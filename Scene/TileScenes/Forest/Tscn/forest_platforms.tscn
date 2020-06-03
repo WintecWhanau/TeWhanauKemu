@@ -1,0 +1,315 @@
+[gd_scene load_steps=48 format=2]
+
+[ext_resource path="res://Assets/forest-platformer-tileset/PNG/Platformer/Cartoon Jungle Game Tileset_Platformer - Spike.png" type="Texture" id=1]
+[ext_resource path="res://Assets/forest-platformer-tileset/PNG/Platformer/Cartoon Jungle Game Tileset_Platformer - Star.png" type="Texture" id=2]
+[ext_resource path="res://Assets/forest-platformer-tileset/PNG/Platformer/Cartoon Jungle Game Tileset_Platformer - Wooden Box.png" type="Texture" id=3]
+[ext_resource path="res://Assets/forest-platformer-tileset/PNG/Platformer/Cartoon Jungle Game Tileset_Platformer - Ladder.png" type="Texture" id=4]
+[ext_resource path="res://Assets/forest-platformer-tileset/PNG/Platformer/Cartoon Jungle Game Tileset_Platformer - Wooden Barrel.png" type="Texture" id=7]
+[ext_resource path="res://Assets/forest-platformer-tileset/PNG/Platformer/Cartoon Jungle Game Tileset_Platformer - Stone.png" type="Texture" id=9]
+[ext_resource path="res://Assets/forest-platformer-tileset/PNG/Platformer/Cartoon Jungle Game Tileset_Platformer - Ground 02.png" type="Texture" id=10]
+[ext_resource path="res://Assets/forest-platformer-tileset/PNG/Platformer/Cartoon Jungle Game Tileset_Platformer - Ground 03.png" type="Texture" id=12]
+[ext_resource path="res://Assets/forest-platformer-tileset/PNG/Platformer/Cartoon Jungle Game Tileset_Platformer - Brick 02.png" type="Texture" id=13]
+[ext_resource path="res://Assets/forest-platformer-tileset/PNG/Platformer/Cartoon Jungle Game Tileset_Platformer - Ground 04.png" type="Texture" id=14]
+[ext_resource path="res://Assets/forest-platformer-tileset/PNG/Platformer/Cartoon Jungle Game Tileset_Platformer - Ground 05.png" type="Texture" id=15]
+[ext_resource path="res://Assets/forest-platformer-tileset/PNG/Platformer/Cartoon Jungle Game Tileset_Platformer - Ground 12.png" type="Texture" id=16]
+[ext_resource path="res://Assets/forest-platformer-tileset/PNG/Platformer/Cartoon Jungle Game Tileset_Platformer - Ground 13.png" type="Texture" id=17]
+[ext_resource path="res://Assets/forest-platformer-tileset/PNG/Platformer/Cartoon Jungle Game Tileset_Platformer - Bridge Part 02.png" type="Texture" id=19]
+[ext_resource path="res://Assets/forest-platformer-tileset/PNG/Platformer/Cartoon Jungle Game Tileset_Platformer - Ground 09.png" type="Texture" id=20]
+[ext_resource path="res://Assets/forest-platformer-tileset/PNG/Platformer/Cartoon Jungle Game Tileset_Platformer - Ground 07.png" type="Texture" id=21]
+[ext_resource path="res://Assets/forest-platformer-tileset/PNG/Platformer/Cartoon Jungle Game Tileset_Platformer - Ground 01.png" type="Texture" id=22]
+[ext_resource path="res://Assets/forest-platformer-tileset/PNG/Platformer/Cartoon Jungle Game Tileset_Platformer - Ground 11.png" type="Texture" id=23]
+[ext_resource path="res://Assets/forest-platformer-tileset/PNG/Platformer/Cartoon Jungle Game Tileset_Platformer - Bridge Part 01.png" type="Texture" id=25]
+[ext_resource path="res://Assets/forest-platformer-tileset/PNG/Platformer/Cartoon Jungle Game Tileset_Platformer - Ground 06.png" type="Texture" id=26]
+[ext_resource path="res://Assets/forest-platformer-tileset/PNG/Platformer/Cartoon Jungle Game Tileset_Platformer - Brick 01.png" type="Texture" id=27]
+[ext_resource path="res://Assets/forest-platformer-tileset/PNG/Platformer/Cartoon Jungle Game Tileset_Platformer - Bonus.png" type="Texture" id=28]
+[ext_resource path="res://Assets/forest-platformer-tileset/PNG/Platformer/Cartoon Jungle Game Tileset_Platformer - Ground 08.png" type="Texture" id=29]
+[ext_resource path="res://Assets/forest-platformer-tileset/PNG/Platformer/Cartoon Jungle Game Tileset_Platformer - Ground 10.png" type="Texture" id=31]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+[sub_resource type="RectangleShape2D" id=2]
+
+[sub_resource type="RectangleShape2D" id=3]
+
+[sub_resource type="RectangleShape2D" id=4]
+
+[sub_resource type="RectangleShape2D" id=5]
+
+[sub_resource type="RectangleShape2D" id=6]
+
+[sub_resource type="RectangleShape2D" id=7]
+
+[sub_resource type="CircleShape2D" id=8]
+
+[sub_resource type="CircleShape2D" id=9]
+
+[sub_resource type="RectangleShape2D" id=10]
+
+[sub_resource type="SegmentShape2D" id=11]
+
+[sub_resource type="RectangleShape2D" id=12]
+
+[sub_resource type="SegmentShape2D" id=13]
+
+[sub_resource type="RectangleShape2D" id=14]
+
+[sub_resource type="RectangleShape2D" id=15]
+
+[sub_resource type="RectangleShape2D" id=16]
+
+[sub_resource type="RectangleShape2D" id=17]
+
+[sub_resource type="RectangleShape2D" id=18]
+
+[sub_resource type="RectangleShape2D" id=19]
+
+[sub_resource type="RectangleShape2D" id=20]
+
+[sub_resource type="RectangleShape2D" id=21]
+
+[sub_resource type="RectangleShape2D" id=22]
+
+[sub_resource type="RectangleShape2D" id=23]
+
+[node name="ForestPlatforms" type="Node"]
+
+[node name="Bonus" type="Sprite" parent="."]
+position = Vector2( 64, 128 )
+texture = ExtResource( 28 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Bonus"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bonus/StaticBody2D"]
+scale = Vector2( 3, 3 )
+shape = SubResource( 1 )
+
+[node name="Star" type="Sprite" parent="."]
+position = Vector2( 160, 128 )
+texture = ExtResource( 2 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Star"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Star/StaticBody2D"]
+scale = Vector2( 3, 3 )
+shape = SubResource( 2 )
+
+[node name="Brick1" type="Sprite" parent="."]
+position = Vector2( 255, 128 )
+texture = ExtResource( 27 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Brick1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Brick1/StaticBody2D"]
+scale = Vector2( 3, 3 )
+shape = SubResource( 3 )
+
+[node name="Brick2" type="Sprite" parent="."]
+position = Vector2( 352, 128 )
+texture = ExtResource( 13 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Brick2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Brick2/StaticBody2D"]
+scale = Vector2( 3, 3 )
+shape = SubResource( 4 )
+
+[node name="Stone" type="Sprite" parent="."]
+position = Vector2( 448, 128 )
+texture = ExtResource( 9 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Stone"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stone/StaticBody2D"]
+scale = Vector2( 3, 3 )
+shape = SubResource( 5 )
+
+[node name="Crate" type="Sprite" parent="."]
+position = Vector2( 544, 128 )
+texture = ExtResource( 3 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Crate"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crate/StaticBody2D"]
+scale = Vector2( 3, 3 )
+shape = SubResource( 6 )
+
+[node name="Barrel" type="Sprite" parent="."]
+position = Vector2( 640, 128 )
+texture = ExtResource( 7 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Barrel"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Barrel/StaticBody2D"]
+scale = Vector2( 3, 3 )
+shape = SubResource( 7 )
+
+[node name="Ladder" type="Sprite" parent="."]
+position = Vector2( 736, 128 )
+texture = ExtResource( 4 )
+
+[node name="Bridge1" type="Sprite" parent="."]
+position = Vector2( 832, 129 )
+texture = ExtResource( 25 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Bridge1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bridge1/StaticBody2D"]
+scale = Vector2( 1.4, 1.4 )
+shape = SubResource( 8 )
+
+[node name="Bridge2" type="Sprite" parent="."]
+position = Vector2( 896, 128 )
+texture = ExtResource( 19 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Bridge2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bridge2/StaticBody2D"]
+scale = Vector2( 1.4, 1.4 )
+shape = SubResource( 9 )
+
+[node name="Spike" type="Sprite" parent="."]
+position = Vector2( 960, 144 )
+texture = ExtResource( 1 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Spike"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spike/StaticBody2D"]
+position = Vector2( 0, 1 )
+scale = Vector2( 2.5, 1.4 )
+shape = SubResource( 10 )
+
+[node name="Ground1" type="Sprite" parent="."]
+position = Vector2( 64, 256 )
+texture = ExtResource( 22 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Ground1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground1/StaticBody2D"]
+position = Vector2( 31, -29 )
+rotation = 0.788889
+scale = Vector2( 1, 8.5 )
+shape = SubResource( 11 )
+
+[node name="Ground2" type="Sprite" parent="."]
+position = Vector2( 160, 256 )
+texture = ExtResource( 10 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Ground2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground2/StaticBody2D"]
+scale = Vector2( 3.2, 3.2 )
+shape = SubResource( 12 )
+
+[node name="Ground3" type="Sprite" parent="."]
+position = Vector2( 256, 256 )
+texture = ExtResource( 12 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Ground3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground3/StaticBody2D"]
+position = Vector2( -31, -29 )
+rotation = -0.787143
+scale = Vector2( 1, 8.5 )
+shape = SubResource( 13 )
+
+[node name="Ground4" type="Sprite" parent="."]
+position = Vector2( 352, 256 )
+texture = ExtResource( 14 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Ground4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground4/StaticBody2D"]
+scale = Vector2( 3.2, 3.2 )
+shape = SubResource( 14 )
+
+[node name="Ground5" type="Sprite" parent="."]
+position = Vector2( 448, 256 )
+texture = ExtResource( 15 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Ground5"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground5/StaticBody2D"]
+scale = Vector2( 3.2, 3.2 )
+shape = SubResource( 15 )
+
+[node name="Ground6" type="Sprite" parent="."]
+position = Vector2( 544, 256 )
+texture = ExtResource( 26 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Ground6"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground6/StaticBody2D"]
+scale = Vector2( 3.2, 3.2 )
+shape = SubResource( 16 )
+
+[node name="Ground7" type="Sprite" parent="."]
+position = Vector2( 640, 256 )
+texture = ExtResource( 21 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Ground7"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground7/StaticBody2D"]
+scale = Vector2( 3.2, 3.2 )
+shape = SubResource( 17 )
+
+[node name="Ground8" type="Sprite" parent="."]
+position = Vector2( 736, 256 )
+texture = ExtResource( 29 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Ground8"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground8/StaticBody2D"]
+scale = Vector2( 3.2, 3.2 )
+shape = SubResource( 18 )
+
+[node name="Ground9" type="Sprite" parent="."]
+position = Vector2( 352, 352 )
+texture = ExtResource( 20 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Ground9"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground9/StaticBody2D"]
+position = Vector2( 8, 0 )
+scale = Vector2( 2.4, 3.2 )
+shape = SubResource( 19 )
+
+[node name="Ground10" type="Sprite" parent="."]
+position = Vector2( 64, 352 )
+texture = ExtResource( 31 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Ground10"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground10/StaticBody2D"]
+scale = Vector2( 3.2, 3.2 )
+shape = SubResource( 20 )
+
+[node name="Ground11" type="Sprite" parent="."]
+position = Vector2( 160, 352 )
+texture = ExtResource( 23 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Ground11"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground11/StaticBody2D"]
+scale = Vector2( 3.2, 3.2 )
+shape = SubResource( 21 )
+
+[node name="Ground12" type="Sprite" parent="."]
+position = Vector2( 256, 352 )
+texture = ExtResource( 16 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Ground12"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground12/StaticBody2D"]
+scale = Vector2( 3.2, 3.2 )
+shape = SubResource( 22 )
+
+[node name="Ground13" type="Sprite" parent="."]
+position = Vector2( 448, 352 )
+texture = ExtResource( 17 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Ground13"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground13/StaticBody2D"]
+position = Vector2( -8, 0 )
+scale = Vector2( 2.4, 3.2 )
+shape = SubResource( 23 )
