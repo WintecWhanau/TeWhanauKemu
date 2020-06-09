@@ -1,0 +1,144 @@
+[gd_scene load_steps=29 format=2]
+
+[ext_resource path="res://Assets/volcano-platformer-tileset/PNG/Environment/Volcano Level Set_Environment - Rock 06.png" type="Texture" id=1]
+[ext_resource path="res://Assets/volcano-platformer-tileset/PNG/Environment/Volcano Level Set_Environment - Crack 07.png" type="Texture" id=2]
+[ext_resource path="res://Assets/volcano-platformer-tileset/PNG/Environment/Volcano Level Set_Environment - Rock 07.png" type="Texture" id=3]
+[ext_resource path="res://Assets/volcano-platformer-tileset/PNG/Environment/Volcano Level Set_Environment - Rock 03.png" type="Texture" id=4]
+[ext_resource path="res://Assets/volcano-platformer-tileset/PNG/Environment/Volcano Level Set_Environment - Rock 02.png" type="Texture" id=5]
+[ext_resource path="res://Assets/volcano-platformer-tileset/PNG/Environment/Volcano Level Set_Environment - Rock 08.png" type="Texture" id=6]
+[ext_resource path="res://Assets/volcano-platformer-tileset/PNG/Environment/Volcano Level Set_Environment - Rock 04.png" type="Texture" id=7]
+[ext_resource path="res://Assets/volcano-platformer-tileset/PNG/Environment/Volcano Level Set_Environment - Rock 01.png" type="Texture" id=8]
+[ext_resource path="res://Assets/volcano-platformer-tileset/PNG/Environment/Volcano Level Set_Environment - Rock 05.png" type="Texture" id=9]
+[ext_resource path="res://Assets/volcano-platformer-tileset/PNG/Environment/Volcano Level Set_Environment - Rolling Stone.png" type="Texture" id=10]
+[ext_resource path="res://Assets/volcano-platformer-tileset/PNG/Environment/Volcano Level Set_Environment - Signpost 06.png" type="Texture" id=11]
+[ext_resource path="res://Assets/volcano-platformer-tileset/PNG/Environment/Volcano Level Set_Environment - Signpost 01.png" type="Texture" id=12]
+[ext_resource path="res://Assets/volcano-platformer-tileset/PNG/Environment/Volcano Level Set_Environment - Skull.png" type="Texture" id=13]
+[ext_resource path="res://Assets/volcano-platformer-tileset/PNG/Environment/Volcano Level Set_Environment - Crack 01.png" type="Texture" id=14]
+[ext_resource path="res://Assets/volcano-platformer-tileset/PNG/Environment/Volcano Level Set_Environment - Signpost 02.png" type="Texture" id=15]
+[ext_resource path="res://Assets/volcano-platformer-tileset/PNG/Environment/Volcano Level Set_Environment - Lava 03.png" type="Texture" id=16]
+[ext_resource path="res://Assets/volcano-platformer-tileset/PNG/Environment/Volcano Level Set_Environment - Signpost 03.png" type="Texture" id=17]
+[ext_resource path="res://Assets/volcano-platformer-tileset/PNG/Environment/Volcano Level Set_Environment - Signpost 05.png" type="Texture" id=18]
+[ext_resource path="res://Assets/volcano-platformer-tileset/PNG/Environment/Volcano Level Set_Environment - Signpost 04.png" type="Texture" id=19]
+[ext_resource path="res://Assets/volcano-platformer-tileset/PNG/Environment/Volcano Level Set_Environment - Lava 02.png" type="Texture" id=20]
+[ext_resource path="res://Assets/volcano-platformer-tileset/PNG/Environment/Volcano Level Set_Environment - Lava 01.png" type="Texture" id=21]
+[ext_resource path="res://Assets/volcano-platformer-tileset/PNG/Environment/Volcano Level Set_Environment - Red Flag.png" type="Texture" id=22]
+[ext_resource path="res://Assets/volcano-platformer-tileset/PNG/Environment/Volcano Level Set_Environment - White Flag.png" type="Texture" id=23]
+[ext_resource path="res://Assets/volcano-platformer-tileset/PNG/Environment/Volcano Level Set_Environment - Crack 02.png" type="Texture" id=24]
+[ext_resource path="res://Assets/volcano-platformer-tileset/PNG/Environment/Volcano Level Set_Environment - Crack 04.png" type="Texture" id=25]
+[ext_resource path="res://Assets/volcano-platformer-tileset/PNG/Environment/Volcano Level Set_Environment - Crack 03.png" type="Texture" id=26]
+[ext_resource path="res://Assets/volcano-platformer-tileset/PNG/Environment/Volcano Level Set_Environment - Crack 05.png" type="Texture" id=27]
+[ext_resource path="res://Assets/volcano-platformer-tileset/PNG/Environment/Volcano Level Set_Environment - Crack 06.png" type="Texture" id=28]
+
+[node name="Environment" type="Node"]
+
+[node name="Lava1" type="Sprite" parent="."]
+position = Vector2( 133.509, 102.852 )
+texture = ExtResource( 21 )
+
+[node name="Lava2" type="Sprite" parent="."]
+position = Vector2( 230.369, 102.15 )
+texture = ExtResource( 20 )
+
+[node name="Lava3" type="Sprite" parent="."]
+position = Vector2( 308.445, 101.688 )
+texture = ExtResource( 16 )
+
+[node name="Flag1" type="Sprite" parent="."]
+position = Vector2( 239.57, 199.366 )
+texture = ExtResource( 23 )
+
+[node name="Flag2" type="Sprite" parent="."]
+position = Vector2( 315.121, 200.388 )
+texture = ExtResource( 22 )
+
+[node name="Skull" type="Sprite" parent="."]
+position = Vector2( 135.597, 216.7 )
+texture = ExtResource( 13 )
+
+[node name="Crack1" type="Sprite" parent="."]
+position = Vector2( 123.362, 416.482 )
+texture = ExtResource( 14 )
+
+[node name="Crack2" type="Sprite" parent="."]
+position = Vector2( 253.362, 416.482 )
+texture = ExtResource( 24 )
+
+[node name="Crack3" type="Sprite" parent="."]
+position = Vector2( 378.362, 416.482 )
+texture = ExtResource( 26 )
+
+[node name="Crack4" type="Sprite" parent="."]
+position = Vector2( 495.362, 416.482 )
+texture = ExtResource( 25 )
+
+[node name="Crack5" type="Sprite" parent="."]
+position = Vector2( 633.362, 416.482 )
+texture = ExtResource( 27 )
+
+[node name="Crack6" type="Sprite" parent="."]
+position = Vector2( 742.362, 416.482 )
+texture = ExtResource( 28 )
+
+[node name="Crack7" type="Sprite" parent="."]
+position = Vector2( 863.362, 416.482 )
+texture = ExtResource( 2 )
+
+[node name="Rock1" type="Sprite" parent="."]
+position = Vector2( 435.351, 207.591 )
+texture = ExtResource( 8 )
+
+[node name="Rock2" type="Sprite" parent="."]
+position = Vector2( 536.145, 206.336 )
+texture = ExtResource( 5 )
+
+[node name="Rock3" type="Sprite" parent="."]
+position = Vector2( 626.069, 212.608 )
+texture = ExtResource( 4 )
+
+[node name="Rock4" type="Sprite" parent="."]
+position = Vector2( 719.755, 213.026 )
+texture = ExtResource( 7 )
+
+[node name="Rock5" type="Sprite" parent="."]
+position = Vector2( 793.871, 213.757 )
+texture = ExtResource( 9 )
+
+[node name="Rock6" type="Sprite" parent="."]
+position = Vector2( 843.263, 213.757 )
+texture = ExtResource( 1 )
+
+[node name="Rock7" type="Sprite" parent="."]
+position = Vector2( 888.703, 212.703 )
+texture = ExtResource( 3 )
+
+[node name="Rock8" type="Sprite" parent="."]
+position = Vector2( 933.879, 213.757 )
+texture = ExtResource( 6 )
+
+[node name="Signpost1" type="Sprite" parent="."]
+position = Vector2( 436.294, 327.508 )
+texture = ExtResource( 12 )
+
+[node name="Signpost2" type="Sprite" parent="."]
+position = Vector2( 534.294, 327.508 )
+texture = ExtResource( 15 )
+
+[node name="Signpost3" type="Sprite" parent="."]
+position = Vector2( 633.294, 327.508 )
+texture = ExtResource( 17 )
+
+[node name="Signpost4" type="Sprite" parent="."]
+position = Vector2( 730.294, 327.508 )
+texture = ExtResource( 19 )
+
+[node name="Signpost5" type="Sprite" parent="."]
+position = Vector2( 838.294, 327.508 )
+texture = ExtResource( 18 )
+
+[node name="Signpost6" type="Sprite" parent="."]
+position = Vector2( 939.294, 327.508 )
+texture = ExtResource( 11 )
+
+[node name="Stone1" type="Sprite" parent="."]
+position = Vector2( 314.95, 324.675 )
+texture = ExtResource( 10 )
