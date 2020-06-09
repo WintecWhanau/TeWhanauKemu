@@ -1,8 +1,14 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Scene/TileScenes/Volcano/Res/volcano.tres" type="TileSet" id=1]
+[ext_resource path="res://Assets/volcano-platformer-tileset/Ruaumoko.jpg" type="Texture" id=2]
 
 [node name="VolcanoLevel" type="Node"]
+
+[node name="VolcanoBG" type="Sprite" parent="."]
+position = Vector2( 507, 194.5 )
+scale = Vector2( 1.0599, 1.21548 )
+texture = ExtResource( 2 )
 
 [node name="VolcanoTilemap" type="TileMap" parent="."]
 scale = Vector2( 0.5, 0.5 )

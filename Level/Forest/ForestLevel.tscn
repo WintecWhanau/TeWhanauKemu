@@ -1,8 +1,14 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Scene/TileScenes/Forest/Res/forest.tres" type="TileSet" id=1]
+[ext_resource path="res://Assets/forest-platformer-tileset/Tanemahuta.jpg" type="Texture" id=2]
 
 [node name="ForestLevel" type="Node"]
+
+[node name="ForestBG" type="Sprite" parent="."]
+position = Vector2( 519.25, 196 )
+scale = Vector2( 1.07638, 1.79821 )
+texture = ExtResource( 2 )
 
 [node name="ForestTileMap" type="TileMap" parent="."]
 scale = Vector2( 0.5, 0.5 )
