@@ -38,9 +38,6 @@
 [ext_resource path="res://Scene/Player/Sprite/Jump/Jump Loop_005.png" type="Texture" id=36]
 [ext_resource path="res://Scene/Player/Sprite/Jump/Jump Loop_001.png" type="Texture" id=37]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 31.9652, 32.8246 )
-
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
 "frames": [ ExtResource( 1 ), ExtResource( 3 ), ExtResource( 5 ), ExtResource( 14 ), ExtResource( 16 ), ExtResource( 12 ), ExtResource( 19 ), ExtResource( 4 ), ExtResource( 7 ), ExtResource( 15 ), ExtResource( 8 ), ExtResource( 6 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 13 ), ExtResource( 11 ), ExtResource( 17 ), ExtResource( 18 ) ],
@@ -57,7 +54,16 @@ animations = [ {
 "loop": true,
 "name": "run",
 "speed": 18.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "fall",
+"speed": 5.0
 } ]
+
+[sub_resource type="CapsuleShape2D" id=3]
+radius = 17.3235
+height = 33.0581
 
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 2 )
@@ -65,22 +71,39 @@ speed = 300
 gravity = 20
 jumpHeight = -500
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 1.10803, 2.21606 )
-shape = SubResource( 1 )
-
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
+limit_left = -1000
+limit_top = -1000
+limit_right = 1000
+limit_bottom = 1000
 drag_margin_h_enabled = true
 drag_margin_v_enabled = true
 smoothing_enabled = true
 drag_margin_left = 0.4
 drag_margin_right = 0.4
+editor_draw_limits = true
 editor_draw_drag_margin = true
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 0.12, 0.12 )
 frames = SubResource( 2 )
 animation = "idle"
-frame = 10
+frame = 11
 playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 1.10803, 2.21606 )
+shape = SubResource( 3 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = -20.3848
+margin_top = -72.7366
+margin_right = 19.6152
+margin_bottom = -58.7366
+text = "LABEL"
+align = 1
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
