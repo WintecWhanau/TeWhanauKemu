@@ -44,7 +44,6 @@ func _ready():
 
 func _physics_process(delta):
 	stateMachine.process(delta)
-	_fixed_process(delta)
 
 func process_movement(delta):
 	velocity = move_and_slide(velocity,up)
@@ -53,31 +52,17 @@ func process_velocity(delta):
 	"""Apply gravity"""
 	velocity.y += 20
 
-func _fixed_process(delta):
-	if Input.is_action_just_pressed("ui_right"):
-		AnimatedSprite.flip_h = false
-		direction = 1
-		velocity.x = speed * direction
-	elif Input.is_action_just_pressed("ui_left"):
-		AnimatedSprite.flip_h = true
-		direction = -1
-		velocity.x = speed * direction
-		
-	if is_on_floor():
-		if Input.is_action_just_pressed("ui_up"):
-			velocity.y = jumpHeight
-
 class PlayerStateMachine extends StateMachine:
-	enum {IDLE, RUN, ATTACK, JUMP, FALL}
-	var player: Player
+	enum {IDLE, RUN, JUMP, FALL, ATTACK}
+	var player: Player = null
 
 	func _init(playerLoad: Player):
 		player = playerLoad
 		add_state(IDLE)
 		add_state(RUN)
-		add_state(ATTACK)
 		add_state(JUMP)
 		add_state(FALL)
+		add_state(ATTACK)
 		
 
 	func _do_actions(delta):
@@ -85,17 +70,23 @@ class PlayerStateMachine extends StateMachine:
 		match state:
 			IDLE:
 				player.Label.text = 'idle'
-				pass
+				_handle_input(delta)
+				if Input.is_action_just_pressed("ui_up"):
+					player.velocity.y += player.jumpHeight
 			RUN:
 				player.Label.text = 'run'
-				pass
+				_handle_input(delta)
+				if Input.is_action_just_pressed("ui_up"):
+					player.velocity.y += player.jumpHeight
 			JUMP:
 				player.Label.text = 'jump'
+				_handle_input(delta)
 				pass
 			FALL:
 				player.Label.text = 'fall'
+				_handle_input(delta)
 				pass
-#		player._fixed_process(delta)
+		_sprite_flip()
 		player.process_velocity(delta)
 		player.process_movement(delta)
 		
@@ -103,31 +94,31 @@ class PlayerStateMachine extends StateMachine:
 		"""Check the current state transition conditions and return to the state to be transferred to"""
 		match state:
 			IDLE:
-				if !player.is_on_floor():
-					if player.velocity.y < 0:
-						return JUMP
-					if player.velocity.y > 0:
-						return FALL
-				elif player.velocity.x != 0:
-					return RUN
+				if player.is_on_floor():
+					if player.direction != 0:
+						return RUN
+				else: 
+					return JUMP
 			RUN:
-				if !player.is_on_floor():
-					if player.velocity.y < 0:
-						return JUMP
-					if player.velocity.y > 0:
-						return FALL
-				elif player.velocity.x == 0:
-					return IDLE
+				if player.is_on_floor():
+					if player.direction == 0:
+						return IDLE
+				else: 
+					return JUMP
 			JUMP:
 				if player.is_on_floor():
-					return IDLE
-				elif player.velocity.y >= 0:
+					if player.direction == 0:
+						return IDLE
+					else:
+						return RUN
+				elif !player.is_on_floor() && player.velocity.y >= 0:
 					return FALL
 			FALL:
 				if player.is_on_floor():
-					return IDLE
-				elif player.velocity.y < 0:
-					return JUMP
+					if player.direction == 0:
+						return IDLE
+					else:
+						return RUN
 
 
 	func _enter_state(state, _old_state):
@@ -142,13 +133,13 @@ class PlayerStateMachine extends StateMachine:
 			FALL:
 				player.AnimatedSprite.play("fall")
 
-
-	func _exit_state(state, _new_state):
-		match state:
-#			IDLE:
-#				pass
-#			RUN:
-#				pass
-			JUMP:
-				player.is_on_floor()
-				pass
+	func _handle_input(delta):
+			var direction = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
+			player.direction = direction
+			player.velocity.x = direction * player.speed
+	
+	func _sprite_flip():
+		if player.direction > 0:
+			player.AnimatedSprite.flip_h = false
+		elif player.direction < 0:
+			player.AnimatedSprite.flip_h = true
