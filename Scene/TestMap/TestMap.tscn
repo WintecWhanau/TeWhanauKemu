@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Tileset/jungle_platform.tres" type="TileSet" id=1]
+[ext_resource path="res://Scene/Player/Player.tscn" type="PackedScene" id=2]
+
+[node name="TestMap" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+speed = 250
+jumpHeight = -700
+
+[node name="TileMap" type="TileMap" parent="."]
+modulate = Color( 0.647059, 0.647059, 0.647059, 1 )
+tile_set = ExtResource( 1 )
+format = 1
+tile_data = PoolIntArray( -131085, 0, 0, -196597, 0, 0, -65549, 0, 0, -131061, 0, 0, -13, 0, 0, -3, 33, 0, -65525, 0, 0, 65523, 0, 0, 65533, 33, 0, 11, 0, 0, 131059, 0, 0, 131060, 0, 0, 131061, 0, 0, 131062, 0, 0, 131063, 0, 0, 131064, 0, 0, 131065, 0, 0, 131066, 0, 0, 131067, 0, 0, 131068, 0, 0, 131069, 0, 0, 131070, 0, 0, 131071, 0, 0, 65536, 0, 0, 65537, 0, 0, 65538, 0, 0, 65539, 0, 0, 65540, 0, 0, 65541, 0, 0, 65542, 0, 0, 65543, 0, 0, 65544, 0, 0, 65545, 0, 0, 65546, 0, 0, 65547, 0, 0 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -336, 24 )
+scale = Vector2( 0.13, 0.13 )
