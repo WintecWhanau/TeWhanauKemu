@@ -1,8 +1,14 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Scene/TileScenes/Water/Res/water.tres" type="TileSet" id=1]
+[ext_resource path="res://Assets/water-platformer-tileset/Tangaroa.jpg" type="Texture" id=2]
 
 [node name="WaterLevel" type="Node"]
+
+[node name="WaterBG" type="Sprite" parent="."]
+position = Vector2( 514, 190 )
+scale = Vector2( 1.09467, 1.82883 )
+texture = ExtResource( 2 )
 
 [node name="WaterTilemap" type="TileMap" parent="."]
 scale = Vector2( 0.5, 0.5 )
