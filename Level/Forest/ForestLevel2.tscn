@@ -1,0 +1,146 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://Scene/TileScenes/Forest/Res/forest.tres" type="TileSet" id=1]
+[ext_resource path="res://Assets/forest-platformer-tileset/Tanemahuta.jpg" type="Texture" id=2]
+[ext_resource path="res://Assets/forest-platformer-tileset/PNG/Environment/Cartoon Jungle Game Tileset_Environment - Tree 02.png" type="Texture" id=3]
+[ext_resource path="res://Assets/forest-platformer-tileset/PNG/Environment/Cartoon Jungle Game Tileset_Environment - Grass 02.png" type="Texture" id=4]
+[ext_resource path="res://Assets/forest-platformer-tileset/PNG/Environment/Cartoon Jungle Game Tileset_Environment - Signpost 04.png" type="Texture" id=5]
+[ext_resource path="res://Assets/forest-platformer-tileset/PNG/Environment/Cartoon Jungle Game Tileset_Environment - Grass 01.png" type="Texture" id=6]
+[ext_resource path="res://Assets/forest-platformer-tileset/PNG/Environment/Cartoon Jungle Game Tileset_Environment - Stone 01.png" type="Texture" id=7]
+[ext_resource path="res://Assets/forest-platformer-tileset/PNG/Environment/Cartoon Jungle Game Tileset_Environment - Mushroom 01.png" type="Texture" id=8]
+[ext_resource path="res://Assets/forest-platformer-tileset/PNG/Environment/Cartoon Jungle Game Tileset_Environment - Tree 01.png" type="Texture" id=9]
+[ext_resource path="res://Assets/forest-platformer-tileset/PNG/Environment/Cartoon Jungle Game Tileset_Environment - Mushroom 03.png" type="Texture" id=10]
+[ext_resource path="res://Assets/forest-platformer-tileset/PNG/Environment/Cartoon Jungle Game Tileset_Environment - Mushroom 04.png" type="Texture" id=11]
+[ext_resource path="res://Assets/forest-platformer-tileset/PNG/Environment/Cartoon Jungle Game Tileset_Environment - Stone 02.png" type="Texture" id=12]
+[ext_resource path="res://Assets/forest-platformer-tileset/PNG/Environment/Cartoon Jungle Game Tileset_Environment - Grass 03.png" type="Texture" id=13]
+[ext_resource path="res://Assets/forest-platformer-tileset/PNG/Environment/Cartoon Jungle Game Tileset_Environment - Rock 02.png" type="Texture" id=14]
+[ext_resource path="res://Assets/forest-platformer-tileset/PNG/Environment/Cartoon Jungle Game Tileset_Environment - Rock 01.png" type="Texture" id=15]
+
+[node name="ForestLevel" type="Node"]
+
+[node name="ForestBG" type="Sprite" parent="."]
+position = Vector2( 517.958, 194.708 )
+scale = Vector2( 1.07638, 1.79821 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ForestTileMap" type="TileMap" parent="."]
+scale = Vector2( 0.5, 0.5 )
+tile_set = ExtResource( 1 )
+format = 1
+tile_data = PoolIntArray( -393226, -1610612719, 0, -393225, 1610612757, 0, -393224, 1610612757, 0, -393223, 1610612757, 0, -393222, 1610612757, 0, -393221, 1610612757, 0, -393220, 1610612757, 0, -393219, 1610612757, 0, -393218, 1610612757, 0, -393217, 1610612757, 0, -458752, 1610612757, 0, -458751, 1610612757, 0, -458750, 1610612757, 0, -458749, 1610612757, 0, -458748, 1610612757, 0, -458747, 1610612757, 0, -458746, 1610612757, 0, -458745, 1610612757, 0, -458744, 1610612757, 0, -458743, 1610612757, 0, -458742, 1610612757, 0, -458741, 1610612757, 0, -458740, 1610612757, 0, -458739, 1610612757, 0, -458738, 1610612757, 0, -458737, 1610612757, 0, -458736, 1610612757, 0, -458735, 1610612757, 0, -458734, 1610612757, 0, -458733, 1610612757, 0, -458732, 1610612757, 0, -458731, 1610612757, 0, -458730, 1610612757, 0, -458729, 1610612757, 0, -458728, 1610612757, 0, -458727, 1610612757, 0, -458726, 1610612757, 0, -458725, 1610612757, 0, -458724, 1610612757, 0, -458723, 1610612757, 0, -458722, 1610612757, 0, -458721, 1610612757, 0, -458720, 1610612757, 0, -458719, 1610612757, 0, -458718, 1610612757, 0, -458717, 1610612757, 0, -458716, 1610612757, 0, -458715, 1610612757, 0, -458714, 1610612757, 0, -458713, 1610612757, 0, -458712, 1610612757, 0, -458711, -1073741809, 0, -327690, -1610612724, 0, -393175, -1073741812, 0, -262154, -1610612724, 0, -262153, 2, 0, -327639, -1073741812, 0, -196618, -1610612724, 0, -196617, 20, 0, -196616, 21, 0, -196615, 21, 0, -196614, 21, 0, -196613, 21, 0, -196612, 21, 0, -196611, 21, 0, -196610, 21, 0, -196609, 21, 0, -262144, 21, 0, -262143, 21, 0, -262142, 22, 0, -262141, 3, 0, -262126, 11, 0, -262125, 12, 0, -262124, 21, 0, -262123, 21, 0, -262122, 21, 0, -262121, 21, 0, -262120, 21, 0, -262119, 21, 0, -262118, 21, 0, -262117, 21, 0, -262116, 21, 0, -262115, 21, 0, -262114, 21, 0, -262113, 21, 0, -262112, 21, 0, -262111, 21, 0, -262110, 21, 0, -262109, 21, 0, -262108, 21, 0, -262107, 21, 0, -262106, 22, 0, -262103, -1073741812, 0, -131082, -1610612724, 0, -196605, 20, 0, -196604, 21, 0, -196603, 21, 0, -196602, 21, 0, -196601, 21, 0, -196600, 21, 0, -196599, 21, 0, -196598, 21, 0, -196597, 21, 0, -196596, 21, 0, -196595, 21, 0, -196594, 21, 0, -196593, 21, 0, -196592, 21, 0, -196591, 21, 0, -196590, 15, 0, -196589, 16, 0, -196567, -1073741812, 0, -65546, -1610612724, 0, -131033, 14, 0, -131032, 18, 0, -131031, -1073741812, 0, -10, -1610612724, 0, -9, 1, 0, -6, 20, 0, -5, 21, 0, -4, 21, 0, -3, 21, 0, -2, 21, 0, -1, 21, 0, -65536, 22, 0, -65515, 20, 0, -65514, 21, 0, -65513, 21, 0, -65512, 22, 0, -65497, 19, 0, -65496, 23, 0, -65495, -1073741812, 0, 65526, -1610612724, 0, 65527, 3, 0, 10, 20, 0, 11, 21, 0, 12, 21, 0, 13, 21, 0, 14, 21, 0, 15, 21, 0, 16, 21, 0, 17, 21, 0, 18, 21, 0, 19, 21, 0, 20, 22, 0, 25, 20, 0, 26, 21, 0, 27, 21, 0, 28, 21, 0, 29, 21, 0, 30, 21, 0, 31, 21, 0, 32, 21, 0, 33, 21, 0, 34, 21, 0, 35, 21, 0, 36, 21, 0, 37, 21, 0, 38, 21, 0, 39, 21, 0, 40, 21, 0, 41, -1073741812, 0, 131062, -1610612724, 0, 131063, 3, 0, 65538, 20, 0, 65539, 21, 0, 65540, 21, 0, 65541, 21, 0, 65542, 21, 0, 65543, 21, 0, 65544, 21, 0, 65545, 22, 0, 65577, -1073741812, 0, 196598, -1610612724, 0, 196599, 21, 0, 196600, 21, 0, 196601, 21, 0, 196602, 21, 0, 196603, 21, 0, 196604, 21, 0, 196605, 21, 0, 196606, 22, 0, 131113, -1073741812, 0, 262134, -1610612724, 0, 262143, 20, 0, 196608, 22, 0, 196636, 11, 0, 196637, 12, 0, 196638, 12, 0, 196639, 13, 0, 196648, 1, 0, 196649, -1073741812, 0, 327670, -1610612724, 0, 327674, 1, 0, 262145, 20, 0, 262146, 21, 0, 262147, 21, 0, 262148, 21, 0, 262149, 21, 0, 262150, 21, 0, 262151, 21, 0, 262152, 21, 0, 262153, 21, 0, 262154, 21, 0, 262155, 21, 0, 262156, 21, 0, 262157, 21, 0, 262158, 21, 0, 262159, 21, 0, 262160, 21, 0, 262161, 21, 0, 262162, 21, 0, 262163, 21, 0, 262164, 21, 0, 262165, 21, 0, 262166, 21, 0, 262167, 21, 0, 262168, 21, 0, 262169, 21, 0, 262170, 21, 0, 262171, 21, 0, 262172, 15, 0, 262173, 16, 0, 262174, 16, 0, 262175, 17, 0, 262176, 21, 0, 262177, 21, 0, 262178, 21, 0, 262179, 22, 0, 262183, 20, 0, 262184, 21, 0, 262185, -1073741812, 0, 393206, -1610612724, 0, 393208, 20, 0, 393209, 21, 0, 393210, 21, 0, 393211, 21, 0, 393212, 22, 0, 327715, 3, 0, 327721, -1073741812, 0, 458742, -1610612724, 0, 393251, 20, 0, 393252, 22, 0, 393257, -1073741812, 0, 524278, -1610612724, 0, 524286, 20, 0, 524287, 22, 0, 458792, 3, 0, 458793, -1073741812, 0, 589814, -1610612724, 0, 589815, 21, 0, 589816, 22, 0, 589819, 20, 0, 589820, 21, 0, 589821, 21, 0, 589822, 21, 0, 589823, 21, 0, 524288, 21, 0, 524289, 21, 0, 524290, 21, 0, 524291, 21, 0, 524292, 22, 0, 524293, 3, 0, 524297, 20, 0, 524298, 21, 0, 524299, 21, 0, 524300, 22, 0, 524308, 20, 0, 524309, 21, 0, 524310, 21, 0, 524311, 21, 0, 524312, 21, 0, 524313, 21, 0, 524314, 21, 0, 524315, 21, 0, 524316, 21, 0, 524317, 21, 0, 524318, 21, 0, 524319, 22, 0, 524326, 20, 0, 524327, 21, 0, 524328, 21, 0, 524329, -1073741812, 0, 655350, -1610612724, 0, 589829, 20, 0, 589830, 21, 0, 589831, 21, 0, 589832, 22, 0, 589837, 20, 0, 589838, 21, 0, 589839, 21, 0, 589840, 21, 0, 589841, 21, 0, 589842, 21, 0, 589843, 21, 0, 589844, 22, 0, 589855, 14, 0, 589856, 21, 0, 589857, 21, 0, 589858, 21, 0, 589859, 21, 0, 589860, 21, 0, 589861, 21, 0, 589862, 22, 0, 589865, -1073741812, 0, 720886, -1610612724, 0, 655391, 19, 0, 655392, 23, 0, 655401, -1073741812, 0, 786422, -1610612724, 0, 786423, 1, 0, 720906, 3, 0, 720907, 3, 0, 720920, 11, 0, 720921, 12, 0, 720922, 12, 0, 720923, 13, 0, 720925, 1, 0, 720926, 1, 0, 720927, 19, 0, 720928, 23, 0, 720937, -1073741812, 0, 851958, -1610612724, 0, 851959, 21, 0, 851960, 21, 0, 851961, 21, 0, 851962, 21, 0, 851963, 21, 0, 851964, 21, 0, 851965, 22, 0, 786434, 20, 0, 786435, 21, 0, 786436, 21, 0, 786437, 21, 0, 786438, 21, 0, 786439, 21, 0, 786440, 21, 0, 786441, 21, 0, 786442, 21, 0, 786443, 21, 0, 786444, 21, 0, 786445, 21, 0, 786446, 21, 0, 786447, 21, 0, 786448, 21, 0, 786449, 21, 0, 786450, 21, 0, 786451, 21, 0, 786452, 21, 0, 786453, 21, 0, 786454, 21, 0, 786455, 21, 0, 786456, 15, 0, 786457, 16, 0, 786458, 16, 0, 786459, 17, 0, 786460, 12, 0, 786461, 21, 0, 786462, 21, 0, 786463, 21, 0, 786464, 22, 0, 786473, -1073741812, 0, 917494, -1610612724, 0, 852009, -1073741812, 0, 983030, -1610612724, 0, 917545, -1073741812, 0, 1048566, -1610612724, 0, 983081, -1073741812, 0, 1114102, -1610612724, 0, 1048617, -1073741812, 0, 1179638, -1610612724, 0, 1114153, -1073741812, 0, 1245174, 17, 0, 1245175, 12, 0, 1245176, 12, 0, 1245177, 12, 0, 1245178, 12, 0, 1245179, 12, 0, 1245180, 12, 0, 1245181, 12, 0, 1245182, 12, 0, 1245183, 12, 0, 1179648, 12, 0, 1179649, 12, 0, 1179650, 12, 0, 1179651, 12, 0, 1179652, 12, 0, 1179653, 12, 0, 1179654, 12, 0, 1179655, 12, 0, 1179656, 12, 0, 1179657, 12, 0, 1179658, 12, 0, 1179659, 12, 0, 1179660, 12, 0, 1179661, 12, 0, 1179662, 12, 0, 1179663, 12, 0, 1179664, 12, 0, 1179665, 12, 0, 1179666, 12, 0, 1179667, 12, 0, 1179668, 12, 0, 1179669, 12, 0, 1179670, 12, 0, 1179671, 12, 0, 1179672, 12, 0, 1179673, 12, 0, 1179674, 12, 0, 1179675, 12, 0, 1179676, 12, 0, 1179677, 12, 0, 1179678, 12, 0, 1179679, 12, 0, 1179680, 12, 0, 1179681, 12, 0, 1179682, 12, 0, 1179683, 12, 0, 1179684, 12, 0, 1179685, 12, 0, 1179686, 12, 0, 1179687, 12, 0, 1179688, 12, 0, 1179689, 15, 0 )
+
+[node name="Cartoon Jungle Game Tileset_Environment - Grass 02" type="Sprite" parent="ForestTileMap"]
+position = Vector2( 1004.95, 1098.91 )
+texture = ExtResource( 4 )
+
+[node name="Cartoon Jungle Game Tileset_Environment - Grass 03" type="Sprite" parent="ForestTileMap"]
+position = Vector2( -297.585, 1119.17 )
+scale = Vector2( 1.64459, 2.28917 )
+z_index = 1
+texture = ExtResource( 13 )
+
+[node name="Cartoon Jungle Game Tileset_Environment - Signpost 04" type="Sprite" parent="."]
+position = Vector2( 427.428, 532.399 )
+scale = Vector2( 1.32229, 1.09917 )
+texture = ExtResource( 5 )
+
+[node name="Cartoon Jungle Game Tileset_Environment - Tree 02" type="Sprite" parent="."]
+position = Vector2( 220.605, 238.944 )
+scale = Vector2( 0.199226, 0.309136 )
+texture = ExtResource( 3 )
+
+[node name="Cartoon Jungle Game Tileset_Environment - Grass 02" type="Sprite" parent="."]
+position = Vector2( 478.737, 111.349 )
+texture = ExtResource( 4 )
+
+[node name="Cartoon Jungle Game Tileset_Environment - Grass 01" type="Sprite" parent="."]
+position = Vector2( 239.149, 269.223 )
+scale = Vector2( 0.652915, 0.57854 )
+texture = ExtResource( 6 )
+
+[node name="Cartoon Jungle Game Tileset_Environment - Grass 03" type="Sprite" parent="."]
+position = Vector2( 905.552, 239.869 )
+texture = ExtResource( 13 )
+
+[node name="Cartoon Jungle Game Tileset_Environment - Grass 04" type="Sprite" parent="."]
+position = Vector2( 937.286, -17.1718 )
+scale = Vector2( 0.652914, 0.553748 )
+texture = ExtResource( 6 )
+
+[node name="Cartoon Jungle Game Tileset_Environment - Stone 02" type="Sprite" parent="."]
+position = Vector2( 532.684, 371.563 )
+texture = ExtResource( 12 )
+
+[node name="Cartoon Jungle Game Tileset_Environment - Stone 01" type="Sprite" parent="."]
+position = Vector2( 450.177, 100.242 )
+texture = ExtResource( 7 )
+
+[node name="Cartoon Jungle Game Tileset_Environment - Tree 01" type="Sprite" parent="."]
+position = Vector2( 971.399, -45.732 )
+scale = Vector2( 0.324424, 0.360923 )
+texture = ExtResource( 9 )
+
+[node name="Cartoon Jungle Game Tileset_Environment - Tree 03" type="Sprite" parent="."]
+position = Vector2( 573.144, 518.33 )
+scale = Vector2( 0.287237, 0.381386 )
+texture = ExtResource( 3 )
+
+[node name="Cartoon Jungle Game Tileset_Environment - Mushroom 04" type="Sprite" parent="Cartoon Jungle Game Tileset_Environment - Tree 03"]
+position = Vector2( 135.336, 110.247 )
+scale = Vector2( 2.5536, 1.52003 )
+texture = ExtResource( 11 )
+
+[node name="Cartoon Jungle Game Tileset_Environment - Grass 05" type="Sprite" parent="."]
+position = Vector2( 422.41, 565.137 )
+scale = Vector2( 0.727291, 0.504165 )
+texture = ExtResource( 6 )
+
+[node name="Cartoon Jungle Game Tileset_Environment - Grass 06" type="Sprite" parent="."]
+position = Vector2( 129.669, 17.735 )
+texture = ExtResource( 4 )
+
+[node name="Cartoon Jungle Game Tileset_Environment - Grass 07" type="Sprite" parent="."]
+position = Vector2( 170.922, 1.86826 )
+texture = ExtResource( 6 )
+
+[node name="Cartoon Jungle Game Tileset_Environment - Grass 08" type="Sprite" parent="."]
+position = Vector2( 691.351, 354.11 )
+texture = ExtResource( 6 )
+
+[node name="Cartoon Jungle Game Tileset_Environment - Grass 09" type="Sprite" parent="."]
+position = Vector2( 658.031, 371.563 )
+texture = ExtResource( 4 )
+
+[node name="Cartoon Jungle Game Tileset_Environment - Grass 10" type="Sprite" parent="."]
+position = Vector2( 815.112, 111.349 )
+texture = ExtResource( 4 )
+
+[node name="Cartoon Jungle Game Tileset_Environment - Grass 11" type="Sprite" parent="."]
+position = Vector2( 420.03, -112.372 )
+texture = ExtResource( 13 )
+
+[node name="Cartoon Jungle Game Tileset_Environment - Rock 02" type="Sprite" parent="."]
+position = Vector2( -176.559, 555.617 )
+texture = ExtResource( 14 )
+
+[node name="Cartoon Jungle Game Tileset_Environment - Rock 01" type="Sprite" parent="."]
+position = Vector2( 388.297, -114.752 )
+scale = Vector2( 0.702499, 0.826458 )
+texture = ExtResource( 15 )
+
+[node name="Cartoon Jungle Game Tileset_Environment - Rock 03" type="Sprite" parent="."]
+position = Vector2( 932.526, -21.9319 )
+texture = ExtResource( 14 )
+
+[node name="Cartoon Jungle Game Tileset_Environment - Mushroom 01" type="Sprite" parent="."]
+position = Vector2( 1078.5, -142.519 )
+scale = Vector2( 0.553749, 0.652915 )
+texture = ExtResource( 8 )
+
+[node name="Cartoon Jungle Game Tileset_Environment - Mushroom 03" type="Sprite" parent="."]
+position = Vector2( -277.313, 235.109 )
+scale = Vector2( 0.727291, 0.702499 )
+texture = ExtResource( 10 )
