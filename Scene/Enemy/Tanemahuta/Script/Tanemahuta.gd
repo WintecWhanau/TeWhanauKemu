@@ -54,7 +54,7 @@ func _on_DetectingBox_body_entered(body):
 func _on_DetectingBox_body_exited(body):
 	"""Player exits the perception area"""
 	if body is Player:
-		state_machine.set_state(TanemahutaStateMachine.IDLE)
+		state_machine.set_state(TanemahutaStateMachine.WALK)
 		
 func _check_direction():
 	"""Determine the current direction"""
@@ -123,10 +123,7 @@ class TanemahutaStateMachine extends StateMachine:
 				if enemy.is_on_floor():
 					if idle_state_duration > state_stay:
 						return WALK
-				else:
-					return JUMP
 			WALK:
-				
 				if walk_state_duration > state_stay: #or enemy.direction != enemy._check_direction() :
 					return IDLE
 			CHASE:
