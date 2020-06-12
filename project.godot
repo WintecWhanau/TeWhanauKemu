@@ -18,10 +18,16 @@ _global_script_classes=[ {
 "class": "StateMachine",
 "language": "GDScript",
 "path": "res://Common/StateMachine.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "Tanemahuta",
+"language": "GDScript",
+"path": "res://Scene/Enemy/Enemy/Tanemahuta/Script/Tanemahuta.gd"
 } ]
 _global_script_class_icons={
 "Player": "",
-"StateMachine": ""
+"StateMachine": "",
+"Tanemahuta": ""
 }
 
 [application]
