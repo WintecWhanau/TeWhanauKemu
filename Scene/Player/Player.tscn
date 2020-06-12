@@ -68,8 +68,10 @@ animations = [ {
 } ]
 
 [sub_resource type="CapsuleShape2D" id=2]
-radius = 15.1811
-height = 13.9948
+
+radius = 11.6843
+height = 21.2564
+
 
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 2 )
@@ -79,10 +81,10 @@ jumpHeight = -500
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
-limit_left = -1000
-limit_top = -1000
-limit_right = 1000
-limit_bottom = 1000
+limit_left = -320
+limit_top = -220
+limit_right = 1345
+limit_bottom = 610
 drag_margin_h_enabled = true
 drag_margin_v_enabled = true
 smoothing_enabled = true
@@ -95,7 +97,7 @@ editor_draw_drag_margin = true
 scale = Vector2( 0.08, 0.08 )
 frames = SubResource( 1 )
 animation = "idle"
-frame = 16
+frame = 14
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
