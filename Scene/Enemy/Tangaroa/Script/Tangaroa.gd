@@ -1,5 +1,5 @@
 extends KinematicBody2D
-class_name Tanemahuta
+class_name Tangaroa
 
 export var max_speed_normal:int = 100 
 export var max_speed_attack:int = 120
@@ -11,7 +11,7 @@ var velocity := Vector2()
 var origin_position: Vector2
 var target: Vector2	# 目标
 var player: Player	# Players in the secen
-var state_machine: TanemahutaStateMachine	# 状态机
+var state_machine: TangaroaStateMachine	# 状态机
 
 onready var GroundCheckLeft = $GroundCheckLeft
 onready var GroundCheckRight = $GroundCheckRight
@@ -24,11 +24,12 @@ const UP = Vector2(0, -1)
 
 func _ready():
 	origin_position = global_position
-	state_machine = TanemahutaStateMachine.new(self)
-	state_machine.set_state_deferred(TanemahutaStateMachine.IDLE)
+	state_machine = TangaroaStateMachine.new(self)
+	state_machine.set_state_deferred(TangaroaStateMachine.IDLE)
 	
 func _physics_process(delta):
 	state_machine.process(delta)
+	print(direction)
 	
 func process_movement(delta):
 	velocity = move_and_slide(velocity,Vector2.UP)
@@ -49,19 +50,19 @@ func _on_HitBox_body_exited(body):
 	if body.has_method("take_damage"):
 		WallCheckLeft.enabled = true
 		WallCheckRight.enabled = true
-		state_machine.set_state(TanemahutaStateMachine.CHASE)
+		state_machine.set_state(TangaroaStateMachine.CHASE)
 
 func _on_DetectingBox_body_entered(body):
 	"""Player enters the perception area"""
 	if body is Player:
 		player = body
 		target = body.global_position
-		state_machine.set_state(TanemahutaStateMachine.CHASE)
+		state_machine.set_state(TangaroaStateMachine.CHASE)
 		
 func _on_DetectingBox_body_exited(body):
 	"""Player exits the perception area"""
 	if body is Player:
-		state_machine.set_state(TanemahutaStateMachine.WALK)
+		state_machine.set_state(TangaroaStateMachine.WALK)
 		
 func _check_direction():
 	"""Determine the current direction"""
@@ -81,16 +82,16 @@ func take_damge(damage):
 	if hp > 0:
 		pass
 	else:
-		state_machine.set_state(TanemahutaStateMachine.DEAD)
+		state_machine.set_state(TangaroaStateMachine.DEAD)
 				
-class TanemahutaStateMachine extends StateMachine:
+class TangaroaStateMachine extends StateMachine:
 	enum {IDLE,WALK,ATTACK,DEAD,CHASE,JUMP}
-	var enemy: Tanemahuta
+	var enemy: Tangaroa
 	var idle_state_duration = 0
 	var walk_state_duration = 0
 	var state_stay = 0
 
-	func _init(tanemahuta: Tanemahuta):
+	func _init(tanemahuta: Tangaroa):
 		enemy = tanemahuta
 		add_state(IDLE)
 		add_state(WALK)
@@ -142,6 +143,7 @@ class TanemahutaStateMachine extends StateMachine:
 				if walk_state_duration > state_stay: #or enemy.direction != enemy._check_direction() :
 					return IDLE
 			CHASE:
+				print(enemy.player.position.x,"-",enemy.position.x)
 				if enemy.player.position.y < enemy.position.y -32 and enemy.is_on_floor():
 					if enemy.player.position.x < enemy.position.x -64 or enemy.player.position.x > enemy.position.x -64:
 						return JUMP
@@ -168,7 +170,7 @@ class TanemahutaStateMachine extends StateMachine:
 				state_stay = rand_range(1, 5)
 			CHASE:
 				enemy.control_ray_cast(false)
-				enemy.AnimatedSprite.play("Walking")
+				enemy.AnimatedSprite.play("Running")
 				enemy.max_speed = enemy.max_speed_attack
 			JUMP:
 				enemy.velocity.y = -700
