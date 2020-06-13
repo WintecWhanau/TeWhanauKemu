@@ -4,6 +4,7 @@ class_name Tanemahuta
 export var max_speed_normal:int = 100 
 export var max_speed_attack:int = 120
 export var damage:int = 1
+export var hp:int = 0
 var direction:int = 1
 var max_speed = max_speed_normal
 var velocity := Vector2()
@@ -37,8 +38,6 @@ func process_velocity(delta):
 	"""Apply gravity"""
 	velocity.y += 20
 	
-
-
 func _on_HitBox_body_entered(body):
 	#AnimatedSprite.play("Slashing")
 	if body.has_method("take_damage"):
@@ -78,6 +77,12 @@ func control_ray_cast(condition:bool):
 	GroundCheckLeft.enabled = condition
 	GroundCheckRight.enabled = condition
 
+func take_damge(damage):
+	hp -= damage
+	if hp > 0:
+		pass
+	else:
+		state_machine.set_state(TanemahutaStateMachine.DEAD)
 				
 class TanemahutaStateMachine extends StateMachine:
 	enum {IDLE,WALK,ATTACK,DEAD,CHASE,JUMP}
@@ -121,8 +126,9 @@ class TanemahutaStateMachine extends StateMachine:
 				
 			JUMP:
 				enemy.velocity.x = enemy.max_speed * enemy.direction
-			ATTACK:
-				pass
+				
+			DEAD:
+				enemy.direction = 0
 				
 		enemy.process_velocity(delta)
 		enemy.process_movement(delta)
@@ -168,8 +174,8 @@ class TanemahutaStateMachine extends StateMachine:
 			JUMP:
 				enemy.velocity.y = -700
 				enemy.AnimatedSprite.play("Jump")
-
-
+			DEAD:
+				enemy.AnimatedSprite.play("Dying")
 
 	func _exit_state(state, new_state):
 		match state:
@@ -184,6 +190,3 @@ class TanemahutaStateMachine extends StateMachine:
 				pass
 			JUMP:
 				pass
-
-
-
