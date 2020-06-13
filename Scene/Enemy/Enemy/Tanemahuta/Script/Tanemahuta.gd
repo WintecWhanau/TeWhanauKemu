@@ -3,6 +3,7 @@ class_name Tanemahuta
 
 export var max_speed_normal:int = 100 
 export var max_speed_attack:int = 120
+export var damage:int = 1
 var direction:int = 1
 var max_speed = max_speed_normal
 var velocity := Vector2()
@@ -41,8 +42,16 @@ func process_velocity(delta):
 func _on_HitBox_body_entered(body):
 	#AnimatedSprite.play("Slashing")
 	if body.has_method("take_damage"):
-		body.take_damage(-1) #what to do?
-		pass
+		WallCheckLeft.enabled = false
+		WallCheckRight.enabled = false
+		body.take_damage(damage) #what to do?
+		AnimatedSprite.play("Slashing")
+		
+func _on_HitBox_body_exited(body):
+	if body.has_method("take_damage"):
+		WallCheckLeft.enabled = true
+		WallCheckRight.enabled = true
+		state_machine.set_state(TanemahutaStateMachine.CHASE)
 
 func _on_DetectingBox_body_entered(body):
 	"""Player enters the perception area"""
@@ -68,11 +77,10 @@ func _check_direction():
 func control_ray_cast(condition:bool):
 	GroundCheckLeft.enabled = condition
 	GroundCheckRight.enabled = condition
-	WallCheckLeft.enabled = condition
-	WallCheckRight.enabled = condition
+
 				
 class TanemahutaStateMachine extends StateMachine:
-	enum {IDLE, WALK, ATTACK, DEAD, CHASE, JUMP}
+	enum {IDLE,WALK,ATTACK,DEAD,CHASE,JUMP}
 	var enemy: Tanemahuta
 	var idle_state_duration = 0
 	var walk_state_duration = 0
@@ -101,10 +109,10 @@ class TanemahutaStateMachine extends StateMachine:
 				walk_state_duration += delta
 				enemy.velocity.x = enemy.max_speed * enemy.direction
 			CHASE:
-				if enemy.player.position.x < enemy.position.x and enemy.position.y >= -40:
+				if enemy.player.position.x < enemy.position.x:
 					enemy.AnimatedSprite.flip_h = true
 					enemy.direction = -1
-				elif enemy.player.position.x > enemy.position.x and enemy.position.y >= -40:
+				elif enemy.player.position.x > enemy.position.x:
 					enemy.AnimatedSprite.flip_h = false
 					enemy.direction = 1
 				
@@ -113,6 +121,8 @@ class TanemahutaStateMachine extends StateMachine:
 				
 			JUMP:
 				enemy.velocity.x = enemy.max_speed * enemy.direction
+			ATTACK:
+				pass
 				
 		enemy.process_velocity(delta)
 		enemy.process_movement(delta)
@@ -129,6 +139,8 @@ class TanemahutaStateMachine extends StateMachine:
 			CHASE:
 				print(enemy.player.position.x,"-",enemy.position.x)
 				if enemy.player.position.y < enemy.position.y -32 and enemy.is_on_floor():
+					return JUMP
+				elif enemy.WallCheckLeft.is_colliding() or enemy.WallCheckRight.is_colliding():
 					return JUMP
 			JUMP:
 				if enemy.is_on_floor():
@@ -158,6 +170,7 @@ class TanemahutaStateMachine extends StateMachine:
 				enemy.AnimatedSprite.play("Jump")
 
 
+
 	func _exit_state(state, new_state):
 		match state:
 			IDLE:
@@ -171,3 +184,6 @@ class TanemahutaStateMachine extends StateMachine:
 				pass
 			JUMP:
 				pass
+
+
+
