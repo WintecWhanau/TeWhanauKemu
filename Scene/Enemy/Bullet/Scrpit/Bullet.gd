@@ -8,12 +8,12 @@ var direction = 1
 func _ready():
 	pass # Replace with function body.
 
-func set_fireball_direction(dir):
+func set_bullet_direction(dir):
 	direction = dir
 	if dir == -1:
 		$AnimatedSprite.flip_h = true
 func _physics_process(delta):
-	velocity.x = speed * delta
+	velocity.x = speed * delta * direction
 	translate(velocity)
 	$Animated.play('Fly')
 	

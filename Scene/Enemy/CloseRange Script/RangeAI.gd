@@ -120,9 +120,11 @@ class RangeEnemyStateMachine extends StateMachine:
 				if enemy.player.position.x < enemy.position.x:
 					enemy.AnimatedSprite.flip_h = true
 					enemy.direction = -1
+					enemy.ShootPosition.x *= -1
 				elif enemy.player.position.x > enemy.position.x:
 					enemy.AnimatedSprite.flip_h = false
 					enemy.direction = 1
+					enemy.ShootPosition.x *= -1 
 				
 				enemy.velocity.x = enemy.max_speed * enemy.direction
 				
@@ -136,10 +138,13 @@ class RangeEnemyStateMachine extends StateMachine:
 			
 			SHOOT:
 				print("shooting!!!")
-				enemy.direction = 0
-				enemy.velocity.x = enemy.max_speed * enemy.direction
 				if enemy.shot == false:
 					var bullet = BULLET.instance()
+					if enemy.direction > 0:
+						bullet.set_bullet_direction(1)
+					elif enemy.direction < 0:
+						bullet.set_bullet_direction(-1)
+					enemy.velocity.x = 0
 					enemy.get_parent().add_child(bullet)
 					bullet.position = enemy.ShootPosition.global_position
 					enemy.shot = true

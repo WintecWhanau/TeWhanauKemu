@@ -113,11 +113,6 @@ animations = [ {
 "name": "Dying",
 "speed": 12.0
 }, {
-"frames": [ ExtResource( 52 ), ExtResource( 48 ), ExtResource( 50 ), ExtResource( 73 ), ExtResource( 79 ), ExtResource( 75 ), ExtResource( 81 ), ExtResource( 76 ), ExtResource( 74 ), ExtResource( 84 ), ExtResource( 78 ), ExtResource( 77 ), ExtResource( 83 ), ExtResource( 85 ), ExtResource( 86 ), ExtResource( 80 ), ExtResource( 82 ), ExtResource( 96 ), ExtResource( 88 ), ExtResource( 92 ), ExtResource( 97 ), ExtResource( 95 ), ExtResource( 98 ), ExtResource( 87 ) ],
-"loop": true,
-"name": "Walking",
-"speed": 12.0
-}, {
 "frames": [ ExtResource( 62 ), ExtResource( 42 ), ExtResource( 46 ), ExtResource( 49 ), ExtResource( 53 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 43 ), ExtResource( 47 ), ExtResource( 41 ), ExtResource( 44 ), ExtResource( 45 ) ],
 "loop": true,
 "name": "Slashing",
@@ -136,6 +131,11 @@ animations = [ {
 "frames": [ ExtResource( 94 ), ExtResource( 89 ), ExtResource( 90 ), ExtResource( 91 ), ExtResource( 93 ), ExtResource( 99 ), ExtResource( 100 ), ExtResource( 71 ), ExtResource( 69 ), ExtResource( 70 ), ExtResource( 72 ), ExtResource( 68 ) ],
 "loop": true,
 "name": "Shoot",
+"speed": 12.0
+}, {
+"frames": [ ExtResource( 52 ), ExtResource( 48 ), ExtResource( 50 ), ExtResource( 73 ), ExtResource( 79 ), ExtResource( 75 ), ExtResource( 81 ), ExtResource( 76 ), ExtResource( 74 ), ExtResource( 84 ), ExtResource( 78 ), ExtResource( 77 ), ExtResource( 83 ), ExtResource( 85 ), ExtResource( 86 ), ExtResource( 80 ), ExtResource( 82 ), ExtResource( 96 ), ExtResource( 88 ), ExtResource( 92 ), ExtResource( 97 ), ExtResource( 95 ), ExtResource( 98 ), ExtResource( 87 ) ],
+"loop": true,
+"name": "Walking",
 "speed": 12.0
 } ]
 
@@ -157,7 +157,7 @@ script = ExtResource( 67 )
 scale = Vector2( 0.09, 0.09 )
 frames = SubResource( 1 )
 animation = "Shoot"
-frame = 6
+frame = 11
 playing = true
 
 [node name="CollisionBox" type="CollisionShape2D" parent="."]

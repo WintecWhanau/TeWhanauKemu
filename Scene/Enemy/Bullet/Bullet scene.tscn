@@ -3,7 +3,7 @@
 [ext_resource path="res://Scene/Enemy/Bullet/Scrpit/Bullet.gd" type="Script" id=1]
 [ext_resource path="res://Scene/Enemy/Bullet/Sprite/Sword.png" type="Texture" id=2]
 
-[sub_resource type="SpriteFrames" id=2]
+[sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 2 ) ],
 "loop": true,
@@ -11,7 +11,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="CapsuleShape2D" id=1]
+[sub_resource type="CapsuleShape2D" id=2]
 radius = 2.18941
 height = 25.4966
 
@@ -20,12 +20,12 @@ script = ExtResource( 1 )
 
 [node name="Animated" type="AnimatedSprite" parent="."]
 scale = Vector2( 0.08, 0.08 )
-frames = SubResource( 2 )
+frames = SubResource( 1 )
 animation = "Fly"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 4.71239
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
 [connection signal="body_entered" from="." to="." method="_on_Bullet_body_entered"]
