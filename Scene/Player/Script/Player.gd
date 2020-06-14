@@ -26,6 +26,9 @@ var direction:int = 1
 const up = Vector2(0, -1)
 var stateMachine: PlayerStateMachine
 
+const patu = preload("res://Scene/Player/Patu.tscn")
+var canShoot = true
+
 var jumps = 0
 
 onready var AnimatedSprite = $AnimatedSprite
@@ -55,16 +58,37 @@ func process_velocity(delta):
 	velocity.y = clamp(velocity.y, -maxSpeed.y, maxSpeed.y)
 
 func _sprite_flip():
-		if direction > 0:
-			AnimatedSprite.flip_h = false
-		elif direction < 0:
-			AnimatedSprite.flip_h = true
+	if direction > 0:
+		AnimatedSprite.flip_h = false
+	elif direction < 0:
+		AnimatedSprite.flip_h = true
+		
+func getPosition():
+	return $SpawnPoints/PatuPosition2D.position.x
+
+func setPosition(dir):
+	$SpawnPoints/PatuPosition2D.position.x *= dir
+
+func shoot():
+	var p = patu.instance()
+	if sign($SpawnPoints/PatuPosition2D.position.x) == 1:
+		p.setDirection(1)
+	else:
+		p.setDirection(-1)
+	p.global_position = $SpawnPoints/PatuPosition2D.global_position
+	p.set_as_toplevel(true)
+	get_parent().add_child(p)
+# end of shoot
+
+func _on_ShootTimer_timeout():
+	queue_free()
+	pass # Replace with function body.
 
 func _on_JumpTimer_timeout():
 	pass # Replace with function body.
 
 class PlayerStateMachine extends StateMachine:
-	enum {IDLE, RUN, JUMP, FALL, ATTACK}
+	enum {IDLE, RUN, JUMP, FALL, ATTACK, SHOOT}
 	var player: Player = null
 
 	func _init(playerLoad: Player):
@@ -74,6 +98,7 @@ class PlayerStateMachine extends StateMachine:
 		add_state(JUMP)
 		add_state(FALL)
 		add_state(ATTACK)
+		add_state(SHOOT)
 
 	func _do_actions(delta):
 		"""Perform current state behavior"""
@@ -96,6 +121,8 @@ class PlayerStateMachine extends StateMachine:
 				player.Label.text = 'fall'
 				_handle_input(delta)
 				pass
+			SHOOT:
+				player.Label.text = 'shoot'
 		player._sprite_flip()
 		player.process_velocity(delta)
 		player.process_movement(delta)
@@ -113,7 +140,7 @@ class PlayerStateMachine extends StateMachine:
 				if player.is_on_floor():
 					if player.direction == 0:
 						return IDLE
-				else: 
+				else:
 					return JUMP
 			JUMP:
 				if player.is_on_floor():
@@ -129,6 +156,8 @@ class PlayerStateMachine extends StateMachine:
 						return IDLE
 					else:
 						return RUN
+			SHOOT:
+				pass
 
 
 	func _enter_state(state, _old_state):
@@ -157,3 +186,9 @@ class PlayerStateMachine extends StateMachine:
 			if player.direction != direction:
 				player.acc = player.accelerationDefault
 			player.direction = direction
+			if sign(player.getPosition()) == -1:
+				player.setPosition(-1)
+			elif sign(player.getPosition()) == 1:
+				player.setPosition(-1)
+			if Input.is_action_pressed("ui_shoot"):
+				player.shoot()
