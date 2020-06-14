@@ -22,7 +22,7 @@ _global_script_classes=[ {
 "base": "KinematicBody2D",
 "class": "Tanemahuta",
 "language": "GDScript",
-"path": "res://Scene/Enemy/Tanemahuta/Script/Tanemahuta.gd"
+"path": "res://Scene/Enemy/Enemy/Tanemahuta/Script/Tanemahuta.gd"
 } ]
 _global_script_class_icons={
 "Player": "",
