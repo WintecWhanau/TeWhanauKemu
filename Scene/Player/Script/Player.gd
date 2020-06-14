@@ -24,7 +24,6 @@ var gravity_ratio := 1.0
 var direction:int = 1
 
 const up = Vector2(0, -1)
-var origin_position: Vector2
 var stateMachine: PlayerStateMachine
 
 var jumps = 0
@@ -34,7 +33,6 @@ onready var Label = $Label
 onready var JumpTimer = $Timers/JumpTimer
 
 func _ready():
-	origin_position = global_position
 	stateMachine = PlayerStateMachine.new(self)
 	stateMachine.set_state_deferred(PlayerStateMachine.IDLE)
 
@@ -52,16 +50,16 @@ func process_velocity(delta):
 	else:
 		acc.x = acceleration.x
 		velocity.x = lerp(velocity.x, 0, friction)
-		
+
 	velocity.y += acc.y * gravity_ratio * delta
 	velocity.y = clamp(velocity.y, -maxSpeed.y, maxSpeed.y)
-	
+
 func _sprite_flip():
 		if direction > 0:
 			AnimatedSprite.flip_h = false
 		elif direction < 0:
 			AnimatedSprite.flip_h = true
-	
+
 func _on_JumpTimer_timeout():
 	pass # Replace with function body.
 
@@ -76,7 +74,6 @@ class PlayerStateMachine extends StateMachine:
 		add_state(JUMP)
 		add_state(FALL)
 		add_state(ATTACK)
-		
 
 	func _do_actions(delta):
 		"""Perform current state behavior"""
@@ -102,7 +99,7 @@ class PlayerStateMachine extends StateMachine:
 		player._sprite_flip()
 		player.process_velocity(delta)
 		player.process_movement(delta)
-		
+
 	func _check_conditions(delta):
 		"""Check the current state transition conditions and return to the state to be transferred to"""
 		match state:
@@ -142,7 +139,7 @@ class PlayerStateMachine extends StateMachine:
 				player.friction = player.frictionGround
 				player.AnimatedSprite.play("idle")
 			RUN:
-				player.gravity_ratio = 0.2
+				player.gravity_ratio = 1.0
 				player.friction = player.frictionGround
 				player.AnimatedSprite.play("run")
 			JUMP:
