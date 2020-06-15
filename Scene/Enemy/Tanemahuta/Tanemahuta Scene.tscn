@@ -1,0 +1,140 @@
+[gd_scene load_steps=46 format=2]
+
+[ext_resource path="res://Scene/Enemy/CloseRange Script/CloseRangeAI.gd" type="Script" id=1]
+[ext_resource path="res://Scene/Enemy/Tanemahuta/Sprite/Slashing/0_Golem_Slashing_001.png" type="Texture" id=2]
+[ext_resource path="res://Scene/Enemy/Tanemahuta/Sprite/Jump/Jump4.png" type="Texture" id=3]
+[ext_resource path="res://Scene/Enemy/Tanemahuta/Sprite/Walking/0_Golem_Walking_004.png" type="Texture" id=4]
+[ext_resource path="res://Scene/Enemy/Tanemahuta/Sprite/Slashing/0_Golem_Slashing_007.png" type="Texture" id=5]
+[ext_resource path="res://Scene/Enemy/Tanemahuta/Sprite/Walking/0_Golem_Walking_008.png" type="Texture" id=6]
+[ext_resource path="res://Scene/Enemy/Tanemahuta/Sprite/Slashing/0_Golem_Slashing_003.png" type="Texture" id=7]
+[ext_resource path="res://Scene/Enemy/Tanemahuta/Sprite/Walking/0_Golem_Walking_000.png" type="Texture" id=8]
+[ext_resource path="res://Scene/Enemy/Tanemahuta/Sprite/Walking/0_Golem_Walking_020.png" type="Texture" id=9]
+[ext_resource path="res://Scene/Enemy/Tanemahuta/Sprite/Slashing/0_Golem_Slashing_011.png" type="Texture" id=10]
+[ext_resource path="res://Scene/Enemy/Tanemahuta/Sprite/Slashing/0_Golem_Slashing_005.png" type="Texture" id=11]
+[ext_resource path="res://Scene/Enemy/Tanemahuta/Sprite/Walking/0_Golem_Walking_012.png" type="Texture" id=12]
+[ext_resource path="res://Scene/Enemy/Tanemahuta/Sprite/Jump/Jump5.png" type="Texture" id=13]
+[ext_resource path="res://Scene/Enemy/Tanemahuta/Sprite/Walking/0_Golem_Walking_023.png" type="Texture" id=14]
+[ext_resource path="res://Scene/Enemy/Tanemahuta/Sprite/Walking/0_Golem_Walking_016.png" type="Texture" id=15]
+[ext_resource path="res://Scene/Enemy/Tanemahuta/Sprite/Idle/0_Golem_Idle_012.png" type="Texture" id=16]
+[ext_resource path="res://Scene/Enemy/Tanemahuta/Sprite/Dying/0_Golem_Dying_000.png" type="Texture" id=17]
+[ext_resource path="res://Scene/Enemy/Tanemahuta/Sprite/Idle/0_Golem_Idle_000.png" type="Texture" id=18]
+[ext_resource path="res://Scene/Enemy/Tanemahuta/Sprite/Idle/0_Golem_Idle_017.png" type="Texture" id=19]
+[ext_resource path="res://Scene/Enemy/Tanemahuta/Sprite/Idle/0_Golem_Idle_004.png" type="Texture" id=20]
+[ext_resource path="res://Scene/Enemy/Tanemahuta/Sprite/Idle/0_Golem_Idle_008.png" type="Texture" id=21]
+[ext_resource path="res://Scene/Enemy/Tanemahuta/Sprite/Jump/Jump2.png" type="Texture" id=22]
+[ext_resource path="res://Scene/Enemy/Tanemahuta/Sprite/Dying/0_Golem_Dying_007.png" type="Texture" id=23]
+[ext_resource path="res://Scene/Enemy/Tanemahuta/Sprite/Jump/Jump3.png" type="Texture" id=24]
+[ext_resource path="res://Scene/Enemy/Tanemahuta/Sprite/Dying/0_Golem_Dying_011.png" type="Texture" id=25]
+[ext_resource path="res://Scene/Enemy/Tanemahuta/Sprite/Dying/0_Golem_Dying_004.png" type="Texture" id=26]
+[ext_resource path="res://Scene/Enemy/Tanemahuta/Sprite/Dying/0_Golem_Dying_014.png" type="Texture" id=27]
+[ext_resource path="res://Scene/Enemy/Tanemahuta/Sprite/Jump/Jump1.png" type="Texture" id=28]
+[ext_resource path="res://Scene/Enemy/Tanemahuta/Sprite/Jump/Jump0.png" type="Texture" id=29]
+[ext_resource path="res://Scene/Enemy/Tanemahuta/Sprite/Running/0_Golem_Running_011.png" type="Texture" id=30]
+[ext_resource path="res://Scene/Enemy/Tanemahuta/Sprite/Running/0_Golem_Running_007.png" type="Texture" id=31]
+[ext_resource path="res://Scene/Enemy/Tanemahuta/Sprite/Running/0_Golem_Running_003.png" type="Texture" id=32]
+[ext_resource path="res://Scene/Enemy/Tanemahuta/Sprite/Running/0_Golem_Running_002.png" type="Texture" id=33]
+[ext_resource path="res://Scene/Enemy/Tanemahuta/Sprite/Running/0_Golem_Running_006.png" type="Texture" id=34]
+[ext_resource path="res://Scene/Enemy/Tanemahuta/Sprite/Running/0_Golem_Running_005.png" type="Texture" id=35]
+[ext_resource path="res://Scene/Enemy/Tanemahuta/Sprite/Running/0_Golem_Running_001.png" type="Texture" id=36]
+[ext_resource path="res://Scene/Enemy/Tanemahuta/Sprite/Running/0_Golem_Running_000.png" type="Texture" id=37]
+[ext_resource path="res://Scene/Enemy/Tanemahuta/Sprite/Running/0_Golem_Running_009.png" type="Texture" id=38]
+[ext_resource path="res://Scene/Enemy/Tanemahuta/Sprite/Running/0_Golem_Running_004.png" type="Texture" id=39]
+[ext_resource path="res://Scene/Enemy/Tanemahuta/Sprite/Running/0_Golem_Running_010.png" type="Texture" id=40]
+[ext_resource path="res://Scene/Enemy/Tanemahuta/Sprite/Running/0_Golem_Running_008.png" type="Texture" id=41]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 29 ), ExtResource( 28 ), ExtResource( 22 ), ExtResource( 24 ), ExtResource( 3 ), ExtResource( 13 ) ],
+"loop": true,
+"name": "Jump",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 17 ), ExtResource( 26 ), ExtResource( 23 ), ExtResource( 25 ), ExtResource( 27 ) ],
+"loop": true,
+"name": "Dying",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 8 ), ExtResource( 4 ), ExtResource( 6 ), ExtResource( 12 ), ExtResource( 15 ), ExtResource( 9 ), ExtResource( 14 ) ],
+"loop": true,
+"name": "Walking",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 2 ), ExtResource( 7 ), ExtResource( 11 ), ExtResource( 5 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "Slashing",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 37 ), ExtResource( 36 ), ExtResource( 33 ), ExtResource( 32 ), ExtResource( 39 ), ExtResource( 35 ), ExtResource( 34 ), ExtResource( 31 ), ExtResource( 41 ), ExtResource( 38 ), ExtResource( 40 ), ExtResource( 30 ) ],
+"loop": true,
+"name": "Running",
+"speed": 12.0
+}, {
+"frames": [ ExtResource( 18 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 16 ), ExtResource( 19 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 5.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 14.1778
+height = 20.0033
+
+[sub_resource type="CapsuleShape2D" id=3]
+radius = 23.9796
+
+[sub_resource type="CapsuleShape2D" id=4]
+radius = 68.8362
+height = 471.109
+
+[node name="Tanemahuta" type="KinematicBody2D"]
+script = ExtResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 0.09, 0.09 )
+frames = SubResource( 1 )
+animation = "Running"
+playing = true
+
+[node name="CollisionBox" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 3 )
+shape = SubResource( 2 )
+
+[node name="GroundCheckLeft" type="RayCast2D" parent="."]
+position = Vector2( -14.2696, 0 )
+enabled = true
+cast_to = Vector2( 0, 24 )
+
+[node name="GroundCheckRight" type="RayCast2D" parent="."]
+position = Vector2( 14, 0 )
+enabled = true
+cast_to = Vector2( 0, 24 )
+
+[node name="WallCheckLeft" type="RayCast2D" parent="."]
+visible = false
+enabled = true
+cast_to = Vector2( 24, 0 )
+
+[node name="WallCheckRight" type="RayCast2D" parent="."]
+visible = false
+enabled = true
+cast_to = Vector2( -24, 0 )
+
+[node name="HitBox" type="Area2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+light_mask = 2
+position = Vector2( 0, 6 )
+shape = SubResource( 3 )
+
+[node name="DetectingBox" type="Area2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectingBox"]
+position = Vector2( 0.19371, 0 )
+rotation = 4.71239
+shape = SubResource( 4 )
+[connection signal="body_entered" from="HitBox" to="." method="_on_HitBox_body_entered"]
+[connection signal="body_exited" from="HitBox" to="." method="_on_HitBox_body_exited"]
+[connection signal="body_entered" from="DetectingBox" to="." method="_on_DetectingBox_body_entered"]
+[connection signal="body_exited" from="DetectingBox" to="." method="_on_DetectingBox_body_exited"]
