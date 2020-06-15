@@ -1,6 +1,6 @@
 [gd_scene load_steps=99 format=2]
 
-[ext_resource path="res://Scene/Enemy/CloseRange Script/CloseRangeAI.gd" type="Script" id=1]
+[ext_resource path="res://Scene/Enemy/AIScript/CloseRangeAI.gd" type="Script" id=1]
 [ext_resource path="res://Scene/Enemy/Tangaroa/Sprite/Dying/0_Elementals_Dying_000.png" type="Texture" id=2]
 [ext_resource path="res://Scene/Enemy/Tangaroa/Sprite/Dying/0_Elementals_Dying_004.png" type="Texture" id=3]
 [ext_resource path="res://Scene/Enemy/Tangaroa/Sprite/Dying/0_Elementals_Dying_002.png" type="Texture" id=4]
@@ -94,6 +94,7 @@
 [ext_resource path="res://Scene/Enemy/Tangaroa/Sprite/Running/0_Elementals_Running_000.png" type="Texture" id=92]
 [ext_resource path="res://Scene/Enemy/Tangaroa/Sprite/Running/0_Elementals_Running_002.png" type="Texture" id=93]
 [ext_resource path="res://Scene/Enemy/Tangaroa/Sprite/Running/0_Elementals_Running_009.png" type="Texture" id=94]
+
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
