@@ -1,6 +1,6 @@
-[gd_scene load_steps=99 format=2]
+[gd_scene load_steps=105 format=2]
 
-[ext_resource path="res://Scene/Enemy/CloseRange Script/CloseRangeAI.gd" type="Script" id=1]
+[ext_resource path="res://Scene/Enemy/AIScript/CloseRangeAI.gd" type="Script" id=1]
 [ext_resource path="res://Scene/Enemy/Tawhirimatea/Sprite/Walking/0_Fallen_Angels_Walking_010.png" type="Texture" id=2]
 [ext_resource path="res://Scene/Enemy/Tawhirimatea/Sprite/Walking/0_Fallen_Angels_Walking_014.png" type="Texture" id=3]
 [ext_resource path="res://Scene/Enemy/Tawhirimatea/Sprite/Walking/0_Fallen_Angels_Walking_018.png" type="Texture" id=4]
@@ -94,14 +94,15 @@
 [ext_resource path="res://Scene/Enemy/Tawhirimatea/Sprite/Idle/0_Fallen_Angels_Idle_009.png" type="Texture" id=92]
 [ext_resource path="res://Scene/Enemy/Tawhirimatea/Sprite/Idle/0_Fallen_Angels_Idle_006.png" type="Texture" id=93]
 [ext_resource path="res://Scene/Enemy/Tawhirimatea/Sprite/Idle/0_Fallen_Angels_Idle_010.png" type="Texture" id=94]
+[ext_resource path="res://Scene/Enemy/Tawhirimatea/Sprite/Falling Down/0_Fallen_Angels_Falling Down_000.png" type="Texture" id=95]
+[ext_resource path="res://Scene/Enemy/Tawhirimatea/Sprite/Falling Down/0_Fallen_Angels_Falling Down_001.png" type="Texture" id=96]
+[ext_resource path="res://Scene/Enemy/Tawhirimatea/Sprite/Falling Down/0_Fallen_Angels_Falling Down_003.png" type="Texture" id=97]
+[ext_resource path="res://Scene/Enemy/Tawhirimatea/Sprite/Falling Down/0_Fallen_Angels_Falling Down_004.png" type="Texture" id=98]
+[ext_resource path="res://Scene/Enemy/Tawhirimatea/Sprite/Falling Down/0_Fallen_Angels_Falling Down_005.png" type="Texture" id=99]
+[ext_resource path="res://Scene/Enemy/Tawhirimatea/Sprite/Falling Down/0_Fallen_Angels_Falling Down_002.png" type="Texture" id=100]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 88 ), ExtResource( 89 ), ExtResource( 71 ), ExtResource( 70 ), ExtResource( 72 ), ExtResource( 74 ), ExtResource( 49 ), ExtResource( 29 ), ExtResource( 37 ), ExtResource( 22 ), ExtResource( 24 ), ExtResource( 46 ) ],
-"loop": true,
-"name": "Jump",
-"speed": 12.0
-}, {
 "frames": [ ExtResource( 62 ), ExtResource( 63 ), ExtResource( 56 ), ExtResource( 61 ), ExtResource( 57 ), ExtResource( 64 ), ExtResource( 58 ), ExtResource( 59 ), ExtResource( 60 ), ExtResource( 84 ), ExtResource( 76 ), ExtResource( 86 ), ExtResource( 67 ), ExtResource( 78 ), ExtResource( 66 ) ],
 "loop": true,
 "name": "Dying",
@@ -112,20 +113,30 @@ animations = [ {
 "name": "Walking",
 "speed": 12.0
 }, {
-"frames": [ ExtResource( 23 ), ExtResource( 32 ), ExtResource( 36 ), ExtResource( 48 ), ExtResource( 31 ), ExtResource( 52 ), ExtResource( 21 ), ExtResource( 25 ), ExtResource( 30 ), ExtResource( 26 ), ExtResource( 28 ), ExtResource( 27 ) ],
-"loop": true,
-"name": "Slashing",
-"speed": 12.0
-}, {
 "frames": [ ExtResource( 47 ), ExtResource( 33 ), ExtResource( 44 ), ExtResource( 42 ), ExtResource( 39 ), ExtResource( 35 ), ExtResource( 51 ), ExtResource( 41 ), ExtResource( 43 ), ExtResource( 45 ), ExtResource( 34 ), ExtResource( 50 ) ],
 "loop": true,
 "name": "Running",
+"speed": 12.0
+}, {
+"frames": [ ExtResource( 88 ), ExtResource( 89 ), ExtResource( 71 ), ExtResource( 70 ), ExtResource( 72 ), ExtResource( 74 ), ExtResource( 49 ), ExtResource( 29 ), ExtResource( 37 ), ExtResource( 22 ), ExtResource( 24 ), ExtResource( 46 ) ],
+"loop": true,
+"name": "Jump",
+"speed": 12.0
+}, {
+"frames": [ ExtResource( 23 ), ExtResource( 32 ), ExtResource( 36 ), ExtResource( 48 ), ExtResource( 31 ), ExtResource( 52 ), ExtResource( 21 ), ExtResource( 25 ), ExtResource( 30 ), ExtResource( 26 ), ExtResource( 28 ), ExtResource( 27 ) ],
+"loop": true,
+"name": "Slashing",
 "speed": 12.0
 }, {
 "frames": [ ExtResource( 77 ), ExtResource( 90 ), ExtResource( 91 ), ExtResource( 79 ), ExtResource( 82 ), ExtResource( 80 ), ExtResource( 93 ), ExtResource( 81 ), ExtResource( 83 ), ExtResource( 92 ), ExtResource( 94 ), ExtResource( 87 ), ExtResource( 65 ), ExtResource( 75 ), ExtResource( 73 ), ExtResource( 69 ), ExtResource( 85 ), ExtResource( 68 ) ],
 "loop": true,
 "name": "Idle",
 "speed": 12.0
+}, {
+"frames": [ ExtResource( 95 ), ExtResource( 96 ), ExtResource( 100 ), ExtResource( 97 ), ExtResource( 98 ), ExtResource( 99 ) ],
+"loop": true,
+"name": "Falling",
+"speed": 5.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=2]
@@ -145,8 +156,8 @@ script = ExtResource( 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 0.09, 0.09 )
 frames = SubResource( 1 )
-animation = "Walking"
-frame = 20
+animation = "Falling"
+frame = 3
 playing = true
 offset = Vector2( 0, 3 )
 
