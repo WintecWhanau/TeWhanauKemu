@@ -1,5 +1,5 @@
 extends KinematicBody2D
-class_name RangeEnemy
+class_name CloseRangeEnemy
 
 export var max_speed_normal:int = 100 
 export var max_speed_attack:int = 120
@@ -11,22 +11,21 @@ var velocity := Vector2()
 var origin_position: Vector2
 var target: Vector2	# 目标
 var player: Player	# Players in the secen
-var state_machine: RangeEnemyStateMachine	# 状态机
-var shot = false
+var state_machine: CloseRangeEnemyStateMachine	# 状态机
+
 onready var GroundCheckLeft = $GroundCheckLeft
 onready var GroundCheckRight = $GroundCheckRight
 onready var WallCheckLeft = $WallCheckLeft
 onready var WallCheckRight = $WallCheckRight
 onready var AnimatedSprite = $AnimatedSprite
-onready var ShootPosition = $Position2D
-const BULLET = preload('res://Scene/Enemy/Bullet/Bullet scene.tscn')
+
 const TARGET_DIST = 0
 const UP = Vector2(0, -1)
 
 func _ready():
 	origin_position = global_position
-	state_machine = RangeEnemyStateMachine.new(self)
-	state_machine.set_state_deferred(RangeEnemyStateMachine.IDLE)
+	state_machine = CloseRangeEnemyStateMachine.new(self)
+	state_machine.set_state_deferred(CloseRangeEnemyStateMachine.IDLE)
 	
 func _physics_process(delta):
 	state_machine.process(delta)
@@ -37,6 +36,7 @@ func process_movement(delta):
 func process_velocity(delta):
 	"""Apply gravity"""
 	velocity.y += 20
+	velocity.x = max_speed * direction
 	
 func _on_HitBox_body_entered(body):
 	#AnimatedSprite.play("Slashing")
@@ -50,19 +50,19 @@ func _on_HitBox_body_exited(body):
 	if body.has_method("take_damage"):
 		WallCheckLeft.enabled = true
 		WallCheckRight.enabled = true
-		state_machine.set_state(RangeEnemyStateMachine.CHASE)
+		state_machine.set_state(CloseRangeEnemyStateMachine.CHASE)
 
 func _on_DetectingBox_body_entered(body):
 	"""Player enters the perception area"""
 	if body is Player:
 		player = body
 		target = body.global_position
-		state_machine.set_state(RangeEnemyStateMachine.CHASE)
+		state_machine.set_state(CloseRangeEnemyStateMachine.CHASE)
 		
 func _on_DetectingBox_body_exited(body):
 	"""Player exits the perception area"""
 	if body is Player:
-		state_machine.set_state(RangeEnemyStateMachine.WALK)
+		state_machine.set_state(CloseRangeEnemyStateMachine.WALK)
 		
 func _check_direction():
 	"""Determine the current direction"""
@@ -73,7 +73,6 @@ func _check_direction():
 	else:
 		return direction
 		
-		
 func control_ray_cast(condition:bool):
 	GroundCheckLeft.enabled = condition
 	GroundCheckRight.enabled = condition
@@ -83,30 +82,30 @@ func take_damge(damage):
 	if hp > 0:
 		pass
 	else:
-		state_machine.set_state(RangeEnemyStateMachine.DEAD)
+		state_machine.set_state(CloseRangeEnemyStateMachine.DEAD)
 				
-class RangeEnemyStateMachine extends StateMachine:
-	enum {IDLE,WALK,SHOOT,DEAD,CHASE,JUMP}
-	var enemy: RangeEnemy
+class CloseRangeEnemyStateMachine extends StateMachine:
+	enum {IDLE,WALK,ATTACK,DEAD,CHASE,JUMP,FALL}
+	var enemy: CloseRangeEnemy
 	var idle_state_duration = 0
 	var walk_state_duration = 0
-	var chase_state_duration = 0
 	var state_stay = 0
 
-	func _init(tanemahuta: RangeEnemy):
+	func _init(tanemahuta: CloseRangeEnemy):
 		enemy = tanemahuta
 		add_state(IDLE)
 		add_state(WALK)
-		add_state(SHOOT)
+		add_state(ATTACK)
 		add_state(DEAD)
 		add_state(CHASE)
 		add_state(JUMP)
+		add_state(FALL)
 
 	func _do_actions(delta):
 		match state:
 			IDLE:
 				idle_state_duration += delta
-				enemy.velocity.y += 20
+				enemy.direction = 0;
 			WALK:
 				enemy.direction = enemy._check_direction()
 				if enemy.direction > 0:
@@ -114,42 +113,15 @@ class RangeEnemyStateMachine extends StateMachine:
 				elif enemy.direction < 0:
 					enemy.AnimatedSprite.flip_h = true
 				walk_state_duration += delta
-				enemy.velocity.x = enemy.max_speed * enemy.direction
 			CHASE:
-				chase_state_duration += delta
 				if enemy.player.position.x < enemy.position.x:
 					enemy.AnimatedSprite.flip_h = true
 					enemy.direction = -1
-					enemy.ShootPosition.x *= -1
 				elif enemy.player.position.x > enemy.position.x:
 					enemy.AnimatedSprite.flip_h = false
 					enemy.direction = 1
-					enemy.ShootPosition.x *= -1 
-				
-				enemy.velocity.x = enemy.max_speed * enemy.direction
-				
-				
-			JUMP:
-				enemy.velocity.x = enemy.max_speed * enemy.direction
-				
-				
 			DEAD:
 				enemy.direction = 0
-			
-			SHOOT:
-				print("shooting!!!")
-				if enemy.shot == false:
-					var bullet = BULLET.instance()
-					if enemy.direction > 0:
-						bullet.set_bullet_direction(1)
-					elif enemy.direction < 0:
-						bullet.set_bullet_direction(-1)
-					enemy.velocity.x = 0
-					enemy.get_parent().add_child(bullet)
-					bullet.position = enemy.ShootPosition.global_position
-					enemy.shot = true
-				
-
 				
 		enemy.process_velocity(delta)
 		enemy.process_movement(delta)
@@ -164,23 +136,21 @@ class RangeEnemyStateMachine extends StateMachine:
 				if walk_state_duration > state_stay: #or enemy.direction != enemy._check_direction() :
 					return IDLE
 			CHASE:
+				print(enemy.player.position.x - enemy.position.x)
 				if enemy.player.position.y < enemy.position.y -32 and enemy.is_on_floor():
 					if enemy.player.position.x - enemy.position.x > -128 and enemy.player.position.x - enemy.position.x <=0 :
 						return JUMP
 					elif enemy.player.position.x - enemy.position.x < 128 and enemy.player.position.x - enemy.position.x >=0:
 						return JUMP
-				elif chase_state_duration > state_stay:
-					print('wqdw')
-					return SHOOT
-					
 				elif enemy.WallCheckLeft.is_colliding() or enemy.WallCheckRight.is_colliding():
 					return JUMP
-			JUMP:
+			JUMP: 
+				if !enemy.is_on_floor() && enemy.velocity.y >= 0:
+					return FALL
+			FALL:
 				if enemy.is_on_floor():
 					return CHASE
-			SHOOT:
-				if  enemy.shot == true and enemy.AnimatedSprite.animation == "Shoot" and enemy.AnimatedSprite.frame == enemy.AnimatedSprite.frames.get_frame_count("Shoot")-1:
-					return CHASE
+
 
 	func _enter_state(state, old_state):
 		"""Enter state"""
@@ -199,29 +169,30 @@ class RangeEnemyStateMachine extends StateMachine:
 			CHASE:
 				enemy.control_ray_cast(false)
 				enemy.AnimatedSprite.play('Running')
-				state_stay = rand_range(1, 2)
 
 				enemy.max_speed = enemy.max_speed_attack
 			JUMP:
 				enemy.velocity.y = -700
 				enemy.AnimatedSprite.play("Jump")
-			#DEAD:
-			#	enemy.AnimatedSprite.play("Dying")
-			SHOOT:
-				print('shoot')
-				enemy.AnimatedSprite.play("Shoot")
+			DEAD:
+				enemy.AnimatedSprite.play("Dying")
+				
+			FALL:
+				enemy.AnimatedSprite.play("Falling")
 
 	func _exit_state(state, new_state):
 		match state:
 			IDLE:
 				idle_state_duration = 0
-				enemy.direction *= -1
+				if enemy.direction == 0:
+					enemy.direction = 1
+				else:
+					enemy.direction *= -1
 				state_stay = 0
 			WALK:
 				walk_state_duration = 0
 				state_stay = 0
 			CHASE:
-				chase_state_duration = 0
-				state_stay = 0
-			SHOOT:
-				enemy.shot = false
+				pass
+			JUMP:
+				pass
