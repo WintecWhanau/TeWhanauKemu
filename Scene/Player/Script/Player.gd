@@ -22,6 +22,8 @@ var velocity := Vector2(0, 0)
 onready var acc := acceleration
 var gravity_ratio := 1.0
 var direction:int = 1
+var shootPosition:int = 1
+onready var shootPoint = $PatuPosition2D
 
 const up = Vector2(0, -1)
 var stateMachine: PlayerStateMachine
@@ -60,24 +62,27 @@ func process_velocity(delta):
 func _sprite_flip():
 	if direction > 0:
 		AnimatedSprite.flip_h = false
+		
 	elif direction < 0:
 		AnimatedSprite.flip_h = true
-		
-func getPosition():
-	return $SpawnPoints/PatuPosition2D.position.x
-
-func setPosition(dir):
-	$SpawnPoints/PatuPosition2D.position.x *= dir
 
 func shoot():
 	var p = patu.instance()
-	if sign($SpawnPoints/PatuPosition2D.position.x) == 1:
-		p.setDirection(1)
-	else:
+	if shootPosition == -1:
+		if $PatuPosition2D.position.x < 0:
+			pass
+		else:
+			$PatuPosition2D.position.x *= -1
 		p.setDirection(-1)
-	p.global_position = $SpawnPoints/PatuPosition2D.global_position
+	elif shootPosition == 1:
+		if $PatuPosition2D.position.x < 0:
+			$PatuPosition2D.position.x *= -1
+			p.setDirection(1)
+	
+	p.global_position = $PatuPosition2D.global_position
 	p.set_as_toplevel(true)
 	get_parent().add_child(p)
+	print($PatuPosition2D.position.x)
 # end of shoot
 
 func _on_ShootTimer_timeout():
@@ -186,9 +191,11 @@ class PlayerStateMachine extends StateMachine:
 			if player.direction != direction:
 				player.acc = player.accelerationDefault
 			player.direction = direction
-			if sign(player.getPosition()) == -1:
-				player.setPosition(-1)
-			elif sign(player.getPosition()) == 1:
-				player.setPosition(-1)
+			if player.direction == -1:
+				player.shootPosition = -1
+
+			elif player.direction == 1:
+				player.shootPosition = 1
 			if Input.is_action_pressed("ui_shoot"):
+				print(player.shootPosition)
 				player.shoot()
