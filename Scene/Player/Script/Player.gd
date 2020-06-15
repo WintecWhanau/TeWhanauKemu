@@ -23,7 +23,7 @@ onready var acc := acceleration
 var gravity_ratio := 1.0
 var direction:int = 1
 var shootPosition:int = 1
-onready var shootPoint = $PatuPosition2D
+onready var shootPoint = $SpawnPoints/PatuPosition2D
 
 const up = Vector2(0, -1)
 var stateMachine: PlayerStateMachine
@@ -32,6 +32,7 @@ const patu = preload("res://Scene/Player/Patu.tscn")
 var canShoot = true
 
 var jumps = 0
+var isJumping = false
 
 onready var AnimatedSprite = $AnimatedSprite
 onready var Label = $Label
@@ -45,7 +46,8 @@ func _physics_process(delta):
 	stateMachine.process(delta)
 
 func process_movement(delta):
-	velocity = move_and_slide(velocity,up)
+	var snap = Vector2.DOWN * 32 if !isJumping else Vector2.ZERO
+	velocity = move_and_slide_with_snap(velocity, snap, up)
 
 func process_velocity(delta):
 	if direction != 0:
@@ -67,26 +69,30 @@ func _sprite_flip():
 		AnimatedSprite.flip_h = true
 
 func shoot():
-	var p = patu.instance()
-	if shootPosition == -1:
-		if $PatuPosition2D.position.x < 0:
-			pass
-		else:
-			$PatuPosition2D.position.x *= -1
-		p.setDirection(-1)
-	elif shootPosition == 1:
-		if $PatuPosition2D.position.x < 0:
-			$PatuPosition2D.position.x *= -1
-			p.setDirection(1)
-	
-	p.global_position = $PatuPosition2D.global_position
-	p.set_as_toplevel(true)
-	get_parent().add_child(p)
-	print($PatuPosition2D.position.x)
+	if canShoot:
+		canShoot = false
+		$Timers/ShootTimer.wait_time = 0.5
+		$Timers/ShootTimer.start()
+		var p = patu.instance()
+		if shootPosition == -1:
+			if $SpawnPoints/PatuPosition2D.position.x < 0:
+				pass
+			else:
+				$SpawnPoints/PatuPosition2D.position.x *= -1
+			p.setDirection(-1)
+		elif shootPosition == 1:
+			if $SpawnPoints/PatuPosition2D.position.x < 0:
+				$SpawnPoints/PatuPosition2D.position.x *= -1
+				p.setDirection(1)
+		
+		p.global_position = $SpawnPoints/PatuPosition2D.global_position
+		p.set_as_toplevel(true)
+		get_parent().add_child(p)
+		print($SpawnPoints/PatuPosition2D.position.x)
 # end of shoot
 
 func _on_ShootTimer_timeout():
-	queue_free()
+	canShoot = true
 	pass # Replace with function body.
 
 func _on_JumpTimer_timeout():
@@ -112,11 +118,13 @@ class PlayerStateMachine extends StateMachine:
 				player.Label.text = 'idle'
 				_handle_input(delta)
 				if Input.is_action_just_pressed("ui_up"):
+					player.isJumping = true
 					player.velocity.y += player.jump_force
 			RUN:
 				player.Label.text = 'run'
 				_handle_input(delta)
 				if Input.is_action_just_pressed("ui_up"):
+					player.isJumping = true
 					player.velocity.y += player.jump_force
 			JUMP:
 				player.Label.text = 'jump'
