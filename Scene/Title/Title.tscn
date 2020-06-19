@@ -1,12 +1,13 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scene/Title/Title BG.jpg" type="Texture" id=1]
 [ext_resource path="res://Scene/Sprites/Boss/Te_Rā3.png" type="Texture" id=2]
 [ext_resource path="res://Scene/Title/MauiTitle.png" type="Texture" id=3]
-[ext_resource path="res://Scene/Player/Sprite/idle/Idle_006.png" type="Texture" id=4]
+[ext_resource path="res://Scene/Player/Sprite/Player/idle/Idle_006.png" type="Texture" id=4]
 [ext_resource path="res://Scene/Title/Adventures-7BOVD.ttf" type="DynamicFontData" id=5]
 [ext_resource path="res://Scene/Title/Button_Quit.gd" type="Script" id=6]
 [ext_resource path="res://Scene/Title/Button_Start.gd" type="Script" id=7]
+[ext_resource path="res://Audio/BG Music/Additional/Game Start.wav" type="AudioStream" id=8]
 
 [sub_resource type="Animation" id=1]
 resource_name = "MauiTitle"
@@ -144,5 +145,10 @@ script = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+volume_db = -5.0
+autoplay = true
 [connection signal="pressed" from="Control/Button_Start" to="Control/Button_Start" method="_on_Button_Start_pressed"]
 [connection signal="button_up" from="Control/Button_Quit" to="Control/Button_Quit" method="_on_Button_Quit_button_up"]
