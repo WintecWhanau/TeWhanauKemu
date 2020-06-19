@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Scene/TileScenes/Forest/Res/forest.tres" type="TileSet" id=1]
 [ext_resource path="res://Assets/forest-platformer-tileset/Tanemahuta.jpg" type="Texture" id=2]
@@ -17,6 +17,7 @@
 [ext_resource path="res://Scene/Player/Player.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Scene/Portal/Portal.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Scene/Collectables/Tanemahuta/TaneCoin.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Audio/BG Music/Forest/ForestBGM1.wav" type="AudioStream" id=18]
 
 [node name="ForestLevel" type="Node"]
 
@@ -173,7 +174,6 @@ texture = ExtResource( 13 )
 
 [node name="Player" parent="." instance=ExtResource( 15 )]
 position = Vector2( 66.7352, 545.679 )
-speed = 200
 
 [node name="PortalArea2D" parent="." instance=ExtResource( 16 )]
 position = Vector2( 1286.34, -150.487 )
@@ -210,3 +210,7 @@ position = Vector2( 1243.15, 269.568 )
 
 [node name="TaneCoin10" parent="Collectables" instance=ExtResource( 17 )]
 position = Vector2( 1044.25, -45.8004 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 18 )
+autoplay = true
