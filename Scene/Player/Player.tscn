@@ -1,48 +1,48 @@
 [gd_scene load_steps=46 format=2]
 
-[ext_resource path="res://Scene/Player/Sprite/idle/Idle_000.png" type="Texture" id=1]
+[ext_resource path="res://Scene/Player/Sprite/Player/idle/Idle_000.png" type="Texture" id=1]
 [ext_resource path="res://Scene/Player/Script/Player.gd" type="Script" id=2]
-[ext_resource path="res://Scene/Player/Sprite/idle/Idle_001.png" type="Texture" id=3]
-[ext_resource path="res://Scene/Player/Sprite/idle/Idle_007.png" type="Texture" id=4]
-[ext_resource path="res://Scene/Player/Sprite/idle/Idle_002.png" type="Texture" id=5]
-[ext_resource path="res://Scene/Player/Sprite/idle/Idle_011.png" type="Texture" id=6]
-[ext_resource path="res://Scene/Player/Sprite/idle/Idle_008.png" type="Texture" id=7]
-[ext_resource path="res://Scene/Player/Sprite/idle/Idle_010.png" type="Texture" id=8]
-[ext_resource path="res://Scene/Player/Sprite/idle/Idle_012.png" type="Texture" id=9]
-[ext_resource path="res://Scene/Player/Sprite/idle/Idle_013.png" type="Texture" id=10]
-[ext_resource path="res://Scene/Player/Sprite/idle/Idle_015.png" type="Texture" id=11]
-[ext_resource path="res://Scene/Player/Sprite/idle/Idle_005.png" type="Texture" id=12]
-[ext_resource path="res://Scene/Player/Sprite/idle/Idle_014.png" type="Texture" id=13]
-[ext_resource path="res://Scene/Player/Sprite/idle/Idle_003.png" type="Texture" id=14]
-[ext_resource path="res://Scene/Player/Sprite/idle/Idle_009.png" type="Texture" id=15]
-[ext_resource path="res://Scene/Player/Sprite/idle/Idle_004.png" type="Texture" id=16]
-[ext_resource path="res://Scene/Player/Sprite/idle/Idle_016.png" type="Texture" id=17]
-[ext_resource path="res://Scene/Player/Sprite/idle/Idle_017.png" type="Texture" id=18]
-[ext_resource path="res://Scene/Player/Sprite/idle/Idle_006.png" type="Texture" id=19]
-[ext_resource path="res://Scene/Player/Sprite/Run/Running_006.png" type="Texture" id=20]
-[ext_resource path="res://Scene/Player/Sprite/Run/Running_005.png" type="Texture" id=21]
-[ext_resource path="res://Scene/Player/Sprite/Run/Running_007.png" type="Texture" id=22]
-[ext_resource path="res://Scene/Player/Sprite/Run/Running_008.png" type="Texture" id=23]
-[ext_resource path="res://Scene/Player/Sprite/Run/Running_009.png" type="Texture" id=24]
-[ext_resource path="res://Scene/Player/Sprite/Run/Running_010.png" type="Texture" id=25]
-[ext_resource path="res://Scene/Player/Sprite/Run/Running_004.png" type="Texture" id=26]
-[ext_resource path="res://Scene/Player/Sprite/Run/Running_011.png" type="Texture" id=27]
-[ext_resource path="res://Scene/Player/Sprite/Run/Running_003.png" type="Texture" id=28]
-[ext_resource path="res://Scene/Player/Sprite/Run/Running_001.png" type="Texture" id=29]
-[ext_resource path="res://Scene/Player/Sprite/Run/Running_000.png" type="Texture" id=30]
-[ext_resource path="res://Scene/Player/Sprite/Run/Running_002.png" type="Texture" id=31]
-[ext_resource path="res://Scene/Player/Sprite/Jump/Jump Loop_002.png" type="Texture" id=32]
-[ext_resource path="res://Scene/Player/Sprite/Jump/Jump Loop_000.png" type="Texture" id=33]
-[ext_resource path="res://Scene/Player/Sprite/Jump/Jump Loop_003.png" type="Texture" id=34]
-[ext_resource path="res://Scene/Player/Sprite/Jump/Jump Loop_004.png" type="Texture" id=35]
-[ext_resource path="res://Scene/Player/Sprite/Jump/Jump Loop_005.png" type="Texture" id=36]
-[ext_resource path="res://Scene/Player/Sprite/Jump/Jump Loop_001.png" type="Texture" id=37]
-[ext_resource path="res://Scene/Player/Sprite/Fall/Falling Down_002.png" type="Texture" id=38]
-[ext_resource path="res://Scene/Player/Sprite/Fall/Falling Down_001.png" type="Texture" id=39]
-[ext_resource path="res://Scene/Player/Sprite/Fall/Falling Down_003.png" type="Texture" id=40]
-[ext_resource path="res://Scene/Player/Sprite/Fall/Falling Down_004.png" type="Texture" id=41]
-[ext_resource path="res://Scene/Player/Sprite/Fall/Falling Down_000.png" type="Texture" id=42]
-[ext_resource path="res://Scene/Player/Sprite/Fall/Falling Down_005.png" type="Texture" id=43]
+[ext_resource path="res://Scene/Player/Sprite/Player/idle/Idle_001.png" type="Texture" id=3]
+[ext_resource path="res://Scene/Player/Sprite/Player/idle/Idle_007.png" type="Texture" id=4]
+[ext_resource path="res://Scene/Player/Sprite/Player/idle/Idle_002.png" type="Texture" id=5]
+[ext_resource path="res://Scene/Player/Sprite/Player/idle/Idle_011.png" type="Texture" id=6]
+[ext_resource path="res://Scene/Player/Sprite/Player/idle/Idle_008.png" type="Texture" id=7]
+[ext_resource path="res://Scene/Player/Sprite/Player/idle/Idle_010.png" type="Texture" id=8]
+[ext_resource path="res://Scene/Player/Sprite/Player/idle/Idle_012.png" type="Texture" id=9]
+[ext_resource path="res://Scene/Player/Sprite/Player/idle/Idle_013.png" type="Texture" id=10]
+[ext_resource path="res://Scene/Player/Sprite/Player/idle/Idle_015.png" type="Texture" id=11]
+[ext_resource path="res://Scene/Player/Sprite/Player/idle/Idle_005.png" type="Texture" id=12]
+[ext_resource path="res://Scene/Player/Sprite/Player/idle/Idle_014.png" type="Texture" id=13]
+[ext_resource path="res://Scene/Player/Sprite/Player/idle/Idle_003.png" type="Texture" id=14]
+[ext_resource path="res://Scene/Player/Sprite/Player/idle/Idle_009.png" type="Texture" id=15]
+[ext_resource path="res://Scene/Player/Sprite/Player/idle/Idle_004.png" type="Texture" id=16]
+[ext_resource path="res://Scene/Player/Sprite/Player/idle/Idle_016.png" type="Texture" id=17]
+[ext_resource path="res://Scene/Player/Sprite/Player/idle/Idle_017.png" type="Texture" id=18]
+[ext_resource path="res://Scene/Player/Sprite/Player/idle/Idle_006.png" type="Texture" id=19]
+[ext_resource path="res://Scene/Player/Sprite/Player/Run/Running_006.png" type="Texture" id=20]
+[ext_resource path="res://Scene/Player/Sprite/Player/Run/Running_005.png" type="Texture" id=21]
+[ext_resource path="res://Scene/Player/Sprite/Player/Run/Running_007.png" type="Texture" id=22]
+[ext_resource path="res://Scene/Player/Sprite/Player/Run/Running_008.png" type="Texture" id=23]
+[ext_resource path="res://Scene/Player/Sprite/Player/Run/Running_009.png" type="Texture" id=24]
+[ext_resource path="res://Scene/Player/Sprite/Player/Run/Running_010.png" type="Texture" id=25]
+[ext_resource path="res://Scene/Player/Sprite/Player/Run/Running_004.png" type="Texture" id=26]
+[ext_resource path="res://Scene/Player/Sprite/Player/Run/Running_011.png" type="Texture" id=27]
+[ext_resource path="res://Scene/Player/Sprite/Player/Run/Running_003.png" type="Texture" id=28]
+[ext_resource path="res://Scene/Player/Sprite/Player/Run/Running_001.png" type="Texture" id=29]
+[ext_resource path="res://Scene/Player/Sprite/Player/Run/Running_000.png" type="Texture" id=30]
+[ext_resource path="res://Scene/Player/Sprite/Player/Run/Running_002.png" type="Texture" id=31]
+[ext_resource path="res://Scene/Player/Sprite/Player/Jump/Jump Loop_002.png" type="Texture" id=32]
+[ext_resource path="res://Scene/Player/Sprite/Player/Jump/Jump Loop_000.png" type="Texture" id=33]
+[ext_resource path="res://Scene/Player/Sprite/Player/Jump/Jump Loop_003.png" type="Texture" id=34]
+[ext_resource path="res://Scene/Player/Sprite/Player/Jump/Jump Loop_004.png" type="Texture" id=35]
+[ext_resource path="res://Scene/Player/Sprite/Player/Jump/Jump Loop_005.png" type="Texture" id=36]
+[ext_resource path="res://Scene/Player/Sprite/Player/Jump/Jump Loop_001.png" type="Texture" id=37]
+[ext_resource path="res://Scene/Player/Sprite/Player/Fall/Falling Down_002.png" type="Texture" id=38]
+[ext_resource path="res://Scene/Player/Sprite/Player/Fall/Falling Down_001.png" type="Texture" id=39]
+[ext_resource path="res://Scene/Player/Sprite/Player/Fall/Falling Down_003.png" type="Texture" id=40]
+[ext_resource path="res://Scene/Player/Sprite/Player/Fall/Falling Down_004.png" type="Texture" id=41]
+[ext_resource path="res://Scene/Player/Sprite/Player/Fall/Falling Down_000.png" type="Texture" id=42]
+[ext_resource path="res://Scene/Player/Sprite/Player/Fall/Falling Down_005.png" type="Texture" id=43]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -56,28 +56,23 @@ animations = [ {
 "name": "jump",
 "speed": 10.0
 }, {
-"frames": [ ExtResource( 30 ), ExtResource( 29 ), ExtResource( 31 ), ExtResource( 28 ), ExtResource( 26 ), ExtResource( 21 ), ExtResource( 20 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 27 ) ],
-"loop": true,
-"name": "run",
-"speed": 18.0
-}, {
 "frames": [ ExtResource( 42 ), ExtResource( 39 ), ExtResource( 38 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 43 ) ],
 "loop": true,
 "name": "fall",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 30 ), ExtResource( 29 ), ExtResource( 31 ), ExtResource( 28 ), ExtResource( 26 ), ExtResource( 21 ), ExtResource( 20 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 27 ) ],
+"loop": true,
+"name": "run",
+"speed": 18.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=2]
-
-radius = 11.6843
-height = 21.2564
-
+radius = 10.5036
+height = 21.9644
 
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 2 )
-speed = 300
-gravity = 20
-jumpHeight = -500
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
@@ -97,11 +92,11 @@ editor_draw_drag_margin = true
 scale = Vector2( 0.08, 0.08 )
 frames = SubResource( 1 )
 animation = "idle"
-frame = 14
+frame = 10
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 1.10803, 2.21606 )
+position = Vector2( 1.47429, 2.09398 )
 shape = SubResource( 2 )
 
 [node name="Label" type="Label" parent="."]
@@ -115,3 +110,16 @@ uppercase = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Timers" type="Node2D" parent="."]
+
+[node name="JumpTimer" type="Timer" parent="Timers"]
+
+[node name="ShootTimer" type="Timer" parent="Timers"]
+
+[node name="SpawnPoints" type="Node2D" parent="."]
+
+[node name="PatuPosition2D" type="Position2D" parent="SpawnPoints"]
+position = Vector2( 23.3289, 12.2059 )
+[connection signal="timeout" from="Timers/JumpTimer" to="." method="_on_JumpTimer_timeout"]
+[connection signal="timeout" from="Timers/ShootTimer" to="." method="_on_ShootTimer_timeout"]
