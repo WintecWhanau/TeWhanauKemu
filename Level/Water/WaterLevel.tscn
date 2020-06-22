@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://Scene/TileScenes/Water/Res/water.tres" type="TileSet" id=1]
 [ext_resource path="res://Assets/water-platformer-tileset/Tangaroa.jpg" type="Texture" id=2]
@@ -27,6 +27,7 @@
 [ext_resource path="res://Assets/water-platformer-tileset/PNG/Environment/Cartoon Water Game Tileset_Environment - Signpost 02.png" type="Texture" id=25]
 [ext_resource path="res://Assets/water-platformer-tileset/PNG/Environment/Cartoon Water Game Tileset_Environment - Signpost 06.png" type="Texture" id=26]
 [ext_resource path="res://Assets/water-platformer-tileset/PNG/Environment/Cartoon Water Game Tileset_Environment - Signpost 04.png" type="Texture" id=27]
+[ext_resource path="res://Audio/BG Music/Water/WaterBGM1.wav" type="AudioStream" id=28]
 
 [node name="WaterLevel1" type="Node"]
 
@@ -63,12 +64,10 @@ texture = ExtResource( 11 )
 
 [node name="Cartoon Water Game Tileset_Environment - Moss 04" type="Sprite" parent="WaterBG"]
 position = Vector2( -19.8586, -81.8039 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 18 )
 
 [node name="Cartoon Water Game Tileset_Environment - Moss 05" type="Sprite" parent="WaterBG"]
 position = Vector2( -143.418, -84.2156 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 18 )
 
 [node name="Cartoon Water Game Tileset_Environment - Moss 03" type="Sprite" parent="WaterBG"]
@@ -289,3 +288,7 @@ texture = ExtResource( 18 )
 
 [node name="PortalArea2D" parent="." instance=ExtResource( 5 )]
 position = Vector2( 1276.12, 479.28 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 28 )
+autoplay = true

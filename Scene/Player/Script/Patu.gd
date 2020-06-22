@@ -3,7 +3,7 @@ class_name Patu
 
 onready var speed = 300
 onready var damage = 25
-onready var lifetime = 0.5
+onready var lifetime = 0.2
 var direction = 1
 var comeBack = false
 var velocity = Vector2()
@@ -40,6 +40,7 @@ func _on_Patu_body_entered(body):
 
 func _on_ReturnTimer_timeout():
 	comeBack = true
+	direction *= -1
 #	queue_free()
 	pass # Replace with function body.
 
@@ -60,7 +61,6 @@ class PatuStateMachine extends StateMachine:
 				pass
 			COMEBACK:
 				print('comeback')
-				queue_free()
 				pass
 		
 	
@@ -79,4 +79,5 @@ class PatuStateMachine extends StateMachine:
 			SHOOT:
 				pass
 			COMEBACK:
+#				patu.setDirection(patu.direction * -1)
 				pass
