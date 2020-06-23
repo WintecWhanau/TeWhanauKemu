@@ -51,11 +51,6 @@ animations = [ {
 "name": "idle",
 "speed": 10.0
 }, {
-"frames": [ ExtResource( 33 ), ExtResource( 37 ), ExtResource( 32 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 36 ) ],
-"loop": true,
-"name": "jump",
-"speed": 10.0
-}, {
 "frames": [ ExtResource( 42 ), ExtResource( 39 ), ExtResource( 38 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 43 ) ],
 "loop": true,
 "name": "fall",
@@ -65,6 +60,11 @@ animations = [ {
 "loop": true,
 "name": "run",
 "speed": 18.0
+}, {
+"frames": [ ExtResource( 33 ), ExtResource( 37 ), ExtResource( 32 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 36 ) ],
+"loop": true,
+"name": "jump",
+"speed": 10.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=2]
@@ -92,7 +92,7 @@ editor_draw_drag_margin = true
 scale = Vector2( 0.08, 0.08 )
 frames = SubResource( 1 )
 animation = "idle"
-frame = 10
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -120,6 +120,6 @@ __meta__ = {
 [node name="SpawnPoints" type="Node2D" parent="."]
 
 [node name="PatuPosition2D" type="Position2D" parent="SpawnPoints"]
-position = Vector2( 23.3289, 12.2059 )
+position = Vector2( 28.1453, 12.2059 )
 [connection signal="timeout" from="Timers/JumpTimer" to="." method="_on_JumpTimer_timeout"]
 [connection signal="timeout" from="Timers/ShootTimer" to="." method="_on_ShootTimer_timeout"]
