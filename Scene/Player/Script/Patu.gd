@@ -3,13 +3,14 @@ class_name Patu
 
 onready var speed = 300
 onready var damage = 25
-onready var lifetime = 0.2
+onready var lifetime = 0.5
 var direction = 1
 var comeBack = false
 var velocity = Vector2()
 var stateMachine = PatuStateMachine
 var level
 onready var AnimatedSprite = $AnimatedSprite
+signal caught
 
 func _ready():
 	$Timers/ReturnTimer.wait_time = lifetime
@@ -44,17 +45,18 @@ func _on_Patu_body_entered(body):
 	else:# patu returning
 		if !body.name == 'Player' && body.has_method('takeDamage'):
 			body.takeDamage(damage)
+			print(body.name)
 		elif body.name == 'Player':
 			queue_free()
+			emit_signal("caught")
 		else:
+			print(body.name)
 			queue_free()
 # end of _on_Area2D_body_entered
 
 func _on_ReturnTimer_timeout():
 	if !comeBack:
 		triggerComeBack()
-#	else:
-#		queue_free()
 # end of _on_ReturnTimer_timeout
 
 func triggerComeBack():
@@ -62,6 +64,10 @@ func triggerComeBack():
 	direction *= -1
 	$Timers/ReturnTimer.wait_time = lifetime
 	$Timers/ReturnTimer.start()
+	if direction == -1:
+		$AnimatedSprite.flip_v = true
+	else:
+		$AnimatedSprite.flip_v = false
 # end of triggerComeBack
 
 class PatuStateMachine extends StateMachine:
