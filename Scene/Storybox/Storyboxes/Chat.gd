@@ -64,3 +64,8 @@ func _on_ShowAll_pressed():
 	
 	set_text(oneLine + dialog[page])
 	pass # Replace with function body.
+
+
+func _on_NextLevel_pressed():
+	get_tree().change_scene(get_parent().next_level)
+	pass # Replace with function body.
