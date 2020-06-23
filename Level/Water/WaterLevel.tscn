@@ -29,6 +29,7 @@
 [ext_resource path="res://Scene/Portal/Portal.tscn" type="PackedScene" id=27]
 [ext_resource path="res://Assets/water-platformer-tileset/PNG/Platformer/Cartoon Water Game Tileset_Platformer - Ground Additional 06.png" type="Texture" id=28]
 
+
 [node name="WaterLevel1" type="Node"]
 
 [node name="WaterBG" type="Sprite" parent="."]
@@ -64,6 +65,7 @@ texture = ExtResource( 6 )
 
 [node name="Cartoon Water Game Tileset_Environment - Moss 04" type="Sprite" parent="WaterBG"]
 position = Vector2( -19.8586, -81.8039 )
+
 texture = ExtResource( 7 )
 
 [node name="Cartoon Water Game Tileset_Environment - Moss 05" type="Sprite" parent="WaterBG"]
@@ -374,3 +376,8 @@ texture = ExtResource( 28 )
 
 [node name="Player" parent="." instance=ExtResource( 24 )]
 position = Vector2( -256.08, 490.931 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 28 )
+autoplay = true
+
