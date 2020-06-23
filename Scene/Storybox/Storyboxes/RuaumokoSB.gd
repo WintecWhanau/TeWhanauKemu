@@ -1,6 +1,7 @@
 extends Panel
 
 export (String, FILE, "*.txt") var story_line_file
+export(String, FILE, "*.tscn") var next_level
 
 onready var chatNode = get_node("Chat")
 onready var nextNode = get_node("Next") # to skip to next line
