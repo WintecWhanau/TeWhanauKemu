@@ -1,0 +1,96 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://Scene/Storybox/Storyboxes/RuaumokoSB.gd" type="Script" id=1]
+[ext_resource path="res://Scene/Storybox/Sprites/Maui/Maui 03.png" type="Texture" id=2]
+[ext_resource path="res://Scene/Storybox/Sprites/Maui/Maui 02.png" type="Texture" id=3]
+[ext_resource path="res://Scene/Storybox/Sprites/Maui/Maui 04.png" type="Texture" id=4]
+[ext_resource path="res://Scene/Storybox/Sprites/Boxes/Tangaroa.png" type="Texture" id=5]
+[ext_resource path="res://Scene/Storybox/Sprites/Maui/Maui 01.png" type="Texture" id=6]
+[ext_resource path="res://Scene/Storybox/Sprites/Atua/TangaroaHead.png" type="Texture" id=7]
+[ext_resource path="res://Fonts/KurriIslandPERSONAL-Regular.ttf" type="DynamicFontData" id=8]
+[ext_resource path="res://Scene/Storybox/Storyboxes/Chat.gd" type="Script" id=9]
+
+[sub_resource type="StyleBoxTexture" id=1]
+texture = ExtResource( 5 )
+region_rect = Rect2( 0, 0, 1056, 321 )
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 8 )
+
+[sub_resource type="DynamicFont" id=3]
+font_data = ExtResource( 8 )
+
+[sub_resource type="DynamicFont" id=4]
+font_data = ExtResource( 8 )
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 2 ), ExtResource( 2 ), ExtResource( 6 ), ExtResource( 3 ), ExtResource( 6 ), ExtResource( 6 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "blink",
+"speed": 4.0
+} ]
+
+[node name="TangaroaSB" type="Panel"]
+margin_left = 128.0
+margin_top = 288.0
+margin_right = 800.0
+margin_bottom = 498.0
+custom_styles/panel = SubResource( 1 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+story_line_file = "res://Scene/Storybox/Scripts/Tangaroa.txt"
+
+[node name="Chat" type="Label" parent="."]
+margin_left = 52.0
+margin_right = 590.0
+margin_bottom = 160.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+valign = 1
+autowrap = true
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Next" type="Button" parent="."]
+margin_left = 192.0
+margin_top = 160.0
+margin_right = 288.0
+margin_bottom = 192.0
+custom_fonts/font = SubResource( 3 )
+text = "Next"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ShowAll" type="Button" parent="."]
+margin_left = 352.0
+margin_top = 160.0
+margin_right = 448.0
+margin_bottom = 192.0
+custom_fonts/font = SubResource( 4 )
+text = "Show All"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( -32, 96 )
+scale = Vector2( 0.364583, 0.364583 )
+frames = SubResource( 5 )
+animation = "blink"
+frame = 3
+playing = true
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 730, 105 )
+scale = Vector2( 1.33333, 1.33333 )
+texture = ExtResource( 7 )
+flip_h = true
+[connection signal="pressed" from="Next" to="Chat" method="_on_Next_pressed"]
+[connection signal="pressed" from="ShowAll" to="Chat" method="_on_ShowAll_pressed"]
