@@ -13,14 +13,14 @@ export (float) var maxHPDefault := 100.0
 onready var maxSpeed := maxSpeedDefault
 onready var acceleration := accelerationDefault
 onready var acceleration_rate := accelerationRateDefault
-onready var jump_force := jumpForceDefault
+onready var jumpForce := jumpForceDefault
 onready var friction := frictionGround
-onready var max_hp := maxHPDefault
-onready var hp := max_hp
+onready var maxHp := maxHPDefault
+onready var hp := maxHp
 
 var velocity := Vector2(0, 0)
 onready var acc := acceleration
-var gravity_ratio := 1.0
+var gravityRatio := 1.0
 var direction:int = 1
 var shootPosition:int = 1
 onready var shootPoint = $SpawnPoints/PatuPosition2D
@@ -29,9 +29,11 @@ const up = Vector2(0, -1)
 var stateMachine: PlayerStateMachine
 
 const patu = preload("res://Scene/Player/Patu.tscn")
+export var level = 0
 var canShoot = true
+var shootCooldown = 6
 
-var jumps = 0
+var canDoubleJump = true
 var isJumping = false
 
 onready var AnimatedSprite = $AnimatedSprite
@@ -58,7 +60,7 @@ func process_velocity(delta):
 		acc.x = acceleration.x
 		velocity.x = lerp(velocity.x, 0, friction)
 
-	velocity.y += acc.y * gravity_ratio * delta
+	velocity.y += acc.y * gravityRatio * delta
 	velocity.y = clamp(velocity.y, -maxSpeed.y, maxSpeed.y)
 
 func _sprite_flip():
@@ -71,9 +73,10 @@ func _sprite_flip():
 func shoot():
 	if canShoot:
 		canShoot = false
-		$Timers/ShootTimer.wait_time = 0.5
+		$Timers/ShootTimer.wait_time = shootCooldown
 		$Timers/ShootTimer.start()
 		var p = patu.instance()
+		p.setLevel(level)
 		if shootPosition == -1:
 			if $SpawnPoints/PatuPosition2D.position.x < 0:
 				pass
@@ -88,7 +91,6 @@ func shoot():
 		p.global_position = $SpawnPoints/PatuPosition2D.global_position
 		p.set_as_toplevel(true)
 		get_parent().add_child(p)
-		print($SpawnPoints/PatuPosition2D.position.x)
 # end of shoot
 
 func _on_ShootTimer_timeout():
@@ -99,7 +101,7 @@ func _on_JumpTimer_timeout():
 	pass # Replace with function body.
 
 class PlayerStateMachine extends StateMachine:
-	enum {IDLE, RUN, JUMP, FALL, ATTACK, SHOOT}
+	enum {IDLE, RUN, JUMP, DOUBLE_JUMP, FALL, ATTACK, SHOOT}
 	var player: Player = null
 
 	func _init(playerLoad: Player):
@@ -107,6 +109,7 @@ class PlayerStateMachine extends StateMachine:
 		add_state(IDLE)
 		add_state(RUN)
 		add_state(JUMP)
+		add_state(DOUBLE_JUMP)
 		add_state(FALL)
 		add_state(ATTACK)
 		add_state(SHOOT)
@@ -117,22 +120,26 @@ class PlayerStateMachine extends StateMachine:
 			IDLE:
 				player.Label.text = 'idle'
 				_handle_input(delta)
-				if Input.is_action_just_pressed("ui_up"):
-					player.isJumping = true
-					player.velocity.y += player.jump_force
+				_jump(player.jumpForce)
 			RUN:
 				player.Label.text = 'run'
 				_handle_input(delta)
-				if Input.is_action_just_pressed("ui_up"):
-					player.isJumping = true
-					player.velocity.y += player.jump_force
+				_jump(player.jumpForce)
 			JUMP:
 				player.Label.text = 'jump'
+				_handle_input(delta)
+				if player.canDoubleJump: # double jump
+					_jump(player.jumpForce / 1.5)
+				pass
+			DOUBLE_JUMP:
+				player.Label.text = 'double jump'
 				_handle_input(delta)
 				pass
 			FALL:
 				player.Label.text = 'fall'
 				_handle_input(delta)
+				if player.canDoubleJump: # double jump
+					_jump(player.jumpForce * 1.2)
 				pass
 			SHOOT:
 				player.Label.text = 'shoot'
@@ -163,6 +170,14 @@ class PlayerStateMachine extends StateMachine:
 						return RUN
 				elif !player.is_on_floor() && player.velocity.y >= 0:
 					return FALL
+			DOUBLE_JUMP:
+				if player.is_on_floor():
+					if player.direction == 0:
+						return IDLE
+					else:
+						return RUN
+				elif !player.is_on_floor() && player.velocity.y >= 0:
+					return FALL
 			FALL:
 				if player.is_on_floor():
 					if player.direction == 0:
@@ -177,15 +192,24 @@ class PlayerStateMachine extends StateMachine:
 		"""Enter state"""
 		match state:
 			IDLE:
-				player.gravity_ratio = 0.1
+				player.gravityRatio = 0.1
 				player.friction = player.frictionGround
 				player.AnimatedSprite.play("idle")
 			RUN:
-				player.gravity_ratio = 1.0
+				player.gravityRatio = 1.0
 				player.friction = player.frictionGround
 				player.AnimatedSprite.play("run")
 			JUMP:
-				player.gravity_ratio = 1.0
+				player.gravityRatio = 1.0
+				player.friction = player.frictionAir
+				if player.velocity.y < 0:
+					player.AnimatedSprite.play("jump")
+				else:
+					player.AnimatedSprite.play("fall")
+				player.canDoubleJump = true
+				player.isJumping = true
+			DOUBLE_JUMP:
+				player.gravityRatio = 1.0
 				player.friction = player.frictionAir
 				if player.velocity.y < 0:
 					player.AnimatedSprite.play("jump")
@@ -193,6 +217,16 @@ class PlayerStateMachine extends StateMachine:
 					player.AnimatedSprite.play("fall")
 			FALL:
 				player.AnimatedSprite.play("fall")
+				
+	func _exit_tree():
+		"""Exit state"""
+		match state:
+			JUMP:
+				player.isJumping = false
+				pass
+			DOUBLE_JUMP:
+				player.canDoubleJump = true
+				pass
 
 	func _handle_input(delta):
 			var direction = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
@@ -201,9 +235,12 @@ class PlayerStateMachine extends StateMachine:
 			player.direction = direction
 			if player.direction == -1:
 				player.shootPosition = -1
-
 			elif player.direction == 1:
 				player.shootPosition = 1
 			if Input.is_action_pressed("ui_shoot"):
-				print(player.shootPosition)
 				player.shoot()
+				
+	func _jump(jumpHeight):
+		if Input.is_action_just_pressed("ui_up"):
+			player.canDoubleJump = false # this is stopping player from constantly jumping
+			player.velocity.y += jumpHeight
