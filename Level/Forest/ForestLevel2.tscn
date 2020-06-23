@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Scene/TileScenes/Forest/Res/forest.tres" type="TileSet" id=1]
 [ext_resource path="res://Assets/forest-platformer-tileset/Tanemahuta.jpg" type="Texture" id=2]
@@ -17,6 +17,7 @@
 [ext_resource path="res://Assets/forest-platformer-tileset/PNG/Environment/Cartoon Jungle Game Tileset_Environment - Rock 01.png" type="Texture" id=15]
 [ext_resource path="res://Scene/Portal/Portal.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Scene/Player/Player.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Scene/Enemy/Tanemahuta/Tanemahuta Scene.tscn" type="PackedScene" id=18]
 
 [node name="ForestLevel" type="Node"]
 
@@ -151,4 +152,7 @@ texture = ExtResource( 10 )
 position = Vector2( -230.068, -152.321 )
 
 [node name="Player" parent="." instance=ExtResource( 17 )]
-position = Vector2( -123.761, -152.321 )
+position = Vector2( -56.2353, 543.808 )
+
+[node name="Tanemahuta" parent="." instance=ExtResource( 18 )]
+position = Vector2( 625.773, 541.43 )
