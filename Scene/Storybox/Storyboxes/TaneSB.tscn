@@ -58,9 +58,9 @@ __meta__ = {
 }
 
 [node name="Next" type="Button" parent="."]
-margin_left = 192.0
+margin_left = 120.0
 margin_top = 160.0
-margin_right = 288.0
+margin_right = 216.0
 margin_bottom = 192.0
 custom_fonts/font = SubResource( 3 )
 text = "Next"
@@ -69,12 +69,23 @@ __meta__ = {
 }
 
 [node name="ShowAll" type="Button" parent="."]
-margin_left = 352.0
+margin_left = 280.0
 margin_top = 160.0
-margin_right = 448.0
+margin_right = 386.0
 margin_bottom = 192.0
 custom_fonts/font = SubResource( 4 )
 text = "Show All"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NextLevel" type="Button" parent="."]
+margin_left = 450.0
+margin_top = 160.0
+margin_right = 546.0
+margin_bottom = 192.0
+custom_fonts/font = SubResource( 4 )
+text = "Next level"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -94,3 +105,4 @@ texture = ExtResource( 7 )
 flip_h = true
 [connection signal="pressed" from="Next" to="Chat" method="_on_Next_pressed"]
 [connection signal="pressed" from="ShowAll" to="Chat" method="_on_ShowAll_pressed"]
+[connection signal="pressed" from="NextLevel" to="Chat" method="_on_NextLevel_pressed"]
