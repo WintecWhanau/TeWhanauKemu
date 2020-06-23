@@ -3,7 +3,7 @@ class_name Patu
 
 onready var speed = 300
 onready var damage = 25
-onready var lifetime = 0.5
+onready var lifetime = 1
 var direction = 1
 var comeBack = false
 var velocity = Vector2()
@@ -57,12 +57,15 @@ func _on_Patu_body_entered(body):
 func _on_ReturnTimer_timeout():
 	if !comeBack:
 		triggerComeBack()
+	else:
+		if $Timers/ReturnTimer.time_left <= 0:
+			queue_free()
 # end of _on_ReturnTimer_timeout
 
 func triggerComeBack():
 	comeBack = true
 	direction *= -1
-	$Timers/ReturnTimer.wait_time = lifetime
+	$Timers/ReturnTimer.wait_time = lifetime + 0.4
 	$Timers/ReturnTimer.start()
 	if direction == -1:
 		$AnimatedSprite.flip_v = true
