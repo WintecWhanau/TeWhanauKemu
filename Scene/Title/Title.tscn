@@ -1,0 +1,154 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://Scene/Title/Title BG.jpg" type="Texture" id=1]
+[ext_resource path="res://Scene/Sprites/Boss/Te_Rā3.png" type="Texture" id=2]
+[ext_resource path="res://Scene/Title/MauiTitle.png" type="Texture" id=3]
+[ext_resource path="res://Scene/Player/Sprite/Player/idle/Idle_006.png" type="Texture" id=4]
+[ext_resource path="res://Scene/Title/Adventures-7BOVD.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://Scene/Title/Button_Quit.gd" type="Script" id=6]
+[ext_resource path="res://Scene/Title/Button_Start.gd" type="Script" id=7]
+[ext_resource path="res://Audio/BG Music/Additional/Game Start.wav" type="AudioStream" id=8]
+
+[sub_resource type="Animation" id=1]
+resource_name = "MauiTitle"
+length = 6.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimationPlayer/MauiTitle:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 3, 6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.176549, 0.182439 ), Vector2( 0.2, 0.24 ), Vector2( 0.176549, 0.182439 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "Maui"
+length = 4.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimationPlayer2/MauiImage:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 281.465, 484.843 ), Vector2( 281.465, 465 ), Vector2( 281.465, 484.843 ), Vector2( 281.465, 465 ), Vector2( 281.465, 484.843 ), Vector2( 281.465, 465 ), Vector2( 281.465, 484.843 ), Vector2( 281.465, 465 ), Vector2( 281.465, 484.843 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "TeRa"
+length = 4.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimationPlayer3/TeRaImage:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 839.431, 197.472 ), Vector2( 820, 197.472 ), Vector2( 839.431, 197.472 ), Vector2( 820, 197.472 ), Vector2( 839.431, 197.472 ), Vector2( 820, 197.472 ), Vector2( 839.431, 197.472 ), Vector2( 820, 197.472 ), Vector2( 839.431, 197.472 ) ]
+}
+
+[sub_resource type="DynamicFont" id=4]
+size = 25
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 25
+font_data = ExtResource( 5 )
+
+[node name="GameTitle" type="Node"]
+
+[node name="TitleBG" type="Sprite" parent="."]
+position = Vector2( 686.048, 336.741 )
+scale = Vector2( 0.405156, 0.350093 )
+texture = ExtResource( 1 )
+flip_h = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "MauiTitle"
+anims/MauiTitle = SubResource( 1 )
+
+[node name="MauiTitle" type="Sprite" parent="AnimationPlayer"]
+position = Vector2( 264.592, 162.734 )
+rotation = -0.176278
+scale = Vector2( 0.189447, 0.214098 )
+texture = ExtResource( 3 )
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
+autoplay = "Maui"
+anims/Maui = SubResource( 2 )
+
+[node name="MauiImage" type="Sprite" parent="AnimationPlayer2"]
+position = Vector2( 281.465, 473.403 )
+scale = Vector2( 0.295628, 0.300402 )
+texture = ExtResource( 4 )
+
+[node name="AnimationPlayer3" type="AnimationPlayer" parent="."]
+autoplay = "TeRa"
+anims/TeRa = SubResource( 3 )
+
+[node name="TeRaImage" type="Sprite" parent="AnimationPlayer3"]
+position = Vector2( 836.014, 197.472 )
+scale = Vector2( 0.424824, 0.424824 )
+texture = ExtResource( 2 )
+
+[node name="Control" type="Control" parent="."]
+margin_left = -0.0477905
+margin_top = -135.81
+margin_right = 39.9522
+margin_bottom = -95.8099
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Button_Start" type="Button" parent="Control"]
+margin_left = 437.874
+margin_top = 479.521
+margin_right = 606.874
+margin_bottom = 513.521
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 1, 0.898039, 0, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 0.360784, 0, 1 )
+text = "START GAME"
+flat = true
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button_Quit" type="Button" parent="Control"]
+margin_left = 450.823
+margin_top = 518.177
+margin_right = 593.823
+margin_bottom = 552.177
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0.627451, 0.627451, 0.627451, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 0.360784, 0, 1 )
+text = "QUIT GAME"
+flat = true
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+volume_db = -5.0
+autoplay = true
+[connection signal="pressed" from="Control/Button_Start" to="Control/Button_Start" method="_on_Button_Start_pressed"]
+[connection signal="button_up" from="Control/Button_Quit" to="Control/Button_Quit" method="_on_Button_Quit_button_up"]
