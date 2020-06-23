@@ -23,7 +23,6 @@ onready var acc := acceleration
 var gravityRatio := 1.0
 var direction:int = 1
 var shootPosition:int = 1
-onready var shootPoint = $SpawnPoints/PatuPosition2D
 
 const up = Vector2(0, -1)
 var stateMachine: PlayerStateMachine
@@ -31,16 +30,20 @@ var stateMachine: PlayerStateMachine
 const patu = preload("res://Scene/Player/Patu.tscn")
 export var level = 0
 var canShoot = true
-var shootCooldown = 6
+var defaultShootTimer = 4.5
+var shootCooldown = 0.1
 
 var canDoubleJump = true
 var isJumping = false
 
-onready var AnimatedSprite = $AnimatedSprite
-onready var Label = $Label
-onready var JumpTimer = $Timers/JumpTimer
+onready var AnimatedSprite: AnimatedSprite = $AnimatedSprite
+onready var Label: Label = $Label
+onready var shootPoint = $SpawnPoints/PatuPosition2D
+onready var jumpAudio = $Audio/JumpAudio
+onready var shootAudio = $Audio/ShootAudio
 
 func _ready():
+	$Timers/DefaultShootTimer.wait_time = defaultShootTimer
 	stateMachine = PlayerStateMachine.new(self)
 	stateMachine.set_state_deferred(PlayerStateMachine.IDLE)
 
@@ -72,9 +75,8 @@ func _sprite_flip():
 
 func shoot():
 	if canShoot:
+		$Timers/DefaultShootTimer.start() # triggers default timer incase player doesnt catch patu
 		canShoot = false
-		$Timers/ShootTimer.wait_time = shootCooldown
-		$Timers/ShootTimer.start()
 		var p = patu.instance()
 		p.setLevel(level)
 		if shootPosition == -1:
@@ -87,17 +89,26 @@ func shoot():
 			if $SpawnPoints/PatuPosition2D.position.x < 0:
 				$SpawnPoints/PatuPosition2D.position.x *= -1
 				p.setDirection(1)
-		
+		 
 		p.global_position = $SpawnPoints/PatuPosition2D.global_position
 		p.set_as_toplevel(true)
 		get_parent().add_child(p)
+		p.connect("caught",self,"handleCaught")
+		shootAudio.play()
+		
 # end of shoot
 
-func _on_ShootTimer_timeout():
+func handleCaught():
+	print('patu caught')
+	$Timers/ShootCooldownTimer.wait_time = shootCooldown
+	$Timers/ShootCooldownTimer.start()
+
+func _on_ShootCooldownTimer_timeout():
 	canShoot = true
 	pass # Replace with function body.
-
-func _on_JumpTimer_timeout():
+	
+func _on_DefaultShootTimer_timeout(): # if patu is not caught this is the default case
+	canShoot = true
 	pass # Replace with function body.
 
 class PlayerStateMachine extends StateMachine:
@@ -204,6 +215,7 @@ class PlayerStateMachine extends StateMachine:
 				player.friction = player.frictionAir
 				if player.velocity.y < 0:
 					player.AnimatedSprite.play("jump")
+					player.jumpAudio.play()
 				else:
 					player.AnimatedSprite.play("fall")
 				player.canDoubleJump = true
@@ -213,11 +225,12 @@ class PlayerStateMachine extends StateMachine:
 				player.friction = player.frictionAir
 				if player.velocity.y < 0:
 					player.AnimatedSprite.play("jump")
+					player.jumpAudio.play()
 				else:
 					player.AnimatedSprite.play("fall")
 			FALL:
 				player.AnimatedSprite.play("fall")
-				
+
 	func _exit_tree():
 		"""Exit state"""
 		match state:
@@ -227,6 +240,8 @@ class PlayerStateMachine extends StateMachine:
 			DOUBLE_JUMP:
 				player.canDoubleJump = true
 				pass
+			SHOOT:
+				player.canShoot = false
 
 	func _handle_input(delta):
 			var direction = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
@@ -242,5 +257,6 @@ class PlayerStateMachine extends StateMachine:
 				
 	func _jump(jumpHeight):
 		if Input.is_action_just_pressed("ui_up"):
+			player.jumpAudio.play()
 			player.canDoubleJump = false # this is stopping player from constantly jumping
 			player.velocity.y += jumpHeight
