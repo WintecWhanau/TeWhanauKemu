@@ -10,6 +10,11 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "KinematicBody2D",
+"class": "Boss",
+"language": "GDScript",
+"path": "res://Scene/Enemy/AIScript/Boss.gd"
+}, {
+"base": "KinematicBody2D",
 "class": "CloseRangeEnemy",
 "language": "GDScript",
 "path": "res://Scene/Enemy/AIScript/CloseRangeAI.gd"
@@ -35,6 +40,7 @@ _global_script_classes=[ {
 "path": "res://Common/StateMachine.gd"
 } ]
 _global_script_class_icons={
+"Boss": "",
 "CloseRangeEnemy": "",
 "Patu": "",
 "Player": "",
@@ -45,7 +51,6 @@ _global_script_class_icons={
 [application]
 
 config/name="Te Whanau Kemu"
-run/main_scene="res://Scene/About/About.tscn"
 config/icon="res://icon.png"
 
 [input]

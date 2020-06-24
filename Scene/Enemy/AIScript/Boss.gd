@@ -1,11 +1,8 @@
 extends KinematicBody2D
-
+class_name Boss
 onready var path_follow = get_parent()
 export var speed:int = 150
 var move_directiom = 0
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
 
 
 # Called when the node enters the scene tree for the first time.
@@ -18,3 +15,4 @@ func MovementLoop(delta):
 	path_follow.set_offset(path_follow.get_offset() + speed * delta)
 	var pos = path_follow.get_global_position()
 	move_directiom = (pos.angle_to_point(prepos)/3.14)*180
+
