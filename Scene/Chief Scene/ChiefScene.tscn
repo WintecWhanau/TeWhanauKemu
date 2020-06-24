@@ -6,16 +6,13 @@
 [node name="ChiefScene" type="Node"]
 
 [node name="ChiefSceneBG" type="Sprite" parent="."]
-position = Vector2( 511.918, 302.758 )
-scale = Vector2( 0.655056, 0.511872 )
+position = Vector2( 511.918, 301.326 )
+scale = Vector2( 0.655056, 0.514229 )
 texture = ExtResource( 2 )
 
 [node name="ChiefSB" parent="." instance=ExtResource( 1 )]
 
 [node name="AnimatedSprite" parent="ChiefSB" index="4"]
 frame = 2
-
-[node name="AnimatedSprite2" parent="ChiefSB" index="5"]
-frame = 7
 
 [editable path="ChiefSB"]
