@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Scene/TileScenes/Wind/Res/wind.tres" type="TileSet" id=1]
 [ext_resource path="res://Assets/War/Tumatauenga.jpg" type="Texture" id=2]
@@ -18,21 +18,28 @@
 [ext_resource path="res://Assets/volcano-platformer-tileset/PNG/Environment/Volcano Level Set_Environment - Crack 07.png" type="Texture" id=16]
 [ext_resource path="res://Assets/volcano-platformer-tileset/PNG/Environment/Volcano Level Set_Environment - Crack 03.png" type="Texture" id=17]
 [ext_resource path="res://Assets/volcano-platformer-tileset/PNG/Environment/Volcano Level Set_Environment - Crack 05.png" type="Texture" id=18]
+[ext_resource path="res://Level/War/WarCutsceneBG.jpg" type="Texture" id=19]
 
 [node name="WindLevel" type="Node"]
 
 [node name="WarBG" type="Sprite" parent="."]
+visible = false
 modulate = Color( 0.992157, 0.772549, 0.772549, 0.992157 )
 position = Vector2( 514, 190.5 )
 scale = Vector2( 0.852083, 0.642857 )
 texture = ExtResource( 2 )
 
+[node name="WarCutsceneBG" type="Sprite" parent="."]
+position = Vector2( 515.5, 190.5 )
+scale = Vector2( 2.69839, 2.07039 )
+texture = ExtResource( 19 )
+
 [node name="Player" parent="." instance=ExtResource( 4 )]
-position = Vector2( -263, 550 )
+position = Vector2( 1169, -150 )
 
 [node name="PortalArea2D" parent="." instance=ExtResource( 5 )]
 position = Vector2( 1272, -154 )
-next_level = "res://Level/War/WarLevel2.tscn"
+next_level = "res://Level/War/WarCutscene.tscn"
 
 [node name="Tilemaps" type="Node" parent="."]
 
