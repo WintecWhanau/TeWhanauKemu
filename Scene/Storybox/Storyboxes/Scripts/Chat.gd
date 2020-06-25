@@ -1,7 +1,7 @@
 extends Label
 
 var drawTextSpeed: int = 0
-var chatterLimit: int = 200 # max characters in chatbox
+var chatterLimit: int = 1000 # max characters in chatbox
 var dialog = [] # list of story lines
 var oneLine = ""
 var page = 0
@@ -53,14 +53,14 @@ func _on_Next_pressed():
 
 # Print the whole script
 func _on_ShowAll_pressed():
-	chatterLimit = dialog[page].length()
+#	chatterLimit = dialog[page].length()
 	oneLine = ""
 	page = 0
 
 	while page < dialog.size()-1:
 		oneLine += dialog[page]+"\n" 
 		page += 1
-		chatterLimit += dialog[page].length()
+#		chatterLimit += dialog[page].length()
 	
 	set_text(oneLine + dialog[page])
 	pass # Replace with function body.
