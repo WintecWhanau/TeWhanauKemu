@@ -64,108 +64,110 @@ scale = Vector2( 1.64459, 2.28917 )
 z_index = 1
 texture = ExtResource( 13 )
 
-[node name="Cartoon Jungle Game Tileset_Environment - Signpost 04" type="Sprite" parent="."]
-position = Vector2( 427.428, 532.399 )
-scale = Vector2( 1.32229, 1.09917 )
-texture = ExtResource( 5 )
+[node name="JungleTileSet" type="Node2D" parent="."]
 
-[node name="Cartoon Jungle Game Tileset_Environment - Tree 02" type="Sprite" parent="."]
-position = Vector2( 220.605, 238.944 )
-scale = Vector2( 0.199226, 0.309136 )
-texture = ExtResource( 3 )
-
-[node name="Cartoon Jungle Game Tileset_Environment - Grass 02" type="Sprite" parent="."]
+[node name="Cartoon Jungle Game Tileset_Environment - Grass 02" type="Sprite" parent="JungleTileSet"]
 position = Vector2( 478.737, 111.349 )
 texture = ExtResource( 4 )
 
-[node name="Cartoon Jungle Game Tileset_Environment - Grass 01" type="Sprite" parent="."]
+[node name="Cartoon Jungle Game Tileset_Environment - Grass 01" type="Sprite" parent="JungleTileSet"]
 position = Vector2( 239.149, 269.223 )
 scale = Vector2( 0.652915, 0.57854 )
 texture = ExtResource( 6 )
 
-[node name="Cartoon Jungle Game Tileset_Environment - Grass 03" type="Sprite" parent="."]
+[node name="Cartoon Jungle Game Tileset_Environment - Grass 03" type="Sprite" parent="JungleTileSet"]
 position = Vector2( 905.552, 239.869 )
 texture = ExtResource( 13 )
 
-[node name="Cartoon Jungle Game Tileset_Environment - Grass 04" type="Sprite" parent="."]
+[node name="Cartoon Jungle Game Tileset_Environment - Grass 04" type="Sprite" parent="JungleTileSet"]
 position = Vector2( 937.286, -17.1718 )
 scale = Vector2( 0.652914, 0.553748 )
 texture = ExtResource( 6 )
 
-[node name="Cartoon Jungle Game Tileset_Environment - Stone 02" type="Sprite" parent="."]
+[node name="Cartoon Jungle Game Tileset_Environment - Stone 02" type="Sprite" parent="JungleTileSet"]
 position = Vector2( 532.684, 371.563 )
 texture = ExtResource( 12 )
 
-[node name="Cartoon Jungle Game Tileset_Environment - Stone 01" type="Sprite" parent="."]
+[node name="Cartoon Jungle Game Tileset_Environment - Stone 01" type="Sprite" parent="JungleTileSet"]
 position = Vector2( 450.177, 100.242 )
 texture = ExtResource( 7 )
 
-[node name="Cartoon Jungle Game Tileset_Environment - Tree 01" type="Sprite" parent="."]
+[node name="Cartoon Jungle Game Tileset_Environment - Tree 01" type="Sprite" parent="JungleTileSet"]
 position = Vector2( 971.399, -45.732 )
 scale = Vector2( 0.324424, 0.360923 )
 texture = ExtResource( 9 )
 
-[node name="Cartoon Jungle Game Tileset_Environment - Tree 03" type="Sprite" parent="."]
+[node name="Cartoon Jungle Game Tileset_Environment - Tree 03" type="Sprite" parent="JungleTileSet"]
 position = Vector2( 573.144, 518.33 )
 scale = Vector2( 0.287237, 0.381386 )
 texture = ExtResource( 3 )
 
-[node name="Cartoon Jungle Game Tileset_Environment - Mushroom 04" type="Sprite" parent="Cartoon Jungle Game Tileset_Environment - Tree 03"]
+[node name="Cartoon Jungle Game Tileset_Environment - Mushroom 04" type="Sprite" parent="JungleTileSet/Cartoon Jungle Game Tileset_Environment - Tree 03"]
 position = Vector2( 135.336, 110.247 )
 scale = Vector2( 2.5536, 1.52003 )
 texture = ExtResource( 11 )
 
-[node name="Cartoon Jungle Game Tileset_Environment - Grass 05" type="Sprite" parent="."]
+[node name="Cartoon Jungle Game Tileset_Environment - Grass 05" type="Sprite" parent="JungleTileSet"]
 position = Vector2( 422.41, 565.137 )
 scale = Vector2( 0.727291, 0.504165 )
 texture = ExtResource( 6 )
 
-[node name="Cartoon Jungle Game Tileset_Environment - Grass 06" type="Sprite" parent="."]
+[node name="Cartoon Jungle Game Tileset_Environment - Grass 06" type="Sprite" parent="JungleTileSet"]
 position = Vector2( 129.669, 17.735 )
 texture = ExtResource( 4 )
 
-[node name="Cartoon Jungle Game Tileset_Environment - Grass 07" type="Sprite" parent="."]
+[node name="Cartoon Jungle Game Tileset_Environment - Grass 07" type="Sprite" parent="JungleTileSet"]
 position = Vector2( 170.922, 1.86826 )
 texture = ExtResource( 6 )
 
-[node name="Cartoon Jungle Game Tileset_Environment - Grass 08" type="Sprite" parent="."]
+[node name="Cartoon Jungle Game Tileset_Environment - Grass 08" type="Sprite" parent="JungleTileSet"]
 position = Vector2( 691.351, 354.11 )
 texture = ExtResource( 6 )
 
-[node name="Cartoon Jungle Game Tileset_Environment - Grass 09" type="Sprite" parent="."]
+[node name="Cartoon Jungle Game Tileset_Environment - Grass 09" type="Sprite" parent="JungleTileSet"]
 position = Vector2( 658.031, 371.563 )
 texture = ExtResource( 4 )
 
-[node name="Cartoon Jungle Game Tileset_Environment - Grass 10" type="Sprite" parent="."]
+[node name="Cartoon Jungle Game Tileset_Environment - Grass 10" type="Sprite" parent="JungleTileSet"]
 position = Vector2( 815.112, 111.349 )
 texture = ExtResource( 4 )
 
-[node name="Cartoon Jungle Game Tileset_Environment - Grass 11" type="Sprite" parent="."]
+[node name="Cartoon Jungle Game Tileset_Environment - Grass 11" type="Sprite" parent="JungleTileSet"]
 position = Vector2( 420.03, -112.372 )
 texture = ExtResource( 13 )
 
-[node name="Cartoon Jungle Game Tileset_Environment - Rock 02" type="Sprite" parent="."]
+[node name="Cartoon Jungle Game Tileset_Environment - Rock 02" type="Sprite" parent="JungleTileSet"]
 position = Vector2( -176.559, 555.617 )
 texture = ExtResource( 14 )
 
-[node name="Cartoon Jungle Game Tileset_Environment - Rock 01" type="Sprite" parent="."]
+[node name="Cartoon Jungle Game Tileset_Environment - Rock 01" type="Sprite" parent="JungleTileSet"]
 position = Vector2( 388.297, -114.752 )
 scale = Vector2( 0.702499, 0.826458 )
 texture = ExtResource( 15 )
 
-[node name="Cartoon Jungle Game Tileset_Environment - Rock 03" type="Sprite" parent="."]
+[node name="Cartoon Jungle Game Tileset_Environment - Rock 03" type="Sprite" parent="JungleTileSet"]
 position = Vector2( 932.526, -21.9319 )
 texture = ExtResource( 14 )
 
-[node name="Cartoon Jungle Game Tileset_Environment - Mushroom 01" type="Sprite" parent="."]
+[node name="Cartoon Jungle Game Tileset_Environment - Mushroom 01" type="Sprite" parent="JungleTileSet"]
 position = Vector2( 1078.5, -142.519 )
 scale = Vector2( 0.553749, 0.652915 )
 texture = ExtResource( 8 )
 
-[node name="Cartoon Jungle Game Tileset_Environment - Mushroom 03" type="Sprite" parent="."]
+[node name="Cartoon Jungle Game Tileset_Environment - Mushroom 03" type="Sprite" parent="JungleTileSet"]
 position = Vector2( -277.313, 235.109 )
 scale = Vector2( 0.727291, 0.702499 )
 texture = ExtResource( 10 )
+
+[node name="Cartoon Jungle Game Tileset_Environment - Signpost 04" type="Sprite" parent="JungleTileSet"]
+position = Vector2( 427.428, 532.399 )
+scale = Vector2( 1.32229, 1.09917 )
+texture = ExtResource( 5 )
+
+[node name="Cartoon Jungle Game Tileset_Environment - Tree 02" type="Sprite" parent="JungleTileSet"]
+position = Vector2( 220.605, 238.944 )
+scale = Vector2( 0.199226, 0.309136 )
+texture = ExtResource( 3 )
 
 [node name="PortalArea2D" parent="." instance=ExtResource( 16 )]
 position = Vector2( 1267.75, 547.402 )
