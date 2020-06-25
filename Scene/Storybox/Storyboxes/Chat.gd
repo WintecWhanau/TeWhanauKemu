@@ -1,7 +1,7 @@
 extends Label
 
 var drawTextSpeed: int = 0
-var chatterLimit: int = 100 # max characters in chatbox
+var chatterLimit: int = 200 # max characters in chatbox
 var dialog = [] # list of story lines
 var oneLine = ""
 var page = 0
