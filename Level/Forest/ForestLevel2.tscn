@@ -169,16 +169,16 @@ texture = ExtResource( 10 )
 
 [node name="PortalArea2D" parent="." instance=ExtResource( 16 )]
 position = Vector2( 1267.75, 547.402 )
-next_level = "res://Level/Water/WaterLevel.tscn"
+next_level = "res://Level/Forest/ForestCutscene.tscn"
 
 [node name="Player" parent="." instance=ExtResource( 17 )]
-position = Vector2( -223.722, -157.081 )
+position = Vector2( -223.722, -159.985 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( -269.735, -161.841 )
 frames = SubResource( 1 )
 animation = "portal_idle"
-frame = 2
+frame = 3
 playing = true
 
 [node name="Collectables" type="Node2D" parent="."]
