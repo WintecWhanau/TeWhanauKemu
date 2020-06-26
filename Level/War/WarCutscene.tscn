@@ -1,0 +1,123 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://Scene/Storybox/Storyboxes/RuaumokoSB.gd" type="Script" id=1]
+[ext_resource path="res://Scene/Storybox/Storyboxes/Chat.gd" type="Script" id=2]
+[ext_resource path="res://Scene/Storybox/Sprites/Maui/Maui 02.png" type="Texture" id=3]
+[ext_resource path="res://Level/War/WarCutsceneBG.jpg" type="Texture" id=4]
+[ext_resource path="res://Scene/Storybox/Sprites/Maui/Maui 01.png" type="Texture" id=5]
+[ext_resource path="res://Fonts/KurriIslandPERSONAL-Regular.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://Scene/Storybox/Sprites/Maui/Maui 04.png" type="Texture" id=7]
+[ext_resource path="res://Scene/Storybox/Sprites/Maui/Maui 03.png" type="Texture" id=8]
+[ext_resource path="res://Scene/Storybox/Sprites/Atua/TuHead.png" type="Texture" id=9]
+[ext_resource path="res://Scene/Storybox/Sprites/Boxes/Tu.png" type="Texture" id=10]
+
+[sub_resource type="StyleBoxTexture" id=1]
+texture = ExtResource( 10 )
+region_rect = Rect2( 0, 0, 1056, 321 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 15
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=3]
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=4]
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=5]
+font_data = ExtResource( 6 )
+
+[sub_resource type="SpriteFrames" id=6]
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 8 ), ExtResource( 8 ), ExtResource( 5 ), ExtResource( 3 ), ExtResource( 5 ), ExtResource( 5 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "blink",
+"speed": 4.0
+} ]
+
+[node name="WarCutscene" type="Node"]
+
+[node name="WarCutsceneBG" type="Sprite" parent="."]
+visible = false
+position = Vector2( 511.756, 300.056 )
+scale = Vector2( 1.68458, 1.50189 )
+texture = ExtResource( 4 )
+
+[node name="TumatauengaSB" type="Panel" parent="."]
+margin_left = 128.0
+margin_top = 288.0
+margin_right = 800.0
+margin_bottom = 498.0
+custom_styles/panel = SubResource( 1 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+story_line_file = "res://Scene/Storybox/Scripts/Tumatauenga.txt"
+next_level = "res://Level/Sun/SunLevel1.tscn"
+
+[node name="Chat" type="Label" parent="TumatauengaSB"]
+margin_left = 52.0
+margin_top = 20.0
+margin_right = 590.0
+margin_bottom = 148.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+valign = 1
+autowrap = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Next" type="Button" parent="TumatauengaSB"]
+margin_left = 192.0
+margin_top = 160.0
+margin_right = 288.0
+margin_bottom = 192.0
+custom_fonts/font = SubResource( 3 )
+text = "Next"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ShowAll" type="Button" parent="TumatauengaSB"]
+margin_left = 325.828
+margin_top = 159.098
+margin_right = 421.828
+margin_bottom = 191.098
+custom_fonts/font = SubResource( 4 )
+text = "Show All"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NextLevel" type="Button" parent="TumatauengaSB"]
+margin_left = 450.0
+margin_top = 160.0
+margin_right = 546.0
+margin_bottom = 192.0
+custom_fonts/font = SubResource( 5 )
+text = "Next level"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="TumatauengaSB"]
+position = Vector2( -32, 96 )
+scale = Vector2( 0.364583, 0.364583 )
+frames = SubResource( 6 )
+animation = "blink"
+frame = 2
+playing = true
+
+[node name="Sprite" type="Sprite" parent="TumatauengaSB"]
+position = Vector2( 730, 105 )
+scale = Vector2( 1.33333, 1.33333 )
+texture = ExtResource( 9 )
+flip_h = true
+[connection signal="pressed" from="TumatauengaSB/Next" to="TumatauengaSB/Chat" method="_on_Next_pressed"]
+[connection signal="pressed" from="TumatauengaSB/ShowAll" to="TumatauengaSB/Chat" method="_on_ShowAll_pressed"]
+[connection signal="pressed" from="TumatauengaSB/NextLevel" to="TumatauengaSB/Chat" method="_on_NextLevel_pressed"]
