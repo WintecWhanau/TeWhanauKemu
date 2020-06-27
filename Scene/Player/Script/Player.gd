@@ -1,5 +1,7 @@
 extends KinematicBody2D
 class_name Player
+
+# DEFAULTS
 export (Vector2) var maxSpeedDefault := Vector2(150, 1200)
 export (Vector2) var accelerationDefault := Vector2(100, 1000)
 export (Vector2) var accelerationRateDefault := Vector2(1.5, 1)
@@ -8,8 +10,7 @@ export (float) var slideTimeDefault := 0.6
 export (float) var frictionGround := 0.2
 export (float) var frictionAir := 0.05
 export (float) var maxHPDefault := 100.0
-
-
+# INIT
 onready var maxSpeed := maxSpeedDefault
 onready var acceleration := accelerationDefault
 onready var acceleration_rate := accelerationRateDefault
@@ -17,46 +18,54 @@ onready var jumpForce := jumpForceDefault
 onready var friction := frictionGround
 onready var maxHp := maxHPDefault
 onready var hp := maxHp
-
+# MOVEMENT
 var velocity := Vector2(0, 0)
 onready var acc := acceleration
 var gravityRatio := 1.0
 var direction:int = 1
-var shootPosition:int = 1
-
 const up = Vector2(0, -1)
 var stateMachine: PlayerStateMachine
-
+# ANIMATIONS
+onready var AnimatedSprite: AnimatedSprite = $AnimatedSprite
+# MELEE
+onready var Taiaha = $Taiaha
+onready var TaiahaHitbox = $Taiaha/CollisionShape2D
+onready var MeleeTimer = $Timers/MeleeTimer
+var isAttacking = false
+var canAttack = true
+# SHOOT
 const patu = preload("res://Scene/Player/Patu.tscn")
 export var level = 0
+onready var shootPoint = $SpawnPoints/PatuPosition2D
+var shootPosition:int = 1
 var canShoot = true
 var isShooting = false
 var defaultShootTimer = 4.5
 var shootCooldown = 0.1
-
-var isAttacking = false
-
+# JUMP
 var canDoubleJump = true
 var isJumping = false
-
-onready var AnimatedSprite: AnimatedSprite = $AnimatedSprite
-onready var Taiaha = $Taiaha
-onready var Label: Label = $Label
-onready var shootPoint = $SpawnPoints/PatuPosition2D
+# AUDIO
 onready var jumpAudio = $Audio/JumpAudio
 onready var shootAudio = $Audio/ShootAudio
+# DEBUG
+onready var Label: Label = $Label
 
 func _ready():
 	$Timers/DefaultShootTimer.wait_time = defaultShootTimer
+	MeleeTimer.wait_time = 0.3
 	stateMachine = PlayerStateMachine.new(self)
 	stateMachine.set_state_deferred(PlayerStateMachine.IDLE)
+# end of _ready
 
 func _physics_process(delta):
 	stateMachine.process(delta)
+# end of _physics_process
 
 func process_movement(delta):
 	var snap = Vector2.DOWN * 32 if !isJumping else Vector2.ZERO
 	velocity = move_and_slide_with_snap(velocity, snap, up)
+# end of process_movement
 
 func process_velocity(delta):
 	if direction != 0:
@@ -69,6 +78,7 @@ func process_velocity(delta):
 
 	velocity.y += acc.y * gravityRatio * delta
 	velocity.y = clamp(velocity.y, -maxSpeed.y, maxSpeed.y)
+# end of process_velocity
 
 func _sprite_flip():
 	if direction > 0:
@@ -81,6 +91,7 @@ func _sprite_flip():
 			pass
 		else:
 			Taiaha.position.x *= -1		
+# end of _sprite_flip
 
 func shoot():
 	if canShoot:
@@ -103,21 +114,42 @@ func shoot():
 		get_parent().add_child(p)
 		p.connect("caught",self,"handleCaught")
 		shootAudio.play()
-		
 # end of shoot
 
 func handleCaught():
 	print('patu caught')
 	$Timers/ShootCooldownTimer.wait_time = shootCooldown
 	$Timers/ShootCooldownTimer.start()
+# end of handleCaught
 
 func _on_ShootCooldownTimer_timeout():
 	canShoot = true
-	pass # Replace with function body.
+# end of _on_ShootCooldownTimer_timeout
 	
 func _on_DefaultShootTimer_timeout(): # if patu is not caught this is the default case
 	canShoot = true
-	pass # Replace with function body.
+# end of _on_DefaultShootTimer_timeout
+
+func melee():
+	if canAttack:
+		canAttack = false
+		isAttacking = true
+		TaiahaHitbox.disabled = false
+		MeleeTimer.start()
+# end of melee
+
+func _on_Taiaha_body_entered(body):
+	if isAttacking:
+		if body.name != 'Player' && body.has_method('take_damage'):
+			body.take_damage()
+# end of _on_Taiaha_body_entered
+
+func _on_MeleeTimer_timeout():
+	if !canAttack:
+		canAttack = true
+		isAttacking = false
+		TaiahaHitbox.disabled = true
+# end of _on_MeleeTimer_timeout
 
 class PlayerStateMachine extends StateMachine:
 	enum {IDLE, RUN, JUMP, DOUBLE_JUMP, FALL, ATTACK, SHOOT}
@@ -138,25 +170,21 @@ class PlayerStateMachine extends StateMachine:
 		match state:
 			IDLE:
 				player.Label.text = 'idle'
-				_handle_input(delta)
 				_jump(player.jumpForce)
 			RUN:
 				player.Label.text = 'run'
-				_handle_input(delta)
 				_jump(player.jumpForce)
 			JUMP:
 				player.Label.text = 'jump'
-				_handle_input(delta)
 				if player.canDoubleJump: # double jump
 					_jump(player.jumpForce / 1.5)
 				pass
 			DOUBLE_JUMP:
 				player.Label.text = 'double jump'
-				_handle_input(delta)
 				pass
 			FALL:
 				player.Label.text = 'fall'
-				_handle_input(delta)
+				
 				if player.canDoubleJump: # double jump
 					_jump(player.jumpForce * 1.2)
 				pass
@@ -164,6 +192,7 @@ class PlayerStateMachine extends StateMachine:
 				player.Label.text = 'shoot'
 			SHOOT:
 				player.Label.text = 'shoot'
+		_handle_input(delta)
 		player._sprite_flip()
 		player.process_velocity(delta)
 		player.process_movement(delta)
@@ -174,9 +203,8 @@ class PlayerStateMachine extends StateMachine:
 			IDLE:
 				if player.isShooting:
 					return SHOOT
-#				elif
-#					player.isAttacking:
-#						return ATTACK
+				elif player.isAttacking:
+						return ATTACK
 				elif player.is_on_floor():
 					if player.direction != 0:
 						return RUN
@@ -185,9 +213,8 @@ class PlayerStateMachine extends StateMachine:
 			RUN:
 				if player.isShooting:
 					return SHOOT
-#				elif
-#					player.isAttacking:
-#						return ATTACK
+				elif player.isAttacking:
+						return ATTACK
 				elif player.is_on_floor():
 					if player.direction == 0:
 						return IDLE
@@ -196,9 +223,8 @@ class PlayerStateMachine extends StateMachine:
 			JUMP:
 				if player.isShooting:
 					return SHOOT
-#				elif
-#					player.isAttacking:
-#						return ATTACK
+				elif player.isAttacking:
+						return ATTACK
 				elif player.is_on_floor():
 					if player.direction == 0:
 						return IDLE
@@ -217,20 +243,20 @@ class PlayerStateMachine extends StateMachine:
 			FALL:
 				if player.isShooting:
 					return SHOOT
-#				elif
-#					player.isAttacking:
-#						return ATTACK
+				elif player.isAttacking:
+						return ATTACK
 				elif player.is_on_floor():
 					if player.direction == 0:
 						return IDLE
 					else:
 						return RUN
 			ATTACK:
-				return IDLE
+				if player.canAttack:
+					return IDLE
 				pass
-			SHOOT:
-				return IDLE
-				pass
+#			SHOOT:
+#				return IDLE
+#				pass
 
 	func _enter_state(state, _old_state):
 		"""Enter state"""
@@ -263,6 +289,8 @@ class PlayerStateMachine extends StateMachine:
 					player.AnimatedSprite.play("fall")
 			FALL:
 				player.AnimatedSprite.play("fall")
+			ATTACK:
+				player.AnimatedSprite.play("attack")
 
 	func _exit_tree():
 		"""Exit state"""
@@ -277,7 +305,7 @@ class PlayerStateMachine extends StateMachine:
 				player.canShoot = false
 
 	func _handle_input(delta):
-			var direction = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
+			var direction = Input.get_action_strength("right") - Input.get_action_strength("left")
 			if player.direction != direction:
 				player.acc = player.accelerationDefault
 			player.direction = direction
@@ -285,11 +313,13 @@ class PlayerStateMachine extends StateMachine:
 				player.shootPosition = -1
 			elif player.direction == 1:
 				player.shootPosition = 1
-			if Input.is_action_pressed("ui_shoot"):
+			if Input.is_action_just_pressed("shoot"):
 				player.shoot()
-				
+			if Input.is_action_just_pressed("melee"):
+				player.melee()
+
 	func _jump(jumpHeight):
-		if Input.is_action_just_pressed("ui_up"):
+		if Input.is_action_just_pressed("jump"):
 			player.jumpAudio.play()
 			player.canDoubleJump = false # this is stopping player from constantly jumping
 			player.velocity.y += jumpHeight
