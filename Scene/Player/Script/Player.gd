@@ -30,13 +30,17 @@ var stateMachine: PlayerStateMachine
 const patu = preload("res://Scene/Player/Patu.tscn")
 export var level = 0
 var canShoot = true
+var isShooting = false
 var defaultShootTimer = 4.5
 var shootCooldown = 0.1
+
+var isAttacking = false
 
 var canDoubleJump = true
 var isJumping = false
 
 onready var AnimatedSprite: AnimatedSprite = $AnimatedSprite
+onready var Taiaha = $Taiaha
 onready var Label: Label = $Label
 onready var shootPoint = $SpawnPoints/PatuPosition2D
 onready var jumpAudio = $Audio/JumpAudio
@@ -69,9 +73,14 @@ func process_velocity(delta):
 func _sprite_flip():
 	if direction > 0:
 		AnimatedSprite.flip_h = false
-		
+		if Taiaha.position.x < 0:
+			Taiaha.position.x *= -1
 	elif direction < 0:
 		AnimatedSprite.flip_h = true
+		if Taiaha.position.x < 0:
+			pass
+		else:
+			Taiaha.position.x *= -1		
 
 func shoot():
 	if canShoot:
@@ -88,10 +97,9 @@ func shoot():
 		elif shootPosition == 1:
 			if $SpawnPoints/PatuPosition2D.position.x < 0:
 				$SpawnPoints/PatuPosition2D.position.x *= -1
-				p.setDirection(1)
-		 
+			p.setDirection(1)
 		p.global_position = $SpawnPoints/PatuPosition2D.global_position
-		p.set_as_toplevel(true)
+		p.set_as_toplevel(true) # independent movement 
 		get_parent().add_child(p)
 		p.connect("caught",self,"handleCaught")
 		shootAudio.play()
@@ -152,6 +160,8 @@ class PlayerStateMachine extends StateMachine:
 				if player.canDoubleJump: # double jump
 					_jump(player.jumpForce * 1.2)
 				pass
+			ATTACK:
+				player.Label.text = 'shoot'
 			SHOOT:
 				player.Label.text = 'shoot'
 		player._sprite_flip()
@@ -162,19 +172,34 @@ class PlayerStateMachine extends StateMachine:
 		"""Check the current state transition conditions and return to the state to be transferred to"""
 		match state:
 			IDLE:
-				if player.is_on_floor():
+				if player.isShooting:
+					return SHOOT
+#				elif
+#					player.isAttacking:
+#						return ATTACK
+				elif player.is_on_floor():
 					if player.direction != 0:
 						return RUN
 				else: 
 					return JUMP
 			RUN:
-				if player.is_on_floor():
+				if player.isShooting:
+					return SHOOT
+#				elif
+#					player.isAttacking:
+#						return ATTACK
+				elif player.is_on_floor():
 					if player.direction == 0:
 						return IDLE
 				else:
 					return JUMP
 			JUMP:
-				if player.is_on_floor():
+				if player.isShooting:
+					return SHOOT
+#				elif
+#					player.isAttacking:
+#						return ATTACK
+				elif player.is_on_floor():
 					if player.direction == 0:
 						return IDLE
 					else:
@@ -190,14 +215,22 @@ class PlayerStateMachine extends StateMachine:
 				elif !player.is_on_floor() && player.velocity.y >= 0:
 					return FALL
 			FALL:
-				if player.is_on_floor():
+				if player.isShooting:
+					return SHOOT
+#				elif
+#					player.isAttacking:
+#						return ATTACK
+				elif player.is_on_floor():
 					if player.direction == 0:
 						return IDLE
 					else:
 						return RUN
-			SHOOT:
+			ATTACK:
+				return IDLE
 				pass
-
+			SHOOT:
+				return IDLE
+				pass
 
 	func _enter_state(state, _old_state):
 		"""Enter state"""
