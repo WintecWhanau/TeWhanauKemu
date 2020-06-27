@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=2]
+[gd_scene load_steps=59 format=2]
 
 [ext_resource path="res://Scene/Player/Sprite/Player/idle/Idle_000.png" type="Texture" id=1]
 [ext_resource path="res://Scene/Player/Script/Player.gd" type="Script" id=2]
@@ -43,33 +43,53 @@
 [ext_resource path="res://Scene/Player/Sprite/Player/Fall/Falling Down_004.png" type="Texture" id=41]
 [ext_resource path="res://Scene/Player/Sprite/Player/Fall/Falling Down_000.png" type="Texture" id=42]
 [ext_resource path="res://Scene/Player/Sprite/Player/Fall/Falling Down_005.png" type="Texture" id=43]
+[ext_resource path="res://Audio/SFX/Enemies/Enemy Slash Attack.wav" type="AudioStream" id=44]
+[ext_resource path="res://Scene/Player/Sprite/Player/Attack/Attacking_003.png" type="Texture" id=45]
+[ext_resource path="res://Scene/Player/Sprite/Player/Attack/Attacking_001.png" type="Texture" id=46]
+[ext_resource path="res://Scene/Player/Sprite/Player/Attack/Attacking_010.png" type="Texture" id=47]
+[ext_resource path="res://Scene/Player/Sprite/Player/Attack/Attacking_002.png" type="Texture" id=48]
+[ext_resource path="res://Scene/Player/Sprite/Player/Attack/Attacking_011.png" type="Texture" id=49]
+[ext_resource path="res://Scene/Player/Sprite/Player/Attack/Attacking_007.png" type="Texture" id=50]
+[ext_resource path="res://Scene/Player/Sprite/Player/Attack/Attacking_009.png" type="Texture" id=51]
+[ext_resource path="res://Scene/Player/Sprite/Player/Attack/Attacking_008.png" type="Texture" id=52]
+[ext_resource path="res://Scene/Player/Sprite/Player/Attack/Attacking_006.png" type="Texture" id=53]
+[ext_resource path="res://Scene/Player/Sprite/Player/Attack/Attacking_004.png" type="Texture" id=54]
+[ext_resource path="res://Scene/Player/Sprite/Player/Attack/Attacking_005.png" type="Texture" id=55]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 1 ), ExtResource( 3 ), ExtResource( 5 ), ExtResource( 14 ), ExtResource( 16 ), ExtResource( 12 ), ExtResource( 19 ), ExtResource( 4 ), ExtResource( 7 ), ExtResource( 15 ), ExtResource( 8 ), ExtResource( 6 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 13 ), ExtResource( 11 ), ExtResource( 17 ), ExtResource( 18 ) ],
 "loop": true,
 "name": "idle",
-"speed": 10.0
+"speed": 20.0
 }, {
 "frames": [ ExtResource( 42 ), ExtResource( 39 ), ExtResource( 38 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 43 ) ],
 "loop": true,
 "name": "fall",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 30 ), ExtResource( 29 ), ExtResource( 31 ), ExtResource( 28 ), ExtResource( 26 ), ExtResource( 21 ), ExtResource( 20 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 27 ) ],
-"loop": true,
-"name": "run",
-"speed": 18.0
+"speed": 20.0
 }, {
 "frames": [ ExtResource( 33 ), ExtResource( 37 ), ExtResource( 32 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 36 ) ],
 "loop": true,
 "name": "jump",
-"speed": 10.0
+"speed": 20.0
+}, {
+"frames": [ ExtResource( 46 ), ExtResource( 48 ), ExtResource( 45 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 53 ), ExtResource( 50 ), ExtResource( 52 ), ExtResource( 51 ), ExtResource( 47 ), ExtResource( 49 ) ],
+"loop": false,
+"name": "attack",
+"speed": 30.0
+}, {
+"frames": [ ExtResource( 30 ), ExtResource( 29 ), ExtResource( 31 ), ExtResource( 28 ), ExtResource( 26 ), ExtResource( 21 ), ExtResource( 20 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 27 ) ],
+"loop": true,
+"name": "run",
+"speed": 20.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=2]
 radius = 10.5036
 height = 21.9644
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 6.99693, 16.3601 )
 
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 2 )
@@ -91,9 +111,8 @@ editor_draw_drag_margin = true
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 0.08, 0.08 )
 frames = SubResource( 1 )
-animation = "idle"
-frame = 1
-playing = true
+animation = "attack"
+frame = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 1.47429, 2.09398 )
@@ -113,13 +132,36 @@ __meta__ = {
 
 [node name="Timers" type="Node2D" parent="."]
 
-[node name="JumpTimer" type="Timer" parent="Timers"]
+[node name="ShootCooldownTimer" type="Timer" parent="Timers"]
+one_shot = true
 
-[node name="ShootTimer" type="Timer" parent="Timers"]
+[node name="DefaultShootTimer" type="Timer" parent="Timers"]
+
+[node name="MeleeTimer" type="Timer" parent="Timers"]
 
 [node name="SpawnPoints" type="Node2D" parent="."]
 
 [node name="PatuPosition2D" type="Position2D" parent="SpawnPoints"]
 position = Vector2( 28.1453, 12.2059 )
-[connection signal="timeout" from="Timers/JumpTimer" to="." method="_on_JumpTimer_timeout"]
-[connection signal="timeout" from="Timers/ShootTimer" to="." method="_on_ShootTimer_timeout"]
+
+[node name="Audio" type="Node2D" parent="."]
+
+[node name="JumpAudio" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource( 44 )
+volume_db = -15.0
+
+[node name="ShootAudio" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource( 44 )
+pitch_scale = 2.0
+
+[node name="Taiaha" type="Area2D" parent="."]
+position = Vector2( 27.1875, 5.06964 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Taiaha"]
+position = Vector2( 0.202812, -0.141094 )
+shape = SubResource( 3 )
+disabled = true
+[connection signal="timeout" from="Timers/ShootCooldownTimer" to="." method="_on_ShootCooldownTimer_timeout"]
+[connection signal="timeout" from="Timers/DefaultShootTimer" to="." method="_on_DefaultShootTimer_timeout"]
+[connection signal="timeout" from="Timers/MeleeTimer" to="." method="_on_MeleeTimer_timeout"]
+[connection signal="body_entered" from="Taiaha" to="." method="_on_Taiaha_body_entered"]

@@ -1,7 +1,0 @@
-[gd_scene load_steps=2 format=2]
-
-[ext_resource path="res://Level/Water/WaterLevel.tscn" type="PackedScene" id=1]
-
-[node name="WaterLevel2" type="Node2D"]
-
-[node name="WaterLevel1" parent="." instance=ExtResource( 1 )]
