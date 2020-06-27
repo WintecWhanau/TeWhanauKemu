@@ -1,10 +1,9 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scene/TileScenes/Volcano/Res/volcano.tres" type="TileSet" id=1]
 [ext_resource path="res://Assets/Sun/Ra BG1.jpg" type="Texture" id=2]
 [ext_resource path="res://Audio/BG Music/Te Ra/TeRaBGM2.wav" type="AudioStream" id=3]
 [ext_resource path="res://Scene/Player/Player.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Scene/Enemy/Boss/Boss.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Level/Sun/TanemahutaPoint.gd" type="Script" id=6]
 
 [sub_resource type="Curve2D" id=1]
@@ -16,7 +15,7 @@ _data = {
 script = ExtResource( 6 )
 
 [node name="SunBG2" type="Sprite" parent="."]
-position = Vector2( 512.63, 190.5 )
+position = Vector2( 511.728, 190.5 )
 scale = Vector2( 0.880991, 0.959281 )
 texture = ExtResource( 2 )
 
@@ -32,7 +31,7 @@ volume_db = -2.0
 autoplay = true
 
 [node name="Player" parent="." instance=ExtResource( 4 )]
-position = Vector2( 280.649, 99.8633 )
+position = Vector2( 607.607, 503.554 )
 
 [node name="Path2D" type="Path2D" parent="."]
 curve = SubResource( 1 )
@@ -42,17 +41,5 @@ position = Vector2( -85.7546, -70.5535 )
 rotate = false
 cubic_interp = false
 
-[node name="Te Ra" parent="Path2D/PathFollow2D" instance=ExtResource( 5 )]
-position = Vector2( 454.962, 25.6749 )
-
 [node name="Enemy" type="Position2D" parent="."]
 position = Vector2( 571.938, 298.888 )
-
-[node name="Enemy2" type="Position2D" parent="."]
-position = Vector2( -27.9335, -20.9501 )
-
-[node name="Enemy3" type="Position2D" parent="."]
-position = Vector2( 641.073, -37.7102 )
-
-[node name="Enemy4" type="Position2D" parent="."]
-position = Vector2( 13.2684, 289.81 )
