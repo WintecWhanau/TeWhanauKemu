@@ -25,9 +25,11 @@ var gravityRatio := 1.0
 var direction:int = 1
 const up = Vector2(0, -1)
 var stateMachine: PlayerStateMachine
-# ANIMATIONS
-onready var AnimatedSprite: AnimatedSprite = $AnimatedSprite
+# JUMP
+var canDoubleJump = true
+var isJumping = false
 # MELEE
+export var taiahaDamage = 100
 onready var Taiaha = $Taiaha
 onready var TaiahaHitbox = $Taiaha/CollisionShape2D
 onready var MeleeTimer = $Timers/MeleeTimer
@@ -35,6 +37,7 @@ var isAttacking = false
 var canAttack = true
 # SHOOT
 const patu = preload("res://Scene/Player/Patu.tscn")
+export var patuDamage = 25
 export var level = 0
 onready var shootPoint = $SpawnPoints/PatuPosition2D
 var shootPosition:int = 1
@@ -42,9 +45,8 @@ var canShoot = true
 var isShooting = false
 var defaultShootTimer = 4.5
 var shootCooldown = 0.1
-# JUMP
-var canDoubleJump = true
-var isJumping = false
+# ANIMATIONS
+onready var AnimatedSprite: AnimatedSprite = $AnimatedSprite
 # AUDIO
 onready var jumpAudio = $Audio/JumpAudio
 onready var shootAudio = $Audio/ShootAudio
@@ -52,6 +54,8 @@ onready var shootAudio = $Audio/ShootAudio
 onready var Label: Label = $Label
 
 func _ready():
+	if level <= 6:
+		canShoot = false
 	$Timers/DefaultShootTimer.wait_time = defaultShootTimer
 	MeleeTimer.wait_time = 0.3
 	stateMachine = PlayerStateMachine.new(self)
@@ -98,6 +102,7 @@ func shoot():
 		$Timers/DefaultShootTimer.start() # triggers default timer incase player doesnt catch patu
 		canShoot = false
 		var p = patu.instance()
+		p.damage = patuDamage
 		p.setLevel(level)
 		if shootPosition == -1:
 			if $SpawnPoints/PatuPosition2D.position.x < 0:
@@ -151,6 +156,9 @@ func _on_MeleeTimer_timeout():
 		TaiahaHitbox.disabled = true
 # end of _on_MeleeTimer_timeout
 
+func take_damage(damage):
+	pass
+
 class PlayerStateMachine extends StateMachine:
 	enum {IDLE, RUN, JUMP, DOUBLE_JUMP, FALL, ATTACK, SHOOT}
 	var player: Player = null
@@ -189,7 +197,7 @@ class PlayerStateMachine extends StateMachine:
 					_jump(player.jumpForce * 1.2)
 				pass
 			ATTACK:
-				player.Label.text = 'shoot'
+				player.Label.text = 'melee'
 			SHOOT:
 				player.Label.text = 'shoot'
 		_handle_input(delta)
