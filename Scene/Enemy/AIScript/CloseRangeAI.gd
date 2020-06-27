@@ -136,7 +136,6 @@ class CloseRangeEnemyStateMachine extends StateMachine:
 				if walk_state_duration > state_stay: #or enemy.direction != enemy._check_direction() :
 					return IDLE
 			CHASE:
-				print(enemy.player.position.x - enemy.position.x)
 				if enemy.player.position.y < enemy.position.y -32 and enemy.is_on_floor():
 					if enemy.player.position.x - enemy.position.x > -128 and enemy.player.position.x - enemy.position.x <=0 :
 						return JUMP
