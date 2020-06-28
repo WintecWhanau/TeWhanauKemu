@@ -118,6 +118,7 @@ position = Vector2( 198.247, 59.5489 )
 
 [node name="Ruaumoko" parent="." instance=ExtResource( 2 )]
 position = Vector2( 196.941, 535.108 )
+
 damage = 35
 hp = 40
 
@@ -135,5 +136,6 @@ hp = 50
 position = Vector2( -43.0547, 177.563 )
 damage = 35
 hp = 40
+
 
 [node name="HUD" parent="." instance=ExtResource( 14 )]
