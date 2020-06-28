@@ -2,18 +2,18 @@
 
 [ext_resource path="res://Scene/Player/Sprite/Player/idle/Idle_006.png" type="Texture" id=1]
 [ext_resource path="res://Scene/Sprites/Boss/Te_Rā1.png" type="Texture" id=2]
-[ext_resource path="res://Scene/Storybox/Storyboxes/RuaumokoSB.gd" type="Script" id=3]
-[ext_resource path="res://Scene/Storybox/Storyboxes/Chat.gd" type="Script" id=4]
+[ext_resource path="res://Scene/Storybox/Storyboxes/Scripts/Storybox.gd" type="Script" id=3]
+[ext_resource path="res://Scene/Storybox/Storyboxes/Scripts/Chat.gd" type="Script" id=4]
 [ext_resource path="res://Scene/Storybox/Sprites/Maui/Maui 01.png" type="Texture" id=5]
 [ext_resource path="res://Scene/Storybox/Sprites/Maui/Maui 02.png" type="Texture" id=6]
 [ext_resource path="res://Scene/Storybox/Sprites/Maui/Maui 03.png" type="Texture" id=7]
 [ext_resource path="res://Fonts/KurriIslandPERSONAL-Regular.ttf" type="DynamicFontData" id=8]
 [ext_resource path="res://Scene/Storybox/Sprites/Maui/Maui 04.png" type="Texture" id=9]
-[ext_resource path="res://Scene/Storybox/Sprites/Atua/Te Ra/Te_Rā2.png" type="Texture" id=10]
+[ext_resource path="res://Scene/Enemy/Boss/Boss Sprite/Te_Rā2.png" type="Texture" id=10]
 [ext_resource path="res://Assets/Sun/Ra BG1.jpg" type="Texture" id=11]
-[ext_resource path="res://Scene/Storybox/Sprites/Atua/Te Ra/Te_Rā3.png" type="Texture" id=12]
+[ext_resource path="res://Scene/Enemy/Boss/Boss Sprite/Te_Rā3.png" type="Texture" id=12]
 [ext_resource path="res://Scene/Storybox/Sprites/Boxes/Te Ra.png" type="Texture" id=13]
-[ext_resource path="res://Scene/Storybox/Sprites/Atua/Te Ra/Te_Rā1.png" type="Texture" id=14]
+[ext_resource path="res://Scene/Enemy/Boss/Boss Sprite/Te_Rā1.png" type="Texture" id=14]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Maui"
@@ -132,10 +132,10 @@ __meta__ = {
 }
 
 [node name="Next" type="Button" parent="TeRaStartSB"]
-margin_left = 192.0
-margin_top = 160.0
-margin_right = 288.0
-margin_bottom = 192.0
+margin_left = 120.77
+margin_top = 155.81
+margin_right = 216.77
+margin_bottom = 187.81
 custom_fonts/font = SubResource( 5 )
 text = "Next"
 __meta__ = {
@@ -159,7 +159,7 @@ position = Vector2( -32, 96 )
 scale = Vector2( 0.364583, 0.364583 )
 frames = SubResource( 7 )
 animation = "blink"
-frame = 4
+frame = 7
 playing = true
 
 [node name="Sprite" type="AnimatedSprite" parent="TeRaStartSB"]
