@@ -4,7 +4,7 @@ class_name CloseRangeEnemy
 export var max_speed_normal:int = 100 
 export var max_speed_attack:int = 120
 export var damage:int = 1
-export var hp:int = 0
+export var hp:int = 1
 var direction:int = 1
 var max_speed = max_speed_normal
 var velocity := Vector2()
@@ -77,7 +77,7 @@ func control_ray_cast(condition:bool):
 	GroundCheckLeft.enabled = condition
 	GroundCheckRight.enabled = condition
 
-func take_damge(damage):
+func takeDamage(damage):
 	hp -= damage
 	if hp > 0:
 		pass
@@ -122,6 +122,8 @@ class CloseRangeEnemyStateMachine extends StateMachine:
 					enemy.direction = 1
 			DEAD:
 				enemy.direction = 0
+				if enemy.AnimatedSprite.animation == "Dying" and enemy.AnimatedSprite.frame == enemy.AnimatedSprite.frames.get_frame_count("Dying")-1:
+					enemy.queue_free()
 				
 		enemy.process_velocity(delta)
 		enemy.process_movement(delta)
@@ -129,13 +131,19 @@ class CloseRangeEnemyStateMachine extends StateMachine:
 	func _check_conditions(delta):
 		match state:
 			IDLE:
+				if enemy.hp <=0:
+					return DEAD
 				if enemy.is_on_floor():
 					if idle_state_duration > state_stay:
 						return WALK
 			WALK:
+				if enemy.hp <=0:
+					return DEAD
 				if walk_state_duration > state_stay: #or enemy.direction != enemy._check_direction() :
 					return IDLE
 			CHASE:
+				if enemy.hp <=0:
+					return DEAD
 				if enemy.player.position.y < enemy.position.y -32 and enemy.is_on_floor():
 					if enemy.player.position.x - enemy.position.x > -128 and enemy.player.position.x - enemy.position.x <=0 :
 						return JUMP
@@ -144,9 +152,13 @@ class CloseRangeEnemyStateMachine extends StateMachine:
 				elif enemy.WallCheckLeft.is_colliding() or enemy.WallCheckRight.is_colliding():
 					return JUMP
 			JUMP: 
+				if enemy.hp <=0:
+					return DEAD
 				if !enemy.is_on_floor() && enemy.velocity.y >= 0:
 					return FALL
 			FALL:
+				if enemy.hp <=0:
+					return DEAD
 				if enemy.is_on_floor():
 					return CHASE
 
@@ -195,3 +207,13 @@ class CloseRangeEnemyStateMachine extends StateMachine:
 				pass
 			JUMP:
 				pass
+	func set_state(new_state):
+		"""Set current status"""
+		if state == DEAD: return
+		if states.has(new_state):
+			previous_state = state
+			state = states[new_state]
+			if previous_state != null:
+				_exit_state(previous_state, state)
+			if state != null:
+				_enter_state(state, previous_state)
