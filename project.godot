@@ -57,7 +57,6 @@ _global_script_class_icons={
 [application]
 
 config/name="Te Whanau Kemu"
-
 run/main_scene="res://Scene/Title/Title.tscn"
 config/icon="res://icon.png"
 
