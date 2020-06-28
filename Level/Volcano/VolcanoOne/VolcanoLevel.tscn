@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scene/TileScenes/Volcano/Res/volcano.tres" type="TileSet" id=1]
 [ext_resource path="res://Scene/Collectables/Ruaumoko/RuaumokoCoin.tscn" type="PackedScene" id=2]
@@ -9,6 +9,8 @@
 [ext_resource path="res://Level/Volcano/VolcanoOne/Script/TriggerTwo.gd" type="Script" id=7]
 [ext_resource path="res://Audio/BG Music/Volcano/VolcanoBGM1.wav" type="AudioStream" id=8]
 [ext_resource path="res://Scene/Portal/Portal.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Common/Map.gd" type="Script" id=10]
+[ext_resource path="res://Scene/HUD Health/HUD.tscn" type="PackedScene" id=11]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 27.1865, 19.1019 )
@@ -17,6 +19,7 @@ extents = Vector2( 27.1865, 19.1019 )
 extents = Vector2( 18.7638, 10 )
 
 [node name="VolcanoLevel" type="Node"]
+script = ExtResource( 10 )
 
 [node name="VolcanoBG" type="Sprite" parent="."]
 position = Vector2( 507, 194.5 )
@@ -34,7 +37,8 @@ stream = ExtResource( 8 )
 autoplay = true
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
-position = Vector2( 705.05, 417.938 )
+position = Vector2( -267.188, 547.57 )
+level = 7
 
 [node name="Enemies" type="Node2D" parent="."]
 position = Vector2( 2.72073, 3.05176e-05 )
@@ -111,5 +115,7 @@ shape = SubResource( 2 )
 [node name="PortalArea2D" parent="." instance=ExtResource( 9 )]
 position = Vector2( 633.081, 534.708 )
 next_level = "res://Level/Volcano/VolcanoTwo/VolcanoLevelTwo.tscn"
+
+[node name="HUD" parent="." instance=ExtResource( 11 )]
 [connection signal="body_entered" from="Triggers/Area2D" to="Triggers/Area2D" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="Triggers/Area2D2" to="Triggers/Area2D2" method="_on_Area2D2_body_entered"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://Assets/water-platformer-tileset/Tangaroa.jpg" type="Texture" id=1]
 [ext_resource path="res://Assets/water-platformer-tileset/PNG/Environment/156-1569523_underwater-bubble-clip-art-hd-png-download.png" type="Texture" id=2]
@@ -27,8 +27,12 @@
 [ext_resource path="res://Assets/water-platformer-tileset/PNG/Platformer/Cartoon Water Game Tileset_Platformer - Ground Additional 06.png" type="Texture" id=25]
 [ext_resource path="res://Assets/water-platformer-tileset/PNG/Environment/Cartoon Water Game Tileset_Environment - Signpost 04.png" type="Texture" id=26]
 [ext_resource path="res://Scene/Portal/Portal.tscn" type="PackedScene" id=27]
+[ext_resource path="res://Scene/Player/Player.tscn" type="PackedScene" id=28]
+[ext_resource path="res://Scene/HUD Health/HUD.tscn" type="PackedScene" id=29]
+[ext_resource path="res://Common/Map.gd" type="Script" id=30]
 
 [node name="WaterLevel1" type="Node"]
+script = ExtResource( 30 )
 
 [node name="WaterBG" type="Sprite" parent="."]
 position = Vector2( 514, 190 )
@@ -395,3 +399,9 @@ position = Vector2( 692.321, 459.086 )
 
 [node name="TangaroaCoin9" parent="." instance=ExtResource( 11 )]
 position = Vector2( 112.814, 210.721 )
+
+[node name="Player" parent="." instance=ExtResource( 28 )]
+position = Vector2( -245.934, 483.935 )
+level = 3
+
+[node name="HUD" parent="." instance=ExtResource( 29 )]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Scene/TileScenes/Forest/Res/forest.tres" type="TileSet" id=1]
 [ext_resource path="res://Assets/forest-platformer-tileset/Tanemahuta.jpg" type="Texture" id=2]
@@ -18,8 +18,12 @@
 [ext_resource path="res://Scene/Portal/Portal.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Scene/Collectables/Tanemahuta/TaneCoin.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Audio/BG Music/Forest/ForestBGM1.wav" type="AudioStream" id=18]
+[ext_resource path="res://Scene/HUD Health/HUD.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Common/Map.gd" type="Script" id=20]
+[ext_resource path="res://Scene/Enemy/Tanemahuta/Tanemahuta Scene.tscn" type="PackedScene" id=21]
 
 [node name="ForestLevel" type="Node"]
+script = ExtResource( 20 )
 
 [node name="ForestBG" type="Sprite" parent="."]
 position = Vector2( 512.448, 197.361 )
@@ -181,6 +185,7 @@ tile_data = PoolIntArray( -393226, -1610612719, 0, -393225, 1610612757, 0, -3932
 
 [node name="Player" parent="." instance=ExtResource( 15 )]
 position = Vector2( 66.7352, 545.679 )
+level = 1
 
 [node name="PortalArea2D" parent="." instance=ExtResource( 16 )]
 position = Vector2( 1286.34, -150.487 )
@@ -221,3 +226,8 @@ position = Vector2( 1044.25, -45.8004 )
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 18 )
 autoplay = true
+
+[node name="HUD" parent="." instance=ExtResource( 19 )]
+
+[node name="Tanemahuta" parent="." instance=ExtResource( 21 )]
+position = Vector2( 215.789, 531.577 )

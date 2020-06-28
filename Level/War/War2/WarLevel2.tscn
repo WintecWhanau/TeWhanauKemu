@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://Scene/TileScenes/Wind/Res/wind.tres" type="TileSet" id=1]
 [ext_resource path="res://Level/War/War2/Tūmatauenga.png" type="Texture" id=2]
@@ -29,6 +29,7 @@
 [ext_resource path="res://Assets/volcano-platformer-tileset/PNG/Environment/Volcano Level Set_Environment - Rock 06.png" type="Texture" id=27]
 [ext_resource path="res://Assets/volcano-platformer-tileset/PNG/Environment/Volcano Level Set_Environment - Rock 04.png" type="Texture" id=28]
 [ext_resource path="res://Assets/volcano-platformer-tileset/PNG/Environment/Volcano Level Set_Environment - Rock 05.png" type="Texture" id=29]
+[ext_resource path="res://Scene/HUD Health/HUD.tscn" type="PackedScene" id=30]
 
 [sub_resource type="Animation" id=1]
 resource_name = "strafe"
@@ -483,8 +484,8 @@ position = Vector2( 1222.75, 540.192 )
 [node name="Tumatauenga7" parent="Enemies" instance=ExtResource( 8 )]
 position = Vector2( -160.165, 540.192 )
 
-[node name="Player" type="Node" parent="."]
-
-[node name="Player" parent="Player" instance=ExtResource( 9 )]
-position = Vector2( -267.043, -151.252 )
+[node name="Player" parent="." instance=ExtResource( 9 )]
+position = Vector2( -261.955, -158.228 )
 level = 10
+
+[node name="HUD" parent="." instance=ExtResource( 30 )]

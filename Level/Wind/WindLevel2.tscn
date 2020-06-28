@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Scene/TileScenes/Wind/Res/wind.tres" type="TileSet" id=1]
 [ext_resource path="res://Assets/wind-platformer-tileset/Tawhirimatea.jpg" type="Texture" id=2]
@@ -8,8 +8,9 @@
 [ext_resource path="res://Scene/Storybox/Sprites/Atua/Tawhiri.png" type="Texture" id=6]
 [ext_resource path="res://Scene/Portal/Portal.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scene/Collectables/Tawhirimatea/TawhirimateaCoin.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Scene/Collectables/Tawhirimatea/TawhirimateaCoin.gd" type="Script" id=9]
+[ext_resource path="res://Common/Map.gd" type="Script" id=9]
 [ext_resource path="res://Scene/Enemy/Tawhirimatea/Tawhirimatea.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scene/HUD Health/HUD.tscn" type="PackedScene" id=11]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Float"
@@ -29,6 +30,7 @@ tracks/0/keys = {
 }
 
 [node name="WindLevel" type="Node"]
+script = ExtResource( 9 )
 
 [node name="Background Stuff" type="Node2D" parent="."]
 
@@ -49,6 +51,7 @@ volume_db = -8.0
 
 [node name="Player" parent="." instance=ExtResource( 4 )]
 position = Vector2( 887.099, 124 )
+level = 6
 
 [node name="Moving Platforms" type="Node2D" parent="."]
 
@@ -198,77 +201,32 @@ position = Vector2( -160, 471.263 )
 [node name="Jump Pattern 1" type="Node2D" parent="Coins"]
 position = Vector2( 887.099, 0 )
 
-[node name="TawhirimateaCoin" type="Area2D" parent="Coins/Jump Pattern 1" instance=ExtResource( 8 )]
+[node name="TawhirimateaCoin" parent="Coins/Jump Pattern 1" instance=ExtResource( 8 )]
 position = Vector2( -168, 552.012 )
-collision_layer = 16
-script = ExtResource( 9 )
-__meta__ = {
-"_edit_group_": true
-}
 
-[node name="TawhirimateaCoin2" type="Area2D" parent="Coins/Jump Pattern 1" instance=ExtResource( 8 )]
+[node name="TawhirimateaCoin2" parent="Coins/Jump Pattern 1" instance=ExtResource( 8 )]
 position = Vector2( -168, 512 )
-collision_layer = 16
-script = ExtResource( 9 )
-__meta__ = {
-"_edit_group_": true
-}
 
-[node name="TawhirimateaCoin3" type="Area2D" parent="Coins/Jump Pattern 1" instance=ExtResource( 8 )]
+[node name="TawhirimateaCoin3" parent="Coins/Jump Pattern 1" instance=ExtResource( 8 )]
 position = Vector2( -156, 472 )
-collision_layer = 16
-script = ExtResource( 9 )
-__meta__ = {
-"_edit_group_": true
-}
 
-[node name="TawhirimateaCoin4" type="Area2D" parent="Coins/Jump Pattern 1" instance=ExtResource( 8 )]
+[node name="TawhirimateaCoin4" parent="Coins/Jump Pattern 1" instance=ExtResource( 8 )]
 position = Vector2( -136, 440 )
-collision_layer = 16
-script = ExtResource( 9 )
-__meta__ = {
-"_edit_group_": true
-}
 
-[node name="TawhirimateaCoin5" type="Area2D" parent="Coins/Jump Pattern 1" instance=ExtResource( 8 )]
+[node name="TawhirimateaCoin5" parent="Coins/Jump Pattern 1" instance=ExtResource( 8 )]
 position = Vector2( -104, 424 )
-collision_layer = 16
-script = ExtResource( 9 )
-__meta__ = {
-"_edit_group_": true
-}
 
-[node name="TawhirimateaCoin6" type="Area2D" parent="Coins/Jump Pattern 1" instance=ExtResource( 8 )]
+[node name="TawhirimateaCoin6" parent="Coins/Jump Pattern 1" instance=ExtResource( 8 )]
 position = Vector2( -72, 440 )
-collision_layer = 16
-script = ExtResource( 9 )
-__meta__ = {
-"_edit_group_": true
-}
 
-[node name="TawhirimateaCoin7" type="Area2D" parent="Coins/Jump Pattern 1" instance=ExtResource( 8 )]
+[node name="TawhirimateaCoin7" parent="Coins/Jump Pattern 1" instance=ExtResource( 8 )]
 position = Vector2( -52, 472 )
-collision_layer = 16
-script = ExtResource( 9 )
-__meta__ = {
-"_edit_group_": true
-}
 
-[node name="TawhirimateaCoin8" type="Area2D" parent="Coins/Jump Pattern 1" instance=ExtResource( 8 )]
+[node name="TawhirimateaCoin8" parent="Coins/Jump Pattern 1" instance=ExtResource( 8 )]
 position = Vector2( -40, 512 )
-collision_layer = 16
-script = ExtResource( 9 )
-__meta__ = {
-"_edit_group_": true
-}
 
-[node name="TawhirimateaCoin9" type="Area2D" parent="Coins/Jump Pattern 1" instance=ExtResource( 8 )]
+[node name="TawhirimateaCoin9" parent="Coins/Jump Pattern 1" instance=ExtResource( 8 )]
 position = Vector2( -40, 552.023 )
-collision_layer = 16
-script = ExtResource( 9 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="Jump Pattern 2" type="Node2D" parent="Coins"]
 position = Vector2( 567.667, 0 )
@@ -339,12 +297,5 @@ position = Vector2( 847.099, 532 )
 
 [node name="Tawhirimatea8" parent="Enemies" instance=ExtResource( 10 )]
 position = Vector2( 192, 535 )
-[connection signal="body_entered" from="Coins/Jump Pattern 1/TawhirimateaCoin" to="Coins/Jump Pattern 1/TawhirimateaCoin" method="_on_TawhirimateaCoin_body_entered"]
-[connection signal="body_entered" from="Coins/Jump Pattern 1/TawhirimateaCoin2" to="Coins/Jump Pattern 1/TawhirimateaCoin2" method="_on_TawhirimateaCoin_body_entered"]
-[connection signal="body_entered" from="Coins/Jump Pattern 1/TawhirimateaCoin3" to="Coins/Jump Pattern 1/TawhirimateaCoin3" method="_on_TawhirimateaCoin_body_entered"]
-[connection signal="body_entered" from="Coins/Jump Pattern 1/TawhirimateaCoin4" to="Coins/Jump Pattern 1/TawhirimateaCoin4" method="_on_TawhirimateaCoin_body_entered"]
-[connection signal="body_entered" from="Coins/Jump Pattern 1/TawhirimateaCoin5" to="Coins/Jump Pattern 1/TawhirimateaCoin5" method="_on_TawhirimateaCoin_body_entered"]
-[connection signal="body_entered" from="Coins/Jump Pattern 1/TawhirimateaCoin6" to="Coins/Jump Pattern 1/TawhirimateaCoin6" method="_on_TawhirimateaCoin_body_entered"]
-[connection signal="body_entered" from="Coins/Jump Pattern 1/TawhirimateaCoin7" to="Coins/Jump Pattern 1/TawhirimateaCoin7" method="_on_TawhirimateaCoin_body_entered"]
-[connection signal="body_entered" from="Coins/Jump Pattern 1/TawhirimateaCoin8" to="Coins/Jump Pattern 1/TawhirimateaCoin8" method="_on_TawhirimateaCoin_body_entered"]
-[connection signal="body_entered" from="Coins/Jump Pattern 1/TawhirimateaCoin9" to="Coins/Jump Pattern 1/TawhirimateaCoin9" method="_on_TawhirimateaCoin_body_entered"]
+
+[node name="HUD" parent="." instance=ExtResource( 11 )]

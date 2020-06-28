@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://Scene/TileScenes/Wind/Res/wind.tres" type="TileSet" id=1]
 [ext_resource path="res://Assets/War/Tumatauenga.jpg" type="Texture" id=2]
@@ -25,8 +25,11 @@
 [ext_resource path="res://Assets/volcano-platformer-tileset/PNG/Environment/Volcano Level Set_Environment - Rock 08.png" type="Texture" id=23]
 [ext_resource path="res://Assets/volcano-platformer-tileset/PNG/Environment/Volcano Level Set_Environment - Rock 01.png" type="Texture" id=24]
 [ext_resource path="res://Assets/volcano-platformer-tileset/PNG/Environment/Volcano Level Set_Environment - Rock 05.png" type="Texture" id=25]
+[ext_resource path="res://Common/Map.gd" type="Script" id=26]
+[ext_resource path="res://Scene/HUD Health/HUD.tscn" type="PackedScene" id=27]
 
 [node name="WarLevel1" type="Node"]
+script = ExtResource( 26 )
 
 [node name="Background" type="Node" parent="."]
 
@@ -367,7 +370,8 @@ position = Vector2( 514.85, 474.812 )
 [node name="Tumatauenga6" parent="Enemies" instance=ExtResource( 20 )]
 position = Vector2( 1024.17, -105.91 )
 
-[node name="Player" type="Node" parent="."]
+[node name="Player" parent="." instance=ExtResource( 4 )]
+position = Vector2( -263.713, 543.249 )
+level = 9
 
-[node name="Player" parent="Player" instance=ExtResource( 4 )]
-position = Vector2( -260.431, 549.432 )
+[node name="HUD" parent="." instance=ExtResource( 27 )]

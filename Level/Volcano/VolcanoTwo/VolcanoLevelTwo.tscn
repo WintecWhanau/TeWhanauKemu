@@ -1,11 +1,14 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scene/TileScenes/Volcano/Res/volcano.tres" type="TileSet" id=1]
+[ext_resource path="res://Common/Map.gd" type="Script" id=2]
 [ext_resource path="res://Scene/Player/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scene/HUD Health/HUD.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Assets/volcano-platformer-tileset/Ruaumoko.jpg" type="Texture" id=5]
 [ext_resource path="res://Audio/BG Music/Volcano/VolcanoBGM1.wav" type="AudioStream" id=8]
 
 [node name="VolcanoLevel" type="Node"]
+script = ExtResource( 2 )
 
 [node name="VolcanoBG" type="Sprite" parent="."]
 position = Vector2( 507, 194.5 )
@@ -24,3 +27,6 @@ autoplay = true
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
 position = Vector2( -78.714, 543.058 )
+level = 8
+
+[node name="HUD" parent="." instance=ExtResource( 4 )]

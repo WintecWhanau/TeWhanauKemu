@@ -298,3 +298,7 @@ position = Vector2( 142.829, 499.35 )
 
 [node name="TangaroaCoin9" parent="." index="64"]
 position = Vector2( 244.075, 179.66 )
+
+[node name="Player" parent="." index="65"]
+position = Vector2( -257.038, 417.313 )
+level = 4
