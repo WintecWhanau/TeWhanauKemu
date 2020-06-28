@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Scene/TileScenes/Volcano/Res/volcano.tres" type="TileSet" id=1]
 [ext_resource path="res://Common/Map.gd" type="Script" id=2]
@@ -7,7 +7,7 @@
 [ext_resource path="res://Assets/volcano-platformer-tileset/Ruaumoko.jpg" type="Texture" id=5]
 [ext_resource path="res://Scene/Enemy/Ruaumoko/Ruaumoko.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Assets/volcano-platformer-tileset/PNG/Background/Volcano Level Set_Background - Layer 01.png" type="Texture" id=7]
-[ext_resource path="res://Audio/BG Music/Volcano/VolcanoBGM1.wav" type="AudioStream" id=8]
+[ext_resource path="res://Audio/BG Music/Volcano/VolcanoBGM2.wav" type="AudioStream" id=8]
 [ext_resource path="res://Assets/volcano-platformer-tileset/PNG/Environment/Volcano Level Set_Environment - Crack 02.png" type="Texture" id=9]
 [ext_resource path="res://Assets/volcano-platformer-tileset/PNG/Environment/Volcano Level Set_Environment - Crack 04.png" type="Texture" id=10]
 [ext_resource path="res://Assets/volcano-platformer-tileset/PNG/Environment/Volcano Level Set_Environment - Lava 01.png" type="Texture" id=11]
@@ -20,6 +20,8 @@
 [ext_resource path="res://Level/Volcano/VolcanoTwo/Platform.gd" type="Script" id=18]
 [ext_resource path="res://Assets/volcano-platformer-tileset/PNG/Environment/Volcano Level Set_Environment - Golden Key.png" type="Texture" id=19]
 [ext_resource path="res://Scene/Portal/Portal.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Scene/Collectables/Ruaumoko/RuaumokoCoin.tscn" type="PackedScene" id=21]
+[ext_resource path="res://Assets/volcano-platformer-tileset/PNG/Environment/Volcano Level Set_Environment - Signpost 04.png" type="Texture" id=22]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 37.5666, 6.55458 )
@@ -50,28 +52,6 @@ position = Vector2( -82.1772, 544.155 )
 level = 8
 
 [node name="HUD" parent="." instance=ExtResource( 4 )]
-
-[node name="Enemies" type="Node2D" parent="."]
-
-[node name="Ruaumoko" parent="Enemies" instance=ExtResource( 6 )]
-position = Vector2( 290.975, 540.207 )
-damage = 25
-
-[node name="Ruaumoko2" parent="Enemies" instance=ExtResource( 6 )]
-position = Vector2( 1036.21, 534.068 )
-damage = 25
-
-[node name="Ruaumoko3" parent="Enemies" instance=ExtResource( 6 )]
-position = Vector2( 358.501, 411.294 )
-damage = 25
-
-[node name="Ruaumoko4" parent="Enemies" instance=ExtResource( 6 )]
-position = Vector2( 778.389, 303.252 )
-damage = 25
-
-[node name="Ruaumoko5" parent="Enemies" instance=ExtResource( 6 )]
-position = Vector2( 327.807, 184.161 )
-damage = 25
 
 [node name="Environment" type="Node2D" parent="."]
 
@@ -131,6 +111,10 @@ position = Vector2( 380.145, 475.699 )
 scale = Vector2( 0.707286, 0.786413 )
 texture = ExtResource( 9 )
 
+[node name="Volcano Level Set_Environment - Signpost 04" type="Sprite" parent="Environment"]
+position = Vector2( 512.99, 215.351 )
+texture = ExtResource( 22 )
+
 [node name="TriggeredAreas" type="Node2D" parent="."]
 
 [node name="Lava" type="Node2D" parent="TriggeredAreas"]
@@ -167,7 +151,109 @@ position = Vector2( -84.9018, 62.9226 )
 position = Vector2( 84.708, -58.4963 )
 shape = SubResource( 2 )
 
+[node name="Collectables" type="Node2D" parent="."]
+position = Vector2( -319.031, -221.999 )
+
+[node name="RuaumokoCoin" parent="Collectables" instance=ExtResource( 21 )]
+position = Vector2( 716.193, 309.055 )
+
+[node name="RuaumokoCoin2" parent="Collectables" instance=ExtResource( 21 )]
+position = Vector2( 716.193, 350.798 )
+
+[node name="RuaumokoCoin3" parent="Collectables" instance=ExtResource( 21 )]
+position = Vector2( 717.42, 390.086 )
+
+[node name="RuaumokoCoin4" parent="Collectables" instance=ExtResource( 21 )]
+position = Vector2( 717.42, 426.918 )
+
+[node name="RuaumokoCoin5" parent="Collectables" instance=ExtResource( 21 )]
+position = Vector2( 1355.85, 628.268 )
+
+[node name="RuaumokoCoin6" parent="Collectables" instance=ExtResource( 21 )]
+position = Vector2( 1358.3, 670.011 )
+
+[node name="RuaumokoCoin7" parent="Collectables" instance=ExtResource( 21 )]
+position = Vector2( 1359.53, 714.21 )
+
+[node name="RuaumokoCoin8" parent="Collectables" instance=ExtResource( 21 )]
+position = Vector2( 1359.53, 763.32 )
+
+[node name="RuaumokoCoin9" parent="Collectables" instance=ExtResource( 21 )]
+position = Vector2( 331.909, 641.773 )
+
+[node name="RuaumokoCoin10" parent="Collectables" instance=ExtResource( 21 )]
+position = Vector2( 371.197, 641.773 )
+
+[node name="RuaumokoCoin11" parent="Collectables" instance=ExtResource( 21 )]
+position = Vector2( 412.94, 641.773 )
+
+[node name="RuaumokoCoin12" parent="Collectables" instance=ExtResource( 21 )]
+position = Vector2( 1152.04, 547.237 )
+
+[node name="RuaumokoCoin13" parent="Collectables" instance=ExtResource( 21 )]
+position = Vector2( 1195.01, 547.237 )
+
+[node name="RuaumokoCoin14" parent="Collectables" instance=ExtResource( 21 )]
+position = Vector2( 788.63, 69.6446 )
+
+[node name="RuaumokoCoin15" parent="Collectables" instance=ExtResource( 21 )]
+position = Vector2( 831.601, 68.4168 )
+
+[node name="RuaumokoCoin16" parent="Collectables" instance=ExtResource( 21 )]
+position = Vector2( 874.572, 69.6446 )
+
+[node name="RuaumokoCoin17" parent="Collectables" instance=ExtResource( 21 )]
+position = Vector2( 63.0332, 451.473 )
+
+[node name="Enemies" type="Node2D" parent="."]
+visible = false
+
+[node name="Ruaumoko" parent="Enemies" instance=ExtResource( 6 )]
+position = Vector2( 259.148, 538.154 )
+damage = 25
+
+[node name="Ruaumoko7" parent="Enemies" instance=ExtResource( 6 )]
+position = Vector2( 274.548, 407.764 )
+damage = 25
+
+[node name="Ruaumoko6" parent="Enemies" instance=ExtResource( 6 )]
+position = Vector2( 587.538, 536.126 )
+damage = 25
+
+[node name="Ruaumoko8" parent="Enemies" instance=ExtResource( 6 )]
+position = Vector2( 479.015, 538.872 )
+damage = 25
+
+[node name="Ruaumoko9" parent="Enemies" instance=ExtResource( 6 )]
+position = Vector2( 684.125, 409.61 )
+damage = 25
+
+[node name="Ruaumoko10" parent="Enemies" instance=ExtResource( 6 )]
+position = Vector2( 154.937, 410.971 )
+damage = 25
+
+[node name="Ruaumoko11" parent="Enemies" instance=ExtResource( 6 )]
+position = Vector2( 215.23, 313.137 )
+damage = 25
+
+[node name="Ruaumoko2" parent="Enemies" instance=ExtResource( 6 )]
+position = Vector2( 1036.21, 534.068 )
+damage = 25
+
+[node name="Ruaumoko12" parent="Enemies" instance=ExtResource( 6 )]
+position = Vector2( 1140.72, 400.411 )
+damage = 25
+
+[node name="Ruaumoko4" parent="Enemies" instance=ExtResource( 6 )]
+position = Vector2( 778.389, 303.252 )
+damage = 25
+
+[node name="Ruaumoko5" parent="Enemies" instance=ExtResource( 6 )]
+position = Vector2( 327.807, 184.161 )
+damage = 25
+
 [node name="PortalArea2D" parent="." instance=ExtResource( 20 )]
 position = Vector2( 1281.62, 221.957 )
+next_level = "res://Level/Volcano/VolcanoCutscene/VolcanoCutscene.tscn"
 [connection signal="body_entered" from="TriggeredAreas/Lava/Area2D" to="TriggeredAreas/Lava" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="TriggeredAreas/Platform/Sprite/Area2D" to="TriggeredAreas/Platform" method="_on_Area2D_body_entered"]

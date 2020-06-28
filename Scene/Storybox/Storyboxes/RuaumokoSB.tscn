@@ -42,6 +42,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 story_line_file = "res://Scene/Storybox/Scripts/Ruaumoko.txt"
+next_level = "res://Level/War/War1/WarLevel.tscn"
 
 [node name="Chat" type="Label" parent="."]
 margin_left = 52.0
@@ -95,7 +96,6 @@ position = Vector2( -32, 96 )
 scale = Vector2( 0.364583, 0.364583 )
 frames = SubResource( 5 )
 animation = "blink"
-frame = 2
 playing = true
 
 [node name="Sprite" type="Sprite" parent="."]
