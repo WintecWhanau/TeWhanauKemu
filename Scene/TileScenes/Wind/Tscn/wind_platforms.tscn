@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=2]
+[gd_scene load_steps=50 format=2]
 
 [ext_resource path="res://Assets/volcano-platformer-tileset/PNG/Platformer/Volcano Level Set_Platformer - Star.png" type="Texture" id=1]
 [ext_resource path="res://Assets/wind-platformer-tileset/PNG/Platformer/Cartoon Spooky Level Set_Platformer - Stone.png" type="Texture" id=2]
@@ -23,6 +23,9 @@
 [ext_resource path="res://Assets/wind-platformer-tileset/PNG/Platformer/Cartoon Spooky Level Set_Platformer - Ground 11.png" type="Texture" id=21]
 [ext_resource path="res://Assets/wind-platformer-tileset/PNG/Platformer/Cartoon Spooky Level Set_Platformer - Ground 12.png" type="Texture" id=22]
 [ext_resource path="res://Assets/wind-platformer-tileset/PNG/Platformer/Cartoon Spooky Level Set_Platformer - Ground 13.png" type="Texture" id=23]
+[ext_resource path="res://Assets/wind-platformer-tileset/PNG/Platformer/Cartoon Spooky Level Set_Platformer - Ground 14.png" type="Texture" id=24]
+[ext_resource path="res://Assets/wind-platformer-tileset/PNG/Platformer/Cartoon Spooky Level Set_Platformer - Ground 16.png" type="Texture" id=25]
+[ext_resource path="res://Assets/wind-platformer-tileset/PNG/Platformer/Cartoon Spooky Level Set_Platformer - Ground 15.png" type="Texture" id=26]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -67,6 +70,9 @@
 [sub_resource type="RectangleShape2D" id=21]
 
 [sub_resource type="RectangleShape2D" id=22]
+
+[sub_resource type="RectangleShape2D" id=23]
+extents = Vector2( 32, 32 )
 
 [node name="WindPlatforms" type="Node"]
 
@@ -145,7 +151,7 @@ position = Vector2( 736, 128 )
 texture = ExtResource( 8 )
 
 [node name="Bridge" type="Sprite" parent="."]
-position = Vector2( 639.733, 368.296 )
+position = Vector2( 648, 440 )
 texture = ExtResource( 9 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Bridge"]
@@ -155,7 +161,7 @@ scale = Vector2( 2.9, 0.6 )
 shape = SubResource( 8 )
 
 [node name="Spike" type="Sprite" parent="."]
-position = Vector2( 541.385, 366.849 )
+position = Vector2( 736, 440 )
 texture = ExtResource( 10 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Spike"]
@@ -229,6 +235,10 @@ texture = ExtResource( 14 )
 scale = Vector2( 3.2, 3.2 )
 shape = SubResource( 15 )
 
+[node name="Ground6NC" type="Sprite" parent="."]
+position = Vector2( 544, 352 )
+texture = ExtResource( 14 )
+
 [node name="Ground7" type="Sprite" parent="."]
 position = Vector2( 640, 256 )
 texture = ExtResource( 16 )
@@ -259,6 +269,10 @@ texture = ExtResource( 17 )
 position = Vector2( 8, 0 )
 scale = Vector2( 2.4, 3.2 )
 shape = SubResource( 18 )
+
+[node name="Ground9NC" type="Sprite" parent="."]
+position = Vector2( 640, 352 )
+texture = ExtResource( 17 )
 
 [node name="Ground10" type="Sprite" parent="."]
 position = Vector2( 64, 352 )
@@ -300,3 +314,34 @@ texture = ExtResource( 23 )
 position = Vector2( -8, 0 )
 scale = Vector2( 2.4, 3.2 )
 shape = SubResource( 22 )
+
+[node name="Ground13NC" type="Sprite" parent="."]
+position = Vector2( 736, 352 )
+texture = ExtResource( 23 )
+
+[node name="Ground14" type="Sprite" parent="."]
+position = Vector2( 64, 448 )
+texture = ExtResource( 24 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Ground14"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground14/StaticBody2D"]
+shape = SubResource( 23 )
+
+[node name="Ground15" type="Sprite" parent="."]
+position = Vector2( 160, 448 )
+texture = ExtResource( 26 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Ground15"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground15/StaticBody2D"]
+shape = SubResource( 23 )
+
+[node name="Ground16" type="Sprite" parent="."]
+position = Vector2( 256, 448 )
+texture = ExtResource( 25 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Ground16"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground16/StaticBody2D"]
+shape = SubResource( 23 )
