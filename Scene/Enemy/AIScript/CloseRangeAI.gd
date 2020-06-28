@@ -114,10 +114,10 @@ class CloseRangeEnemyStateMachine extends StateMachine:
 					enemy.AnimatedSprite.flip_h = true
 				walk_state_duration += delta
 			CHASE:
-				if enemy.player.position.x < enemy.position.x:
+				if enemy.player.position.x < enemy.position.x - 60:
 					enemy.AnimatedSprite.flip_h = true
 					enemy.direction = -1
-				elif enemy.player.position.x > enemy.position.x:
+				elif enemy.player.position.x > enemy.position.x +60:
 					enemy.AnimatedSprite.flip_h = false
 					enemy.direction = 1
 			DEAD:
