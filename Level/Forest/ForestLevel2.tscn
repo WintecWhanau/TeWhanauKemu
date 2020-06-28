@@ -174,7 +174,7 @@ position = Vector2( 1267.75, 547.402 )
 next_level = "res://Level/Forest/ForestCutscene.tscn"
 
 [node name="Player" parent="." instance=ExtResource( 17 )]
-position = Vector2( -223.722, -159.985 )
+position = Vector2( -174.355, -149.822 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( -269.735, -161.841 )
@@ -218,4 +218,3 @@ position = Vector2( 272.908, 542.643 )
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 24 )
 volume_db = -2.0
-autoplay = true
