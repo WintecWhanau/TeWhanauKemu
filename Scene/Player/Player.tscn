@@ -64,24 +64,24 @@ animations = [ {
 "name": "idle",
 "speed": 20.0
 }, {
-"frames": [ ExtResource( 30 ), ExtResource( 29 ), ExtResource( 31 ), ExtResource( 28 ), ExtResource( 26 ), ExtResource( 21 ), ExtResource( 20 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 27 ) ],
-"loop": true,
-"name": "run",
-"speed": 20.0
-}, {
 "frames": [ ExtResource( 46 ), ExtResource( 48 ), ExtResource( 45 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 53 ), ExtResource( 50 ), ExtResource( 52 ), ExtResource( 51 ), ExtResource( 47 ), ExtResource( 49 ) ],
 "loop": true,
 "name": "attack",
 "speed": 30.0
+}, {
+"frames": [ ExtResource( 42 ), ExtResource( 39 ), ExtResource( 38 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 43 ) ],
+"loop": true,
+"name": "fall",
+"speed": 20.0
 }, {
 "frames": [ ExtResource( 33 ), ExtResource( 37 ), ExtResource( 32 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 36 ) ],
 "loop": true,
 "name": "jump",
 "speed": 20.0
 }, {
-"frames": [ ExtResource( 42 ), ExtResource( 39 ), ExtResource( 38 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 43 ) ],
+"frames": [ ExtResource( 30 ), ExtResource( 29 ), ExtResource( 31 ), ExtResource( 28 ), ExtResource( 26 ), ExtResource( 21 ), ExtResource( 20 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 27 ) ],
 "loop": true,
-"name": "fall",
+"name": "run",
 "speed": 20.0
 } ]
 
@@ -113,24 +113,12 @@ editor_draw_drag_margin = true
 scale = Vector2( 0.08, 0.08 )
 frames = SubResource( 1 )
 animation = "run"
-frame = 9
+frame = 5
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 1.47429, 2.09398 )
 shape = SubResource( 2 )
-
-[node name="Label" type="Label" parent="."]
-margin_left = -20.3848
-margin_top = -72.7366
-margin_right = 19.6152
-margin_bottom = -58.7366
-text = "LABEL"
-align = 1
-uppercase = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Timers" type="Node2D" parent="."]
 
