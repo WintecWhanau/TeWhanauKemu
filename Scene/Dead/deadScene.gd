@@ -7,9 +7,6 @@ signal death_screen
 func _on_player_death_screen():
 	visible = true
 
-
-
-
 #if health >= 0: 
 	queue_free()
 	$death.visible = true

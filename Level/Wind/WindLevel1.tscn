@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scene/TileScenes/Wind/Res/wind.tres" type="TileSet" id=1]
 [ext_resource path="res://Assets/wind-platformer-tileset/Tawhirimatea.jpg" type="Texture" id=2]
@@ -8,8 +8,11 @@
 [ext_resource path="res://Scene/TileScenes/Wind/Tscn/wind_moving.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scene/Portal/Portal.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scene/Enemy/Tawhirimatea/Tawhirimatea.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Common/Map.gd" type="Script" id=9]
+[ext_resource path="res://Scene/HUD Health/HUD.tscn" type="PackedScene" id=10]
 
 [node name="WindLevel" type="Node"]
+script = ExtResource( 9 )
 
 [node name="BackgroundStuff" type="Node2D" parent="."]
 
@@ -374,3 +377,6 @@ max_speed_attack = 90
 
 [node name="Player" parent="." instance=ExtResource( 4 )]
 position = Vector2( -264, 536 )
+level = 5
+
+[node name="HUD" parent="." instance=ExtResource( 10 )]

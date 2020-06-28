@@ -17,7 +17,6 @@ func _ready():
 
 
 func _on_Area2D2_body_entered(body):
-	var wall = get_tree().get_root().get_child(0).get_node("Walls")
-	if wall.has_node("WallTwo"):
-		wall.get_node("WallTwo").queue_free()
+	$WallTwo.queue_free()
+	queue_free()
 	pass # Replace with function body.
