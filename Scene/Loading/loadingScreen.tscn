@@ -1,0 +1,71 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Scene/Loading/loadingScreen.gd" type="Script" id=1]
+[ext_resource path="res://Scene/Title/Title BG.jpg" type="Texture" id=2]
+[ext_resource path="res://Scene/Title/MauiTitle.png" type="Texture" id=3]
+[ext_resource path="res://Scene/Loading/Loading image.PNG" type="Texture" id=4]
+[ext_resource path="res://Audio/BG Music/Additional/Game Loading.wav" type="AudioStream" id=5]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Hide"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
+[node name="loadingScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Visual" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="Visual"]
+position = Vector2( 18.6157, -0.716003 )
+texture = ExtResource( 2 )
+
+[node name="Sprite2" type="Sprite" parent="Visual"]
+position = Vector2( 787.586, 209.068 )
+scale = Vector2( 0.246059, 0.147773 )
+texture = ExtResource( 3 )
+
+[node name="LoadingTween" type="Tween" parent="."]
+
+[node name="LoadScreenAnim" type="AnimationPlayer" parent="."]
+anims/Hide = SubResource( 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="LoadingBar" type="ProgressBar" parent="."]
+margin_left = 559.755
+margin_top = 514.821
+margin_right = 1047.76
+margin_bottom = 528.821
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Loading Image" type="Sprite" parent="."]
+position = Vector2( 808.348, 411.692 )
+scale = Vector2( 0.424237, 0.249088 )
+texture = ExtResource( 4 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+autoplay = true
