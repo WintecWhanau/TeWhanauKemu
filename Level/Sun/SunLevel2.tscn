@@ -1,50 +1,41 @@
-
 [gd_scene load_steps=12 format=2]
 
-
 [ext_resource path="res://Scene/TileScenes/Volcano/Res/volcano.tres" type="TileSet" id=1]
-[ext_resource path="res://Assets/Sun/Ra BG1.jpg" type="Texture" id=2]
 [ext_resource path="res://Audio/BG Music/Te Ra/TeRaBGM2.wav" type="AudioStream" id=3]
 [ext_resource path="res://Scene/Player/Player.tscn" type="PackedScene" id=4]
-
 [ext_resource path="res://Scene/Enemy/Boss/Boss.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Level/Sun/TanemahutaPoint.gd" type="Script" id=6]
 [ext_resource path="res://Scene/TileScenes/Volcano/Res/boss.tres" type="TileSet" id=7]
 [ext_resource path="res://Assets/volcano-platformer-tileset/PNG/Environment/Volcano Level Set_Environment - Rock 05.png" type="Texture" id=8]
 [ext_resource path="res://Assets/volcano-platformer-tileset/PNG/Environment/Volcano Level Set_Environment - Signpost 01.png" type="Texture" id=9]
 [ext_resource path="res://Assets/volcano-platformer-tileset/PNG/Environment/Volcano Level Set_Environment - Signpost 05.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Sun/Ra BG2.jpg" type="Texture" id=11]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 921.688, -124.044, 0, 0, 0, 0, 900.731, 455.964, 0, 0, 0, 0, 927.428, 449.29, 0, 0, 0, 0, 960.799, -126.026, 0, 0, 0, 0, 921.688, -124.044 )
-
 }
 
 [node name="VolcanoLevel" type="Node"]
 script = ExtResource( 6 )
 
 [node name="SunBG2" type="Sprite" parent="."]
-
 position = Vector2( 499.114, 209.844 )
-
 scale = Vector2( 0.880991, 0.959281 )
-texture = ExtResource( 2 )
+texture = ExtResource( 11 )
 
 [node name="SunTilemap" type="TileMap" parent="."]
 scale = Vector2( 0.5, 0.5 )
 tile_set = ExtResource( 1 )
 format = 1
-
 tile_data = PoolIntArray( -393226, 1610612750, 0, -393225, 1610612747, 0, -393224, 1610612747, 0, -393223, 1610612747, 0, -393222, 1610612747, 0, -393221, 1610612747, 0, -393220, 1610612747, 0, -393219, 1610612747, 0, -393218, 1610612747, 0, -393217, 1610612747, 0, -458752, 1610612747, 0, -458751, 1610612747, 0, -458750, 1610612747, 0, -458749, 1610612747, 0, -458748, 1610612747, 0, -458747, 1610612747, 0, -458746, 1610612747, 0, -458745, 1610612747, 0, -458744, 1610612747, 0, -458743, 1610612747, 0, -458742, 1610612747, 0, -458741, 1610612747, 0, -458740, 1610612747, 0, -458739, 1610612747, 0, -458738, 1610612747, 0, -458737, 1610612747, 0, -458736, 1610612747, 0, -458735, 1610612747, 0, -458734, 1610612747, 0, -458733, 1610612747, 0, -458732, 1610612747, 0, -458731, 1610612747, 0, -458730, 1610612747, 0, -458729, 1610612747, 0, -458728, 1610612747, 0, -458727, 1610612747, 0, -458726, 1610612747, 0, -458725, 1610612747, 0, -458724, 1610612747, 0, -458723, 1610612747, 0, -458722, 1610612747, 0, -458721, 1610612747, 0, -458720, 1610612747, 0, -458719, 1610612747, 0, -458718, 1610612747, 0, -458717, 1610612747, 0, -458716, 1610612747, 0, -458715, 1610612747, 0, -458714, 1610612747, 0, -458713, 1610612747, 0, -458712, 1610612747, 0, -458711, -1073741810, 0, -327690, -1610612725, 0, -393175, -1073741813, 0, -262154, -1610612725, 0, -327639, -1073741813, 0, -196618, -1610612725, 0, -262103, -1073741813, 0, -131082, -1610612725, 0, -196567, -1073741813, 0, -65546, -1610612725, 0, -131031, -1073741813, 0, -10, -1610612725, 0, -65495, -1073741813, 0, 65526, -1610612725, 0, 41, -1073741813, 0, 131062, -1610612725, 0, 65577, -1073741813, 0, 196598, -1610612725, 0, 131113, -1073741813, 0, 262134, -1610612725, 0, 196649, -1073741813, 0, 327670, -1610612725, 0, 262185, -1073741813, 0, 393206, -1610612725, 0, 327721, -1073741813, 0, 458742, -1610612725, 0, 458750, 19, 0, 393239, 21, 0, 393257, -1073741813, 0, 524278, -1610612725, 0, 458793, -1073741813, 0, 589814, -1610612725, 0, 524329, -1073741813, 0, 655350, -1610612725, 0, 655358, 19, 0, 589847, 21, 0, 589865, -1073741813, 0, 720886, -1610612725, 0, 655401, -1073741813, 0, 786422, -1610612725, 0, 720937, -1073741813, 0, 851958, -1610612725, 0, 851966, 19, 0, 786455, 21, 0, 786473, -1073741813, 0, 917494, -1610612725, 0, 852009, -1073741813, 0, 983030, -1610612725, 0, 917545, -1073741813, 0, 1048566, -1610612725, 0, 1048574, 19, 0, 983063, 21, 0, 983081, -1073741813, 0, 1114102, -1610612725, 0, 1048617, -1073741813, 0, 1179638, -1610612725, 0, 1114153, -1073741813, 0, 1245174, 16, 0, 1245175, 11, 0, 1245176, 11, 0, 1245177, 11, 0, 1245178, 11, 0, 1245179, 11, 0, 1245180, 11, 0, 1245181, 11, 0, 1245182, 11, 0, 1245183, 11, 0, 1179648, 11, 0, 1179649, 11, 0, 1179650, 11, 0, 1179651, 11, 0, 1179652, 11, 0, 1179653, 11, 0, 1179654, 11, 0, 1179655, 11, 0, 1179656, 11, 0, 1179657, 11, 0, 1179658, 11, 0, 1179659, 11, 0, 1179660, 11, 0, 1179661, 11, 0, 1179662, 11, 0, 1179663, 11, 0, 1179664, 11, 0, 1179665, 11, 0, 1179666, 11, 0, 1179667, 11, 0, 1179668, 11, 0, 1179669, 11, 0, 1179670, 11, 0, 1179671, 11, 0, 1179672, 11, 0, 1179673, 11, 0, 1179674, 11, 0, 1179675, 11, 0, 1179676, 11, 0, 1179677, 11, 0, 1179678, 11, 0, 1179679, 11, 0, 1179680, 11, 0, 1179681, 11, 0, 1179682, 11, 0, 1179683, 11, 0, 1179684, 11, 0, 1179685, 11, 0, 1179686, 11, 0, 1179687, 11, 0, 1179688, 11, 0, 1179689, 14, 0 )
-
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
 volume_db = -2.0
 
-
 [node name="Player" parent="." instance=ExtResource( 4 )]
-position = Vector2( 607.607, 504.554 )
+position = Vector2( -185.973, 549.453 )
 level = 7
 
 [node name="Path2D" type="Path2D" parent="."]
@@ -60,16 +51,16 @@ cubic_interp = false
 position = Vector2( 2.36816, -1.50798 )
 
 [node name="Enemy" type="Position2D" parent="."]
-position = Vector2( 594.938, 108.888 )
+position = Vector2( 547.262, 353.624 )
 
 [node name="Enemy2" type="Position2D" parent="."]
 position = Vector2( 109.562, 422.723 )
 
 [node name="Enemy3" type="Position2D" parent="."]
-position = Vector2( 142.525, 11.1277 )
+position = Vector2( 193.379, 261.161 )
 
 [node name="Enemy4" type="Position2D" parent="."]
-position = Vector2( 777.736, 77.0542 )
+position = Vector2( 579.617, 173.465 )
 
 [node name="TileMap" type="TileMap" parent="."]
 scale = Vector2( 0.5, 0.5 )
@@ -88,4 +79,3 @@ texture = ExtResource( 9 )
 [node name="Volcano Level Set_Environment - Signpost 05" type="Sprite" parent="TileMap"]
 position = Vector2( 1887.97, 1121.9 )
 texture = ExtResource( 10 )
-
