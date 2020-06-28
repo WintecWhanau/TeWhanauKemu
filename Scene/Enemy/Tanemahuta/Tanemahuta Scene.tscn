@@ -55,6 +55,16 @@ animations = [ {
 "name": "Dying",
 "speed": 8.0
 }, {
+"frames": [ ExtResource( 29 ), ExtResource( 28 ), ExtResource( 22 ), ExtResource( 24 ), ExtResource( 3 ), ExtResource( 13 ) ],
+"loop": true,
+"name": "Jump",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 42 ), ExtResource( 47 ), ExtResource( 46 ), ExtResource( 43 ), ExtResource( 45 ), ExtResource( 44 ) ],
+"loop": true,
+"name": "Falling",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 8 ), ExtResource( 4 ), ExtResource( 6 ), ExtResource( 12 ), ExtResource( 15 ), ExtResource( 9 ), ExtResource( 14 ) ],
 "loop": true,
 "name": "Walking",
@@ -65,11 +75,6 @@ animations = [ {
 "name": "Running",
 "speed": 12.0
 }, {
-"frames": [ ExtResource( 29 ), ExtResource( 28 ), ExtResource( 22 ), ExtResource( 24 ), ExtResource( 3 ), ExtResource( 13 ) ],
-"loop": true,
-"name": "Jump",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 2 ), ExtResource( 7 ), ExtResource( 11 ), ExtResource( 5 ), ExtResource( 10 ) ],
 "loop": true,
 "name": "Slashing",
@@ -78,11 +83,6 @@ animations = [ {
 "frames": [ ExtResource( 18 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 16 ), ExtResource( 19 ) ],
 "loop": true,
 "name": "Idle",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 42 ), ExtResource( 47 ), ExtResource( 46 ), ExtResource( 43 ), ExtResource( 45 ), ExtResource( 44 ) ],
-"loop": true,
-"name": "Falling",
 "speed": 5.0
 } ]
 
@@ -121,17 +121,14 @@ enabled = true
 cast_to = Vector2( 0, 24 )
 
 [node name="WallCheckLeft" type="RayCast2D" parent="."]
-visible = false
 enabled = true
 cast_to = Vector2( 24, 0 )
 
 [node name="WallCheckRight" type="RayCast2D" parent="."]
-visible = false
 enabled = true
 cast_to = Vector2( -24, 0 )
 
 [node name="HitBox" type="Area2D" parent="."]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
 light_mask = 2
@@ -139,7 +136,6 @@ position = Vector2( 0, 6 )
 shape = SubResource( 3 )
 
 [node name="DetectingBox" type="Area2D" parent="."]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectingBox"]
 position = Vector2( 0.19371, 0 )
