@@ -161,7 +161,8 @@ func take_damage(damage):
 	pass
 	
 func dead():
-	queue_free()
+	Dead.set_level(get_parent().filename)
+	get_tree().change_scene("res://Scene/Dead/deadScreen.tscn")
 
 class PlayerStateMachine extends StateMachine:
 	enum {IDLE, RUN, JUMP, DOUBLE_JUMP, FALL, ATTACK, SHOOT}
