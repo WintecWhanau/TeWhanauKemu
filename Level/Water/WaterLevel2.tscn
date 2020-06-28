@@ -206,99 +206,108 @@ position = Vector2( 452.309, 546.549 )
 [node name="Cartoon Water Game Tileset_Environment - Moss 05" parent="." index="33"]
 position = Vector2( 387.296, -97.8457 )
 
-[node name="PortalArea2D" parent="." index="34"]
-position = Vector2( 1290.6, 197.739 )
-
-[node name="TangaroaCoin" parent="." index="35"]
+[node name="TangaroaCoin" parent="." index="34"]
 position = Vector2( 92.5141, -163.079 )
 
-[node name="TangaroaCoin2" parent="." index="36"]
+[node name="TangaroaCoin2" parent="." index="35"]
 position = Vector2( 1289.17, 85.6178 )
 
-[node name="TangaroaCoin3" parent="." index="37"]
+[node name="TangaroaCoin3" parent="." index="36"]
 position = Vector2( 505.477, 62.0357 )
 
-[node name="TangaroaCoin4" parent="." index="38"]
+[node name="TangaroaCoin4" parent="." index="37"]
 position = Vector2( 200.555, -92.9117 )
 
-[node name="TangaroaCoin6" parent="." index="39"]
+[node name="TangaroaCoin6" parent="." index="38"]
 position = Vector2( -69.2682, -84.7989 )
 
-[node name="TangaroaCoin7" parent="." index="40"]
+[node name="TangaroaCoin7" parent="." index="39"]
 position = Vector2( 1297.27, -149.972 )
 
-[node name="TangaroaCoin8" parent="." index="41"]
+[node name="TangaroaCoin8" parent="." index="40"]
 position = Vector2( 994.413, 427.143 )
 
-[node name="TangaroaCoin10" parent="." index="42"]
+[node name="TangaroaCoin10" parent="." index="41"]
 position = Vector2( -97.8864, 228.741 )
 
-[node name="TangaroaCoin11" parent="." index="43"]
+[node name="TangaroaCoin11" parent="." index="42"]
 position = Vector2( 1285.99, 295.467 )
 
-[node name="TangaroaCoin12" parent="." index="44"]
+[node name="TangaroaCoin12" parent="." index="43"]
 position = Vector2( 1150.55, 30.5958 )
 
-[node name="TangaroaCoin14" parent="." index="45"]
+[node name="TangaroaCoin14" parent="." index="44"]
 position = Vector2( 559.567, 17.1787 )
 
-[node name="TangaroaCoin15" parent="." index="46"]
+[node name="TangaroaCoin15" parent="." index="45"]
 position = Vector2( 730.781, -15.3636 )
 
-[node name="TangaroaCoin16" parent="." index="47"]
+[node name="TangaroaCoin16" parent="." index="46"]
 position = Vector2( 84.5907, -30.8956 )
 
-[node name="TangaroaCoin17" parent="." index="48"]
+[node name="TangaroaCoin17" parent="." index="47"]
 position = Vector2( 959.499, -163.775 )
 
-[node name="Cartoon Water Game Tileset_Environment - Grass 05" parent="." index="49"]
+[node name="Cartoon Water Game Tileset_Environment - Grass 05" parent="." index="48"]
 position = Vector2( 1287.23, 561.043 )
 
-[node name="TangaroaCoin18" parent="." index="50"]
+[node name="TangaroaCoin18" parent="." index="49"]
 position = Vector2( 1292.16, -183.792 )
 
-[node name="TangaroaCoin19" parent="." index="51"]
+[node name="TangaroaCoin19" parent="." index="50"]
 position = Vector2( 83.0151, 18.901 )
 
-[node name="TangaroaCoin20" parent="." index="52"]
+[node name="TangaroaCoin20" parent="." index="51"]
 position = Vector2( 760.897, 219.362 )
 
-[node name="TangaroaCoin21" parent="." index="53"]
+[node name="TangaroaCoin21" parent="." index="52"]
 position = Vector2( 614.414, 69.5797 )
 
-[node name="TangaroaCoin22" parent="." index="54"]
+[node name="TangaroaCoin22" parent="." index="53"]
 position = Vector2( 989.87, -27.0532 )
 
-[node name="TangaroaCoin23" parent="." index="55"]
+[node name="TangaroaCoin23" parent="." index="54"]
 position = Vector2( 727.247, -65.9333 )
 
-[node name="TangaroaCoin24" parent="." index="56"]
+[node name="TangaroaCoin24" parent="." index="55"]
 position = Vector2( 1202.1, 523.143 )
 
-[node name="TangaroaCoin25" parent="." index="57"]
+[node name="TangaroaCoin25" parent="." index="56"]
 position = Vector2( 269.98, 495.657 )
 
-[node name="TangaroaCoin26" parent="." index="58"]
+[node name="TangaroaCoin26" parent="." index="57"]
 position = Vector2( 674.922, -162.368 )
 
-[node name="TangaroaCoin27" parent="." index="59"]
+[node name="TangaroaCoin27" parent="." index="58"]
 position = Vector2( 966.998, 237.674 )
 
-[node name="TangaroaCoin28" parent="." index="60"]
+[node name="TangaroaCoin28" parent="." index="59"]
 position = Vector2( 62.4791, 305.832 )
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="61"]
-stream = ExtResource( 5 )
-
-[node name="TangaroaCoin29" parent="." index="62"]
+[node name="TangaroaCoin29" parent="." index="60"]
 position = Vector2( 401.367, -162.633 )
 
-[node name="TangaroaCoin30" parent="." index="63"]
+[node name="TangaroaCoin30" parent="." index="61"]
 position = Vector2( 142.829, 499.35 )
 
-[node name="TangaroaCoin9" parent="." index="64"]
+[node name="TangaroaCoin9" parent="." index="62"]
 position = Vector2( 244.075, 179.66 )
 
-[node name="Player" parent="." index="65"]
-position = Vector2( -257.038, 417.313 )
-level = 4
+[node name="Player" parent="." index="63"]
+position = Vector2( -253.574, -149.583 )
+
+[node name="PortalArea2D" parent="." index="64"]
+position = Vector2( 1290.6, 197.739 )
+next_level = "res://Level/Water/WaterCutScene.tscn"
+
+[node name="Tangaroa" parent="." index="65"]
+position = Vector2( 956.503, -150.115 )
+
+[node name="Tangaroa2" parent="." index="66"]
+position = Vector2( 251.056, 105.221 )
+
+[node name="Tangaroa3" parent="." index="67"]
+position = Vector2( 898.577, 532.649 )
+
+[node name="AudioStreamPlayer" parent="." index="68"]
+stream = ExtResource( 5 )

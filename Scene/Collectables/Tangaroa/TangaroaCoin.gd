@@ -9,3 +9,7 @@ func _on_TangaroaCoin_body_entered(body):
 	if body.name == "Player":
 #		MainHUD.score += 10
 		queue_free()
+
+
+func _on_PortalArea2D_body_entered(body):
+	pass # Replace with function body.

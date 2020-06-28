@@ -27,7 +27,24 @@ func _ready():
 	button.set_text(\"Restart\")
 	
 	#set toggle name
-	button.set_toggle_mode(false)
+
+	#button.set_toggle_mode(true)
+
+	#Disable button
+	#button.set_disabled(true)
+
+#On button toggle
+#func on_toggled(pressed):
+	#if(pressed):
+		#print(\"Hello!\")
+	#else:
+		#print(\"Goodbye!\")
+		
+#On button pressed
+func on_pressed():
+	get_tree().change_scene(\"res://Title/Title.tscn\")
+	#print(\"Game Over\")
+
 
 func _on_RestartButton_pressed():
 	print(Dead.lastLevel)
@@ -53,10 +70,23 @@ func _ready():
 	button.set_text(\"Quit\")
 	
 	#set toggle name
-	button.set_toggle_mode(false)
+
+	button.set_toggle_mode(true)
+
+	#Disable button
+	button.set_disabled(true)
+
+#On button toggle
+func on_toggled(pressed):
+	if(pressed):
+		print(\"Hello!\")
+	else:
+		print(\"Goodbye!\")
 
 func _on_QuitButton_pressed():
-	get_tree().change_scene(\"res://Scene/Title/Title.tscn\")
+	get_tree().change_scene(\"res://Scene/About/About.tscn\")
+	print(\"Game Over\")
+
 	pass # Replace with function body.
 "
 
@@ -68,6 +98,7 @@ __meta__ = {
 }
 
 [node name="Background" type="Sprite" parent="."]
+position = Vector2( -6, 2 )
 texture = ExtResource( 1 )
 
 [node name="GameTitle" type="Sprite" parent="."]
@@ -89,6 +120,7 @@ margin_bottom = 493.0
 custom_fonts/font = SubResource( 2 )
 shortcut_in_tooltip = false
 action_mode = 0
+button_mask = 0
 text = "Restart"
 script = SubResource( 3 )
 __meta__ = {
@@ -102,6 +134,9 @@ margin_top = 457.549
 margin_right = 713.09
 margin_bottom = 494.549
 custom_fonts/font = SubResource( 4 )
+shortcut_in_tooltip = false
+action_mode = 0
+button_mask = 0
 text = "Quit"
 script = SubResource( 5 )
 __meta__ = {
@@ -112,5 +147,6 @@ button_path = NodePath(".")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
 autoplay = true
+
 [connection signal="pressed" from="RestartButton" to="RestartButton" method="_on_RestartButton_pressed"]
-[connection signal="pressed" from="QuitButton" to="QuitButton" method="_on_QuitButton_pressed"]
+
