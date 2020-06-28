@@ -118,22 +118,22 @@ position = Vector2( 198.247, 59.5489 )
 
 [node name="Ruaumoko" parent="." instance=ExtResource( 2 )]
 position = Vector2( 196.941, 535.108 )
-damage = 10
-hp = 20
+damage = 35
+hp = 40
 
 [node name="Ruaumoko2" parent="." instance=ExtResource( 2 )]
 position = Vector2( 201.023, -140.799 )
-damage = 10
-hp = 20
+damage = 35
+hp = 50
 
 [node name="Ruaumoko4" parent="." instance=ExtResource( 2 )]
 position = Vector2( 501.043, 131.601 )
-damage = 10
-hp = 20
+damage = 35
+hp = 50
 
 [node name="Ruaumoko3" parent="." instance=ExtResource( 2 )]
 position = Vector2( -43.0547, 177.563 )
-damage = 10
-hp = 20
+damage = 35
+hp = 40
 
 [node name="HUD" parent="." instance=ExtResource( 14 )]
