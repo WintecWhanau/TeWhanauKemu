@@ -131,7 +131,6 @@ class RangeEnemyStateMachine extends StateMachine:
 				enemy.direction = 0
 			
 			SHOOT:
-				print("shooting!!!")
 				if enemy.shot == false:
 					var bullet = BULLET.instance()
 					if enemy.direction > 0:

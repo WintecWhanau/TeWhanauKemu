@@ -108,6 +108,16 @@ animations = [ {
 "name": "Dying",
 "speed": 12.0
 }, {
+"frames": [ ExtResource( 88 ), ExtResource( 89 ), ExtResource( 71 ), ExtResource( 70 ), ExtResource( 72 ), ExtResource( 74 ), ExtResource( 49 ), ExtResource( 29 ), ExtResource( 37 ), ExtResource( 22 ), ExtResource( 24 ), ExtResource( 46 ) ],
+"loop": true,
+"name": "Jump",
+"speed": 12.0
+}, {
+"frames": [ ExtResource( 95 ), ExtResource( 96 ), ExtResource( 100 ), ExtResource( 97 ), ExtResource( 98 ), ExtResource( 99 ) ],
+"loop": true,
+"name": "Falling",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 38 ), ExtResource( 40 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 13 ), ExtResource( 11 ), ExtResource( 14 ), ExtResource( 19 ), ExtResource( 10 ), ExtResource( 2 ), ExtResource( 5 ), ExtResource( 7 ), ExtResource( 12 ), ExtResource( 3 ), ExtResource( 9 ), ExtResource( 20 ), ExtResource( 16 ), ExtResource( 4 ), ExtResource( 17 ), ExtResource( 15 ), ExtResource( 8 ), ExtResource( 18 ), ExtResource( 6 ) ],
 "loop": true,
 "name": "Walking",
@@ -116,11 +126,6 @@ animations = [ {
 "frames": [ ExtResource( 47 ), ExtResource( 33 ), ExtResource( 44 ), ExtResource( 42 ), ExtResource( 39 ), ExtResource( 35 ), ExtResource( 51 ), ExtResource( 41 ), ExtResource( 43 ), ExtResource( 45 ), ExtResource( 34 ), ExtResource( 50 ) ],
 "loop": true,
 "name": "Running",
-"speed": 12.0
-}, {
-"frames": [ ExtResource( 88 ), ExtResource( 89 ), ExtResource( 71 ), ExtResource( 70 ), ExtResource( 72 ), ExtResource( 74 ), ExtResource( 49 ), ExtResource( 29 ), ExtResource( 37 ), ExtResource( 22 ), ExtResource( 24 ), ExtResource( 46 ) ],
-"loop": true,
-"name": "Jump",
 "speed": 12.0
 }, {
 "frames": [ ExtResource( 23 ), ExtResource( 32 ), ExtResource( 36 ), ExtResource( 48 ), ExtResource( 31 ), ExtResource( 52 ), ExtResource( 21 ), ExtResource( 25 ), ExtResource( 30 ), ExtResource( 26 ), ExtResource( 28 ), ExtResource( 27 ) ],
@@ -132,11 +137,6 @@ animations = [ {
 "loop": true,
 "name": "Idle",
 "speed": 12.0
-}, {
-"frames": [ ExtResource( 95 ), ExtResource( 96 ), ExtResource( 100 ), ExtResource( 97 ), ExtResource( 98 ), ExtResource( 99 ) ],
-"loop": true,
-"name": "Falling",
-"speed": 5.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=2]
@@ -157,7 +157,7 @@ script = ExtResource( 1 )
 scale = Vector2( 0.09, 0.09 )
 frames = SubResource( 1 )
 animation = "Falling"
-frame = 3
+frame = 2
 playing = true
 offset = Vector2( 0, 3 )
 
@@ -166,41 +166,33 @@ position = Vector2( 0, 3 )
 shape = SubResource( 2 )
 
 [node name="GroundCheckLeft" type="RayCast2D" parent="."]
-visible = false
 position = Vector2( -14.2696, 0 )
 enabled = true
 cast_to = Vector2( 0, 24 )
 
 [node name="GroundCheckRight" type="RayCast2D" parent="."]
-visible = false
 position = Vector2( 14, 0 )
 enabled = true
 cast_to = Vector2( 0, 24 )
 
 [node name="WallCheckLeft" type="RayCast2D" parent="."]
-visible = false
 enabled = true
 cast_to = Vector2( 24, 0 )
 
 [node name="WallCheckRight" type="RayCast2D" parent="."]
-visible = false
 enabled = true
 cast_to = Vector2( -24, 0 )
 
 [node name="HitBox" type="Area2D" parent="."]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
-visible = false
 light_mask = 2
 position = Vector2( 0, 6 )
 shape = SubResource( 3 )
 
 [node name="DetectingBox" type="Area2D" parent="."]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectingBox"]
-visible = false
 position = Vector2( -0.522034, 0.429283 )
 rotation = 4.71239
 shape = SubResource( 4 )
