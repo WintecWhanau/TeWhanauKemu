@@ -50,8 +50,6 @@ onready var AnimatedSprite: AnimatedSprite = $AnimatedSprite
 # AUDIO
 onready var jumpAudio = $Audio/JumpAudio
 onready var shootAudio = $Audio/ShootAudio
-# DEBUG
-onready var Label: Label = $Label
 
 func _ready():
 	if level <= 6:
@@ -182,29 +180,23 @@ class PlayerStateMachine extends StateMachine:
 		"""Perform current state behavior"""
 		match state:
 			IDLE:
-				player.Label.text = 'idle'
 				_jump(player.jumpForce)
 			RUN:
-				player.Label.text = 'run'
 				_jump(player.jumpForce)
 			JUMP:
-				player.Label.text = 'jump'
 				if player.canDoubleJump: # double jump
 					_jump(player.jumpForce / 1.5)
 				pass
 			DOUBLE_JUMP:
-				player.Label.text = 'double jump'
 				pass
 			FALL:
-				player.Label.text = 'fall'
-				
 				if player.canDoubleJump: # double jump
 					_jump(player.jumpForce * 1.2)
 				pass
 			ATTACK:
-				player.Label.text = 'melee'
+				pass
 			SHOOT:
-				player.Label.text = 'shoot'
+				pass
 		_handle_input(delta)
 		player._sprite_flip()
 		player.process_velocity(delta)
