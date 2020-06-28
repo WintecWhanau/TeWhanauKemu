@@ -157,7 +157,11 @@ func _on_MeleeTimer_timeout():
 # end of _on_MeleeTimer_timeout
 
 func take_damage(damage):
+	$Health.set_current($Health.current - damage)
 	pass
+	
+func dead():
+	queue_free()
 
 class PlayerStateMachine extends StateMachine:
 	enum {IDLE, RUN, JUMP, DOUBLE_JUMP, FALL, ATTACK, SHOOT}

@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scene/HUD Health/HealthBar1.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scene/Enemy/Tanemahuta/Sprite/Idle/0_Golem_Idle_000.png" type="Texture" id=2]
 [ext_resource path="res://Scene/Sprites/Boss/Te_Rā1.png" type="Texture" id=3]
+[ext_resource path="res://Scene/HUD Health/Health.tscn" type="PackedScene" id=4]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.407843, 0.843137, 0.309804, 1 )
@@ -38,6 +39,9 @@ margin_bottom = 70.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Health" parent="Interface" instance=ExtResource( 4 )]
+current = 20
 
 [node name="HealthBar_Maui" parent="Interface" instance=ExtResource( 1 )]
 
@@ -97,3 +101,4 @@ stretch_mode = 6
 __meta__ = {
 "_edit_use_anchors_": false
 }
+[connection signal="changed" from="Interface/Health" to="Interface/HealthBar_Maui" method="set_value"]
