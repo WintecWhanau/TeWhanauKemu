@@ -5,7 +5,7 @@
 [ext_resource path="res://Scene/HUD Health/CoinCounter.gd" type="Script" id=3]
 [ext_resource path="res://Scene/HUD Health/CoinCounter.tscn" type="PackedScene" id=4]
 
-[node name="HUDCanvasLayer" type="CanvasLayer"]
+[node name="HUD" type="CanvasLayer"]
 script = ExtResource( 2 )
 
 [node name="HealthBar_Maui" parent="." instance=ExtResource( 1 )]
