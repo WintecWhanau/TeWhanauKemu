@@ -26,10 +26,10 @@ font_data = ExtResource( 4 )
 [sub_resource type="DynamicFont" id=4]
 font_data = ExtResource( 4 )
 
-[sub_resource type="DynamicFont" id=7]
+[sub_resource type="DynamicFont" id=5]
 font_data = ExtResource( 4 )
 
-[sub_resource type="SpriteFrames" id=5]
+[sub_resource type="SpriteFrames" id=6]
 animations = [ {
 "frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 5 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 3 ) ],
 "loop": true,
@@ -37,7 +37,7 @@ animations = [ {
 "speed": 4.0
 } ]
 
-[sub_resource type="SpriteFrames" id=6]
+[sub_resource type="SpriteFrames" id=7]
 animations = [ {
 "frames": [ ExtResource( 11 ), ExtResource( 9 ), ExtResource( 10 ) ],
 "loop": true,
@@ -99,7 +99,7 @@ margin_left = 448.0
 margin_top = 160.0
 margin_right = 544.0
 margin_bottom = 192.0
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 5 )
 text = "Fight!"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -108,16 +108,15 @@ __meta__ = {
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( -32, 96 )
 scale = Vector2( 0.364583, 0.364583 )
-frames = SubResource( 5 )
+frames = SubResource( 6 )
 animation = "blink"
-frame = 1
+frame = 4
 playing = true
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
 position = Vector2( 704, 96 )
 scale = Vector2( 0.364166, 0.364166 )
-frames = SubResource( 6 )
-frame = 2
+frames = SubResource( 7 )
 playing = true
 flip_h = true
 [connection signal="pressed" from="Next" to="Chat" method="_on_Next_pressed"]
