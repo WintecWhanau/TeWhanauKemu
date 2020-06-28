@@ -1,4 +1,6 @@
-[gd_scene load_steps=14 format=2]
+
+[gd_scene load_steps=13 format=2]
+
 
 [ext_resource path="res://Scene/TileScenes/Volcano/Res/volcano.tres" type="TileSet" id=1]
 [ext_resource path="res://Common/Map.gd" type="Script" id=2]
@@ -85,4 +87,6 @@ texture = ExtResource( 9 )
 position = Vector2( 1887.97, 1121.9 )
 texture = ExtResource( 10 )
 
-[node name="HUD" parent="VolcanoLevel" instance=ExtResource( 12 )]
+
+[node name="HUD" parent="." instance=ExtResource( 12 )]
+
