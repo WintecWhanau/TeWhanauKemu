@@ -34,6 +34,7 @@ autoplay = true
 
 [node name="PortalArea2D" parent="." instance=ExtResource( 4 )]
 position = Vector2( -277.884, -157.942 )
+next_level = "res://Level/Sun/SunCutScene.tscn"
 
 [node name="Node2D" type="Node2D" parent="."]
 
@@ -42,7 +43,7 @@ position = Vector2( -255, 545.663 )
 texture = ExtResource( 13 )
 
 [node name="RuaumokoCoin" parent="Node2D" instance=ExtResource( 7 )]
-position = Vector2( 907.993, 16.6678 )
+position = Vector2( 1290, 4.32166 )
 
 [node name="RuaumokoCoin2" parent="Node2D" instance=ExtResource( 7 )]
 position = Vector2( 302.189, 497.422 )
@@ -51,7 +52,34 @@ position = Vector2( 302.189, 497.422 )
 position = Vector2( 269.06, 171.221 )
 
 [node name="RuaumokoCoin4" parent="Node2D" instance=ExtResource( 7 )]
-position = Vector2( 227.68, 43.0764 )
+position = Vector2( 226.228, 39.4452 )
+
+[node name="RuaumokoCoin11" parent="Node2D" instance=ExtResource( 7 )]
+position = Vector2( 977.89, 397.483 )
+
+[node name="RuaumokoCoin16" parent="Node2D" instance=ExtResource( 7 )]
+position = Vector2( 977.89, 397.483 )
+
+[node name="RuaumokoCoin14" parent="Node2D" instance=ExtResource( 7 )]
+position = Vector2( 1139.84, 332.121 )
+
+[node name="RuaumokoCoin15" parent="Node2D" instance=ExtResource( 7 )]
+position = Vector2( 1139.84, 332.121 )
+
+[node name="RuaumokoCoin12" parent="Node2D" instance=ExtResource( 7 )]
+position = Vector2( 476.055, 425.807 )
+
+[node name="RuaumokoCoin13" parent="Node2D" instance=ExtResource( 7 )]
+position = Vector2( 715.716, 337.205 )
+
+[node name="RuaumokoCoin9" parent="Node2D" instance=ExtResource( 7 )]
+position = Vector2( 466.614, 234.079 )
+
+[node name="RuaumokoCoin10" parent="Node2D" instance=ExtResource( 7 )]
+position = Vector2( 614.768, -49.1566 )
+
+[node name="RuaumokoCoin8" parent="Node2D" instance=ExtResource( 7 )]
+position = Vector2( 431.755, -89.1 )
 
 [node name="RuaumokoCoin5" parent="Node2D" instance=ExtResource( 7 )]
 position = Vector2( 233.844, 464.888 )
@@ -86,4 +114,13 @@ position = Vector2( -208.283, 549.49 )
 position = Vector2( 198.247, 59.5489 )
 
 [node name="Ruaumoko" parent="." instance=ExtResource( 2 )]
-position = Vector2( 204.288, 534.292 )
+position = Vector2( 196.941, 535.108 )
+
+[node name="Ruaumoko2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 201.023, -140.799 )
+
+[node name="Ruaumoko4" parent="." instance=ExtResource( 2 )]
+position = Vector2( 501.043, 131.601 )
+
+[node name="Ruaumoko3" parent="." instance=ExtResource( 2 )]
+position = Vector2( -43.0547, 177.563 )
