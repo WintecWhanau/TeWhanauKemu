@@ -6,11 +6,13 @@ var enemyB = preload('res://Scene/Enemy/Ruaumoko/Ruaumoko.tscn')
 var enemyC = preload('res://Scene/Enemy/Tangaroa/Tangaroa Scene.tscn')
 var enemyD = preload('res://Scene/Enemy/Tumatauenga/Tumatauenga.tscn')
 onready var pointA = get_node("Enemy")
+
 onready var pointB = get_node("Enemy2")
 onready var pointC = get_node("Enemy3")
 onready var pointD = get_node("Enemy4")
 onready var enemyArray = [enemyA,enemyB, enemyC, enemyD]
 onready var enemySpwan = [pointA,pointB,pointC,pointD]
+
 var screenSize:Vector2
 func _ready():
 	screenSize = get_viewport().get_visible_rect().size
@@ -23,8 +25,10 @@ func _physics_process(delta):
 
 class FianlLevelStateMachine extends StateMachine:
 	var F: Final
+
 	var idle_state_duration = 0
 	var state_stay = 0
+
 	enum {IDLE,SPWAN}
 	func _init(final: Final):
 		F = final
@@ -35,15 +39,18 @@ class FianlLevelStateMachine extends StateMachine:
 	func _do_actions(delta):
 		match state:
 			SPWAN:
+
 				randPoint()
 			IDLE:
 				if F.pointA.get_child_count()+ F.pointB.get_child_count() + F.pointC.get_child_count() + F.pointD.get_child_count() == 0:
 					idle_state_duration += delta
 					print(idle_state_duration)
+
 				
 	func _check_conditions(delta):
 		match state:
 			IDLE:
+
 				if F.pointA.get_child_count()+ F.pointB.get_child_count() + F.pointC.get_child_count() + F.pointD.get_child_count() ==0 and idle_state_duration > state_stay:
 					return SPWAN
 			SPWAN:
@@ -83,5 +90,6 @@ class FianlLevelStateMachine extends StateMachine:
 		e.position.x = point.position.x
 		e.position.y = point.position.y
 		point.add_child(e)
+
 
 

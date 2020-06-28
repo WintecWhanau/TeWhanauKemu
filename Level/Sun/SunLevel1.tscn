@@ -3,9 +3,11 @@
 [ext_resource path="res://Scene/TileScenes/Volcano/Res/volcano.tres" type="TileSet" id=1]
 [ext_resource path="res://Assets/Sun/Ra BG2.jpg" type="Texture" id=2]
 [ext_resource path="res://Audio/BG Music/Te Ra/TeRaBGM2.wav" type="AudioStream" id=3]
+
 [ext_resource path="res://Scene/Portal/Portal.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scene/Player/Player.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scene/TileScenes/Volcano/Tscn/volcano_moving.tscn" type="PackedScene" id=6]
+
 
 [node name="VolcanoLevel" type="Node"]
 

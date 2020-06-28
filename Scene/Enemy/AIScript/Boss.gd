@@ -3,7 +3,9 @@ class_name Boss
 onready var path_follow = get_parent()
 export var speed:int = 150
 var move_directiom = 0
+
 export var hp:int = 1000
+
 
 func _physics_process(delta):
 	MovementLoop(delta) # Replace with function body.
@@ -19,3 +21,4 @@ func takeDamage(damage):
 	hp -= damage
 	if hp <= 0:
 		queue_free()
+

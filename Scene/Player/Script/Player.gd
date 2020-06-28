@@ -145,8 +145,8 @@ func melee():
 
 func _on_Taiaha_body_entered(body):
 	if isAttacking:
-		if body.name != 'Player' && body.has_method('take_damage'):
-			body.take_damage()
+		if body.name != 'Player' && body.has_method('takeDamage'):
+			body.takeDamage(taiahaDamage)
 # end of _on_Taiaha_body_entered
 
 func _on_MeleeTimer_timeout():
