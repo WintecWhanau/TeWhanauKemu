@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scene/Loading/Main.gd" type="Script" id=1]
+[ext_resource path="res://Scene/Loading/loadingScreen.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Audio/BG Music/Additional/Game Loading.wav" type="AudioStream" id=3]
+
+[node name="Main" type="Control"]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="loadingScreen" parent="." instance=ExtResource( 2 )]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+autoplay = true
