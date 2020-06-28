@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://Scene/TileScenes/Wind/Res/wind.tres" type="TileSet" id=1]
 [ext_resource path="res://Assets/War/Tumatauenga.jpg" type="Texture" id=2]
@@ -20,6 +20,11 @@
 [ext_resource path="res://Assets/volcano-platformer-tileset/PNG/Environment/Volcano Level Set_Environment - Crack 05.png" type="Texture" id=18]
 [ext_resource path="res://Level/War/WarCutscene/WarCutsceneBG.jpg" type="Texture" id=19]
 [ext_resource path="res://Scene/Enemy/Tumatauenga/Tumatauenga.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Assets/volcano-platformer-tileset/PNG/Environment/Volcano Level Set_Environment - Rock 02.png" type="Texture" id=21]
+[ext_resource path="res://Assets/volcano-platformer-tileset/PNG/Environment/Volcano Level Set_Environment - Rock 07.png" type="Texture" id=22]
+[ext_resource path="res://Assets/volcano-platformer-tileset/PNG/Environment/Volcano Level Set_Environment - Rock 08.png" type="Texture" id=23]
+[ext_resource path="res://Assets/volcano-platformer-tileset/PNG/Environment/Volcano Level Set_Environment - Rock 01.png" type="Texture" id=24]
+[ext_resource path="res://Assets/volcano-platformer-tileset/PNG/Environment/Volcano Level Set_Environment - Rock 05.png" type="Texture" id=25]
 
 [node name="WarLevel1" type="Node"]
 
@@ -306,11 +311,35 @@ texture = ExtResource( 12 )
 position = Vector2( 821, 572 )
 texture = ExtResource( 14 )
 
+[node name="Lava3" type="Sprite" parent="Lava"]
+position = Vector2( 97.5627, 539.17 )
+texture = ExtResource( 14 )
+
 [node name="Misc" type="Node" parent="."]
 
 [node name="Skull" type="Sprite" parent="Misc"]
-position = Vector2( 557, 560 )
+position = Vector2( 835.229, -77.063 )
 texture = ExtResource( 15 )
+
+[node name="Rock1" type="Sprite" parent="Misc"]
+position = Vector2( 7.39698, 564.936 )
+texture = ExtResource( 25 )
+
+[node name="Rock2" type="Sprite" parent="Misc"]
+position = Vector2( 33.1138, 561.541 )
+texture = ExtResource( 22 )
+
+[node name="Rock3" type="Sprite" parent="Misc"]
+position = Vector2( 461.274, 547.221 )
+texture = ExtResource( 21 )
+
+[node name="Rock4" type="Sprite" parent="Misc"]
+position = Vector2( 492.558, 538.12 )
+texture = ExtResource( 23 )
+
+[node name="Rock5" type="Sprite" parent="Misc"]
+position = Vector2( 566.509, 552.706 )
+texture = ExtResource( 24 )
 
 [node name="Audio" type="Node" parent="."]
 
