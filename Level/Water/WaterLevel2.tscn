@@ -302,3 +302,12 @@ position = Vector2( 244.075, 179.66 )
 [node name="Player" parent="." index="65"]
 position = Vector2( -257.038, 417.313 )
 level = 4
+
+[node name="Enemy1" parent="Enemies" index="0"]
+position = Vector2( 745.06, 20.3963 )
+
+[node name="Enemy2" parent="Enemies" index="1"]
+position = Vector2( 187.426, -107.655 )
+
+[node name="Enemy3" parent="Enemies" index="2"]
+position = Vector2( 531.21, 534.174 )

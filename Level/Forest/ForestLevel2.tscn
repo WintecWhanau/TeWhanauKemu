@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://Scene/TileScenes/Forest/Res/forest.tres" type="TileSet" id=1]
 [ext_resource path="res://Assets/forest-platformer-tileset/Tanemahuta.jpg" type="Texture" id=2]
@@ -26,6 +26,8 @@
 [ext_resource path="res://Audio/BG Music/Forest/ForestBGM2.wav" type="AudioStream" id=24]
 [ext_resource path="res://Common/Map.gd" type="Script" id=25]
 [ext_resource path="res://Scene/HUD Health/HUD.tscn" type="PackedScene" id=26]
+[ext_resource path="res://Scene/Enemy/AIScript/CloseRangeAI.gd" type="Script" id=27]
+[ext_resource path="res://Scene/Enemy/Tanemahuta/Tanemahuta Scene.tscn" type="PackedScene" id=28]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -223,3 +225,20 @@ volume_db = -2.0
 autoplay = true
 
 [node name="HUD" parent="." instance=ExtResource( 26 )]
+
+[node name="Tanemahuta" type="KinematicBody2D" parent="." instance=ExtResource( 28 )]
+position = Vector2( 899.181, -165.299 )
+script = ExtResource( 27 )
+damage = 10
+
+[node name="Tanemahuta2" parent="." instance=ExtResource( 28 )]
+position = Vector2( 98.2905, 82.2732 )
+damage = 10
+
+[node name="Tanemahuta3" parent="." instance=ExtResource( 28 )]
+position = Vector2( 835.757, 208.287 )
+damage = 10
+
+[node name="Tanemahuta4" parent="." instance=ExtResource( 28 )]
+position = Vector2( 540.77, 520.457 )
+damage = 10

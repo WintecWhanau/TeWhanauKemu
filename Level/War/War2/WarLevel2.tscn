@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://Scene/TileScenes/Wind/Res/wind.tres" type="TileSet" id=1]
 [ext_resource path="res://Level/War/War2/Tūmatauenga.png" type="Texture" id=2]
@@ -30,6 +30,7 @@
 [ext_resource path="res://Assets/volcano-platformer-tileset/PNG/Environment/Volcano Level Set_Environment - Rock 04.png" type="Texture" id=28]
 [ext_resource path="res://Assets/volcano-platformer-tileset/PNG/Environment/Volcano Level Set_Environment - Rock 05.png" type="Texture" id=29]
 [ext_resource path="res://Scene/HUD Health/HUD.tscn" type="PackedScene" id=30]
+[ext_resource path="res://Common/Map.gd" type="Script" id=31]
 
 [sub_resource type="Animation" id=1]
 resource_name = "strafe"
@@ -61,6 +62,7 @@ tracks/1/keys = {
 }
 
 [node name="WarLevel2" type="Node"]
+script = ExtResource( 31 )
 
 [node name="Background" type="Node" parent="."]
 
@@ -465,24 +467,31 @@ autoplay = true
 
 [node name="Tumatauenga" parent="Enemies" instance=ExtResource( 8 )]
 position = Vector2( 636.596, 512.023 )
+damage = 35
 
 [node name="Tumatauenga2" parent="Enemies" instance=ExtResource( 8 )]
 position = Vector2( 1261.74, 250.311 )
+damage = 35
 
 [node name="Tumatauenga3" parent="Enemies" instance=ExtResource( 8 )]
 position = Vector2( 1227.84, -41.1488 )
+damage = 35
 
 [node name="Tumatauenga4" parent="Enemies" instance=ExtResource( 8 )]
 position = Vector2( 627.4, -31.0322 )
+damage = 35
 
 [node name="Tumatauenga5" parent="Enemies" instance=ExtResource( 8 )]
 position = Vector2( 149.062, 186.73 )
+damage = 35
 
 [node name="Tumatauenga6" parent="Enemies" instance=ExtResource( 8 )]
 position = Vector2( 1222.75, 540.192 )
+damage = 35
 
 [node name="Tumatauenga7" parent="Enemies" instance=ExtResource( 8 )]
 position = Vector2( -160.165, 540.192 )
+damage = 35
 
 [node name="Player" parent="." instance=ExtResource( 9 )]
 position = Vector2( -261.955, -158.228 )
