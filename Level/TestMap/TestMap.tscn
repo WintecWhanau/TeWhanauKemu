@@ -1,11 +1,14 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scene/TileScenes/Forest/Res/forest.tres" type="TileSet" id=1]
 [ext_resource path="res://Assets/forest-platformer-tileset/Tanemahuta.jpg" type="Texture" id=2]
 [ext_resource path="res://Scene/Enemy/Tanemahuta/Tanemahuta Scene.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Common/Map.gd" type="Script" id=4]
+[ext_resource path="res://Scene/HUD Health/HUD.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scene/Player/Player.tscn" type="PackedScene" id=15]
 
 [node name="ForestLevel" type="Node"]
+script = ExtResource( 4 )
 
 [node name="ForestBG" type="Sprite" parent="."]
 position = Vector2( 512.448, 197.361 )
@@ -27,3 +30,5 @@ level = 4
 
 [node name="KinematicBody2D" parent="." instance=ExtResource( 3 )]
 position = Vector2( 630.71, 336.91 )
+
+[node name="HUDCanvasLayer" parent="." instance=ExtResource( 5 )]

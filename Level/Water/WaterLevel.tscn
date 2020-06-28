@@ -1,4 +1,6 @@
+
 [gd_scene load_steps=30 format=2]
+
 
 [ext_resource path="res://Assets/water-platformer-tileset/Tangaroa.jpg" type="Texture" id=1]
 [ext_resource path="res://Assets/water-platformer-tileset/PNG/Environment/156-1569523_underwater-bubble-clip-art-hd-png-download.png" type="Texture" id=2]
@@ -28,9 +30,12 @@
 [ext_resource path="res://Assets/water-platformer-tileset/PNG/Environment/Cartoon Water Game Tileset_Environment - Signpost 04.png" type="Texture" id=26]
 [ext_resource path="res://Scene/Portal/Portal.tscn" type="PackedScene" id=27]
 [ext_resource path="res://Scene/Player/Player.tscn" type="PackedScene" id=28]
+
 [ext_resource path="res://Scene/Enemy/Tangaroa/Tangaroa Scene.tscn" type="PackedScene" id=29]
 
+
 [node name="WaterLevel1" type="Node"]
+script = ExtResource( 30 )
 
 [node name="WaterBG" type="Sprite" parent="."]
 position = Vector2( 514, 190 )
@@ -396,6 +401,7 @@ position = Vector2( 692.321, 479.727 )
 position = Vector2( 112.814, 210.721 )
 
 [node name="Player" parent="." instance=ExtResource( 28 )]
+
 position = Vector2( -242.06, 495.379 )
 
 [node name="PortalArea2D" parent="." instance=ExtResource( 27 )]
@@ -416,3 +422,4 @@ scale = Vector2( 1.09467, 1.82883 )
 stream = ExtResource( 12 )
 autoplay = true
 [connection signal="body_entered" from="PortalArea2D" to="WaterBG/TangaroaCoin5" method="_on_PortalArea2D_body_entered"]
+
