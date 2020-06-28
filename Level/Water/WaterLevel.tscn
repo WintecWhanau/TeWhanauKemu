@@ -1,34 +1,32 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://Assets/water-platformer-tileset/Tangaroa.jpg" type="Texture" id=1]
 [ext_resource path="res://Assets/water-platformer-tileset/PNG/Environment/156-1569523_underwater-bubble-clip-art-hd-png-download.png" type="Texture" id=2]
 [ext_resource path="res://Assets/water-platformer-tileset/PNG/Environment/Cartoon Water Game Tileset_Environment - Grass 01.png" type="Texture" id=3]
 [ext_resource path="res://Assets/water-platformer-tileset/PNG/Environment/Cartoon Water Game Tileset_Environment - Rock 01.png" type="Texture" id=4]
 [ext_resource path="res://Assets/water-platformer-tileset/PNG/Environment/Cartoon Water Game Tileset_Environment - Rock 06.png" type="Texture" id=5]
-[ext_resource path="res://Assets/water-platformer-tileset/PNG/Environment/Cartoon Water Game Tileset_Environment - Rock 05.png" type="Texture" id=6]
-[ext_resource path="res://Assets/water-platformer-tileset/PNG/Environment/Cartoon Water Game Tileset_Environment - Moss 03.png" type="Texture" id=7]
-[ext_resource path="res://Assets/water-platformer-tileset/PNG/Environment/Cartoon Water Game Tileset_Environment - Moss 01.png" type="Texture" id=8]
-[ext_resource path="res://Assets/water-platformer-tileset/PNG/Environment/Cartoon Water Game Tileset_Environment - Signpost 06.png" type="Texture" id=9]
-[ext_resource path="res://Assets/water-platformer-tileset/PNG/Environment/Cartoon Water Game Tileset_Environment - Grass 02.png" type="Texture" id=10]
-[ext_resource path="res://Assets/water-platformer-tileset/PNG/Environment/Cartoon Water Game Tileset_Environment - Grass 03.png" type="Texture" id=11]
-[ext_resource path="res://Assets/water-platformer-tileset/PNG/Environment/Cartoon Water Game Tileset_Environment - Rock 08.png" type="Texture" id=12]
-[ext_resource path="res://Assets/water-platformer-tileset/PNG/Platformer/Cartoon Water Game Tileset_Platformer - Ground Additional 02.png" type="Texture" id=13]
-[ext_resource path="res://Assets/water-platformer-tileset/PNG/Environment/Cartoon Water Game Tileset_Environment - Rock 04.png" type="Texture" id=14]
-[ext_resource path="res://Assets/water-platformer-tileset/PNG/Platformer/Cartoon Water Game Tileset_Platformer - Ground Additional 04.png" type="Texture" id=15]
-[ext_resource path="res://Assets/water-platformer-tileset/PNG/Environment/Cartoon Water Game Tileset_Environment - Rock 02.png" type="Texture" id=16]
-[ext_resource path="res://Assets/water-platformer-tileset/PNG/Environment/Cartoon Water Game Tileset_Environment - Signpost 02.png" type="Texture" id=17]
-[ext_resource path="res://Assets/water-platformer-tileset/PNG/Environment/Cartoon Water Game Tileset_Environment - Signpost 01.png" type="Texture" id=18]
-[ext_resource path="res://Scene/Collectables/Tangaroa/TangaroaCoin.tscn" type="PackedScene" id=19]
-[ext_resource path="res://Scene/TileScenes/Water/Res/water.tres" type="TileSet" id=20]
-[ext_resource path="res://Assets/water-platformer-tileset/PNG/Environment/Cartoon Water Game Tileset_Environment - White Flag.png" type="Texture" id=21]
-[ext_resource path="res://Assets/water-platformer-tileset/PNG/Platformer/Cartoon Water Game Tileset_Platformer - Ground Additional 01.png" type="Texture" id=22]
+[ext_resource path="res://Assets/water-platformer-tileset/PNG/Environment/Cartoon Water Game Tileset_Environment - Moss 03.png" type="Texture" id=6]
+[ext_resource path="res://Assets/water-platformer-tileset/PNG/Environment/Cartoon Water Game Tileset_Environment - Moss 01.png" type="Texture" id=7]
+[ext_resource path="res://Assets/water-platformer-tileset/PNG/Environment/Cartoon Water Game Tileset_Environment - Rock 05.png" type="Texture" id=8]
+[ext_resource path="res://Assets/water-platformer-tileset/PNG/Environment/Cartoon Water Game Tileset_Environment - Grass 02.png" type="Texture" id=9]
+[ext_resource path="res://Assets/water-platformer-tileset/PNG/Environment/Cartoon Water Game Tileset_Environment - Grass 03.png" type="Texture" id=10]
+[ext_resource path="res://Scene/Collectables/Tangaroa/TangaroaCoin.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Audio/BG Music/Water/WaterBGM1.wav" type="AudioStream" id=12]
+[ext_resource path="res://Assets/water-platformer-tileset/PNG/Environment/Cartoon Water Game Tileset_Environment - Rock 08.png" type="Texture" id=13]
+[ext_resource path="res://Assets/water-platformer-tileset/PNG/Platformer/Cartoon Water Game Tileset_Platformer - Ground Additional 02.png" type="Texture" id=14]
+[ext_resource path="res://Assets/water-platformer-tileset/PNG/Environment/Cartoon Water Game Tileset_Environment - Rock 04.png" type="Texture" id=15]
+[ext_resource path="res://Assets/water-platformer-tileset/PNG/Platformer/Cartoon Water Game Tileset_Platformer - Ground Additional 04.png" type="Texture" id=16]
+[ext_resource path="res://Assets/water-platformer-tileset/PNG/Environment/Cartoon Water Game Tileset_Environment - Rock 02.png" type="Texture" id=17]
+[ext_resource path="res://Assets/water-platformer-tileset/PNG/Environment/Cartoon Water Game Tileset_Environment - Signpost 02.png" type="Texture" id=18]
+[ext_resource path="res://Assets/water-platformer-tileset/PNG/Environment/Cartoon Water Game Tileset_Environment - Signpost 01.png" type="Texture" id=19]
+[ext_resource path="res://Assets/water-platformer-tileset/PNG/Platformer/Cartoon Water Game Tileset_Platformer - Ground Additional 01.png" type="Texture" id=20]
+[ext_resource path="res://Scene/TileScenes/Water/Res/water.tres" type="TileSet" id=21]
+[ext_resource path="res://Assets/water-platformer-tileset/PNG/Environment/Cartoon Water Game Tileset_Environment - Signpost 06.png" type="Texture" id=22]
 [ext_resource path="res://Assets/water-platformer-tileset/PNG/Environment/Cartoon Water Game Tileset_Environment - Signpost 03.png" type="Texture" id=23]
-[ext_resource path="res://Scene/Player/Player.tscn" type="PackedScene" id=24]
-[ext_resource path="res://Assets/water-platformer-tileset/PNG/Platformer/Cartoon Water Game Tileset_Platformer - Ground Additional 05.png" type="Texture" id=25]
+[ext_resource path="res://Assets/water-platformer-tileset/PNG/Platformer/Cartoon Water Game Tileset_Platformer - Ground Additional 05.png" type="Texture" id=24]
+[ext_resource path="res://Assets/water-platformer-tileset/PNG/Platformer/Cartoon Water Game Tileset_Platformer - Ground Additional 06.png" type="Texture" id=25]
 [ext_resource path="res://Assets/water-platformer-tileset/PNG/Environment/Cartoon Water Game Tileset_Environment - Signpost 04.png" type="Texture" id=26]
 [ext_resource path="res://Scene/Portal/Portal.tscn" type="PackedScene" id=27]
-[ext_resource path="res://Assets/water-platformer-tileset/PNG/Platformer/Cartoon Water Game Tileset_Platformer - Ground Additional 06.png" type="Texture" id=28]
-
 
 [node name="WaterLevel1" type="Node"]
 
@@ -48,85 +46,83 @@ scale = Vector2( 0.913517, 0.546798 )
 texture = ExtResource( 2 )
 
 [node name="Cartoon Water Game Tileset_Environment - Grass 01" type="Sprite" parent="WaterBG"]
-position = Vector2( -525.401, -2.29047 )
+position = Vector2( -223.59, 157.322 )
 texture = ExtResource( 3 )
 
 [node name="Cartoon Water Game Tileset_Environment - Rock 01" type="Sprite" parent="WaterBG"]
-position = Vector2( -162.714, -27.794 )
+position = Vector2( -663.308, 160.114 )
 texture = ExtResource( 4 )
 
 [node name="Cartoon Water Game Tileset_Environment - Rock 06" type="Sprite" parent="WaterBG"]
-position = Vector2( -186.616, -25.3058 )
+position = Vector2( -704.179, 156.798 )
 texture = ExtResource( 5 )
 
-[node name="Cartoon Water Game Tileset_Environment - Rock 05" type="Sprite" parent="WaterBG"]
-position = Vector2( -265.635, 98.268 )
+[node name="Cartoon Water Game Tileset_Environment - Moss 04" type="Sprite" parent="WaterBG"]
+position = Vector2( -14.7162, -82.8299 )
 texture = ExtResource( 6 )
 
-[node name="Cartoon Water Game Tileset_Environment - Moss 04" type="Sprite" parent="WaterBG"]
-position = Vector2( -19.8586, -81.8039 )
-
-texture = ExtResource( 7 )
-
 [node name="Cartoon Water Game Tileset_Environment - Moss 05" type="Sprite" parent="WaterBG"]
-position = Vector2( -143.418, -84.2156 )
-texture = ExtResource( 7 )
+position = Vector2( -136.561, -84.2156 )
+texture = ExtResource( 6 )
 
 [node name="Cartoon Water Game Tileset_Environment - Moss 03" type="Sprite" parent="WaterBG"]
 position = Vector2( -179.68, -154.958 )
-texture = ExtResource( 7 )
+texture = ExtResource( 6 )
 
 [node name="Cartoon Water Game Tileset_Environment - Moss 01" type="Sprite" parent="WaterBG"]
-position = Vector2( 658.375, 85.4057 )
-texture = ExtResource( 8 )
-
-[node name="Cartoon Water Game Tileset_Environment - Signpost 06" type="Sprite" parent="WaterBG"]
-position = Vector2( 185.626, 75.759 )
-texture = ExtResource( 9 )
+position = Vector2( -674.926, -182.309 )
+texture = ExtResource( 7 )
 
 [node name="Cartoon Water Game Tileset_Environment - Rock 07" type="Sprite" parent="WaterBG"]
 position = Vector2( 709.411, -187.114 )
-texture = ExtResource( 6 )
+texture = ExtResource( 8 )
 
 [node name="Cartoon Water Game Tileset_Environment - Grass 02" type="Sprite" parent="WaterBG"]
 position = Vector2( -367.705, -194.349 )
-texture = ExtResource( 10 )
+texture = ExtResource( 9 )
 
 [node name="Cartoon Water Game Tileset_Environment - Grass 03" type="Sprite" parent="WaterBG"]
 position = Vector2( -312.641, -194.349 )
-texture = ExtResource( 11 )
+texture = ExtResource( 10 )
 
 [node name="Cartoon Water Game Tileset_Environment - Grass 04" type="Sprite" parent="WaterBG"]
 position = Vector2( -281.751, -199.172 )
 texture = ExtResource( 3 )
 
+[node name="TangaroaCoin5" parent="WaterBG" instance=ExtResource( 11 )]
+position = Vector2( -475.109, 185.05 )
+scale = Vector2( 0.913517, 0.546798 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="WaterBG"]
+stream = ExtResource( 12 )
+
 [node name="Cartoon Water Game Tileset_Environment - Rock 13" type="Sprite" parent="."]
-position = Vector2( 211.884, 368.965 )
+position = Vector2( 89.8147, 538.801 )
 scale = Vector2( 1.09467, 1.82883 )
-texture = ExtResource( 12 )
+texture = ExtResource( 13 )
 
 [node name="Cartoon Water Game Tileset_Environment - Rock 14" type="Sprite" parent="."]
-position = Vector2( 177.642, 368.245 )
+position = Vector2( 58.0929, 547.008 )
 scale = Vector2( 1.09467, 1.82883 )
-texture = ExtResource( 6 )
+texture = ExtResource( 8 )
 
 [node name="Cartoon Water Game Tileset_Platformer - Ground Additional 03" type="Sprite" parent="."]
 position = Vector2( 1271.15, -37.8084 )
 scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 13 )
+texture = ExtResource( 14 )
 
 [node name="Cartoon Water Game Tileset_Platformer - Ground Additional 02" type="Sprite" parent="."]
 position = Vector2( -53.4657, 502.79 )
-texture = ExtResource( 13 )
+texture = ExtResource( 14 )
 
 [node name="Cartoon Water Game Tileset_Environment - Grass 03" type="Sprite" parent="."]
 position = Vector2( -253.735, 498.82 )
-texture = ExtResource( 11 )
+texture = ExtResource( 10 )
 
 [node name="Cartoon Water Game Tileset_Environment - Rock 10" type="Sprite" parent="."]
 position = Vector2( 1091.96, 44.7488 )
 scale = Vector2( 1.09467, 1.82883 )
-texture = ExtResource( 6 )
+texture = ExtResource( 8 )
 
 [node name="Cartoon Water Game Tileset_Environment - Rock 11" type="Sprite" parent="."]
 position = Vector2( 1066.93, 54.9872 )
@@ -136,248 +132,266 @@ texture = ExtResource( 5 )
 [node name="Cartoon Water Game Tileset_Environment - Rock 12" type="Sprite" parent="."]
 position = Vector2( 1037.35, 54.9872 )
 scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 6 )
+texture = ExtResource( 8 )
 
 [node name="Cartoon Water Game Tileset_Environment - Rock 04" type="Sprite" parent="."]
 position = Vector2( 1066.93, 54.9872 )
-texture = ExtResource( 14 )
+texture = ExtResource( 15 )
 
 [node name="Cartoon Water Game Tileset_Platformer - Ground Additional 04" type="Sprite" parent="."]
 position = Vector2( 154.119, -77.2202 )
-texture = ExtResource( 15 )
-
-[node name="Cartoon Water Game Tileset_Environment - Moss 06" type="Sprite" parent="."]
-position = Vector2( -145.798, 38.9243 )
-texture = ExtResource( 7 )
-
-[node name="Cartoon Water Game Tileset_Environment - Rock 02" type="Sprite" parent="."]
-position = Vector2( 174.702, 368.245 )
 texture = ExtResource( 16 )
 
-[node name="Cartoon Water Game Tileset_Environment - Signpost 02" type="Sprite" parent="."]
-position = Vector2( 1105.33, 219.757 )
+[node name="Cartoon Water Game Tileset_Environment - Rock 02" type="Sprite" parent="."]
+position = Vector2( 67.2279, 555.33 )
 texture = ExtResource( 17 )
+
+[node name="Cartoon Water Game Tileset_Environment - Signpost 02" type="Sprite" parent="."]
+position = Vector2( 526.827, 355.095 )
+texture = ExtResource( 18 )
+flip_h = true
+
+[node name="Cartoon Water Game Tileset_Environment - Signpost 03" type="Sprite" parent="."]
+position = Vector2( 376.894, -31.0159 )
+texture = ExtResource( 18 )
 
 [node name="Cartoon Water Game Tileset_Environment - Signpost 01" type="Sprite" parent="."]
 position = Vector2( 1131.79, -158.08 )
-texture = ExtResource( 18 )
+texture = ExtResource( 19 )
 
-[node name="TangaroaCoin13" parent="." instance=ExtResource( 19 )]
+[node name="TangaroaCoin13" parent="." instance=ExtResource( 11 )]
 position = Vector2( 1299.44, -159.373 )
 
+[node name="Cartoon Water Game Tileset_Platformer - Ground Additional 01" type="Sprite" parent="."]
+position = Vector2( 423.727, 240.695 )
+scale = Vector2( 0.5, 0.640977 )
+texture = ExtResource( 20 )
+
 [node name="WaterTilemap" type="TileMap" parent="."]
+position = Vector2( 3, 0 )
 scale = Vector2( 0.5, 0.5 )
-tile_set = ExtResource( 20 )
+tile_set = ExtResource( 21 )
 format = 1
-tile_data = PoolIntArray( -393226, -1610612722, 0, -393225, 1610612745, 0, -393224, 1610612745, 0, -393223, 1610612745, 0, -393222, 1610612745, 0, -393221, 1610612745, 0, -393220, 1610612745, 0, -393219, 1610612745, 0, -393218, 1610612745, 0, -393217, 1610612745, 0, -458752, 1610612745, 0, -458751, 1610612745, 0, -458750, 1610612745, 0, -458749, 1610612745, 0, -458748, 1610612745, 0, -458747, 1610612745, 0, -458746, 1610612745, 0, -458745, 1610612745, 0, -458744, 1610612745, 0, -458743, 1610612745, 0, -458742, 1610612745, 0, -458741, 1610612745, 0, -458740, 1610612745, 0, -458739, 1610612745, 0, -458738, 1610612745, 0, -458737, 1610612745, 0, -458736, 1610612745, 0, -458735, 1610612745, 0, -458734, 1610612745, 0, -458733, 1610612745, 0, -458732, 1610612745, 0, -458731, 1610612745, 0, -458730, 1610612745, 0, -458729, 1610612745, 0, -458728, 1610612745, 0, -458727, 1610612745, 0, -458726, 1610612745, 0, -458725, 1610612745, 0, -458724, 1610612745, 0, -458723, 1610612745, 0, -458722, 1610612745, 0, -458721, 1610612745, 0, -458720, 1610612745, 0, -458719, 1610612745, 0, -458718, 1610612745, 0, -458717, 1610612745, 0, -458716, 1610612745, 0, -458715, 1610612745, 0, -458714, 1610612745, 0, -458713, 1610612745, 0, -458712, 1610612745, 0, -458711, -1073741812, 0, -327690, -1610612727, 0, -393175, -1073741815, 0, -262154, -1610612727, 0, -327639, -1073741815, 0, -196618, -1610612727, 0, -196617, 9, 0, -196616, 9, 0, -196615, 19, 0, -196610, 17, 0, -196609, 18, 0, -262144, 19, 0, -262136, 17, 0, -262135, 9, 0, -262134, 9, 0, -262133, 19, 0, -262129, 8, 0, -262128, 9, 0, -262127, 9, 0, -262126, 9, 0, -262125, 19, 0, -262121, 17, 0, -262120, 18, 0, -262119, 18, 0, -262118, 18, 0, -262117, 19, 0, -262109, 17, 0, -262108, 18, 0, -262107, 18, 0, -262106, 18, 0, -262105, 18, 0, -262104, 18, 0, -262103, -1073741815, 0, -131082, -1610612727, 0, -196603, 18, 0, -196594, 8, 0, -196593, 12, 0, -196592, 13, 0, -196591, 20, 0, -196589, 6, 0, -196567, -1073741815, 0, -65546, -1610612727, 0, -65541, 18, 0, -131059, 8, 0, -131058, 12, 0, -131057, 13, 0, -131056, 13, 0, -131055, 20, 0, -131053, 2, 0, -131042, 17, 0, -131041, 18, 0, -131040, 19, 0, -131032, 6, 0, -131031, -1073741815, 0, -10, -1610612727, 0, -65533, 18, 0, -65527, 6, 0, -65524, 8, 0, -65523, 12, 0, -65522, 13, 0, -65521, 13, 0, -65520, 13, 0, -65519, 20, 0, -65517, 2, 0, -65515, 2, 0, -65496, 3, 0, -65495, -1073741815, 0, 65526, -1610612727, 0, 65529, 17, 0, 65530, 9, 0, 65531, 9, 0, 65532, 9, 0, 65533, 19, 0, 9, 17, 0, 10, 18, 0, 11, 18, 0, 12, 12, 0, 13, 13, 0, 14, 13, 0, 15, 13, 0, 16, 13, 0, 17, 20, 0, 20, 17, 0, 21, 18, 0, 22, 18, 0, 23, 19, 0, 26, 3, 0, 38, 17, 0, 39, 18, 0, 40, 18, 0, 41, -1073741815, 0, 131062, -1610612727, 0, 65540, 2, 0, 65562, 17, 0, 65563, 18, 0, 65564, 19, 0, 65577, -1073741815, 0, 196598, -1610612727, 0, 131076, 2, 0, 131104, 17, 0, 131105, 18, 0, 131106, 18, 0, 131107, 19, 0, 131113, -1073741815, 0, 262134, -1610612727, 0, 262135, 1, 0, 262136, 3, 0, 196612, 17, 0, 196613, 18, 0, 196614, 19, 0, 196649, -1073741815, 0, 327670, -1610612727, 0, 327671, 5, 0, 327672, 3, 0, 262162, 17, 0, 262163, 18, 0, 262164, 19, 0, 262185, -1073741815, 0, 393206, -1610612727, 0, 393207, 3, 0, 393208, 11, 0, 393209, 9, 0, 393210, 9, 0, 393211, 15, 0, 327687, 17, 0, 327688, 18, 0, 327689, 18, 0, 327690, 18, 0, 327691, 19, 0, 327721, -1073741815, 0, 458742, -1610612727, 0, 458743, 19, 0, 393229, 8, 0, 393230, 9, 0, 393231, 15, 0, 393239, 17, 0, 393240, 18, 0, 393241, 18, 0, 393242, 18, 0, 393243, 18, 0, 393244, 18, 0, 393245, 19, 0, 393256, 5, 0, 393257, -1073741815, 0, 524278, -1610612727, 0, 524285, 17, 0, 524286, 19, 0, 458764, 8, 0, 458765, 12, 0, 458766, 13, 0, 458767, 20, 0, 458791, 6, 0, 458792, 5, 0, 458793, -1073741815, 0, 589814, -1610612727, 0, 589815, 1, 0, 524299, 8, 0, 524300, 12, 0, 524301, 13, 0, 524302, 13, 0, 524303, 20, 0, 524322, 17, 0, 524323, 18, 0, 524324, 18, 0, 524325, 18, 0, 524326, 18, 0, 524327, 18, 0, 524328, 18, 0, 524329, -1073741815, 0, 655350, -1610612727, 0, 655351, 5, 0, 655352, 6, 0, 655359, 17, 0, 589824, 9, 0, 589825, 19, 0, 589834, 8, 0, 589835, 12, 0, 589836, 13, 0, 589837, 13, 0, 589838, 13, 0, 589839, 20, 0, 589865, -1073741815, 0, 720886, -1610612727, 0, 720887, 17, 0, 720888, 18, 0, 720889, 18, 0, 720890, 19, 0, 655401, -1073741815, 0, 786422, -1610612727, 0, 720937, -1073741815, 0, 851958, -1610612727, 0, 786435, 11, 0, 786436, 9, 0, 786437, 9, 0, 786438, 9, 0, 786439, 15, 0, 786441, 18, 0, 786449, 17, 0, 786450, 18, 0, 786451, 18, 0, 786452, 18, 0, 786453, 18, 0, 786454, 19, 0, 786458, 17, 0, 786459, 18, 0, 786460, 18, 0, 786461, 19, 0, 786473, -1073741815, 0, 917494, -1610612727, 0, 851971, 16, 0, 851972, 13, 0, 851973, 13, 0, 851974, 13, 0, 851975, 20, 0, 851979, 8, 0, 851980, 9, 0, 851981, 18, 0, 851982, 19, 0, 852009, -1073741815, 0, 983030, -1610612727, 0, 983039, 17, 0, 917504, 18, 0, 917505, 18, 0, 917506, 19, 0, 917508, 16, 0, 917509, 13, 0, 917510, 20, 0, 917514, 8, 0, 917515, 12, 0, 917516, 20, 0, 917536, 11, 0, 917537, 9, 0, 917538, 9, 0, 917539, 9, 0, 917540, 10, 0, 917545, -1073741815, 0, 1048566, -1610612727, 0, 983044, 16, 0, 983045, 13, 0, 983046, 20, 0, 983072, 16, 0, 983073, 13, 0, 983074, 13, 0, 983075, 13, 0, 983076, 14, 0, 983077, 10, 0, 983081, -1073741815, 0, 1114102, -1610612727, 0, 1114103, 11, 0, 1114104, 9, 0, 1114105, 9, 0, 1114106, 9, 0, 1114107, 9, 0, 1114108, 15, 0, 1048580, 16, 0, 1048581, 13, 0, 1048582, 20, 0, 1048596, 4, 0, 1048606, 3, 0, 1048607, 1, 0, 1048608, 7, 0, 1048609, 7, 0, 1048610, 13, 0, 1048611, 13, 0, 1048612, 13, 0, 1048613, 14, 0, 1048614, 9, 0, 1048615, 9, 0, 1048616, 15, 0, 1048617, -1073741815, 0, 1179638, -1610612727, 0, 1179639, 16, 0, 1179640, 13, 0, 1179641, 13, 0, 1179642, 13, 0, 1179643, 13, 0, 1179644, 20, 0, 1114115, 4, 0, 1114116, 16, 0, 1114117, 13, 0, 1114118, 20, 0, 1114120, 4, 0, 1114132, 4, 0, 1114141, 4, 0, 1114142, 3, 0, 1114143, 3, 0, 1114144, 16, 0, 1114145, 13, 0, 1114146, 13, 0, 1114147, 4, 0, 1114148, 13, 0, 1114149, 13, 0, 1114150, 13, 0, 1114151, 13, 0, 1114152, 20, 0, 1114153, -1073741815, 0, 1245174, 14, 0, 1245175, 9, 0, 1245176, 9, 0, 1245177, 9, 0, 1245178, 9, 0, 1245179, 9, 0, 1245180, 9, 0, 1245181, 9, 0, 1245182, 9, 0, 1245183, 9, 0, 1179648, 9, 0, 1179649, 9, 0, 1179650, 9, 0, 1179651, 9, 0, 1179652, 9, 0, 1179653, 9, 0, 1179654, 9, 0, 1179655, 9, 0, 1179656, 9, 0, 1179657, 9, 0, 1179658, 9, 0, 1179659, 9, 0, 1179660, 9, 0, 1179661, 9, 0, 1179662, 9, 0, 1179663, 9, 0, 1179664, 9, 0, 1179665, 9, 0, 1179666, 9, 0, 1179667, 9, 0, 1179668, 9, 0, 1179669, 9, 0, 1179670, 9, 0, 1179671, 9, 0, 1179672, 9, 0, 1179673, 9, 0, 1179674, 9, 0, 1179675, 9, 0, 1179676, 9, 0, 1179677, 9, 0, 1179678, 9, 0, 1179679, 9, 0, 1179680, 9, 0, 1179681, 9, 0, 1179682, 9, 0, 1179683, 9, 0, 1179684, 9, 0, 1179685, 9, 0, 1179686, 9, 0, 1179687, 9, 0, 1179688, 9, 0, 1179689, 12, 0 )
+tile_data = PoolIntArray( -393226, -1610612722, 0, -393225, 1610612745, 0, -393224, 1610612745, 0, -393223, 1610612745, 0, -393222, 1610612745, 0, -393221, 1610612745, 0, -393220, 1610612745, 0, -393219, 1610612745, 0, -393218, 1610612745, 0, -393217, 1610612745, 0, -458752, 1610612745, 0, -458751, 1610612745, 0, -458750, 1610612745, 0, -458749, 1610612745, 0, -458748, 1610612745, 0, -458747, 1610612745, 0, -458746, 1610612745, 0, -458745, 1610612745, 0, -458744, 1610612745, 0, -458743, 1610612745, 0, -458742, 1610612745, 0, -458741, 1610612745, 0, -458740, 1610612745, 0, -458739, 1610612745, 0, -458738, 1610612745, 0, -458737, 1610612745, 0, -458736, 1610612745, 0, -458735, 1610612745, 0, -458734, 1610612745, 0, -458733, 1610612745, 0, -458732, 1610612745, 0, -458731, 1610612745, 0, -458730, 1610612745, 0, -458729, 1610612745, 0, -458728, 1610612745, 0, -458727, 1610612745, 0, -458726, 1610612745, 0, -458725, 1610612745, 0, -458724, 1610612745, 0, -458723, 1610612745, 0, -458722, 1610612745, 0, -458721, 1610612745, 0, -458720, 1610612745, 0, -458719, 1610612745, 0, -458718, 1610612745, 0, -458717, 1610612745, 0, -458716, 1610612745, 0, -458715, 1610612745, 0, -458714, 1610612745, 0, -458713, 1610612745, 0, -458712, 1610612745, 0, -458711, -1073741812, 0, -327690, -1610612727, 0, -393175, -1073741815, 0, -262154, -1610612727, 0, -327639, -1073741815, 0, -196618, -1610612727, 0, -196617, 9, 0, -196616, 9, 0, -196615, 19, 0, -262140, 4, 0, -262136, 17, 0, -262135, 18, 0, -262134, 18, 0, -262133, 19, 0, -262129, 8, 0, -262128, 9, 0, -262127, 9, 0, -262126, 9, 0, -262125, 19, 0, -262121, 17, 0, -262120, 18, 0, -262119, 18, 0, -262118, 18, 0, -262117, 19, 0, -262114, 17, 0, -262113, 18, 0, -262112, 19, 0, -262109, 17, 0, -262108, 18, 0, -262107, 18, 0, -262106, 18, 0, -262105, 18, 0, -262104, 18, 0, -262103, -1073741815, 0, -131082, -1610612727, 0, -196594, 8, 0, -196593, 12, 0, -196592, 13, 0, -196591, 20, 0, -196589, 6, 0, -196567, -1073741815, 0, -65546, -1610612727, 0, -131059, 8, 0, -131058, 12, 0, -131057, 13, 0, -131056, 13, 0, -131055, 20, 0, -131053, 2, 0, -131051, 2, 0, -131032, 6, 0, -131031, -1073741815, 0, -10, -1610612727, 0, -9, 18, 0, -8, 19, 0, -65524, 8, 0, -65523, 12, 0, -65522, 13, 0, -65521, 13, 0, -65520, 13, 0, -65519, 20, 0, -65517, 2, 0, -65515, 2, 0, -65496, 3, 0, -65495, -1073741815, 0, 65526, -1610612727, 0, 65532, 17, 0, 65533, 18, 0, 65534, 19, 0, 2, 17, 0, 3, 18, 0, 4, 18, 0, 5, 19, 0, 9, 17, 0, 10, 18, 0, 11, 18, 0, 12, 12, 0, 13, 13, 0, 14, 13, 0, 15, 13, 0, 16, 13, 0, 17, 20, 0, 20, 17, 0, 21, 18, 0, 22, 18, 0, 23, 19, 0, 26, 3, 0, 38, 17, 0, 39, 18, 0, 40, 18, 0, 41, -1073741815, 0, 131062, -1610612727, 0, 65562, 17, 0, 65563, 18, 0, 65564, 19, 0, 65577, -1073741815, 0, 196598, -1610612727, 0, 196599, 18, 0, 196600, 18, 0, 196601, 19, 0, 131104, 17, 0, 131105, 18, 0, 131106, 18, 0, 131107, 19, 0, 131113, -1073741815, 0, 262134, -1610612727, 0, 196649, -1073741815, 0, 327670, -1610612727, 0, 262164, 1, 0, 262185, -1073741815, 0, 393206, -1610612727, 0, 393207, 18, 0, 393208, 18, 0, 393209, 18, 0, 393210, 19, 0, 327700, 3, 0, 327701, 3, 0, 327702, 3, 0, 327703, 3, 0, 327721, -1073741815, 0, 458742, -1610612727, 0, 458748, 5, 0, 393241, 1, 0, 393256, 5, 0, 393257, -1073741815, 0, 524278, -1610612727, 0, 524284, 17, 0, 524285, 18, 0, 524286, 18, 0, 524287, 18, 0, 458752, 19, 0, 458756, 17, 0, 458757, 18, 0, 458758, 18, 0, 458759, 19, 0, 458777, 3, 0, 458778, 3, 0, 458779, 3, 0, 458780, 3, 0, 458791, 6, 0, 458792, 5, 0, 458793, -1073741815, 0, 589814, -1610612727, 0, 524298, 5, 0, 524324, 17, 0, 524325, 18, 0, 524326, 18, 0, 524327, 18, 0, 524328, 18, 0, 524329, -1073741815, 0, 655350, -1610612727, 0, 589834, 17, 0, 589835, 18, 0, 589836, 18, 0, 589837, 19, 0, 589865, -1073741815, 0, 720886, -1610612727, 0, 655391, 17, 0, 655392, 18, 0, 655393, 19, 0, 655401, -1073741815, 0, 786422, -1610612727, 0, 720937, -1073741815, 0, 851958, -1610612727, 0, 786435, 11, 0, 786436, 9, 0, 786437, 9, 0, 786438, 9, 0, 786439, 19, 0, 786446, 8, 0, 786447, 9, 0, 786448, 15, 0, 786458, 17, 0, 786459, 18, 0, 786460, 19, 0, 786473, -1073741815, 0, 917494, -1610612727, 0, 851971, 16, 0, 851972, 13, 0, 851973, 13, 0, 851974, 20, 0, 851981, 8, 0, 851982, 12, 0, 851983, 13, 0, 851984, 20, 0, 851986, 2, 0, 852000, 17, 0, 852001, 18, 0, 852002, 19, 0, 852009, -1073741815, 0, 983030, -1610612727, 0, 983039, 17, 0, 917504, 18, 0, 917505, 18, 0, 917506, 19, 0, 917507, 16, 0, 917508, 13, 0, 917509, 13, 0, 917510, 20, 0, 917514, 11, 0, 917515, 9, 0, 917516, 9, 0, 917517, 12, 0, 917518, 13, 0, 917519, 13, 0, 917520, 20, 0, 917524, 3, 0, 917525, 3, 0, 917526, 3, 0, 917545, -1073741815, 0, 1048566, -1610612727, 0, 983043, 16, 0, 983044, 13, 0, 983045, 13, 0, 983046, 20, 0, 983050, 16, 0, 983051, 5, 0, 983052, 0, 0, 983053, 13, 0, 983054, 13, 0, 983055, 13, 0, 983056, 20, 0, 983076, 11, 0, 983077, 10, 0, 983081, -1073741815, 0, 1114102, -1610612727, 0, 1114103, 11, 0, 1114104, 9, 0, 1114105, 9, 0, 1114106, 9, 0, 1114107, 9, 0, 1114108, 15, 0, 1048580, 13, 0, 1048581, 13, 0, 1048582, 20, 0, 1048586, 16, 0, 1048587, 5, 0, 1048588, 1, 0, 1048589, 1, 0, 1048590, 13, 0, 1048591, 13, 0, 1048592, 20, 0, 1048612, 16, 0, 1048613, 14, 0, 1048614, 9, 0, 1048615, 9, 0, 1048616, 15, 0, 1048617, -1073741815, 0, 1179638, -1610612727, 0, 1179639, 16, 0, 1179640, 13, 0, 1179641, 13, 0, 1179642, 13, 0, 1179643, 13, 0, 1179644, 20, 0, 1114116, 13, 0, 1114117, 13, 0, 1114118, 20, 0, 1114122, 16, 0, 1114123, 5, 0, 1114124, 5, 0, 1114125, 5, 0, 1114126, 5, 0, 1114127, 6, 0, 1114128, 6, 0, 1114147, 4, 0, 1114148, 4, 0, 1114149, 13, 0, 1114150, 13, 0, 1114151, 13, 0, 1114152, 20, 0, 1114153, -1073741815, 0, 1245174, 14, 0, 1245175, 9, 0, 1245176, 9, 0, 1245177, 9, 0, 1245178, 9, 0, 1245179, 9, 0, 1245180, 9, 0, 1245181, 9, 0, 1245182, 9, 0, 1245183, 9, 0, 1179648, 9, 0, 1179649, 9, 0, 1179650, 9, 0, 1179651, 9, 0, 1179652, 9, 0, 1179653, 9, 0, 1179654, 9, 0, 1179655, 9, 0, 1179656, 9, 0, 1179657, 9, 0, 1179658, 9, 0, 1179659, 9, 0, 1179660, 9, 0, 1179661, 9, 0, 1179662, 9, 0, 1179663, 9, 0, 1179664, 9, 0, 1179665, 9, 0, 1179666, 9, 0, 1179667, 9, 0, 1179668, 9, 0, 1179669, 9, 0, 1179670, 9, 0, 1179671, 9, 0, 1179672, 9, 0, 1179673, 9, 0, 1179674, 9, 0, 1179675, 9, 0, 1179676, 9, 0, 1179677, 9, 0, 1179678, 9, 0, 1179679, 9, 0, 1179680, 9, 0, 1179681, 9, 0, 1179682, 9, 0, 1179683, 9, 0, 1179684, 9, 0, 1179685, 9, 0, 1179686, 9, 0, 1179687, 9, 0, 1179688, 9, 0, 1179689, 12, 0 )
+
+[node name="Cartoon Water Game Tileset_Environment - Rock 07" type="Sprite" parent="WaterTilemap"]
+position = Vector2( 221.09, 1068.49 )
+scale = Vector2( 2.18934, 3.65766 )
+texture = ExtResource( 8 )
+
+[node name="Cartoon Water Game Tileset_Environment - Signpost 06" type="Sprite" parent="WaterTilemap"]
+position = Vector2( 1373.86, 784.035 )
+scale = Vector2( 2.18934, 3.65766 )
+texture = ExtResource( 22 )
 
 [node name="Cartoon Water Game Tileset_Environment - Signpost 01" type="Sprite" parent="WaterTilemap"]
 position = Vector2( -527.819, 991.291 )
-texture = ExtResource( 18 )
-
-[node name="Cartoon Water Game Tileset_Environment - White Flag" type="Sprite" parent="WaterTilemap"]
-position = Vector2( 929.268, 802.91 )
-texture = ExtResource( 21 )
-
-[node name="Cartoon Water Game Tileset_Platformer - Ground Additional 01" type="Sprite" parent="WaterTilemap"]
-position = Vector2( 1414.65, 1077.14 )
-texture = ExtResource( 22 )
+texture = ExtResource( 19 )
 
 [node name="Cartoon Water Game Tileset_Environment - Grass 01" type="Sprite" parent="WaterTilemap"]
-position = Vector2( 1236.16, 1062.62 )
+position = Vector2( 2379.89, 1089.15 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 3 )
 
 [node name="Cartoon Water Game Tileset_Environment - Grass 03" type="Sprite" parent="WaterTilemap"]
-position = Vector2( 1149.52, 1134.82 )
-texture = ExtResource( 11 )
+position = Vector2( 1046.03, 755.346 )
+texture = ExtResource( 10 )
 
 [node name="Cartoon Water Game Tileset_Environment - Signpost 03" type="Sprite" parent="WaterTilemap"]
-position = Vector2( 712.709, -282.424 )
+position = Vector2( -425.72, -279.77 )
+texture = ExtResource( 23 )
+
+[node name="Cartoon Water Game Tileset_Environment - Signpost 04" type="Sprite" parent="WaterTilemap"]
+position = Vector2( 1821.95, 36.0178 )
+texture = ExtResource( 23 )
+
+[node name="Cartoon Water Game Tileset_Environment - Signpost 05" type="Sprite" parent="WaterTilemap"]
+position = Vector2( 2347.38, 484.49 )
+texture = ExtResource( 23 )
+flip_h = true
+
+[node name="Cartoon Water Game Tileset_Environment - Signpost 07" type="Sprite" parent="WaterTilemap"]
+position = Vector2( 2225.31, 808.239 )
 texture = ExtResource( 23 )
 
 [node name="Cartoon Water Game Tileset_Environment - Rock 06" type="Sprite" parent="WaterTilemap"]
-position = Vector2( 687.174, 297.976 )
+position = Vector2( -422.065, 995.894 )
 texture = ExtResource( 5 )
 
 [node name="Cartoon Water Game Tileset_Environment - Signpost 02" type="Sprite" parent="WaterTilemap"]
-position = Vector2( 1516.73, 354.243 )
-texture = ExtResource( 18 )
+position = Vector2( 367.686, 423.239 )
+texture = ExtResource( 19 )
+flip_h = true
 
 [node name="Cartoon Water Game Tileset_Environment - Moss 03" type="Sprite" parent="WaterTilemap"]
-position = Vector2( 31.8439, 645.339 )
-texture = ExtResource( 7 )
+position = Vector2( -488.278, -198.532 )
+texture = ExtResource( 6 )
 
 [node name="Cartoon Water Game Tileset_Environment - Grass 02" type="Sprite" parent="WaterTilemap"]
-position = Vector2( 1572.6, 354.243 )
+position = Vector2( -206.694, 417.931 )
+scale = Vector2( 1.29025, 1 )
 texture = ExtResource( 3 )
+
+[node name="Cartoon Water Game Tileset_Environment - Rock 15" type="Sprite" parent="WaterTilemap"]
+position = Vector2( 184.419, 1098.88 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 8 )
 
 [node name="Cartoon Water Game Tileset_Environment - Rock 05" type="Sprite" parent="WaterTilemap"]
 position = Vector2( 1704.91, 42.5641 )
-texture = ExtResource( 6 )
+texture = ExtResource( 8 )
 
 [node name="Cartoon Water Game Tileset_Platformer - Ground Additional 05" type="Sprite" parent="."]
-position = Vector2( 574.42, 303.465 )
+position = Vector2( 654.03, 497.184 )
+texture = ExtResource( 24 )
+
+[node name="Cartoon Water Game Tileset_Platformer - Ground Additional 06" type="Sprite" parent="."]
+position = Vector2( 715.4, 497.184 )
 texture = ExtResource( 25 )
 
 [node name="Cartoon Water Game Tileset_Environment - Rock 08" type="Sprite" parent="."]
-position = Vector2( 233.615, 551.165 )
-texture = ExtResource( 12 )
+position = Vector2( 310.572, 552.492 )
+texture = ExtResource( 13 )
 
 [node name="Cartoon Water Game Tileset_Environment - Rock 06" type="Sprite" parent="."]
-position = Vector2( 188.49, 558.385 )
+position = Vector2( 269.427, 554.405 )
 texture = ExtResource( 5 )
 
 [node name="Cartoon Water Game Tileset_Environment - Rock 01" type="Sprite" parent="."]
-position = Vector2( 141.56, 552.97 )
+position = Vector2( 223.824, 554.297 )
 texture = ExtResource( 4 )
 
 [node name="Cartoon Water Game Tileset_Environment - Moss 03" type="Sprite" parent="."]
-position = Vector2( 184.88, 538.53 )
-texture = ExtResource( 7 )
-
-[node name="Cartoon Water Game Tileset_Environment - Rock 05" type="Sprite" parent="."]
-position = Vector2( 1040.45, 560.19 )
+position = Vector2( 260.51, 541.184 )
 texture = ExtResource( 6 )
 
-[node name="Cartoon Water Game Tileset_Environment - Grass 02" type="Sprite" parent="."]
-position = Vector2( 610.86, 561.325 )
-texture = ExtResource( 10 )
+[node name="Cartoon Water Game Tileset_Environment - Rock 05" type="Sprite" parent="."]
+position = Vector2( 1222.23, 554.883 )
+texture = ExtResource( 8 )
 
 [node name="Cartoon Water Game Tileset_Environment - Rock 07" type="Sprite" parent="."]
-position = Vector2( 1089.18, 556.58 )
+position = Vector2( 1256.36, 555.253 )
 texture = ExtResource( 5 )
 
 [node name="Cartoon Water Game Tileset_Environment - Rock 09" type="Sprite" parent="."]
-position = Vector2( 1060.3, 549.36 )
-texture = ExtResource( 12 )
+position = Vector2( 1292.5, 552.014 )
+texture = ExtResource( 13 )
 
 [node name="Cartoon Water Game Tileset_Environment - Moss 01" type="Sprite" parent="."]
 position = Vector2( 1092.79, 112.55 )
-texture = ExtResource( 8 )
+texture = ExtResource( 7 )
 
 [node name="Cartoon Water Game Tileset_Environment - Grass 01" type="Sprite" parent="."]
 position = Vector2( 1285.93, -156.395 )
 texture = ExtResource( 3 )
 
 [node name="Cartoon Water Game Tileset_Environment - Grass 04" type="Sprite" parent="."]
-position = Vector2( -229.505, 145.995 )
-texture = ExtResource( 10 )
+position = Vector2( -262.676, 144.668 )
+texture = ExtResource( 9 )
+
+[node name="Cartoon Water Game Tileset_Environment - Moss 06" type="Sprite" parent="."]
+position = Vector2( 85.2418, 542.818 )
+texture = ExtResource( 6 )
 
 [node name="Cartoon Water Game Tileset_Environment - Moss 04" type="Sprite" parent="."]
-position = Vector2( 605.465, 255.041 )
-texture = ExtResource( 7 )
-
-[node name="Cartoon Water Game Tileset_Environment - Rock 15" type="Sprite" parent="."]
-position = Vector2( 204.105, 371.186 )
+position = Vector2( 1250.31, 288.212 )
 texture = ExtResource( 6 )
 
 [node name="Cartoon Water Game Tileset_Environment - Signpost 04" type="Sprite" parent="."]
-position = Vector2( 1118.56, 528.794 )
+position = Vector2( 1264.51, 547.37 )
 texture = ExtResource( 26 )
 
 [node name="Cartoon Water Game Tileset_Environment - Moss 05" type="Sprite" parent="."]
 position = Vector2( 703.968, 38.9243 )
-texture = ExtResource( 7 )
+texture = ExtResource( 6 )
 
 [node name="PortalArea2D" parent="." instance=ExtResource( 27 )]
-position = Vector2( 1276.12, 479.28 )
+position = Vector2( 1292.04, 485.914 )
 
-[node name="TangaroaCoin" parent="." instance=ExtResource( 19 )]
+[node name="TangaroaCoin" parent="." instance=ExtResource( 11 )]
 position = Vector2( -272.371, -139.28 )
 
-[node name="TangaroaCoin2" parent="." instance=ExtResource( 19 )]
+[node name="TangaroaCoin2" parent="." instance=ExtResource( 11 )]
 position = Vector2( -273.918, 111.424 )
 
-[node name="TangaroaCoin3" parent="." instance=ExtResource( 19 )]
-position = Vector2( 128.448, 337.368 )
+[node name="TangaroaCoin3" parent="." instance=ExtResource( 11 )]
+position = Vector2( -90.4807, 439.535 )
 
-[node name="TangaroaCoin4" parent="." instance=ExtResource( 19 )]
-position = Vector2( 299.252, 370.933 )
+[node name="TangaroaCoin4" parent="." instance=ExtResource( 11 )]
+position = Vector2( 392.131, 392.163 )
 
-[node name="TangaroaCoin5" parent="." instance=ExtResource( 19 )]
-position = Vector2( 431.77, 365.224 )
+[node name="TangaroaCoin6" parent="." instance=ExtResource( 11 )]
+position = Vector2( 1.51757, 86.7112 )
 
-[node name="TangaroaCoin6" parent="." instance=ExtResource( 19 )]
-position = Vector2( 114.299, -43.3192 )
+[node name="TangaroaCoin7" parent="." instance=ExtResource( 11 )]
+position = Vector2( 308.464, -168.3 )
 
-[node name="TangaroaCoin7" parent="." instance=ExtResource( 19 )]
-position = Vector2( 338.981, -48.8848 )
-
-[node name="TangaroaCoin8" parent="." instance=ExtResource( 19 )]
+[node name="TangaroaCoin8" parent="." instance=ExtResource( 11 )]
 position = Vector2( 568.254, -171.883 )
 
-[node name="TangaroaCoin10" parent="." instance=ExtResource( 19 )]
-position = Vector2( 657.948, -8.15417 )
+[node name="TangaroaCoin10" parent="." instance=ExtResource( 11 )]
+position = Vector2( 656.621, -17.442 )
 
-[node name="TangaroaCoin11" parent="." instance=ExtResource( 19 )]
+[node name="TangaroaCoin11" parent="." instance=ExtResource( 11 )]
 position = Vector2( 819.96, -156.278 )
 
-[node name="TangaroaCoin12" parent="." instance=ExtResource( 19 )]
+[node name="TangaroaCoin12" parent="." instance=ExtResource( 11 )]
 position = Vector2( 1154.52, -139.359 )
 
-[node name="TangaroaCoin14" parent="." instance=ExtResource( 19 )]
+[node name="TangaroaCoin14" parent="." instance=ExtResource( 11 )]
 position = Vector2( 1265.74, -17.2055 )
 
-[node name="TangaroaCoin15" parent="." instance=ExtResource( 19 )]
-position = Vector2( 623.498, 366.863 )
+[node name="TangaroaCoin15" parent="." instance=ExtResource( 11 )]
+position = Vector2( 657.996, 459.326 )
 
-[node name="TangaroaCoin16" parent="." instance=ExtResource( 19 )]
-position = Vector2( 814.368, 484.53 )
+[node name="TangaroaCoin16" parent="." instance=ExtResource( 11 )]
+position = Vector2( 727.896, 458.354 )
 
-[node name="TangaroaCoin17" parent="." instance=ExtResource( 19 )]
-position = Vector2( 961.829, 470.238 )
+[node name="TangaroaCoin17" parent="." instance=ExtResource( 11 )]
+position = Vector2( 818.53, 169.045 )
 
-[node name="TangaroaCoin18" parent="." instance=ExtResource( 19 )]
-position = Vector2( 1043.93, 432.159 )
+[node name="Cartoon Water Game Tileset_Environment - Grass 05" type="Sprite" parent="."]
+position = Vector2( 1266.32, 562.652 )
+texture = ExtResource( 9 )
 
-[node name="TangaroaCoin19" parent="." instance=ExtResource( 19 )]
-position = Vector2( 1100.32, 379.152 )
+[node name="TangaroaCoin18" parent="." instance=ExtResource( 11 )]
+position = Vector2( 880.729, 364.49 )
 
-[node name="TangaroaCoin20" parent="." instance=ExtResource( 19 )]
-position = Vector2( 1196.26, 416.294 )
+[node name="TangaroaCoin19" parent="." instance=ExtResource( 11 )]
+position = Vector2( 658.482, 108.477 )
 
-[node name="TangaroaCoin21" parent="." instance=ExtResource( 19 )]
-position = Vector2( 880.406, 348.877 )
+[node name="TangaroaCoin20" parent="." instance=ExtResource( 11 )]
+position = Vector2( 1220.14, 497.231 )
 
-[node name="TangaroaCoin22" parent="." instance=ExtResource( 19 )]
-position = Vector2( 880.562, 299.745 )
+[node name="TangaroaCoin21" parent="." instance=ExtResource( 11 )]
+position = Vector2( 463.778, 173.734 )
 
-[node name="TangaroaCoin23" parent="." instance=ExtResource( 19 )]
+[node name="TangaroaCoin22" parent="." instance=ExtResource( 11 )]
+position = Vector2( 380.343, 172.368 )
+
+[node name="TangaroaCoin23" parent="." instance=ExtResource( 11 )]
 position = Vector2( 1187.72, 200.792 )
 
-[node name="TangaroaCoin24" parent="." instance=ExtResource( 19 )]
+[node name="TangaroaCoin24" parent="." instance=ExtResource( 11 )]
 position = Vector2( 1218.61, 128.135 )
 
-[node name="TangaroaCoin25" parent="." instance=ExtResource( 19 )]
+[node name="TangaroaCoin25" parent="." instance=ExtResource( 11 )]
 position = Vector2( 1087.99, 48.8197 )
 
-[node name="TangaroaCoin26" parent="." instance=ExtResource( 19 )]
+[node name="TangaroaCoin26" parent="." instance=ExtResource( 11 )]
 position = Vector2( 1287.17, 101.307 )
 
-[node name="TangaroaCoin27" parent="." instance=ExtResource( 19 )]
-position = Vector2( 619.024, 105.234 )
+[node name="TangaroaCoin27" parent="." instance=ExtResource( 11 )]
+position = Vector2( 421.325, 175.557 )
 
-[node name="TangaroaCoin28" parent="." instance=ExtResource( 19 )]
-position = Vector2( -55.7124, 137.733 )
+[node name="TangaroaCoin28" parent="." instance=ExtResource( 11 )]
+position = Vector2( 175.158, 318.183 )
 
-[node name="TangaroaCoin29" parent="." instance=ExtResource( 19 )]
-position = Vector2( 173.327, -174.875 )
+[node name="TangaroaCoin29" parent="." instance=ExtResource( 11 )]
+position = Vector2( 148.117, -174.875 )
 
-[node name="TangaroaCoin30" parent="." instance=ExtResource( 19 )]
-position = Vector2( 681.706, 559.565 )
+[node name="TangaroaCoin30" parent="." instance=ExtResource( 11 )]
+position = Vector2( 692.321, 459.086 )
 
-[node name="TangaroaCoin9" parent="." instance=ExtResource( 19 )]
-position = Vector2( 359.606, 141.725 )
-
-[node name="Cartoon Water Game Tileset_Platformer - Ground Additional 06" type="Sprite" parent="."]
-position = Vector2( 635.79, 303.465 )
-texture = ExtResource( 28 )
-
-[node name="Player" parent="." instance=ExtResource( 24 )]
-position = Vector2( -256.08, 490.931 )
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 28 )
-autoplay = true
-
+[node name="TangaroaCoin9" parent="." instance=ExtResource( 11 )]
+position = Vector2( 112.814, 210.721 )
