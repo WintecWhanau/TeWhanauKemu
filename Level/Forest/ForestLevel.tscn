@@ -230,4 +230,13 @@ autoplay = true
 [node name="HUD" parent="." instance=ExtResource( 19 )]
 
 [node name="Tanemahuta" parent="." instance=ExtResource( 21 )]
-position = Vector2( 215.789, 531.577 )
+position = Vector2( 734, -63 )
+damage = 10
+
+[node name="Tanemahuta2" parent="." instance=ExtResource( 21 )]
+position = Vector2( 1097, 314 )
+damage = 10
+hp = 10
+
+[node name="Tanemahuta3" parent="." instance=ExtResource( 21 )]
+position = Vector2( -139, 53 )

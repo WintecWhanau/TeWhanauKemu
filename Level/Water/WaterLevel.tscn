@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://Assets/water-platformer-tileset/Tangaroa.jpg" type="Texture" id=1]
 [ext_resource path="res://Assets/water-platformer-tileset/PNG/Environment/156-1569523_underwater-bubble-clip-art-hd-png-download.png" type="Texture" id=2]
@@ -30,6 +30,7 @@
 [ext_resource path="res://Scene/Player/Player.tscn" type="PackedScene" id=28]
 [ext_resource path="res://Scene/HUD Health/HUD.tscn" type="PackedScene" id=29]
 [ext_resource path="res://Common/Map.gd" type="Script" id=30]
+[ext_resource path="res://Scene/Enemy/Tangaroa/Tangaroa Scene.tscn" type="PackedScene" id=31]
 
 [node name="WaterLevel1" type="Node"]
 script = ExtResource( 30 )
@@ -405,3 +406,14 @@ position = Vector2( -245.934, 483.935 )
 level = 3
 
 [node name="HUD" parent="." instance=ExtResource( 29 )]
+
+[node name="Enemies" type="Node" parent="."]
+
+[node name="Enemy1" parent="Enemies" instance=ExtResource( 31 )]
+position = Vector2( 1111, 34 )
+
+[node name="Enemy2" parent="Enemies" instance=ExtResource( 31 )]
+position = Vector2( 820, 529 )
+
+[node name="Enemy3" parent="Enemies" instance=ExtResource( 31 )]
+position = Vector2( 202, 190 )
