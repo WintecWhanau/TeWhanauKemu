@@ -40,6 +40,8 @@ func process_velocity(delta):
 	
 func _on_HitBox_body_entered(body):
 	#AnimatedSprite.play("Slashing")
+	if hp <=0:
+		state_machine.set_state(CloseRangeEnemyStateMachine.DEAD)
 	if body.has_method("take_damage"):
 		WallCheckLeft.enabled = false
 		WallCheckRight.enabled = false
@@ -161,6 +163,9 @@ class CloseRangeEnemyStateMachine extends StateMachine:
 					return DEAD
 				if enemy.is_on_floor():
 					return CHASE
+			ATTACK:
+				if enemy.hp <=0:
+					return DEAD
 
 
 	func _enter_state(state, old_state):
