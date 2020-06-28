@@ -1,19 +1,13 @@
 extends Node
 
-signal max_changed(new_max)
 signal changed(new_amount)
 signal depleted
 
-export(int) var max_amount = 10 setget set_max
-onready var current = max_amount setget set_current
+export(int) var max_amount = 100
+export (int) var current = 100 setget set_current
 
 func _ready():
-	_initialize()
-
-func set_max(new_max):
-	max_amount = new_max
-	max_amount = max(1, new_max)
-	emit_signal("max_changed", max_amount)
+	initialize()
 
 func set_current(new_value):
 	current = new_value
@@ -23,9 +17,8 @@ func set_current(new_value):
 	if current == 0:
 		emit_signal("depleted")
 
-func _initialize():
-	emit_signal("max_changed", max_amount)
+func initialize():
 	emit_signal("changed", current)
 
-func set_value(new_amount):
-	pass # Replace with function body.
+#func set_value(new_amount):
+#	pass # Replace with function body.

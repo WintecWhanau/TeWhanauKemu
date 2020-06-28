@@ -36,12 +36,12 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Sprite" type="Sprite" parent="Visual"]
+[node name="Background" type="Sprite" parent="Visual"]
 position = Vector2( 18.6157, -0.716003 )
 texture = ExtResource( 2 )
 
-[node name="Sprite2" type="Sprite" parent="Visual"]
-position = Vector2( 787.586, 209.068 )
+[node name="Title" type="Sprite" parent="Visual"]
+position = Vector2( 509.586, 155.068 )
 scale = Vector2( 0.246059, 0.147773 )
 texture = ExtResource( 3 )
 
@@ -53,16 +53,16 @@ anims/Hide = SubResource( 1 )
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
 [node name="LoadingBar" type="ProgressBar" parent="."]
-margin_left = 559.755
-margin_top = 514.821
-margin_right = 1047.76
-margin_bottom = 528.821
+margin_left = 265.755
+margin_top = 478.821
+margin_right = 753.76
+margin_bottom = 492.821
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Loading Image" type="Sprite" parent="."]
-position = Vector2( 808.348, 411.692 )
+position = Vector2( 516.348, 358.692 )
 scale = Vector2( 0.424237, 0.249088 )
 texture = ExtResource( 4 )
 
