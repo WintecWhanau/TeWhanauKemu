@@ -1,7 +1,7 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=16 format=2]
 
-[ext_resource path="res://Scene/Storybox/Storyboxes/Chat.gd" type="Script" id=1]
-[ext_resource path="res://Scene/Storybox/Storyboxes/RuaumokoSB.gd" type="Script" id=2]
+[ext_resource path="res://Scene/Storybox/Storyboxes/Scripts/Chat.gd" type="Script" id=1]
+[ext_resource path="res://Scene/Storybox/Storyboxes/Scripts/Storybox.gd" type="Script" id=2]
 [ext_resource path="res://Scene/Storybox/Sprites/Maui/Maui 04.png" type="Texture" id=3]
 [ext_resource path="res://Scene/Storybox/Sprites/Maui/Maui 01.png" type="Texture" id=4]
 [ext_resource path="res://Scene/Storybox/Sprites/Maui/Maui 03.png" type="Texture" id=5]
@@ -26,27 +26,24 @@ font_data = ExtResource( 7 )
 [sub_resource type="DynamicFont" id=4]
 font_data = ExtResource( 7 )
 
-[sub_resource type="DynamicFont" id=5]
-font_data = ExtResource( 7 )
-
-[sub_resource type="SpriteFrames" id=6]
+[sub_resource type="SpriteFrames" id=5]
 animations = [ {
-"frames": [ ExtResource( 8 ), ExtResource( 8 ), ExtResource( 8 ), ExtResource( 8 ), ExtResource( 8 ), ExtResource( 8 ), ExtResource( 8 ), ExtResource( 9 ) ],
-"loop": true,
-"name": "chiefblink",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 6 ), ExtResource( 5 ), ExtResource( 5 ), ExtResource( 4 ), ExtResource( 6 ), ExtResource( 4 ), ExtResource( 4 ), ExtResource( 3 ) ],
 "loop": true,
 "name": "blink",
 "speed": 4.0
+}, {
+"frames": [ ExtResource( 8 ), ExtResource( 8 ), ExtResource( 8 ), ExtResource( 8 ), ExtResource( 8 ), ExtResource( 8 ), ExtResource( 8 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "chiefblink",
+"speed": 5.0
 } ]
 
 [node name="ChiefSB" type="Panel"]
-margin_left = 174.0
-margin_top = 262.0
-margin_right = 846.0
-margin_bottom = 472.0
+margin_left = 128.0
+margin_top = 256.0
+margin_right = 800.0
+margin_bottom = 466.0
 custom_styles/panel = SubResource( 1 )
 script = ExtResource( 2 )
 __meta__ = {
@@ -71,9 +68,9 @@ __meta__ = {
 }
 
 [node name="Next" type="Button" parent="."]
-margin_left = 287.0
+margin_left = 192.0
 margin_top = 160.0
-margin_right = 383.0
+margin_right = 288.0
 margin_bottom = 192.0
 custom_fonts/font = SubResource( 3 )
 text = "Next"
@@ -81,23 +78,12 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ShowAll" type="Button" parent="."]
-margin_left = 402.0
-margin_top = 159.098
-margin_right = 498.0
-margin_bottom = 191.098
-custom_fonts/font = SubResource( 4 )
-text = "Show All"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="NextLevel" type="Button" parent="."]
-margin_left = 517.0
-margin_top = 158.0
-margin_right = 613.0
-margin_bottom = 190.0
-custom_fonts/font = SubResource( 5 )
+margin_left = 352.0
+margin_top = 160.0
+margin_right = 448.0
+margin_bottom = 192.0
+custom_fonts/font = SubResource( 4 )
 text = "Next level"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -106,18 +92,16 @@ __meta__ = {
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( -32, 96 )
 scale = Vector2( 0.364583, 0.364583 )
-frames = SubResource( 6 )
+frames = SubResource( 5 )
 animation = "blink"
-frame = 4
+frame = 3
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="."]
 position = Vector2( 694, 96 )
 scale = Vector2( 0.364583, 0.364583 )
-frames = SubResource( 6 )
+frames = SubResource( 5 )
 animation = "chiefblink"
-frame = 3
 playing = true
 [connection signal="pressed" from="Next" to="Chat" method="_on_Next_pressed"]
-[connection signal="pressed" from="ShowAll" to="Chat" method="_on_ShowAll_pressed"]
 [connection signal="pressed" from="NextLevel" to="Chat" method="_on_NextLevel_pressed"]
