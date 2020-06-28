@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Scene/TileScenes/Volcano/Res/volcano.tres" type="TileSet" id=1]
 [ext_resource path="res://Scene/Collectables/Ruaumoko/RuaumokoCoin.tscn" type="PackedScene" id=2]
@@ -11,6 +11,14 @@
 [ext_resource path="res://Scene/Portal/Portal.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Common/Map.gd" type="Script" id=10]
 [ext_resource path="res://Scene/HUD Health/HUD.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Assets/volcano-platformer-tileset/PNG/Environment/Volcano Level Set_Environment - Silver Key.png" type="Texture" id=12]
+[ext_resource path="res://Assets/volcano-platformer-tileset/PNG/Environment/Volcano Level Set_Environment - Crack 05.png" type="Texture" id=13]
+[ext_resource path="res://Assets/volcano-platformer-tileset/PNG/Environment/Volcano Level Set_Environment - Crack 02.png" type="Texture" id=14]
+[ext_resource path="res://Assets/volcano-platformer-tileset/PNG/Environment/Volcano Level Set_Environment - Crack 01.png" type="Texture" id=15]
+[ext_resource path="res://Assets/volcano-platformer-tileset/PNG/Environment/Volcano Level Set_Environment - Crack 04.png" type="Texture" id=16]
+[ext_resource path="res://Assets/volcano-platformer-tileset/PNG/Environment/Volcano Level Set_Environment - Crack 03.png" type="Texture" id=17]
+[ext_resource path="res://Assets/volcano-platformer-tileset/PNG/Environment/Volcano Level Set_Environment - Crack 07.png" type="Texture" id=18]
+[ext_resource path="res://Assets/volcano-platformer-tileset/PNG/Environment/Volcano Level Set_Environment - Crack 06.png" type="Texture" id=19]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 27.1865, 19.1019 )
@@ -40,21 +48,6 @@ autoplay = true
 position = Vector2( -267.188, 547.57 )
 level = 7
 
-[node name="Enemies" type="Node2D" parent="."]
-position = Vector2( 2.72073, 3.05176e-05 )
-
-[node name="Ruaumoko" parent="Enemies" instance=ExtResource( 4 )]
-position = Vector2( 1091.31, 533.597 )
-
-[node name="Ruaumoko2" parent="Enemies" instance=ExtResource( 4 )]
-position = Vector2( 783.815, 220.071 )
-
-[node name="Ruaumoko3" parent="Enemies" instance=ExtResource( 4 )]
-position = Vector2( 1134.1, 415.023 )
-
-[node name="Ruaumoko4" parent="Enemies" instance=ExtResource( 4 )]
-position = Vector2( 384.371, 409.995 )
-
 [node name="Collectables" type="Node2D" parent="."]
 position = Vector2( 9.15527e-05, 0 )
 __meta__ = {
@@ -78,18 +71,6 @@ position = Vector2( 510.139, -156.443 )
 
 [node name="Walls" type="Node2D" parent="."]
 
-[node name="WallOne" type="TileMap" parent="Walls"]
-scale = Vector2( 0.5, 0.5 )
-tile_set = ExtResource( 1 )
-format = 1
-tile_data = PoolIntArray( 12, 11, 0, 13, 11, 0, 14, 11, 0, 15, 11, 0, 16, 11, 0, 17, 11, 0, 18, 11, 0, 19, 11, 0 )
-
-[node name="WallTwo" type="TileMap" parent="Walls"]
-scale = Vector2( 0.5, 0.5 )
-tile_set = ExtResource( 1 )
-format = 1
-tile_data = PoolIntArray( 131086, 22, 0, 196622, 22, 0, 262158, 22, 0, 262161, 18, 0, 327697, 18, 0 )
-
 [node name="Triggers" type="Node2D" parent="."]
 
 [node name="Area2D" type="Area2D" parent="Triggers"]
@@ -102,6 +83,18 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Triggers/Area2D"]
 shape = SubResource( 1 )
 
+[node name="Sprite" type="Sprite" parent="Triggers/Area2D"]
+position = Vector2( 0.174, 2.654 )
+scale = Vector2( 0.657921, 0.834144 )
+texture = ExtResource( 12 )
+
+[node name="WallOne" type="TileMap" parent="Triggers/Area2D"]
+position = Vector2( -1283.07, -235.796 )
+scale = Vector2( 0.5, 0.5 )
+tile_set = ExtResource( 1 )
+format = 1
+tile_data = PoolIntArray( 12, 11, 0, 13, 11, 0, 14, 11, 0, 15, 11, 0, 16, 11, 0, 17, 11, 0, 18, 11, 0, 19, 11, 0 )
+
 [node name="Area2D2" type="Area2D" parent="Triggers"]
 position = Vector2( 511.605, 229.302 )
 script = ExtResource( 7 )
@@ -112,10 +105,95 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Triggers/Area2D2"]
 shape = SubResource( 2 )
 
+[node name="WallTwo" type="TileMap" parent="Triggers/Area2D2"]
+position = Vector2( -511.605, -229.302 )
+scale = Vector2( 0.5, 0.5 )
+tile_set = ExtResource( 1 )
+format = 1
+tile_data = PoolIntArray( 131086, 22, 0, 196622, 22, 0, 262158, 22, 0, 262161, 18, 0, 327697, 18, 0 )
+
 [node name="PortalArea2D" parent="." instance=ExtResource( 9 )]
 position = Vector2( 633.081, 534.708 )
 next_level = "res://Level/Volcano/VolcanoTwo/VolcanoLevelTwo.tscn"
 
+[node name="Enemies" type="Node2D" parent="."]
+position = Vector2( 2.72073, 3.05176e-05 )
+
+[node name="Ruaumoko" parent="Enemies" instance=ExtResource( 4 )]
+position = Vector2( 263.596, 410.557 )
+damage = 25
+
+[node name="Ruaumoko2" parent="Enemies" instance=ExtResource( 4 )]
+position = Vector2( 400.151, 137.857 )
+damage = 25
+
+[node name="Ruaumoko3" parent="Enemies" instance=ExtResource( 4 )]
+position = Vector2( 624.23, 149.754 )
+damage = 25
+
+[node name="Ruaumoko4" parent="Enemies" instance=ExtResource( 4 )]
+position = Vector2( 1090.84, 518.454 )
+damage = 25
+
+[node name="Ruaumoko5" parent="Enemies" instance=ExtResource( 4 )]
+position = Vector2( 630.809, -54.5922 )
+damage = 25
+
 [node name="HUD" parent="." instance=ExtResource( 11 )]
+
+[node name="Environment" type="Node2D" parent="."]
+
+[node name="Volcano Level Set_Environment - Crack 07" type="Sprite" parent="Environment"]
+position = Vector2( 588.445, 229.999 )
+scale = Vector2( 0.749999, 0.830466 )
+texture = ExtResource( 18 )
+
+[node name="Volcano Level Set_Environment - Crack 01" type="Sprite" parent="Environment"]
+position = Vector2( -172.999, 547.002 )
+texture = ExtResource( 15 )
+
+[node name="Volcano Level Set_Environment - Crack 03" type="Sprite" parent="Environment"]
+position = Vector2( -13.998, 482.002 )
+texture = ExtResource( 17 )
+
+[node name="Volcano Level Set_Environment - Crack 02" type="Sprite" parent="Environment"]
+position = Vector2( 278.003, 484.002 )
+texture = ExtResource( 14 )
+
+[node name="Volcano Level Set_Environment - Crack 04" type="Sprite" parent="Environment"]
+position = Vector2( 631.004, 357.001 )
+texture = ExtResource( 16 )
+
+[node name="Volcano Level Set_Environment - Crack 05" type="Sprite" parent="Environment"]
+position = Vector2( 802.005, 426.001 )
+texture = ExtResource( 13 )
+
+[node name="Volcano Level Set_Environment - Crack 08" type="Sprite" parent="Environment"]
+position = Vector2( 129.002, 284.001 )
+texture = ExtResource( 18 )
+
+[node name="Volcano Level Set_Environment - Crack 06" type="Sprite" parent="Environment"]
+position = Vector2( 932.119, 315.917 )
+texture = ExtResource( 14 )
+
+[node name="Volcano Level Set_Environment - Crack 09" type="Sprite" parent="Environment"]
+position = Vector2( 796.352, 162.241 )
+scale = Vector2( 1.01091, 1.05456 )
+texture = ExtResource( 17 )
+
+[node name="Volcano Level Set_Environment - Crack 10" type="Sprite" parent="Environment"]
+position = Vector2( 418.575, 34.1589 )
+scale = Vector2( 1.12003, 1.29746 )
+texture = ExtResource( 13 )
+
+[node name="Volcano Level Set_Environment - Crack 11" type="Sprite" parent="Environment"]
+position = Vector2( 450.968, 410.406 )
+scale = Vector2( 1.12003, 1.29746 )
+texture = ExtResource( 19 )
+
+[node name="Volcano Level Set_Environment - Crack 12" type="Sprite" parent="Environment"]
+position = Vector2( 448.803, 240.964 )
+scale = Vector2( 0.64914, 0.59749 )
+texture = ExtResource( 18 )
 [connection signal="body_entered" from="Triggers/Area2D" to="Triggers/Area2D" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="Triggers/Area2D2" to="Triggers/Area2D2" method="_on_Area2D2_body_entered"]
