@@ -3,8 +3,8 @@ class_name CloseRangeEnemy
 
 export var max_speed_normal:int = 100 
 export var max_speed_attack:int = 120
-export var damage:int = 1
-export var hp:int = 1
+export var damage:int = 45
+export var hp:int = 10
 var direction:int = 1
 var max_speed = max_speed_normal
 var velocity := Vector2()

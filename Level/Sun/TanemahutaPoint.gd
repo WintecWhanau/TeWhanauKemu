@@ -18,6 +18,13 @@ func _ready():
 	screenSize = get_viewport().get_visible_rect().size
 	state_machine = FianlLevelStateMachine.new(self)
 	state_machine.set_state_deferred(FianlLevelStateMachine.IDLE)
+	var player = $Player
+	var playerHealth = $Player/Health
+	var healthBar =  $HUD/HealthBar_Maui
+
+	playerHealth.connect("changed", healthBar, "set_value")
+	playerHealth.connect("depleted", player, "dead")
+
 	
 func _physics_process(delta):
 	state_machine.process(delta)
