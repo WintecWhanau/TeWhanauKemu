@@ -50,8 +50,6 @@ onready var AnimatedSprite: AnimatedSprite = $AnimatedSprite
 # AUDIO
 onready var jumpAudio = $Audio/JumpAudio
 onready var shootAudio = $Audio/ShootAudio
-# DEBUG
-onready var Label: Label = $Label
 
 func _ready():
 	if level <= 6:
@@ -145,8 +143,8 @@ func melee():
 
 func _on_Taiaha_body_entered(body):
 	if isAttacking:
-		if body.name != 'Player' && body.has_method('take_damage'):
-			body.take_damage()
+		if body.name != 'Player' && body.has_method('takeDamage'):
+			body.takeDamage(taiahaDamage)
 # end of _on_Taiaha_body_entered
 
 func _on_MeleeTimer_timeout():
@@ -157,7 +155,12 @@ func _on_MeleeTimer_timeout():
 # end of _on_MeleeTimer_timeout
 
 func take_damage(damage):
+	$Health.set_current($Health.current - damage)
 	pass
+	
+func dead():
+	Dead.set_level(get_parent().filename)
+	get_tree().change_scene("res://Scene/Dead/deadScreen.tscn")
 
 class PlayerStateMachine extends StateMachine:
 	enum {IDLE, RUN, JUMP, DOUBLE_JUMP, FALL, ATTACK, SHOOT}
@@ -177,29 +180,23 @@ class PlayerStateMachine extends StateMachine:
 		"""Perform current state behavior"""
 		match state:
 			IDLE:
-				player.Label.text = 'idle'
 				_jump(player.jumpForce)
 			RUN:
-				player.Label.text = 'run'
 				_jump(player.jumpForce)
 			JUMP:
-				player.Label.text = 'jump'
 				if player.canDoubleJump: # double jump
 					_jump(player.jumpForce / 1.5)
 				pass
 			DOUBLE_JUMP:
-				player.Label.text = 'double jump'
 				pass
 			FALL:
-				player.Label.text = 'fall'
-				
 				if player.canDoubleJump: # double jump
 					_jump(player.jumpForce * 1.2)
 				pass
 			ATTACK:
-				player.Label.text = 'melee'
+				pass
 			SHOOT:
-				player.Label.text = 'shoot'
+				pass
 		_handle_input(delta)
 		player._sprite_flip()
 		player.process_velocity(delta)

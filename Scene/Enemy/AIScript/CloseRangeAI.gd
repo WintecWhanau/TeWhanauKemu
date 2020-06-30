@@ -3,8 +3,8 @@ class_name CloseRangeEnemy
 
 export var max_speed_normal:int = 100 
 export var max_speed_attack:int = 120
-export var damage:int = 1
-export var hp:int = 1
+export var damage:int = 45
+export var hp:int = 10
 var direction:int = 1
 var max_speed = max_speed_normal
 var velocity := Vector2()
@@ -40,6 +40,8 @@ func process_velocity(delta):
 	
 func _on_HitBox_body_entered(body):
 	#AnimatedSprite.play("Slashing")
+	if hp <=0:
+		state_machine.set_state(CloseRangeEnemyStateMachine.DEAD)
 	if body.has_method("take_damage"):
 		WallCheckLeft.enabled = false
 		WallCheckRight.enabled = false
@@ -114,10 +116,10 @@ class CloseRangeEnemyStateMachine extends StateMachine:
 					enemy.AnimatedSprite.flip_h = true
 				walk_state_duration += delta
 			CHASE:
-				if enemy.player.position.x < enemy.position.x:
+				if enemy.player.position.x < enemy.position.x - 60:
 					enemy.AnimatedSprite.flip_h = true
 					enemy.direction = -1
-				elif enemy.player.position.x > enemy.position.x:
+				elif enemy.player.position.x > enemy.position.x +60:
 					enemy.AnimatedSprite.flip_h = false
 					enemy.direction = 1
 			DEAD:
@@ -161,6 +163,9 @@ class CloseRangeEnemyStateMachine extends StateMachine:
 					return DEAD
 				if enemy.is_on_floor():
 					return CHASE
+			ATTACK:
+				if enemy.hp <=0:
+					return DEAD
 
 
 	func _enter_state(state, old_state):

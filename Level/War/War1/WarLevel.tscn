@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://Scene/TileScenes/Wind/Res/wind.tres" type="TileSet" id=1]
 [ext_resource path="res://Assets/War/Tumatauenga.jpg" type="Texture" id=2]
@@ -20,8 +20,16 @@
 [ext_resource path="res://Assets/volcano-platformer-tileset/PNG/Environment/Volcano Level Set_Environment - Crack 05.png" type="Texture" id=18]
 [ext_resource path="res://Level/War/WarCutscene/WarCutsceneBG.jpg" type="Texture" id=19]
 [ext_resource path="res://Scene/Enemy/Tumatauenga/Tumatauenga.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Assets/volcano-platformer-tileset/PNG/Environment/Volcano Level Set_Environment - Rock 02.png" type="Texture" id=21]
+[ext_resource path="res://Assets/volcano-platformer-tileset/PNG/Environment/Volcano Level Set_Environment - Rock 07.png" type="Texture" id=22]
+[ext_resource path="res://Assets/volcano-platformer-tileset/PNG/Environment/Volcano Level Set_Environment - Rock 08.png" type="Texture" id=23]
+[ext_resource path="res://Assets/volcano-platformer-tileset/PNG/Environment/Volcano Level Set_Environment - Rock 01.png" type="Texture" id=24]
+[ext_resource path="res://Assets/volcano-platformer-tileset/PNG/Environment/Volcano Level Set_Environment - Rock 05.png" type="Texture" id=25]
+[ext_resource path="res://Common/Map.gd" type="Script" id=26]
+[ext_resource path="res://Scene/HUD Health/HUD.tscn" type="PackedScene" id=27]
 
 [node name="WarLevel1" type="Node"]
+script = ExtResource( 26 )
 
 [node name="Background" type="Node" parent="."]
 
@@ -306,11 +314,35 @@ texture = ExtResource( 12 )
 position = Vector2( 821, 572 )
 texture = ExtResource( 14 )
 
+[node name="Lava3" type="Sprite" parent="Lava"]
+position = Vector2( 97.5627, 539.17 )
+texture = ExtResource( 14 )
+
 [node name="Misc" type="Node" parent="."]
 
 [node name="Skull" type="Sprite" parent="Misc"]
-position = Vector2( 557, 560 )
+position = Vector2( 835.229, -77.063 )
 texture = ExtResource( 15 )
+
+[node name="Rock1" type="Sprite" parent="Misc"]
+position = Vector2( 7.39698, 564.936 )
+texture = ExtResource( 25 )
+
+[node name="Rock2" type="Sprite" parent="Misc"]
+position = Vector2( 33.1138, 561.541 )
+texture = ExtResource( 22 )
+
+[node name="Rock3" type="Sprite" parent="Misc"]
+position = Vector2( 461.274, 547.221 )
+texture = ExtResource( 21 )
+
+[node name="Rock4" type="Sprite" parent="Misc"]
+position = Vector2( 492.558, 538.12 )
+texture = ExtResource( 23 )
+
+[node name="Rock5" type="Sprite" parent="Misc"]
+position = Vector2( 566.509, 552.706 )
+texture = ExtResource( 24 )
 
 [node name="Audio" type="Node" parent="."]
 
@@ -322,23 +354,30 @@ autoplay = true
 
 [node name="Tumatauenga" parent="Enemies" instance=ExtResource( 20 )]
 position = Vector2( -5.83176, -92.1417 )
+damage = 35
 
 [node name="Tumatauenga2" parent="Enemies" instance=ExtResource( 20 )]
 position = Vector2( -76.9792, 254.265 )
+damage = 35
 
 [node name="Tumatauenga3" parent="Enemies" instance=ExtResource( 20 )]
 position = Vector2( 714.771, 117.811 )
+damage = 35
 
 [node name="Tumatauenga4" parent="Enemies" instance=ExtResource( 20 )]
 position = Vector2( 1239.96, 536.692 )
+damage = 35
 
 [node name="Tumatauenga5" parent="Enemies" instance=ExtResource( 20 )]
 position = Vector2( 514.85, 474.812 )
+damage = 35
 
 [node name="Tumatauenga6" parent="Enemies" instance=ExtResource( 20 )]
 position = Vector2( 1024.17, -105.91 )
+damage = 35
 
-[node name="Player" type="Node" parent="."]
+[node name="Player" parent="." instance=ExtResource( 4 )]
+position = Vector2( -263.713, 543.249 )
+level = 9
 
-[node name="Player" parent="Player" instance=ExtResource( 4 )]
-position = Vector2( -260.431, 549.432 )
+[node name="HUD" parent="." instance=ExtResource( 27 )]

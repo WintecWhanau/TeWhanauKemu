@@ -1,4 +1,6 @@
+
 [gd_scene load_steps=28 format=2]
+
 
 [ext_resource path="res://Scene/TileScenes/Forest/Res/forest.tres" type="TileSet" id=1]
 [ext_resource path="res://Assets/forest-platformer-tileset/Tanemahuta.jpg" type="Texture" id=2]
@@ -24,8 +26,10 @@
 [ext_resource path="res://Scene/Sprites/Portal/Portal3.png" type="Texture" id=22]
 [ext_resource path="res://Scene/Collectables/Tanemahuta/TaneCoin.tscn" type="PackedScene" id=23]
 [ext_resource path="res://Audio/BG Music/Forest/ForestBGM2.wav" type="AudioStream" id=24]
+
 [ext_resource path="res://Scene/Enemy/Tanemahuta/Tanemahuta Scene.tscn" type="PackedScene" id=25]
 [ext_resource path="res://Scene/HUD Health/HUD.tscn" type="PackedScene" id=26]
+
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -41,6 +45,7 @@ animations = [ {
 } ]
 
 [node name="ForestLevel" type="Node"]
+script = ExtResource( 25 )
 
 [node name="ForestBG" type="Sprite" parent="."]
 position = Vector2( 517.958, 194.708 )
@@ -179,11 +184,14 @@ next_level = "res://Level/Forest/ForestCutscene.tscn"
 position = Vector2( 254.391, -119.864 )
 level = 7
 
+
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 204.058, -124.034 )
 frames = SubResource( 1 )
 animation = "portal_idle"
+
 frame = 4
+
 playing = true
 
 [node name="Collectables" type="Node2D" parent="."]

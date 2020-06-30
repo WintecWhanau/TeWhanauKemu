@@ -37,13 +37,14 @@ func setLevel(lvl):
 
 func _on_Patu_body_entered(body):
 	if !comeBack:# initial shot
-		if !body.name == 'Player' && body.has_method('takeDamage'):
+		if body.name != 'Player' && body.has_method('takeDamage'):
 			body.takeDamage(damage)
 		elif body.name == 'Player':
 			queue_free()
-		triggerComeBack()
+		else:
+			triggerComeBack()
 	else:# patu returning
-		if !body.name == 'Player' && body.has_method('takeDamage'):
+		if body.name != 'Player' && body.has_method('takeDamage'):
 			body.takeDamage(damage)
 			print(body.name)
 		elif body.name == 'Player':
