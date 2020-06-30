@@ -106,9 +106,9 @@ texture = ExtResource( 2 )
 
 [node name="Control" type="Control" parent="."]
 margin_left = -0.0477905
-margin_top = -135.81
+margin_top = -138.143
 margin_right = 39.9522
-margin_bottom = -95.8099
+margin_bottom = -98.1426
 __meta__ = {
 "_edit_group_": true,
 "_edit_use_anchors_": false
