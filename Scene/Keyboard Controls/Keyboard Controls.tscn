@@ -1,0 +1,92 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Scene/Title/Button_Quit.gd" type="Script" id=1]
+[ext_resource path="res://Scene/Title/Title BG.jpg" type="Texture" id=2]
+[ext_resource path="res://Scene/Title/Adventures-7BOVD.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Audio/BG Music/Additional/Game Start.wav" type="AudioStream" id=4]
+[ext_resource path="res://Scene/Player/Sprite/Player/Attack/Attacking_000.png" type="Texture" id=5]
+[ext_resource path="res://Scene/Keyboard Controls/Game controls.png" type="Texture" id=6]
+[ext_resource path="res://Scene/Player/Sprite/Player/Attack/Attacking_011.png" type="Texture" id=7]
+[ext_resource path="res://Scene/Player/Sprite/Player/Attack/Attacking_002.png" type="Texture" id=8]
+[ext_resource path="res://Scene/Player/Sprite/Player/Attack/Attacking_007.png" type="Texture" id=9]
+[ext_resource path="res://Scene/Player/Sprite/Player/Attack/Attacking_004.png" type="Texture" id=10]
+
+[sub_resource type="DynamicFont" id=5]
+size = 25
+font_data = ExtResource( 3 )
+
+[node name="Keyboard Controls" type="Node"]
+
+[node name="Sprites" type="Node" parent="."]
+
+[node name="TitleBG" type="Sprite" parent="Sprites"]
+position = Vector2( 686.048, 336.741 )
+scale = Vector2( 0.405156, 0.350093 )
+texture = ExtResource( 2 )
+flip_h = true
+
+[node name="Game Controls" type="Sprite" parent="Sprites"]
+position = Vector2( 508.957, 302.208 )
+scale = Vector2( 0.0847679, 0.0849368 )
+texture = ExtResource( 6 )
+
+[node name="Maui 1" type="Sprite" parent="Sprites"]
+position = Vector2( 613.412, 337.452 )
+scale = Vector2( 0.153776, 0.153776 )
+texture = ExtResource( 5 )
+
+[node name="Maui 2" type="Sprite" parent="Sprites"]
+position = Vector2( 690.79, 337.452 )
+scale = Vector2( 0.153776, 0.153776 )
+texture = ExtResource( 8 )
+
+[node name="Maui 3" type="Sprite" parent="Sprites"]
+position = Vector2( 768.168, 337.452 )
+scale = Vector2( 0.153776, 0.153776 )
+texture = ExtResource( 10 )
+
+[node name="Maui 4" type="Sprite" parent="Sprites"]
+position = Vector2( 859.374, 337.452 )
+scale = Vector2( 0.153776, 0.153776 )
+texture = ExtResource( 9 )
+
+[node name="Maui 5" type="Sprite" parent="Sprites"]
+position = Vector2( 956.677, 337.452 )
+scale = Vector2( 0.153776, 0.153776 )
+texture = ExtResource( 7 )
+
+[node name="Control" type="Control" parent="."]
+margin_left = -0.0477905
+margin_top = -138.143
+margin_right = 39.9522
+margin_bottom = -98.1426
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Button_Menu" type="Button" parent="Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 382.096
+margin_top = 585.935
+margin_right = 660.096
+margin_bottom = 619.935
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 1, 0.898039, 0, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 0.360784, 0, 1 )
+text = "BACK TO START MENU"
+flat = true
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -5.0
+autoplay = true
+[connection signal="pressed" from="Control/Button_Menu" to="Control/Button_Menu" method="_on_Button_Menu_pressed"]
