@@ -19,11 +19,11 @@
 [ext_resource path="res://Scene/Storybox/Sprites/Atua/Te Ra/End/Te_Rā4.png" type="Texture" id=17]
 [ext_resource path="res://Scene/Storybox/Sprites/Atua/Te Ra/End/Te_Rā7.png" type="Texture" id=18]
 
-[sub_resource type="StyleBoxTexture" id=1]
+[sub_resource type="StyleBoxTexture" id=7]
 texture = ExtResource( 5 )
 region_rect = Rect2( 0, 0, 1056, 321 )
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=8]
 size = 15
 font_data = ExtResource( 8 )
 
@@ -57,7 +57,7 @@ margin_left = 128.0
 margin_top = 288.0
 margin_right = 800.0
 margin_bottom = 498.0
-custom_styles/panel = SubResource( 1 )
+custom_styles/panel = SubResource( 7 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -69,7 +69,7 @@ margin_left = 52.0
 margin_top = 20.0
 margin_right = 590.0
 margin_bottom = 148.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 8 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
 valign = 1
@@ -117,6 +117,9 @@ position = Vector2( -41.3126, 86.6874 )
 scale = Vector2( 0.395625, 0.395625 )
 frames = SubResource( 6 )
 animation = "blink"
+
+frame = 3
+
 playing = true
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
