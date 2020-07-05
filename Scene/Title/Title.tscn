@@ -26,7 +26,7 @@ tracks/0/keys = {
 "values": [ Vector2( 0.176549, 0.182439 ), Vector2( 0.2, 0.24 ), Vector2( 0.176549, 0.182439 ) ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=2]
 length = 4.0
 loop = true
 tracks/0/type = "value"
@@ -63,7 +63,7 @@ tracks/0/keys = {
 size = 25
 font_data = ExtResource( 5 )
 
-[sub_resource type="DynamicFont" id=6]
+[sub_resource type="DynamicFont" id=5]
 size = 25
 font_data = ExtResource( 5 )
 
@@ -87,7 +87,7 @@ texture = ExtResource( 3 )
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
 autoplay = "Maui"
-anims/Maui = SubResource( 5 )
+anims/Maui = SubResource( 2 )
 
 [node name="MauiImage" type="Sprite" parent="AnimationPlayer2"]
 position = Vector2( 281.465, 453.604 )
@@ -150,7 +150,7 @@ margin_left = 450.823
 margin_top = 572.342
 margin_right = 593.823
 margin_bottom = 606.342
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 0.627451, 0.627451, 0.627451, 1 )
 custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
 custom_colors/font_color_pressed = Color( 1, 0.360784, 0, 1 )

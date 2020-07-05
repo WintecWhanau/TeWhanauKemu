@@ -27,6 +27,9 @@ margin_right = 835.37
 margin_bottom = 500.721
 next_level = "res://Scene/About/About.tscn"
 
+[node name="AnimatedSprite" parent="TeRaEndSB" index="4"]
+frame = 4
+
 [node name="Sprite" parent="TeRaEndSB" index="5"]
 frames = SubResource( 1 )
 frame = 0

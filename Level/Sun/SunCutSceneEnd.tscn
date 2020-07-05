@@ -15,7 +15,7 @@ texture = ExtResource( 2 )
 next_level = "res://Level/Sun/SunLevel2.tscn"
 
 [node name="AnimatedSprite" parent="TeRaStartSB" index="4"]
-frame = 2
+frame = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
