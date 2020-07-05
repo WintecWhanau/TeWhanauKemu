@@ -26,8 +26,7 @@ tracks/0/keys = {
 "values": [ Vector2( 0.176549, 0.182439 ), Vector2( 0.2, 0.24 ), Vector2( 0.176549, 0.182439 ) ]
 }
 
-[sub_resource type="Animation" id=2]
-resource_name = "Maui"
+[sub_resource type="Animation" id=5]
 length = 4.0
 loop = true
 tracks/0/type = "value"
@@ -37,10 +36,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 1, 2, 3, 4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 281.465, 484.843 ), Vector2( 281.465, 465 ), Vector2( 281.465, 484.843 ), Vector2( 281.465, 465 ), Vector2( 281.465, 484.843 ), Vector2( 281.465, 465 ), Vector2( 281.465, 484.843 ), Vector2( 281.465, 465 ), Vector2( 281.465, 484.843 ) ]
+"values": [ Vector2( 281.465, 473.403 ), Vector2( 281.465, 450.021 ), Vector2( 281.465, 473.403 ), Vector2( 281.465, 450.021 ), Vector2( 281.465, 473.403 ) ]
 }
 
 [sub_resource type="Animation" id=3]
@@ -64,7 +63,7 @@ tracks/0/keys = {
 size = 25
 font_data = ExtResource( 5 )
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=6]
 size = 25
 font_data = ExtResource( 5 )
 
@@ -83,15 +82,15 @@ anims/MauiTitle = SubResource( 1 )
 [node name="MauiTitle" type="Sprite" parent="AnimationPlayer"]
 position = Vector2( 264.592, 162.734 )
 rotation = -0.176278
-scale = Vector2( 0.189447, 0.214098 )
+scale = Vector2( 0.176549, 0.182439 )
 texture = ExtResource( 3 )
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
 autoplay = "Maui"
-anims/Maui = SubResource( 2 )
+anims/Maui = SubResource( 5 )
 
 [node name="MauiImage" type="Sprite" parent="AnimationPlayer2"]
-position = Vector2( 281.465, 473.403 )
+position = Vector2( 281.465, 453.604 )
 scale = Vector2( 0.295628, 0.300402 )
 texture = ExtResource( 4 )
 
@@ -151,7 +150,7 @@ margin_left = 450.823
 margin_top = 572.342
 margin_right = 593.823
 margin_bottom = 606.342
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 0.627451, 0.627451, 0.627451, 1 )
 custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
 custom_colors/font_color_pressed = Color( 1, 0.360784, 0, 1 )

@@ -32,12 +32,12 @@ tile_data = PoolIntArray( -393226, 1610612750, 0, -393225, 1610612747, 0, -39322
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
-volume_db = -2.0
+volume_db = -5.0
 autoplay = true
 
 [node name="PortalArea2D" parent="." instance=ExtResource( 4 )]
 position = Vector2( -277.884, -157.942 )
-next_level = "res://Level/Sun/SunCutScene.tscn"
+next_level = "res://Level/Sun/SunCutSceneEnd.tscn"
 
 [node name="Node2D" type="Node2D" parent="."]
 
@@ -112,30 +112,29 @@ texture = ExtResource( 12 )
 
 [node name="Player" parent="." instance=ExtResource( 5 )]
 position = Vector2( -208.283, 549.49 )
+level = 11
 
 [node name="VolcanoMovingPlat" parent="." instance=ExtResource( 6 )]
 position = Vector2( 198.247, 59.5489 )
 
 [node name="Ruaumoko" parent="." instance=ExtResource( 2 )]
 position = Vector2( 196.941, 535.108 )
-
-damage = 35
+damage = 30
 hp = 40
 
 [node name="Ruaumoko2" parent="." instance=ExtResource( 2 )]
 position = Vector2( 201.023, -140.799 )
-damage = 35
+damage = 30
 hp = 50
 
 [node name="Ruaumoko4" parent="." instance=ExtResource( 2 )]
 position = Vector2( 501.043, 131.601 )
-damage = 35
+damage = 30
 hp = 50
 
 [node name="Ruaumoko3" parent="." instance=ExtResource( 2 )]
 position = Vector2( -43.0547, 177.563 )
-damage = 35
+damage = 30
 hp = 40
-
 
 [node name="HUD" parent="." instance=ExtResource( 14 )]

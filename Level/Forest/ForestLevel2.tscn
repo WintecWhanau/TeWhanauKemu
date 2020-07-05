@@ -1,6 +1,4 @@
-
 [gd_scene load_steps=28 format=2]
-
 
 [ext_resource path="res://Scene/TileScenes/Forest/Res/forest.tres" type="TileSet" id=1]
 [ext_resource path="res://Assets/forest-platformer-tileset/Tanemahuta.jpg" type="Texture" id=2]
@@ -26,10 +24,8 @@
 [ext_resource path="res://Scene/Sprites/Portal/Portal3.png" type="Texture" id=22]
 [ext_resource path="res://Scene/Collectables/Tanemahuta/TaneCoin.tscn" type="PackedScene" id=23]
 [ext_resource path="res://Audio/BG Music/Forest/ForestBGM2.wav" type="AudioStream" id=24]
-
 [ext_resource path="res://Scene/Enemy/Tanemahuta/Tanemahuta Scene.tscn" type="PackedScene" id=25]
 [ext_resource path="res://Scene/HUD Health/HUD.tscn" type="PackedScene" id=26]
-
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -182,16 +178,12 @@ next_level = "res://Level/Forest/ForestCutscene.tscn"
 
 [node name="Player" parent="." instance=ExtResource( 17 )]
 position = Vector2( 254.391, -119.864 )
-level = 7
-
+level = 1
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 204.058, -124.034 )
 frames = SubResource( 1 )
 animation = "portal_idle"
-
-frame = 4
-
 playing = true
 
 [node name="Collectables" type="Node2D" parent="."]
@@ -228,22 +220,27 @@ position = Vector2( 272.908, 542.643 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 24 )
-volume_db = -2.0
+volume_db = -5.0
 autoplay = true
 
 [node name="Tanemahuta" parent="." instance=ExtResource( 25 )]
 position = Vector2( 643.116, -159.433 )
+damage = 10
 
 [node name="Tanemahuta5" parent="." instance=ExtResource( 25 )]
 position = Vector2( 1149.09, 537.986 )
+damage = 10
 
 [node name="Tanemahuta2" parent="." instance=ExtResource( 25 )]
 position = Vector2( 737.234, 90.7372 )
+damage = 10
 
 [node name="Tanemahuta3" parent="." instance=ExtResource( 25 )]
 position = Vector2( 225.632, 250.009 )
+damage = 10
 
 [node name="Tanemahuta4" parent="." instance=ExtResource( 25 )]
 position = Vector2( -33.386, 415.717 )
+damage = 10
 
 [node name="HUDCanvasLayer" parent="." instance=ExtResource( 26 )]

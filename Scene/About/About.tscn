@@ -1,8 +1,14 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Fonts/KurriIslandCapsPERSONAL-Bold.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Assets/forest-platformer-tileset/PNG/Background/Cartoon Jungle Game Tileset_Background - Layer 00.png" type="Texture" id=2]
 [ext_resource path="res://Audio/BG Music/Cutscenes/Tane Cutscene.wav" type="AudioStream" id=3]
+[ext_resource path="res://Scene/About/Jon.png" type="Texture" id=4]
+[ext_resource path="res://Scene/About/Stevie.png" type="Texture" id=5]
+[ext_resource path="res://Scene/About/Pippa.png" type="Texture" id=6]
+[ext_resource path="res://Scene/About/JB.png" type="Texture" id=7]
+[ext_resource path="res://Scene/About/Toni.png" type="Texture" id=8]
+[ext_resource path="res://Scene/About/Elysia.png" type="Texture" id=9]
 
 [sub_resource type="DynamicFont" id=1]
 size = 20
@@ -20,8 +26,111 @@ font_data = ExtResource( 1 )
 size = 26
 font_data = ExtResource( 1 )
 
+[sub_resource type="Animation" id=5]
+resource_name = "JB_idle"
+length = 6.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimateJB/JB:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.5, 3, 4.5, 6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 254.668, 533.277 ), Vector2( 254.668, 523.503 ), Vector2( 254.668, 533.277 ), Vector2( 254.668, 523.503 ), Vector2( 254.668, 533.277 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "Jon_idle"
+length = 5.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimateJon/Jon:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.3, 2.5, 3.8, 5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 368.847, 528.499 ), Vector2( 368.847, 519.539 ), Vector2( 368.847, 528.499 ), Vector2( 368.847, 519.539 ), Vector2( 368.847, 528.499 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "Stevie_idle"
+length = 9.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimateStevie/Stevie:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.5, 3, 4.5, 6, 7.5, 9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 491.825, 526.421 ), Vector2( 491.825, 498.728 ), Vector2( 491.825, 526.421 ), Vector2( 491.825, 498.728 ), Vector2( 491.825, 526.421 ), Vector2( 491.825, 498.728 ), Vector2( 491.825, 526.421 ) ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "Toni_idle"
+length = 5.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimateToni/Toni:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.2, 2.5, 3.8, 5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 602.118, 533.277 ), Vector2( 602.118, 521.874 ), Vector2( 602.118, 533.277 ), Vector2( 602.118, 521.874 ), Vector2( 602.118, 533.277 ) ]
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "Pippa_idle"
+length = 8.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatePippa/Pippa:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2, 3, 4, 5, 6, 7, 8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 715.07, 533.277 ), Vector2( 715.07, 512.1 ), Vector2( 715.07, 533.277 ), Vector2( 715.07, 512.1 ), Vector2( 715.07, 533.277 ), Vector2( 715.07, 512.1 ), Vector2( 715.07, 533.277 ), Vector2( 715.07, 512.1 ), Vector2( 715.07, 533.277 ) ]
+}
+
+[sub_resource type="Animation" id=10]
+resource_name = "Elysia_idle"
+length = 6.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimateElysia/Elysia:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.5, 3, 4.5, 6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 829.249, 533.277 ), Vector2( 829.249, 527 ), Vector2( 829.249, 533.277 ), Vector2( 829.249, 527 ), Vector2( 829.249, 533.277 ) ]
+}
+
 [node name="About" type="Control"]
-margin_right = 40.0
+margin_left = 1.36032
+margin_right = 41.3603
 margin_bottom = 40.0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -31,10 +140,6 @@ __meta__ = {
 position = Vector2( 529.523, 303.834 )
 scale = Vector2( 0.823386, 0.849152 )
 texture = ExtResource( 2 )
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="BackgroundImage"]
-stream = ExtResource( 3 )
-autoplay = true
 
 [node name="Characters Roles" type="MarginContainer" parent="."]
 anchor_left = -0.05
@@ -106,12 +211,12 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Role" type="Label" parent="MarginContainer3"]
+[node name="Team" type="Label" parent="MarginContainer3"]
 margin_top = 14.0
 margin_right = 79.0
 margin_bottom = 40.0
 custom_fonts/font = SubResource( 3 )
-text = "Player"
+text = "Team"
 __meta__ = {
 "_edit_lock_": true
 }
@@ -125,12 +230,73 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Name" type="Label" parent="MarginContainer4"]
+[node name="Role" type="Label" parent="MarginContainer4"]
 margin_top = 7.0
 margin_right = 141.0
 margin_bottom = 33.0
 custom_fonts/font = SubResource( 4 )
-text = "Characters"
+text = "Role"
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( 529.523, 303.834 )
+scale = Vector2( 0.823386, 0.849152 )
+stream = ExtResource( 3 )
+volume_db = -5.0
+autoplay = true
+
+[node name="AnimateJB" type="AnimationPlayer" parent="."]
+autoplay = "JB_idle"
+anims/JB_idle = SubResource( 5 )
+
+[node name="JB" type="Sprite" parent="AnimateJB"]
+position = Vector2( 254.668, 529.856 )
+scale = Vector2( 0.175858, 0.175858 )
+texture = ExtResource( 7 )
+
+[node name="AnimateJon" type="AnimationPlayer" parent="."]
+autoplay = "Jon_idle"
+anims/Jon_idle = SubResource( 6 )
+
+[node name="Jon" type="Sprite" parent="AnimateJon"]
+position = Vector2( 368.847, 521.158 )
+scale = Vector2( 0.175858, 0.186476 )
+texture = ExtResource( 4 )
+
+[node name="AnimateStevie" type="AnimationPlayer" parent="."]
+autoplay = "Stevie_idle"
+anims/Stevie_idle = SubResource( 7 )
+
+[node name="Stevie" type="Sprite" parent="AnimateStevie"]
+position = Vector2( 491.825, 523.246 )
+scale = Vector2( 0.209345, 0.209345 )
+texture = ExtResource( 5 )
+
+[node name="AnimateToni" type="AnimationPlayer" parent="."]
+autoplay = "Toni_idle"
+anims/Toni_idle = SubResource( 8 )
+
+[node name="Toni" type="Sprite" parent="AnimateToni"]
+position = Vector2( 602.118, 528.615 )
+scale = Vector2( 0.175858, 0.175858 )
+texture = ExtResource( 8 )
+
+[node name="AnimatePippa" type="AnimationPlayer" parent="."]
+autoplay = "Pippa_idle"
+anims/Pippa_idle = SubResource( 9 )
+
+[node name="Pippa" type="Sprite" parent="AnimatePippa"]
+position = Vector2( 715.07, 518.94 )
+scale = Vector2( 0.175858, 0.175858 )
+texture = ExtResource( 6 )
+
+[node name="AnimateElysia" type="AnimationPlayer" parent="."]
+autoplay = "Elysia_idle"
+anims/Elysia_idle = SubResource( 10 )
+
+[node name="Elysia" type="Sprite" parent="AnimateElysia"]
+position = Vector2( 829.249, 527.162 )
+scale = Vector2( 0.175858, 0.175858 )
+texture = ExtResource( 9 )

@@ -1,6 +1,4 @@
-
-[gd_scene load_steps=13 format=2]
-
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scene/TileScenes/Volcano/Res/volcano.tres" type="TileSet" id=1]
 [ext_resource path="res://Common/Map.gd" type="Script" id=2]
@@ -39,7 +37,8 @@ tile_data = PoolIntArray( -393226, 1610612750, 0, -393225, 1610612747, 0, -39322
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="VolcanoLevel"]
 stream = ExtResource( 3 )
-volume_db = -2.0
+volume_db = -5.0
+autoplay = true
 
 [node name="Player" parent="VolcanoLevel" instance=ExtResource( 4 )]
 position = Vector2( -185.973, 549.453 )
@@ -87,6 +86,4 @@ texture = ExtResource( 9 )
 position = Vector2( 1887.97, 1121.9 )
 texture = ExtResource( 10 )
 
-
 [node name="HUD" parent="." instance=ExtResource( 12 )]
-

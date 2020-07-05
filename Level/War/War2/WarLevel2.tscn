@@ -461,37 +461,38 @@ texture = ExtResource( 28 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Audio"]
 stream = ExtResource( 12 )
+volume_db = -5.0
 autoplay = true
 
 [node name="Enemies" type="Node" parent="."]
 
 [node name="Tumatauenga" parent="Enemies" instance=ExtResource( 8 )]
 position = Vector2( 636.596, 512.023 )
-damage = 35
+damage = 15
 
 [node name="Tumatauenga2" parent="Enemies" instance=ExtResource( 8 )]
 position = Vector2( 1261.74, 250.311 )
-damage = 35
+damage = 15
 
 [node name="Tumatauenga3" parent="Enemies" instance=ExtResource( 8 )]
 position = Vector2( 1227.84, -41.1488 )
-damage = 35
+damage = 15
 
 [node name="Tumatauenga4" parent="Enemies" instance=ExtResource( 8 )]
 position = Vector2( 627.4, -31.0322 )
-damage = 35
+damage = 15
 
 [node name="Tumatauenga5" parent="Enemies" instance=ExtResource( 8 )]
 position = Vector2( 149.062, 186.73 )
-damage = 35
+damage = 15
 
 [node name="Tumatauenga6" parent="Enemies" instance=ExtResource( 8 )]
 position = Vector2( 1222.75, 540.192 )
-damage = 35
+damage = 15
 
 [node name="Tumatauenga7" parent="Enemies" instance=ExtResource( 8 )]
 position = Vector2( -160.165, 540.192 )
-damage = 35
+damage = 15
 
 [node name="Player" parent="." instance=ExtResource( 9 )]
 position = Vector2( -261.955, -158.228 )

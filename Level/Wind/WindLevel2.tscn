@@ -47,7 +47,8 @@ tile_data = PoolIntArray( -393226, 1610612750, 0, -393225, 1610612747, 0, -39322
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Background Stuff"]
 stream = ExtResource( 3 )
-volume_db = -8.0
+volume_db = -5.0
+autoplay = true
 
 [node name="Player" parent="." instance=ExtResource( 4 )]
 position = Vector2( 887.099, 124 )
@@ -279,30 +280,30 @@ position = Vector2( 1024, 352 )
 
 [node name="Tawhirimatea" parent="Enemies" instance=ExtResource( 10 )]
 position = Vector2( 260.838, -68 )
-damage = 20
+damage = 10
 
 [node name="Tawhirimatea2" parent="Enemies" instance=ExtResource( 10 )]
 position = Vector2( 855.099, -68 )
-damage = 20
+damage = 10
 
 [node name="Tawhirimatea3" parent="Enemies" instance=ExtResource( 10 )]
 position = Vector2( 463.667, 124 )
-damage = 20
+damage = 10
 
 [node name="Tawhirimatea4" parent="Enemies" instance=ExtResource( 10 )]
 position = Vector2( 367.649, 346.527 )
-damage = 20
+damage = 10
 
 [node name="Tawhirimatea5" parent="Enemies" instance=ExtResource( 10 )]
 position = Vector2( 827.099, 346.527 )
-damage = 20
+damage = 10
 
 [node name="Tawhirimatea6" parent="Enemies" instance=ExtResource( 10 )]
 position = Vector2( 847.099, 532 )
-damage = 20
+damage = 10
 
 [node name="Tawhirimatea8" parent="Enemies" instance=ExtResource( 10 )]
 position = Vector2( 192, 535 )
-damage = 20
+damage = 10
 
 [node name="HUD" parent="." instance=ExtResource( 11 )]

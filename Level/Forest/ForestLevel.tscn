@@ -225,6 +225,7 @@ position = Vector2( 1044.25, -45.8004 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 18 )
+volume_db = -5.0
 autoplay = true
 
 [node name="HUD" parent="." instance=ExtResource( 19 )]
@@ -236,7 +237,7 @@ damage = 10
 [node name="Tanemahuta2" parent="." instance=ExtResource( 21 )]
 position = Vector2( 1097, 314 )
 damage = 10
-hp = 10
 
 [node name="Tanemahuta3" parent="." instance=ExtResource( 21 )]
 position = Vector2( -139, 53 )
+damage = 10

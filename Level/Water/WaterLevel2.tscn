@@ -57,6 +57,10 @@ position = Vector2( -497.154, 201.764 )
 position = Vector2( -385.219, 130.622 )
 texture = ExtResource( 2 )
 
+[node name="AudioStreamPlayer" parent="WaterBG" index="15"]
+volume_db = -5.0
+autoplay = true
+
 [node name="Cartoon Water Game Tileset_Environment - Rock 13" parent="." index="1"]
 position = Vector2( 842.215, 543.929 )
 
@@ -208,6 +212,7 @@ position = Vector2( 387.296, -97.8457 )
 
 [node name="PortalArea2D" parent="." index="34"]
 position = Vector2( 1290.6, 197.739 )
+next_level = "res://Level/Water/TangaroaCutscene.tscn"
 
 [node name="TangaroaCoin" parent="." index="35"]
 position = Vector2( 92.5141, -163.079 )
@@ -287,19 +292,16 @@ position = Vector2( 966.998, 237.674 )
 [node name="TangaroaCoin28" parent="." index="60"]
 position = Vector2( 62.4791, 305.832 )
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="61"]
-stream = ExtResource( 5 )
-
-[node name="TangaroaCoin29" parent="." index="62"]
+[node name="TangaroaCoin29" parent="." index="61"]
 position = Vector2( 401.367, -162.633 )
 
-[node name="TangaroaCoin30" parent="." index="63"]
+[node name="TangaroaCoin30" parent="." index="62"]
 position = Vector2( 142.829, 499.35 )
 
-[node name="TangaroaCoin9" parent="." index="64"]
+[node name="TangaroaCoin9" parent="." index="63"]
 position = Vector2( 244.075, 179.66 )
 
-[node name="Player" parent="." index="65"]
+[node name="Player" parent="." index="64"]
 position = Vector2( -257.038, 417.313 )
 level = 4
 
@@ -311,3 +313,8 @@ position = Vector2( 187.426, -107.655 )
 
 [node name="Enemy3" parent="Enemies" index="2"]
 position = Vector2( 531.21, 534.174 )
+
+[node name="AudioStreamPlayer" parent="." index="67"]
+stream = ExtResource( 5 )
+volume_db = 0.0
+autoplay = false

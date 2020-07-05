@@ -42,6 +42,7 @@ tile_data = PoolIntArray( -393226, 1610612750, 0, -393225, 1610612747, 0, -39322
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 8 )
+volume_db = -5.0
 autoplay = true
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
@@ -121,23 +122,23 @@ position = Vector2( 2.72073, 3.05176e-05 )
 
 [node name="Ruaumoko" parent="Enemies" instance=ExtResource( 4 )]
 position = Vector2( 263.596, 410.557 )
-damage = 25
+damage = 15
 
 [node name="Ruaumoko2" parent="Enemies" instance=ExtResource( 4 )]
 position = Vector2( 400.151, 137.857 )
-damage = 25
+damage = 15
 
 [node name="Ruaumoko3" parent="Enemies" instance=ExtResource( 4 )]
 position = Vector2( 624.23, 149.754 )
-damage = 25
+damage = 15
 
 [node name="Ruaumoko4" parent="Enemies" instance=ExtResource( 4 )]
 position = Vector2( 1090.84, 518.454 )
-damage = 25
+damage = 15
 
 [node name="Ruaumoko5" parent="Enemies" instance=ExtResource( 4 )]
 position = Vector2( 630.809, -54.5922 )
-damage = 25
+damage = 15
 
 [node name="HUD" parent="." instance=ExtResource( 11 )]
 

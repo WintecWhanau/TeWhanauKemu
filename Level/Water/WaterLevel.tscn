@@ -312,6 +312,7 @@ texture = ExtResource( 6 )
 
 [node name="PortalArea2D" parent="." instance=ExtResource( 27 )]
 position = Vector2( 1292.04, 485.914 )
+next_level = "res://Level/Water/WaterLevel2.tscn"
 
 [node name="TangaroaCoin" parent="." instance=ExtResource( 11 )]
 position = Vector2( -272.371, -139.28 )
@@ -411,9 +412,17 @@ level = 3
 
 [node name="Enemy1" parent="Enemies" instance=ExtResource( 31 )]
 position = Vector2( 1111, 34 )
+damage = 10
 
 [node name="Enemy2" parent="Enemies" instance=ExtResource( 31 )]
 position = Vector2( 820, 529 )
+damage = 10
 
 [node name="Enemy3" parent="Enemies" instance=ExtResource( 31 )]
 position = Vector2( 202, 190 )
+damage = 10
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 12 )
+volume_db = -5.0
+autoplay = true

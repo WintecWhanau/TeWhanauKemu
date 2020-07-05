@@ -18,7 +18,7 @@ script = ExtResource( 9 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="BackgroundStuff"]
 stream = ExtResource( 3 )
-volume_db = -8.0
+volume_db = -5.0
 autoplay = true
 
 [node name="WindBG" type="Sprite" parent="BackgroundStuff"]
@@ -339,48 +339,49 @@ next_level = "res://Level/Wind/WindLevel2.tscn"
 position = Vector2( 1136, 96 )
 max_speed_normal = 70
 max_speed_attack = 90
-damage = 20
+damage = 10
 
 [node name="Tawhirimatea2" parent="Enemies" instance=ExtResource( 8 )]
 position = Vector2( 32, 99 )
 max_speed_normal = 70
 max_speed_attack = 90
-damage = 20
+damage = 10
 
 [node name="Tawhirimatea3" parent="Enemies" instance=ExtResource( 8 )]
 position = Vector2( 424, 99 )
 max_speed_normal = 70
 max_speed_attack = 90
+damage = 10
 
 [node name="Tawhirimatea4" parent="Enemies" instance=ExtResource( 8 )]
 position = Vector2( 804, 99 )
 max_speed_normal = 70
 max_speed_attack = 90
-damage = 20
+damage = 10
 
 [node name="Tawhirimatea8" parent="Enemies" instance=ExtResource( 8 )]
 position = Vector2( 1288, 542 )
 max_speed_normal = 70
 max_speed_attack = 90
-damage = 20
+damage = 10
 
 [node name="Tawhirimatea7" parent="Enemies" instance=ExtResource( 8 )]
 position = Vector2( 184, 545 )
 max_speed_normal = 70
 max_speed_attack = 90
-damage = 20
+damage = 10
 
 [node name="Tawhirimatea6" parent="Enemies" instance=ExtResource( 8 )]
 position = Vector2( 576, 545 )
 max_speed_normal = 70
 max_speed_attack = 90
-damage = 20
+damage = 10
 
 [node name="Tawhirimatea5" parent="Enemies" instance=ExtResource( 8 )]
 position = Vector2( 956, 545 )
 max_speed_normal = 70
 max_speed_attack = 90
-damage = 20
+damage = 10
 
 [node name="Player" parent="." instance=ExtResource( 4 )]
 position = Vector2( -264, 536 )

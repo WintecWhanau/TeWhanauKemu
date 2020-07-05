@@ -20,4 +20,5 @@ next_level = "res://Level/Water/WaterLevel.tscn"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
+volume_db = -5.0
 autoplay = true
