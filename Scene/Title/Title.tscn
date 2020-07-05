@@ -130,11 +130,27 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Button_Controls" type="Button" parent="Control"]
+margin_left = 437.874
+margin_top = 525.948
+margin_right = 606.874
+margin_bottom = 559.948
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0.956863, 0.556863, 0.113725, 1 )
+custom_colors/font_color_pressed = Color( 1, 0.360784, 0, 1 )
+text = "CONTROLS"
+flat = true
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Button_Quit" type="Button" parent="Control"]
 margin_left = 450.823
-margin_top = 518.177
+margin_top = 572.342
 margin_right = 593.823
-margin_bottom = 552.177
+margin_bottom = 606.342
 custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 0.627451, 0.627451, 0.627451, 1 )
 custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
@@ -151,4 +167,5 @@ stream = ExtResource( 8 )
 volume_db = -5.0
 autoplay = true
 [connection signal="pressed" from="Control/Button_Start" to="Control/Button_Start" method="_on_Button_Start_pressed"]
+[connection signal="pressed" from="Control/Button_Controls" to="Control/Button_Controls" method="_on_Button_Controls_pressed"]
 [connection signal="button_up" from="Control/Button_Quit" to="Control/Button_Quit" method="_on_Button_Quit_button_up"]
