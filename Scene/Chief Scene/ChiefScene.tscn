@@ -12,13 +12,10 @@ scale = Vector2( 0.655056, 0.514229 )
 texture = ExtResource( 2 )
 
 [node name="ChiefSB" parent="." instance=ExtResource( 1 )]
-margin_left = 181.684
-margin_top = 268.632
-margin_right = 853.684
-margin_bottom = 478.632
-
-[node name="AnimatedSprite" parent="ChiefSB" index="3"]
-frame = 6
+margin_left = 183.044
+margin_top = 280.875
+margin_right = 855.044
+margin_bottom = 490.875
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
