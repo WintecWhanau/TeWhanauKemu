@@ -1,0 +1,259 @@
+[gd_scene load_steps=25 format=2]
+
+[ext_resource path="res://Scene/TileScenes/Volcano/Res/volcano.tres" type="TileSet" id=1]
+[ext_resource path="res://Common/Map.gd" type="Script" id=2]
+[ext_resource path="res://Scene/Player/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scene/HUD Health/HUD.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/volcano-platformer-tileset/Ruaumoko.jpg" type="Texture" id=5]
+[ext_resource path="res://Scene/Enemy/Ruaumoko/Ruaumoko.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Assets/volcano-platformer-tileset/PNG/Background/Volcano Level Set_Background - Layer 01.png" type="Texture" id=7]
+[ext_resource path="res://Audio/BG Music/Volcano/VolcanoBGM2.wav" type="AudioStream" id=8]
+[ext_resource path="res://Assets/volcano-platformer-tileset/PNG/Environment/Volcano Level Set_Environment - Crack 02.png" type="Texture" id=9]
+[ext_resource path="res://Assets/volcano-platformer-tileset/PNG/Environment/Volcano Level Set_Environment - Crack 04.png" type="Texture" id=10]
+[ext_resource path="res://Assets/volcano-platformer-tileset/PNG/Environment/Volcano Level Set_Environment - Lava 01.png" type="Texture" id=11]
+[ext_resource path="res://Assets/volcano-platformer-tileset/PNG/Environment/Volcano Level Set_Environment - Crack 07.png" type="Texture" id=12]
+[ext_resource path="res://Assets/volcano-platformer-tileset/PNG/Environment/Volcano Level Set_Environment - Crack 03.png" type="Texture" id=13]
+[ext_resource path="res://Assets/volcano-platformer-tileset/PNG/Environment/Volcano Level Set_Environment - Crack 01.png" type="Texture" id=14]
+[ext_resource path="res://Assets/volcano-platformer-tileset/PNG/Environment/Volcano Level Set_Environment - Crack 06.png" type="Texture" id=15]
+[ext_resource path="res://Level/Volcano/VolcanoTwo/Lava.gd" type="Script" id=16]
+[ext_resource path="res://Assets/volcano-platformer-tileset/PNG/Environment/Volcano Level Set_Environment - Crack 05.png" type="Texture" id=17]
+[ext_resource path="res://Level/Volcano/VolcanoTwo/Platform.gd" type="Script" id=18]
+[ext_resource path="res://Assets/volcano-platformer-tileset/PNG/Environment/Volcano Level Set_Environment - Golden Key.png" type="Texture" id=19]
+[ext_resource path="res://Scene/Portal/Portal.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Scene/Collectables/Ruaumoko/RuaumokoCoin.tscn" type="PackedScene" id=21]
+[ext_resource path="res://Assets/volcano-platformer-tileset/PNG/Environment/Volcano Level Set_Environment - Signpost 04.png" type="Texture" id=22]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 37.5666, 6.55458 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 50.7378, 19.9954 )
+
+[node name="VolcanoLevel" type="Node"]
+script = ExtResource( 2 )
+
+[node name="VolcanoBG" type="Sprite" parent="."]
+position = Vector2( 507, 194.5 )
+scale = Vector2( 1.0599, 1.21548 )
+texture = ExtResource( 5 )
+
+[node name="VolcanoTilemap" type="TileMap" parent="."]
+scale = Vector2( 0.5, 0.5 )
+tile_set = ExtResource( 1 )
+format = 1
+tile_data = PoolIntArray( -393226, 1610612750, 0, -393225, 1610612747, 0, -393224, 1610612747, 0, -393223, 1610612747, 0, -393222, 1610612747, 0, -393221, 1610612747, 0, -393220, 1610612747, 0, -393219, 1610612747, 0, -393218, 1610612747, 0, -393217, 1610612747, 0, -458752, 1610612747, 0, -458751, 1610612747, 0, -458750, 1610612747, 0, -458749, 1610612747, 0, -458748, 1610612747, 0, -458747, 1610612747, 0, -458746, 1610612747, 0, -458745, 1610612747, 0, -458744, 1610612747, 0, -458743, 1610612747, 0, -458742, 1610612747, 0, -458741, 1610612747, 0, -458740, 1610612747, 0, -458739, 1610612747, 0, -458738, 1610612747, 0, -458737, 1610612747, 0, -458736, 1610612747, 0, -458735, 1610612747, 0, -458734, 1610612747, 0, -458733, 1610612747, 0, -458732, 1610612747, 0, -458731, 1610612747, 0, -458730, 1610612747, 0, -458729, 1610612747, 0, -458728, 1610612747, 0, -458727, 1610612747, 0, -458726, 1610612747, 0, -458725, 1610612747, 0, -458724, 1610612747, 0, -458723, 1610612747, 0, -458722, 1610612747, 0, -458721, 1610612747, 0, -458720, 1610612747, 0, -458719, 1610612747, 0, -458718, 1610612747, 0, -458717, 1610612747, 0, -458716, 1610612747, 0, -458715, 1610612747, 0, -458714, 1610612747, 0, -458713, 1610612747, 0, -458712, 1610612747, 0, -458711, -1073741810, 0, -327690, -1610612725, 0, -393175, -1073741813, 0, -262154, -1610612725, 0, -327639, -1073741813, 0, -196618, -1610612725, 0, -262130, 13, 0, -262129, 11, 0, -262128, 11, 0, -262127, 17, 0, -262103, -1073741813, 0, -131082, -1610612725, 0, -196567, -1073741813, 0, -65546, -1610612725, 0, -131031, -1073741813, 0, -10, -1610612725, 0, -65495, -1073741813, 0, 65526, -1610612725, 0, 11, 10, 0, 12, 11, 0, 13, 11, 0, 14, 17, 0, 17, 13, 0, 18, 11, 0, 19, 11, 0, 20, 12, 0, 41, -1073741813, 0, 131062, -1610612725, 0, 65546, 10, 0, 65547, 14, 0, 65548, 15, 0, 65549, 15, 0, 65550, 22, 0, 65553, 18, 0, 65554, 15, 0, 65555, 15, 0, 65556, 16, 0, 65557, 12, 0, 65577, -1073741813, 0, 196598, -1610612725, 0, 131081, 10, 0, 131082, 14, 0, 131083, 22, 0, 131089, 18, 0, 131090, 22, 0, 131092, 18, 0, 131093, 16, 0, 131094, 12, 0, 131113, -1073741813, 0, 262134, -1610612725, 0, 196616, 10, 0, 196617, 14, 0, 196618, 15, 0, 196619, 22, 0, 196625, 18, 0, 196626, 22, 0, 196628, 18, 0, 196629, 15, 0, 196630, 16, 0, 196631, 12, 0, 196649, -1073741813, 0, 327670, -1610612725, 0, 262149, 13, 0, 262150, 11, 0, 262151, 11, 0, 262152, 14, 0, 262153, 15, 0, 262154, 15, 0, 262155, 22, 0, 262166, 18, 0, 262167, 16, 0, 262168, 11, 0, 262169, 11, 0, 262170, 17, 0, 262185, -1073741813, 0, 393206, -1610612725, 0, 327685, 18, 0, 327686, 22, 0, 327693, 13, 0, 327694, 17, 0, 327702, 18, 0, 327703, 15, 0, 327704, 15, 0, 327705, 15, 0, 327706, 22, 0, 327721, -1073741813, 0, 458742, -1610612725, 0, 393221, 18, 0, 393222, 22, 0, 393229, 18, 0, 393230, 22, 0, 393233, 13, 0, 393234, 11, 0, 393235, 11, 0, 393236, 17, 0, 393241, 18, 0, 393242, 22, 0, 393257, -1073741813, 0, 524278, -1610612725, 0, 458755, 10, 0, 458756, 11, 0, 458757, 14, 0, 458758, 22, 0, 458761, 13, 0, 458762, 11, 0, 458763, 11, 0, 458764, 11, 0, 458765, 14, 0, 458766, 22, 0, 458769, 18, 0, 458770, 15, 0, 458771, 15, 0, 458772, 22, 0, 458777, 18, 0, 458778, 16, 0, 458779, 11, 0, 458780, 12, 0, 458793, -1073741813, 0, 589814, -1610612725, 0, 589815, 11, 0, 589816, 17, 0, 524290, 10, 0, 524291, 14, 0, 524292, 15, 0, 524293, 15, 0, 524294, 15, 0, 524295, 11, 0, 524296, 11, 0, 524297, 14, 0, 524298, 15, 0, 524299, 15, 0, 524300, 15, 0, 524301, 15, 0, 524302, 16, 0, 524303, 11, 0, 524304, 11, 0, 524305, 14, 0, 524306, 15, 0, 524307, 15, 0, 524308, 16, 0, 524309, 11, 0, 524310, 11, 0, 524313, 18, 0, 524314, 15, 0, 524315, 15, 0, 524316, 16, 0, 524317, 12, 0, 524327, 13, 0, 524328, 11, 0, 524329, -1073741813, 0, 655350, -1610612725, 0, 589825, 10, 0, 589826, 15, 0, 589827, 22, 0, 589852, 18, 0, 589853, 16, 0, 589854, 12, 0, 589865, -1073741813, 0, 720886, -1610612725, 0, 655360, 10, 0, 655361, 14, 0, 655362, 15, 0, 655363, 22, 0, 655388, 18, 0, 655389, 15, 0, 655390, 16, 0, 655391, 12, 0, 655401, -1073741813, 0, 786422, -1610612725, 0, 786429, 13, 0, 786430, 11, 0, 786431, 11, 0, 720896, 14, 0, 720897, 15, 0, 720898, 15, 0, 720899, 22, 0, 720901, 13, 0, 720902, 11, 0, 720903, 11, 0, 720904, 11, 0, 720905, 11, 0, 720906, 11, 0, 720907, 11, 0, 720908, 11, 0, 720909, 11, 0, 720910, 11, 0, 720911, 11, 0, 720912, 11, 0, 720913, 11, 0, 720914, 11, 0, 720915, 11, 0, 720916, 11, 0, 720917, 11, 0, 720918, 11, 0, 720919, 11, 0, 720920, 11, 0, 720921, 11, 0, 720922, 11, 0, 720923, 11, 0, 720924, 14, 0, 720925, 15, 0, 720926, 15, 0, 720927, 16, 0, 720928, 11, 0, 720929, 11, 0, 720930, 17, 0, 720937, -1073741813, 0, 851958, -1610612725, 0, 851965, 18, 0, 851966, 15, 0, 851967, 22, 0, 786465, 18, 0, 786466, 22, 0, 786473, -1073741813, 0, 917494, -1610612725, 0, 917501, 18, 0, 917502, 15, 0, 917503, 22, 0, 852001, 18, 0, 852002, 22, 0, 852009, -1073741813, 0, 983030, -1610612725, 0, 983035, 10, 0, 983036, 11, 0, 983037, 14, 0, 983038, 15, 0, 983039, 16, 0, 917504, 11, 0, 917505, 11, 0, 917506, 11, 0, 917507, 11, 0, 917508, 11, 0, 917509, 11, 0, 917510, 11, 0, 917511, 11, 0, 917512, 11, 0, 917513, 11, 0, 917514, 11, 0, 917515, 11, 0, 917516, 11, 0, 917517, 11, 0, 917518, 11, 0, 917519, 11, 0, 917520, 11, 0, 917521, 11, 0, 917522, 11, 0, 917523, 11, 0, 917524, 11, 0, 917525, 11, 0, 917526, 11, 0, 917527, 11, 0, 917528, 11, 0, 917529, 11, 0, 917530, 11, 0, 917531, 11, 0, 917532, 11, 0, 917533, 11, 0, 917534, 11, 0, 917535, 17, 0, 917537, 18, 0, 917538, 16, 0, 917539, 11, 0, 917540, 12, 0, 917545, -1073741813, 0, 1048566, -1610612725, 0, 1048570, 10, 0, 1048571, 14, 0, 1048572, 15, 0, 1048573, 15, 0, 1048574, 15, 0, 1048575, 15, 0, 983040, 15, 0, 983041, 15, 0, 983042, 15, 0, 983043, 15, 0, 983044, 15, 0, 983045, 15, 0, 983046, 15, 0, 983047, 15, 0, 983048, 15, 0, 983049, 15, 0, 983050, 15, 0, 983051, 15, 0, 983052, 15, 0, 983053, 15, 0, 983054, 15, 0, 983055, 15, 0, 983056, 15, 0, 983057, 15, 0, 983058, 15, 0, 983059, 15, 0, 983060, 15, 0, 983061, 15, 0, 983062, 15, 0, 983063, 15, 0, 983064, 15, 0, 983065, 15, 0, 983066, 15, 0, 983067, 15, 0, 983068, 15, 0, 983069, 15, 0, 983070, 15, 0, 983071, 22, 0, 983073, 18, 0, 983074, 15, 0, 983075, 15, 0, 983076, 16, 0, 983077, 12, 0, 983081, -1073741813, 0, 1114102, -1610612725, 0, 1114105, 10, 0, 1114106, 14, 0, 1114107, 15, 0, 1114108, 22, 0, 1048609, 18, 0, 1048610, 15, 0, 1048611, 15, 0, 1048612, 15, 0, 1048613, 16, 0, 1048614, 12, 0, 1048617, -1073741813, 0, 1179638, -1610612725, 0, 1179640, 10, 0, 1179641, 14, 0, 1179642, 15, 0, 1179643, 15, 0, 1179644, 22, 0, 1114145, 18, 0, 1114146, 15, 0, 1114147, 15, 0, 1114148, 15, 0, 1114149, 15, 0, 1114150, 16, 0, 1114151, 12, 0, 1114153, -1073741813, 0, 1245174, 16, 0, 1245175, 11, 0, 1245176, 11, 0, 1245177, 11, 0, 1245178, 11, 0, 1245179, 11, 0, 1245180, 11, 0, 1245181, 11, 0, 1245182, 11, 0, 1245183, 11, 0, 1179648, 11, 0, 1179649, 11, 0, 1179650, 11, 0, 1179651, 11, 0, 1179652, 11, 0, 1179653, 11, 0, 1179654, 11, 0, 1179655, 11, 0, 1179656, 11, 0, 1179657, 11, 0, 1179658, 11, 0, 1179659, 11, 0, 1179660, 11, 0, 1179661, 11, 0, 1179662, 11, 0, 1179663, 11, 0, 1179664, 11, 0, 1179665, 11, 0, 1179666, 11, 0, 1179667, 11, 0, 1179668, 11, 0, 1179669, 11, 0, 1179670, 11, 0, 1179671, 11, 0, 1179672, 11, 0, 1179673, 11, 0, 1179674, 11, 0, 1179675, 11, 0, 1179676, 11, 0, 1179677, 11, 0, 1179678, 11, 0, 1179679, 11, 0, 1179680, 11, 0, 1179681, 11, 0, 1179682, 11, 0, 1179683, 11, 0, 1179684, 11, 0, 1179685, 11, 0, 1179686, 11, 0, 1179687, 11, 0, 1179688, 11, 0, 1179689, 14, 0 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+autoplay = true
+
+[node name="Player" parent="." instance=ExtResource( 3 )]
+position = Vector2( -82.1772, 544.155 )
+level = 8
+
+[node name="HUD" parent="." instance=ExtResource( 4 )]
+
+[node name="Environment" type="Node2D" parent="."]
+
+[node name="Volcano Level Set_Background - Layer 01" type="Sprite" parent="Environment"]
+position = Vector2( 512.711, 324.377 )
+scale = Vector2( 1.24887, 0.984327 )
+texture = ExtResource( 7 )
+
+[node name="Volcano Level Set_Environment - Crack 02" type="Sprite" parent="Environment"]
+position = Vector2( -168.676, 552.77 )
+texture = ExtResource( 9 )
+
+[node name="Volcano Level Set_Environment - Crack 04" type="Sprite" parent="Environment"]
+position = Vector2( 186.664, 483.788 )
+texture = ExtResource( 10 )
+
+[node name="Volcano Level Set_Environment - Crack 07" type="Sprite" parent="Environment"]
+position = Vector2( 712.837, 482.241 )
+scale = Vector2( 1, 0.951638 )
+texture = ExtResource( 12 )
+
+[node name="Volcano Level Set_Environment - Crack 08" type="Sprite" parent="Environment"]
+position = Vector2( -49.2718, 402.727 )
+scale = Vector2( 1.20264, 1.39538 )
+texture = ExtResource( 12 )
+
+[node name="Volcano Level Set_Environment - Crack 06" type="Sprite" parent="Environment"]
+position = Vector2( 1095.22, 484.484 )
+scale = Vector2( 1, 0.863457 )
+texture = ExtResource( 15 )
+
+[node name="Volcano Level Set_Environment - Crack 01" type="Sprite" parent="Environment"]
+position = Vector2( 629.942, 229.105 )
+texture = ExtResource( 14 )
+
+[node name="Volcano Level Set_Environment - Crack 03" type="Sprite" parent="Environment"]
+position = Vector2( 352.331, 259.002 )
+texture = ExtResource( 13 )
+
+[node name="Volcano Level Set_Environment - Crack 09" type="Sprite" parent="Environment"]
+position = Vector2( 337.458, 114.85 )
+texture = ExtResource( 15 )
+flip_h = true
+
+[node name="Volcano Level Set_Environment - Lava 01" type="Sprite" parent="Environment"]
+position = Vector2( 512.779, 250.676 )
+scale = Vector2( 1.37823, 1.13754 )
+texture = ExtResource( 11 )
+
+[node name="Volcano Level Set_Environment - Crack 05" type="Sprite" parent="Environment"]
+position = Vector2( 757.285, 164.551 )
+scale = Vector2( 1, 1.37184 )
+texture = ExtResource( 17 )
+
+[node name="Volcano Level Set_Environment - Crack 10" type="Sprite" parent="Environment"]
+position = Vector2( 380.145, 475.699 )
+scale = Vector2( 0.707286, 0.786413 )
+texture = ExtResource( 9 )
+
+[node name="Volcano Level Set_Environment - Signpost 04" type="Sprite" parent="Environment"]
+position = Vector2( 512.99, 215.351 )
+texture = ExtResource( 22 )
+
+[node name="TriggeredAreas" type="Node2D" parent="."]
+
+[node name="Lava" type="Node2D" parent="TriggeredAreas"]
+position = Vector2( 512.638, 250.139 )
+script = ExtResource( 16 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="TriggeredAreas/Lava"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TriggeredAreas/Lava/Area2D"]
+shape = SubResource( 1 )
+
+[node name="Platform" type="Node2D" parent="TriggeredAreas"]
+position = Vector2( 253.28, 241.856 )
+script = ExtResource( 18 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Position2D" type="Position2D" parent="TriggeredAreas/Platform"]
+position = Vector2( 221.711, -42.9664 )
+
+[node name="Sprite" type="Sprite" parent="TriggeredAreas/Platform"]
+position = Vector2( 1.45599, -3.39713 )
+scale = Vector2( 0.489422, 0.54503 )
+texture = ExtResource( 19 )
+
+[node name="Area2D" type="Area2D" parent="TriggeredAreas/Platform/Sprite"]
+position = Vector2( -84.9018, 62.9226 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TriggeredAreas/Platform/Sprite/Area2D"]
+position = Vector2( 84.708, -58.4963 )
+shape = SubResource( 2 )
+
+[node name="Collectables" type="Node2D" parent="."]
+position = Vector2( -319.031, -221.999 )
+
+[node name="RuaumokoCoin" parent="Collectables" instance=ExtResource( 21 )]
+position = Vector2( 716.193, 309.055 )
+
+[node name="RuaumokoCoin2" parent="Collectables" instance=ExtResource( 21 )]
+position = Vector2( 716.193, 350.798 )
+
+[node name="RuaumokoCoin3" parent="Collectables" instance=ExtResource( 21 )]
+position = Vector2( 717.42, 390.086 )
+
+[node name="RuaumokoCoin4" parent="Collectables" instance=ExtResource( 21 )]
+position = Vector2( 717.42, 426.918 )
+
+[node name="RuaumokoCoin5" parent="Collectables" instance=ExtResource( 21 )]
+position = Vector2( 1355.85, 628.268 )
+
+[node name="RuaumokoCoin6" parent="Collectables" instance=ExtResource( 21 )]
+position = Vector2( 1358.3, 670.011 )
+
+[node name="RuaumokoCoin7" parent="Collectables" instance=ExtResource( 21 )]
+position = Vector2( 1359.53, 714.21 )
+
+[node name="RuaumokoCoin8" parent="Collectables" instance=ExtResource( 21 )]
+position = Vector2( 1359.53, 763.32 )
+
+[node name="RuaumokoCoin9" parent="Collectables" instance=ExtResource( 21 )]
+position = Vector2( 331.909, 641.773 )
+
+[node name="RuaumokoCoin10" parent="Collectables" instance=ExtResource( 21 )]
+position = Vector2( 371.197, 641.773 )
+
+[node name="RuaumokoCoin11" parent="Collectables" instance=ExtResource( 21 )]
+position = Vector2( 412.94, 641.773 )
+
+[node name="RuaumokoCoin12" parent="Collectables" instance=ExtResource( 21 )]
+position = Vector2( 1152.04, 547.237 )
+
+[node name="RuaumokoCoin13" parent="Collectables" instance=ExtResource( 21 )]
+position = Vector2( 1195.01, 547.237 )
+
+[node name="RuaumokoCoin14" parent="Collectables" instance=ExtResource( 21 )]
+position = Vector2( 788.63, 69.6446 )
+
+[node name="RuaumokoCoin15" parent="Collectables" instance=ExtResource( 21 )]
+position = Vector2( 831.601, 68.4168 )
+
+[node name="RuaumokoCoin16" parent="Collectables" instance=ExtResource( 21 )]
+position = Vector2( 874.572, 69.6446 )
+
+[node name="RuaumokoCoin17" parent="Collectables" instance=ExtResource( 21 )]
+position = Vector2( 63.0332, 451.473 )
+
+[node name="Enemies" type="Node2D" parent="."]
+visible = false
+
+[node name="Ruaumoko" parent="Enemies" instance=ExtResource( 6 )]
+position = Vector2( 259.148, 538.154 )
+damage = 25
+
+[node name="Ruaumoko7" parent="Enemies" instance=ExtResource( 6 )]
+position = Vector2( 274.548, 407.764 )
+damage = 25
+
+[node name="Ruaumoko6" parent="Enemies" instance=ExtResource( 6 )]
+position = Vector2( 587.538, 536.126 )
+damage = 25
+
+[node name="Ruaumoko8" parent="Enemies" instance=ExtResource( 6 )]
+position = Vector2( 479.015, 538.872 )
+damage = 25
+
+[node name="Ruaumoko9" parent="Enemies" instance=ExtResource( 6 )]
+position = Vector2( 684.125, 409.61 )
+damage = 25
+
+[node name="Ruaumoko10" parent="Enemies" instance=ExtResource( 6 )]
+position = Vector2( 154.937, 410.971 )
+damage = 25
+
+[node name="Ruaumoko11" parent="Enemies" instance=ExtResource( 6 )]
+position = Vector2( 215.23, 313.137 )
+damage = 25
+
+[node name="Ruaumoko2" parent="Enemies" instance=ExtResource( 6 )]
+position = Vector2( 1036.21, 534.068 )
+damage = 25
+
+[node name="Ruaumoko12" parent="Enemies" instance=ExtResource( 6 )]
+position = Vector2( 1140.72, 400.411 )
+damage = 25
+
+[node name="Ruaumoko4" parent="Enemies" instance=ExtResource( 6 )]
+position = Vector2( 778.389, 303.252 )
+damage = 25
+
+[node name="Ruaumoko5" parent="Enemies" instance=ExtResource( 6 )]
+position = Vector2( 327.807, 184.161 )
+damage = 25
+
+[node name="PortalArea2D" parent="." instance=ExtResource( 20 )]
+position = Vector2( 1281.62, 221.957 )
+next_level = "res://Level/Volcano/VolcanoCutscene/VolcanoCutscene.tscn"
+[connection signal="body_entered" from="TriggeredAreas/Lava/Area2D" to="TriggeredAreas/Lava" method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="TriggeredAreas/Platform/Sprite/Area2D" to="TriggeredAreas/Platform" method="_on_Area2D_body_entered"]

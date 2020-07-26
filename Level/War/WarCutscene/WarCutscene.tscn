@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scene/Storybox/Storyboxes/TumatauengaSB.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Audio/BG Music/Cutscenes/Tumatauenga Cutscene.wav" type="AudioStream" id=2]
+[ext_resource path="res://Level/War/WarCutscene/WarCutsceneBG.jpg" type="Texture" id=4]
+
+[node name="WarCutscene" type="Node"]
+
+[node name="WarCutsceneBG" type="Sprite" parent="."]
+position = Vector2( 511.756, 300.056 )
+scale = Vector2( 1.68458, 1.50189 )
+texture = ExtResource( 4 )
+
+[node name="TumatauengaSB" parent="." instance=ExtResource( 1 )]
+next_level = "res://Level/Sun/SunLevel1.tscn"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+autoplay = true

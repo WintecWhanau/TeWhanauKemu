@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scene/Storybox/Storyboxes/TeRaStart.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/Sun/Ra BG1.jpg" type="Texture" id=2]
+
+[node name="SunCutScene" type="Node2D"]
+
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( 513.02, 299.805 )
+scale = Vector2( 0.553977, 0.713242 )
+texture = ExtResource( 2 )
+
+[node name="TeRaStartSB" parent="." instance=ExtResource( 1 )]
+next_level = "res://Level/Sun/SunLevel1.tscn"
+
+[node name="AnimatedSprite" parent="TeRaStartSB" index="4"]
+frame = 0
+
+[editable path="TeRaStartSB"]

@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scene/Storybox/Storyboxes/TangaroaSB.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Audio/BG Music/Cutscenes/Tangaroa Cutscene.wav" type="AudioStream" id=2]
+[ext_resource path="res://Assets/water-platformer-tileset/PNG/Background/Cartoon Jungle Game Tileset_Background - Layer 00.png" type="Texture" id=3]
+
+[node name="TangaroaCutscene" type="Node"]
+
+[node name="Cartoon Jungle Game Tileset_Background - Layer 00" type="Sprite" parent="."]
+position = Vector2( 512.22, 291.584 )
+texture = ExtResource( 3 )
+
+[node name="TangaroaSB" parent="." instance=ExtResource( 1 )]
+next_level = "res://Level/Wind/WindLevel1.tscn"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+autoplay = true
