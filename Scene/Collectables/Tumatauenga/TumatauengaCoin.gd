@@ -7,5 +7,7 @@ func _process(_delta):
 
 func _on_TumatauengaCoin_body_entered(body):
 	if body.name == "Player":
-#		MainHUD.score += 10
-		queue_free()
+		$Collect.play()
+
+func _on_Collect_finished():
+	queue_free()
