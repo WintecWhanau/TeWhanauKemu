@@ -184,6 +184,7 @@ level = 1
 position = Vector2( 204.058, -124.034 )
 frames = SubResource( 1 )
 animation = "portal_idle"
+frame = 4
 playing = true
 
 [node name="Collectables" type="Node2D" parent="."]
